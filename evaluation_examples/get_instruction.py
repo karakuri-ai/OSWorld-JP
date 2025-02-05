@@ -62,7 +62,7 @@ def generate_completion(prompt):
     completion_text = completion.choices[0].message.content.strip()
     return completion_text
 
-def translate_en_to_jp(english_text):
+async def translate_gpt(english_text):
     """
     Translate English text to Japanese text.
     Args:
@@ -71,44 +71,41 @@ def translate_en_to_jp(english_text):
         str: Japanese translation of the English text.
     """
     # Specify the language code for Japanese
-    prompt = "Translate the following English text to Japanese:\n\n" + english_text
+    prompt = """
+    Translate the following English text into natural Japanese.
+
+    For polite expressions such as “Please” or “would like to,” use honorific language. 
+    Otherwise, use imperative or declarative forms.
+    Output only the translation of the English text, without any additional information.
+    Text:
+    """.strip() + english_text
     # Translate the English text to Japanese
     japanese_text = generate_completion(prompt)
     return japanese_text
 
-async def translate_text(text):
+async def translate_gtrans(text):
     translator = Translator()
     translation = await translator.translate(text, src='en', dest='ja')
     return translation.text
 
-async def translate_onefile():
-    # Specify the path to the JSON file
-    json_file_path = "evaluation_examples/examples/Windows/excel/3aaa4e37-dc91-482e-99af-132a612d40f3.json"
-
-    # Get the instruction
-    instruction = get_instruction(json_file_path)
-    instruction_jp = await translate_text(instruction)
-
-    # Print the instruction
-    print("Instruction:", instruction, "\n"
-        "Japanese Translation:", instruction_jp)
-
 async def process_json_files(input_dir, output_dir, json_file):
-    translations = []
+    translations = {}
 
     for root, _, files in os.walk(input_dir):
         for file in files:
             if file.endswith('.json'):
                 input_file_path = os.path.join(root, file)
-                output_file_path = os.path.join(output_dir, 'J_' + os.path.relpath(input_file_path, input_dir))
+                output_file_name = 'J_' + file
+                output_file_path = os.path.join(output_dir, os.path.relpath(input_file_path, input_dir))
+                output_file_path = os.path.join(os.path.dirname(output_file_path), output_file_name)
 
                 instruction = get_instruction(input_file_path)
                 if instruction.startswith("File not found") or instruction.startswith("Error decoding"):
                     continue
 
-                translated_instruction = await translate_text(instruction)
-                translations.append([instruction, translated_instruction])
-                
+                translated_instruction = await translate_gpt(instruction)
+                translations[file] = [instruction, translated_instruction]
+
                 with open(input_file_path, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                 data['instruction'] = translated_instruction
