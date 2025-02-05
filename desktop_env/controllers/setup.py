@@ -4,6 +4,7 @@ import os
 import os.path
 import platform
 import shutil
+import subprocess #日本語環境用
 import sqlite3
 import tempfile
 import time
@@ -22,6 +23,7 @@ from requests_toolbelt.multipart.encoder import MultipartEncoder
 from desktop_env.controllers.python import PythonController
 from desktop_env.evaluators.metrics.utils import compare_urls
 
+logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger("desktopenv.setup")
 
 FILE_PATH = os.path.dirname(os.path.abspath(__file__))
@@ -40,6 +42,36 @@ class SetupController:
     def reset_cache_dir(self, cache_dir: str):
         self.cache_dir = cache_dir
 
+    def execute_command_in_vm(self, command, shell=False):
+        payload = {
+            "command": command,
+            "shell": shell
+        }
+        response = requests.post(f"{self.http_server}/execute", json=payload)
+        if response.status_code != 200:
+            raise Exception(f"Failed to execute command in VM: {response.text}")
+        result = response.json()
+        #logger.info(f"Command executed: {command}, Result: {result}")
+        return result
+
+
+    def wait_for_reboot(self, timeout: int = 300, poll_interval: int = 5):
+        logger.info("Waiting for VM to finish rebooting...")
+        start_time = time.time()
+        while time.time() - start_time < timeout:
+            try:
+                response = requests.get(self.http_server, timeout=3)
+                logger.debug("Polled {} - status code: {}".format(self.http_server, response.status_code))
+                if response.status_code == 404:
+                    logger.info("VM is back online.")
+                    return
+                else:
+                    logger.debug("Unexpected status code: {}".format(response.status_code))
+            except requests.RequestException as e:
+                logger.debug("VM not reachable yet: {}".format(e))
+            time.sleep(poll_interval)
+        raise Exception("Timeout: VM did not come back online after reboot.")
+    
     def setup(self, config: List[Dict[str, Any]]):
         """
         Args:
@@ -48,11 +80,62 @@ class SetupController:
                 {
                     "type": str, corresponding to the `_{:}_setup` methods of
                       this class
-                    "parameters": dick like {str, Any} providing the keyword
+                    "parameters": dict like {str, Any} providing the keyword
                       parameters
                 }
         """
+    def setup(self, config: list[Dict[str, Any]]):
+        """
+        Perform the setup, including installing language packs, setting locales,
+        rebooting the VM, and then running further configuration steps.
 
+        Args:
+            config (List[Dict[str, Any]]): list of dict like {str: Any}. each
+              config dict has the structure like
+                {
+                    "type": str, corresponding to the `_{:}_setup` methods of
+                      this class
+                    "parameters": dict like {str, Any} providing the keyword
+                      parameters
+                }
+        
+        """
+        """
+        # --- Steps before reboot ---
+        try:
+            self.execute_command_in_vm("echo password | sudo -S DEBIAN_FRONTEND=noninteractive apt-get update", shell=True)
+            self.execute_command_in_vm("echo password | sudo -S DEBIAN_FRONTEND=noninteractive apt-get install -y language-pack-ja", shell=True)
+            self.execute_command_in_vm("echo password | sudo -S DEBIAN_FRONTEND=noninteractive update-locale LANG=ja_JP.UTF-8", shell=True)
+        except Exception as e:
+            logger.error(f"Failed during language pack installation: {e}")
+            raise
+
+        # --- Reboot the VM ---
+        try:
+            # The reboot command will drop your connection. If an exception occurs here,
+            # it might be expected. You can log it and continue.
+            self.execute_command_in_vm("echo password | sudo -S reboot", shell=True)
+        except Exception as reboot_exception:
+            # Log the exception but assume it is due to the reboot
+            logger.info("Reboot command issued; connection likely dropped as expected.")
+
+        # --- Wait for the VM to come back online ---
+        try:
+            self.wait_for_reboot(timeout=300, poll_interval=5)
+        except Exception as wait_exception:
+            logger.error(f"Reboot did not complete as expected: {wait_exception}")
+            raise
+
+        # --- Now perform post-reboot commands ---
+        try:
+            # Check locale and language pack status
+            locale_result = self.execute_command_in_vm("locale", shell=True)
+            language_pack_result = self.execute_command_in_vm("dpkg -l | grep language-pack", shell=True)
+            logger.info("Japanese language pack installed and locale set to ja_JP.UTF-8")
+        except Exception as post_reboot_exception:
+            logger.error(f"Post-reboot command failed: {post_reboot_exception}")
+            raise
+        """
         for cfg in config:
             config_type: str = cfg["type"]
             parameters: Dict[str, Any] = cfg["parameters"]
