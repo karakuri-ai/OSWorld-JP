@@ -1,0 +1,21 @@
+{
+    "id": "cb130f0d-d36f-4302-9838-b3baf46139b6",
+    "snapshot": "base_setup",
+    "instruction": "私の部屋の照明に合わせて、このビデオの明るさとコントラストを自動的に調整します。",
+    "source": "https://www.vlchelp.com/increase-brightness-contrast-videos/",
+    "config": [
+        {
+            "type": "launch",
+            "parameters": {
+                "command": "vlc"
+            }
+        }
+    ],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "vlc"
+    ],
+    "evaluator": {
+        "func": "infeasible"
+    }
+}

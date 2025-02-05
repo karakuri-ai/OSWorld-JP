@@ -1,0 +1,70 @@
+{
+    "id": "65e62ec6-4603-4c67-b4d2-07830deb285b",
+    "snapshot": "multiapps",
+    "instruction": "私は最近、大規模な言語モデルに非常に興味を持っています。いくつかの大規模な言語モデルにいくつかの質問を入力しようとし、デスクトップの下に「Answers.json」という名前のファイルに答えを保存しました。今、私はGPT-4の答えのみに焦点を合わせたいと思っています。すべてのGPT-4回答をデスクトップの下にある「results.docx」という名前の単語文書にコピーしてください。",
+    "source": "",
+    "config": [
+        {
+            "type": "download",
+            "parameters": {
+                "files": [
+                    {
+                        "url": "https://drive.google.com/uc?id=1V2Ic9V3_5sxwynRMkLCDyqwBVUNe7PSK&export=download",
+                        "path": "/home/user/Desktop/answers.json"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "open",
+            "parameters": {
+                "path": "/home/user/Desktop/answers.json"
+            }
+        }
+    ],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "libreoffice_writer"
+    ],
+    "evaluator": {
+        "postconfig": [
+            {
+                "type": "activate_window",
+                "parameters": {
+                    "window_name": "results.docx - LibreOffice Writer",
+                    "strict": true
+                }
+            },
+            {
+                "type": "sleep",
+                "parameters": {
+                    "seconds": 0.5
+                }
+            },
+            {
+                "type": "execute",
+                "parameters": {
+                    "command": [
+                        "python",
+                        "-c",
+                        "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5); "
+                    ]
+                }
+            }
+        ],
+        "func": "compare_docx_files_and_ignore_new_lines",
+        "expected": {
+            "type": "cloud_file",
+            "path": "https://drive.google.com/uc?id=1cLS9dtb-6Yg_VtcFjNbovw6CE04vWuFl&export=download",
+            "dest": "results_Gold.docx"
+        },
+        "result": {
+            "type": "vm_file",
+            "path": "/home/user/Desktop/results.docx",
+            "dest": "results.docx"
+        },
+        "options": {
+            "ignore_blanks": false
+        }
+    }
+}

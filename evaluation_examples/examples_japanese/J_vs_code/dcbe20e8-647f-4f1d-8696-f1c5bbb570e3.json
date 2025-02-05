@@ -1,0 +1,29 @@
+{
+    "id": "dcbe20e8-647f-4f1d-8696-f1c5bbb570e3",
+    "snapshot": "vscode",
+    "instruction": "ダウンロードの写真にVSコードの背景を変更するのを手伝ってください。",
+    "source": "",
+    "config": [
+        {
+            "type": "launch",
+            "parameters": {
+                "command": [
+                    "code"
+                ]
+            }
+        },
+        {
+            "type": "activate_window",
+            "parameters": {
+                "window_name": "Visual Studio Code"
+            }
+        }
+    ],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "vscode"
+    ],
+    "evaluator": {
+        "func": "infeasible"
+    }
+}

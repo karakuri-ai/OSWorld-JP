@@ -1,0 +1,16 @@
+{
+    "id": "c9e7eaf2-b1a1-4efc-a982-721972fa9f02",
+    "snapshot": "chrome",
+    "instruction": "明日、Expediaのシンガポールへの一方通行便のウェブサイトに移動してください。",
+    "source": "https://www.youtube.com/watch?v=t6qvLhZ_zc4",
+    "config": [],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "chrome"
+    ],
+    "evaluator": {
+        "func": "",
+        "result": {},
+        "expected": {}
+    }
+}

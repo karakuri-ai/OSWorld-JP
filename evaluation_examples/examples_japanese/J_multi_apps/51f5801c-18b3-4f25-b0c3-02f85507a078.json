@@ -1,0 +1,46 @@
+{
+    "id": "51f5801c-18b3-4f25-b0c3-02f85507a078",
+    "snapshot": "libreoffice_impress",
+    "instruction": "私はLibreoffice Impressでこのプレゼンテーションに取り組んできましたが、今後の講演のためにたくさんのスピーカーノートを追加しました。リハーサルするときは、別のドキュメントでそれらのメモを手元に置いておきたいです。 Impress Fileからすべてのプレゼンターノートを抽出し、Wordドキュメントとして保存するのを手伝っていただけますか？メモのテキストを保持してください。フォーマットまたはページ番号情報を追加しないでください。ファイルに「notes.docx」という名前で、簡単にアクセスできるようにデスクトップに配置したいと思います。",
+    "source": "https://github.com/danielrcollins1/ImpressExtractNotes",
+    "config": [
+        {
+            "type": "download",
+            "parameters": {
+                "files": [
+                    {
+                        "url": "https://drive.usercontent.google.com/download?id=1epTcblcYh8j_wFtA-aiXPIF2Oo1IVw8A&export=download",
+                        "path": "/home/user/Desktop/Dickinson_Slides.pptx"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "open",
+            "parameters": {
+                "path": "/home/user/Desktop/Dickinson_Slides.pptx"
+            }
+        }
+    ],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "libreoffice_impress",
+        "libreoffice_writer"
+    ],
+    "evaluator": {
+        "func": "compare_docx_files",
+        "result": {
+            "type": "vm_file",
+            "path": "/home/user/Desktop/notes.docx",
+            "dest": "notes.docx"
+        },
+        "expected": {
+            "type": "cloud_file",
+            "path": "https://drive.usercontent.google.com/download?id=1vUvaQLJUtFgbZi7lSzl0y0TS_WecFczm&export=download",
+            "dest": "notes_gold.docx"
+        },
+        "options": {
+            "ignore_blanks": true
+        }
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "id": "f13c9e86-3d6d-475f-b2bc-9557fe355236",
+    "snapshot": "libreoffice_calc",
+    "instruction": "すべての年の総利益を計算します。年、販売、および総利益列を新しいシートにコピーしてから、売上と利益を表示するクラスター化された列チャートをプロットします。 XおよびY軸のタイトルをそれぞれ「年」と「量」として設定します。",
+    "source": "SheetCopilot@96",
+    "config": [
+        {
+            "type": "download",
+            "parameters": {
+                "files": [
+                    {
+                        "url": "https://drive.google.com/uc?id=1im3XRe64ka2wjlBDkKcpek_1fzC8fP9U&export=download",
+                        "path": "/home/user/IncomeStatement2.xlsx"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "open",
+            "parameters": {
+                "path": "/home/user/IncomeStatement2.xlsx"
+            }
+        }
+    ],
+    "trajectory": "trajectories/f13c9e86-3d6d-475f-b2bc-9557fe355236",
+    "related_apps": [
+        "libreoffice_calc"
+    ],
+    "evaluator": {
+        "postconfig": [
+            {
+                "type": "activate_window",
+                "parameters": {
+                    "window_name": "IncomeStatement2.xlsx - LibreOffice Calc",
+                    "strict": true
+                }
+            },
+            {
+                "type": "sleep",
+                "parameters": {
+                    "seconds": 0.5
+                }
+            },
+            {
+                "type": "execute",
+                "parameters": {
+                    "command": [
+                        "python",
+                        "-c",
+                        "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
+                    ]
+                }
+            },
+            {
+                "type": "sleep",
+                "parameters": {
+                    "seconds": 0.5
+                }
+            }
+        ],
+        "func": "compare_table",
+        "expected": {
+            "type": "cloud_file",
+            "path": "https://drive.google.com/uc?id=1yeSyR89nw6aYLXfsb1xUB94pOzK0z7VK&export=download",
+            "dest": "9_IncomeStatement2_gt1.xlsx"
+        },
+        "result": {
+            "type": "vm_file",
+            "path": "/home/user/IncomeStatement2.xlsx",
+            "dest": "IncomeStatement2.xlsx"
+        },
+        "options": {
+            "rules": [
+                {
+                    "type": "sheet_data",
+                    "sheet_idx0": 0,
+                    "sheet_idx1": "EI0"
+                },
+                {
+                    "type": "chart",
+                    "sheet_idx0": 0,
+                    "sheet_idx1": "EI0",
+                    "chart_props": [
+                        "xtitle",
+                        "ytitle",
+                        "type"
+                    ]
+                },
+                {
+                    "type": "sheet_data",
+                    "sheet_idx0": 1,
+                    "sheet_idx1": "EI1"
+                }
+            ]
+        }
+    }
+}

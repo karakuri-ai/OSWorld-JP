@@ -1,0 +1,70 @@
+{
+    "id": "88fe4b2d-3040-4c70-9a70-546a47764b48",
+    "snapshot": "libreoffice_writer",
+    "instruction": "私は自分のコースの学生のためにガイドラインを作成しており、読みやすさを向上させるために最初の段落で各文を分離したいと思います。私はそれらを1つずつ分離するのに苦労しているので、それぞれの後に1つの空のラインスペースを作成して各文を分離してください。",
+    "source": "https://stackoverflow.com/questions/56554555/libreoffice-writer-how-to-create-empty-line-space-after-every-period-in-a-par",
+    "config": [
+        {
+            "type": "download",
+            "parameters": {
+                "files": [
+                    {
+                        "url": "https://drive.usercontent.google.com/download?id=1DV0M0eSOEM64Lc59TR-tsBgFqehSQbFf&export=download&authuser=0&confirm=t&uuid=b8ca221a-3e09-4765-9b6d-0f7c439e492a&at=APZUnTWYXixuTuAHaX9Iz-5g_xMx:1706012515458",
+                        "path": "/home/user/Desktop/CCCH9003_Tutorial_guidelines.docx"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "open",
+            "parameters": {
+                "path": "/home/user/Desktop/CCCH9003_Tutorial_guidelines.docx"
+            }
+        }
+    ],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "libreoffice_writer"
+    ],
+    "evaluator": {
+        "postconfig": [
+            {
+                "type": "activate_window",
+                "parameters": {
+                    "window_name": "CCCH9003_Tutorial_guidelines.docx - LibreOffice Writer",
+                    "strict": true
+                }
+            },
+            {
+                "type": "sleep",
+                "parameters": {
+                    "seconds": 0.5
+                }
+            },
+            {
+                "type": "execute",
+                "parameters": {
+                    "command": [
+                        "python",
+                        "-c",
+                        "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5); "
+                    ]
+                }
+            }
+        ],
+        "func": "compare_docx_files",
+        "expected": {
+            "type": "cloud_file",
+            "path": "https://drive.usercontent.google.com/download?id=1B9mOd0lTiX0QFly41ZhgmCSB9AnjFWLP&export=download&authuser=0&confirm=t&uuid=28af3f12-0639-4b30-8428-08d9e1834690&at=APZUnTW9oJ1ULogYQMAjxSWJkUv1:1706012516839",
+            "dest": "CCCH9003_Tutorial_guidelines_Gold.docx"
+        },
+        "result": {
+            "type": "vm_file",
+            "path": "/home/user/Desktop/CCCH9003_Tutorial_guidelines.docx",
+            "dest": "CCCH9003_Tutorial_guidelines.docx"
+        },
+        "options": {
+            "ignore_blanks": false
+        }
+    }
+}

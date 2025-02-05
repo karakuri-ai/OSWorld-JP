@@ -1,0 +1,14 @@
+{
+    "id": "7b802dad-6e0f-4204-9815-d4e3f57627d8",
+    "snapshot": "libreoffice_calc",
+    "instruction": "セルの色に基づいてこのテーブルを並べ替えて、最初はピンクでマークされたすべての行を配置します。",
+    "source": "https://www.youtube.com/shorts/Of-lzeP1usE",
+    "config": [],
+    "trajectory": "trajectories/7b802dad-6e0f-4204-9815-d4e3f57627d8",
+    "related_apps": [
+        "libreoffice_calc"
+    ],
+    "evaluator": {
+        "func": "infeasible"
+    }
+}

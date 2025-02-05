@@ -1,0 +1,16 @@
+{
+    "id": "b5ebc8c6-6329-4373-85b4-9421c97375e9",
+    "snapshot": "chrome",
+    "instruction": "私は3日前に見た最初の3つのウェブサイトを見つけようとしていますが、それは惑星の顔から消えたようです。 Google Chromeブラウジングの歴史を調べてみると幸運があると思いましたが、見つけることができません。 3日前に入力した最初の3つのWebサイトにアクセスするのを手伝っていただけますか？",
+    "source": "https://superuser.com/questions/364470/is-there-a-way-to-view-google-chrome-browsing-history-past-three-months-ago?rq=1",
+    "config": [],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "chrome"
+    ],
+    "evaluator": {
+        "func": "",
+        "result": {},
+        "expected": {}
+    }
+}

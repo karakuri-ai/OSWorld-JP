@@ -1,0 +1,14 @@
+{
+    "id": "ae78f875-5b98-4907-bbb5-9c737fc68c03",
+    "snapshot": "chrome",
+    "instruction": "1ページに表示されている検索結果の数を50に変更していただけますか？複数のページを絶えずクリックする必要性を減らすため、より多くの結果が一度に目に見えるようになると、研究効率が大幅に向上することがわかります。",
+    "source": "https://support.google.com/chrome/thread/219988391/increase-search-results-per-page?hl=en",
+    "config": [],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "chrome"
+    ],
+    "evaluator": {
+        "func": "infeasible"
+    }
+}

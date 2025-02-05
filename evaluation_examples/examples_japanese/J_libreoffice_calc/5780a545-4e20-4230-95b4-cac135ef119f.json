@@ -1,0 +1,103 @@
+{
+    "id": "5780a545-4e20-4230-95b4-cac135ef119f",
+    "snapshot": "libreoffice_calc",
+    "instruction": "新しいシートでは、セルA1：B1をマージし、青い塗りつぶしの色と白いテキストの色で太字のテキスト「Summer Sales（$）」を書きます。次に、この新しいシートから始まるピボットテーブルをシート1の私のデータのために作成して、各プロモーションの収益の合計を計算します。結果を示す3Dパイチャートをプロットします。チャートタイトルを「各プロモーションの収益（$）」として設定し、凡例を下に移動します。チャートに外部エンドデータラベルを追加することを忘れないでください。",
+    "source": "SheetCopilot@53",
+    "config": [
+        {
+            "type": "download",
+            "parameters": {
+                "files": [
+                    {
+                        "url": "https://drive.google.com/uc?id=1I29YyV7zFdNqbsQw0SWD9pDuLz3oHlge&export=download",
+                        "path": "/home/user/EntireSummerSales.xlsx"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "open",
+            "parameters": {
+                "path": "/home/user/EntireSummerSales.xlsx"
+            }
+        }
+    ],
+    "trajectory": "trajectories/5780a545-4e20-4230-95b4-cac135ef119f",
+    "related_apps": [
+        "libreoffice_calc"
+    ],
+    "evaluator": {
+        "postconfig": [
+            {
+                "type": "activate_window",
+                "parameters": {
+                    "window_name": "EntireSummerSales.xlsx - LibreOffice Calc",
+                    "strict": true
+                }
+            },
+            {
+                "type": "sleep",
+                "parameters": {
+                    "seconds": 0.5
+                }
+            },
+            {
+                "type": "execute",
+                "parameters": {
+                    "command": [
+                        "python",
+                        "-c",
+                        "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
+                    ]
+                }
+            },
+            {
+                "type": "sleep",
+                "parameters": {
+                    "seconds": 0.5
+                }
+            }
+        ],
+        "func": "compare_table",
+        "expected": {
+            "type": "cloud_file",
+            "path": "https://drive.google.com/uc?id=1zHi--HRZwHvyMyvSXx62qO6Laiql7zG3&export=download",
+            "dest": "4_EntireSummerSales_gt1.xlsx"
+        },
+        "result": {
+            "type": "vm_file",
+            "path": "/home/user/EntireSummerSales.xlsx",
+            "dest": "EntireSummerSales.xlsx"
+        },
+        "options": {
+            "rules": [
+                {
+                    "type": "sheet_data",
+                    "sheet_idx0": 0,
+                    "sheet_idx1": "EI0"
+                },
+                {
+                    "type": "chart",
+                    "sheet_idx0": 0,
+                    "sheet_idx1": "EI0",
+                    "chart_props": [
+                        "type",
+                        "legend",
+                        "title"
+                    ]
+                },
+                {
+                    "type": "pivot_table",
+                    "sheet_idx0": 0,
+                    "sheet_idx1": "EI0",
+                    "pivot_props": [
+                        "col_fields",
+                        "filter",
+                        "row_fields",
+                        "data_fields"
+                    ]
+                }
+            ]
+        }
+    }
+}

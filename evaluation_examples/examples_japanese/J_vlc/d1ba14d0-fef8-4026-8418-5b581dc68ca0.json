@@ -1,0 +1,16 @@
+{
+    "id": "d1ba14d0-fef8-4026-8418-5b581dc68ca0",
+    "snapshot": "chrome",
+    "instruction": "VLCメディアプレーヤーが最初から中間点まで繰り返しビデオを再生するようにするのを手伝っていただけますか？クラスプロジェクトの映画の前半を分析しています。この特定のセクションを継続的に再生すると、詳細なレビューと分析が大幅に役立ちます。",
+    "source": "https://superuser.com/questions/306154/how-to-use-a-b-repeat-feature-of-vlc",
+    "config": [],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "vlc"
+    ],
+    "evaluator": {
+        "func": "",
+        "result": {},
+        "expected": {}
+    }
+}

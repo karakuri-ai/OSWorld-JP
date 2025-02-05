@@ -1,0 +1,14 @@
+{
+    "id": "93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9",
+    "snapshot": "chrome",
+    "instruction": "Google ChromeのDark Mode機能をオフにするのを手伝っていただけますか？暗いモードはまぶしさを減らすのに最適ですが、特に乱視でテキストをはっきりと読むことが実際に挑戦的になることに気付きました。",
+    "source": "https://superuser.com/questions/1417973/how-to-disable-google-chrome-dark-mode",
+    "config": [],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "chrome"
+    ],
+    "evaluator": {
+        "func": "infeasible"
+    }
+}

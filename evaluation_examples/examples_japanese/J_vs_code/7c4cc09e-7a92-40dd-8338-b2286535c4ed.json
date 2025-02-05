@@ -1,0 +1,29 @@
+{
+    "id": "7c4cc09e-7a92-40dd-8338-b2286535c4ed",
+    "snapshot": "vscode",
+    "instruction": "VSコードの表示言語を「アラビア語」に変更するのを手伝ってください。",
+    "source": "",
+    "config": [
+        {
+            "type": "launch",
+            "parameters": {
+                "command": [
+                    "code"
+                ]
+            }
+        },
+        {
+            "type": "activate_window",
+            "parameters": {
+                "window_name": "Visual Studio Code"
+            }
+        }
+    ],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "vscode"
+    ],
+    "evaluator": {
+        "func": "infeasible"
+    }
+}

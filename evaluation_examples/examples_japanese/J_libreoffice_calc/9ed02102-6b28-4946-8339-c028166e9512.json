@@ -1,0 +1,103 @@
+{
+    "id": "9ed02102-6b28-4946-8339-c028166e9512",
+    "snapshot": "libreoffice_calc",
+    "instruction": "対応する小売価格と割引を考慮して、販売テーブルの各取引の収益を計算したいと思います。ヘッダー「Revenue」の新しいコラムでこれを行うのを手伝ってください。次に、新しいシートにピボットテーブルを作成して、ブーメランが販売されているWebサイトのカウントを表示します。最後に、チャートのタイトル「Webサイトごとの販売頻度」を掲載し、伝説のないピボットテーブルのこの新しいシートにバーチャートをプロットします。",
+    "source": "SheetCopilot@0",
+    "config": [
+        {
+            "type": "download",
+            "parameters": {
+                "files": [
+                    {
+                        "url": "https://drive.google.com/uc?id=1P_8BeCgFJXQwUizF3eFYAeMS4YIw6dmA&export=download",
+                        "path": "/home/user/BoomerangSales.xlsx"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "open",
+            "parameters": {
+                "path": "/home/user/BoomerangSales.xlsx"
+            }
+        }
+    ],
+    "trajectory": "trajectories/9ed02102-6b28-4946-8339-c028166e9512",
+    "related_apps": [
+        "libreoffice_calc"
+    ],
+    "evaluator": {
+        "postconfig": [
+            {
+                "type": "activate_window",
+                "parameters": {
+                    "window_name": "BoomerangSales.xlsx - LibreOffice Calc",
+                    "strict": true
+                }
+            },
+            {
+                "type": "sleep",
+                "parameters": {
+                    "seconds": 0.5
+                }
+            },
+            {
+                "type": "execute",
+                "parameters": {
+                    "command": [
+                        "python",
+                        "-c",
+                        "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
+                    ]
+                }
+            },
+            {
+                "type": "sleep",
+                "parameters": {
+                    "seconds": 0.5
+                }
+            }
+        ],
+        "func": "compare_table",
+        "expected": {
+            "type": "cloud_file",
+            "path": "https://drive.google.com/uc?id=1XNTnZ1fxMX5xfIAZPqu9m1QuNlxEWQxj&export=download",
+            "dest": "1_BoomerangSales_gt1.xlsx"
+        },
+        "result": {
+            "type": "vm_file",
+            "path": "/home/user/BoomerangSales.xlsx",
+            "dest": "BoomerangSales.xlsx"
+        },
+        "options": {
+            "rules": [
+                {
+                    "type": "sheet_data",
+                    "sheet_idx0": 1,
+                    "sheet_idx1": "EI1"
+                },
+                {
+                    "type": "chart",
+                    "sheet_idx0": 0,
+                    "sheet_idx1": "EI0",
+                    "chart_props": [
+                        "type",
+                        "legend",
+                        "title"
+                    ]
+                },
+                {
+                    "type": "pivot_table",
+                    "sheet_idx0": 0,
+                    "sheet_idx1": "EI0",
+                    "pivot_props": [
+                        "col_fields",
+                        "filter",
+                        "row_fields",
+                        "data_fields"
+                    ]
+                }
+            ]
+        }
+    }
+}

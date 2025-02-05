@@ -1,0 +1,16 @@
+{
+    "id": "4d2b519e-e872-4100-8ea3-fe71ab0f9133",
+    "snapshot": "os",
+    "instruction": "ZSH端末のパス変数に新しいエントリ「/home/david/pear/bin」を追加するのを手伝ってください。",
+    "source": "https://stackoverflow.com/questions/11530090/adding-a-new-entry-to-the-path-variable-in-zsh",
+    "trajectory": "trajectories/",
+    "config": [],
+    "related_apps": [
+        "os"
+    ],
+    "evaluator": {
+        "func": "",
+        "result": {},
+        "expected": {}
+    }
+}

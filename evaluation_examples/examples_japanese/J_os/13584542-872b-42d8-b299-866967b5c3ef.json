@@ -1,0 +1,55 @@
+{
+    "id": "13584542-872b-42d8-b299-866967b5c3ef",
+    "snapshot": "os",
+    "instruction": "端子をクリックします：ターミナル - > 132x43は端子サイズを変更しますが、各再起動の後端子サイズがデフォルト設定に設定された後、再度変更する必要があります。永久に設定するのを手伝ってください",
+    "source": "https://superuser.com/questions/72176/linux-set-default-terminal-size-and-screen-position",
+    "trajectory": "trajectories/",
+    "config": [
+        {
+            "type": "execute",
+            "parameters": {
+                "command": [
+                    "python",
+                    "-c",
+                    "import pyautogui; import time; pyautogui.click(960, 540); time.sleep(0.5);"
+                ]
+            }
+        }
+    ],
+    "related_apps": [
+        "os"
+    ],
+    "evaluator": {
+        "postconfig": [
+            {
+                "type": "sleep",
+                "parameters": {
+                    "seconds": 1
+                }
+            },
+            {
+                "type": "execute",
+                "parameters": {
+                    "command": [
+                        "python",
+                        "-c",
+                        "import pyautogui; import time; time.sleep(0.5); pyautogui.hotkey('ctrl', 'alt', 't'); time.sleep(0.5); pyautogui.write('stty size'); time.sleep(0.5); pyautogui.press('enter')"
+                    ]
+                }
+            }
+        ],
+        "func": "check_include_exclude",
+        "result": {
+            "type": "vm_terminal_output"
+        },
+        "expected": {
+            "type": "rule",
+            "rules": {
+                "include": [
+                    "43 132"
+                ],
+                "exclude": []
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "id": "971cbb5b-3cbf-4ff7-9e24-b5c84fcebfa6",
+    "snapshot": "vscode",
+    "instruction": "VSコードの設定を変更するのを手伝ってください。そうすれば、コードを開くたびに、「test.py」と呼ばれるpythonファイルが自動的に作成されます。",
+    "source": "",
+    "config": [
+        {
+            "type": "launch",
+            "parameters": {
+                "command": [
+                    "code"
+                ]
+            }
+        },
+        {
+            "type": "activate_window",
+            "parameters": {
+                "window_name": "Visual Studio Code"
+            }
+        }
+    ],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "vscode"
+    ],
+    "evaluator": {
+        "func": "infeasible"
+    }
+}

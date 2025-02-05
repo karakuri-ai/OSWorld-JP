@@ -1,0 +1,16 @@
+{
+    "id": "5c433d22-ed9a-4e31-91f5-54cf3e8acd63",
+    "snapshot": "os",
+    "instruction": "システム言語を中国語に変更したい（簡素化）。手伝ってもらえますか？",
+    "source": "https://help.ubuntu.com/lts/ubuntu-help/session-language.html.zh-CN",
+    "trajectory": "trajectories/",
+    "config": [],
+    "related_apps": [
+        "os"
+    ],
+    "evaluator": {
+        "func": "",
+        "result": {},
+        "expected": {}
+    }
+}

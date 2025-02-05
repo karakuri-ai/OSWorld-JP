@@ -1,0 +1,14 @@
+{
+    "id": "5ca86c6f-f317-49d8-b6a7-b527541caae8",
+    "snapshot": "gimp",
+    "instruction": "香港大学のロゴをGIMP内に「.png」形式をダウンロードするのを手伝ってもらえますか？",
+    "source": "",
+    "config": [],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "gimp"
+    ],
+    "evaluator": {
+        "func": "infeasible"
+    }
+}

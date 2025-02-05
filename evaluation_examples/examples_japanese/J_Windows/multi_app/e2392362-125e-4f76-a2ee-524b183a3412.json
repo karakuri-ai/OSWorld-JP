@@ -1,0 +1,120 @@
+{
+    "id": "e2392362-125e-4f76-a2ee-524b183a3412",
+    "snapshot": "chrome",
+    "instruction": "私は最近、AcademicPages.github.ioの有名な個人的なホームページテンプレートを使用して、独自のホームページを構築しました。オンラインチュートリアルによると、_config.yamlファイルで名前と連絡先情報を構成できます。ただし、YAMLファイル形式に慣れていません。このファイルの名前と連絡先情報に関連するセクションを見つけて、「テストアカウント」と「test@gmail.com」に変更してください。",
+    "source": "authors",
+    "config": [
+        {
+            "type": "command",
+            "parameters": {
+                "command": "mkdir C:\\Users\\User\\Documents\\Code\\Website",
+                "shell": true
+            }
+        },
+        {
+            "type": "download",
+            "parameters": {
+                "files": [
+                    {
+                        "path": "C:\\Users\\User\\.tmp.7z",
+                        "url": "https://drive.google.com/uc?id=1LYc6rBSuCNBtTQIg-m9zP6KmlEB_Zfdo&export=download"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "execute",
+            "parameters": {
+                "command": [
+                    "C:\\Program Files\\7-Zip\\7z.exe",
+                    "x",
+                    "-oC:\\Users\\User\\Documents\\Code\\Website",
+                    "C:\\Users\\User\\.tmp.7z"
+                ]
+            }
+        },
+        {
+            "type": "launch",
+            "parameters": {
+                "command": [
+                    "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+                    "--remote-debugging-port=1337"
+                ]
+            }
+        },
+        {
+            "type": "launch",
+            "parameters": {
+                "command": "ncat.exe -k -l 0.0.0.0 9222 --sh-exec \"ncat.exe 127.0.0.1 1337\"",
+                "shell": true
+            }
+        },
+        {
+            "type": "chrome_open_tabs",
+            "parameters": {
+                "urls_to_open": [
+                    "https://academicpages.github.io/"
+                ]
+            }
+        }
+    ],
+    "trajectory": "trajectories/e2392362-125e-4f76-a2ee-524b183a3412",
+    "related_apps": [
+        "chrome",
+        "os",
+        "vscode"
+    ],
+    "evaluator": {
+        "postconfig": [
+            {
+                "type": "execute",
+                "parameters": {
+                    "command": [
+                        "python",
+                        "-c",
+                        "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5);"
+                    ]
+                }
+            }
+        ],
+        "func": "check_json",
+        "options": {
+            "is_yaml": true
+        },
+        "expected": {
+            "type": "rule",
+            "rules": {
+                "expect": [
+                    {
+                        "key": [
+                            "name"
+                        ],
+                        "method": "eq",
+                        "ref": "Test Account"
+                    },
+                    {
+                        "key": [
+                            "author",
+                            "name"
+                        ],
+                        "method": "eq",
+                        "ref": "Test Account"
+                    },
+                    {
+                        "key": [
+                            "author",
+                            "email"
+                        ],
+                        "method": "eq",
+                        "ref": "Test@gmail.com"
+                    }
+                ]
+            }
+        },
+        "result": {
+            "type": "vm_file",
+            "path": "C:\\Users\\User\\Documents\\Code\\Website\\academicpages.github.io\\_config.yml",
+            "dest": "_config.yaml"
+        }
+    }
+}
