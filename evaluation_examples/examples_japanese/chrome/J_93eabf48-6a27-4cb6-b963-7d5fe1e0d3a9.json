@@ -1,0 +1,14 @@
+{
+    "id": "93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9",
+    "snapshot": "chrome",
+    "instruction": "Google Chromeのダークモード機能をオフにしていただけますか？ダークモードは確かにまぶしさを軽減するのに良いですが、特に乱視のせいで文字をはっきり読むのが難しくなっています。",
+    "source": "https://superuser.com/questions/1417973/how-to-disable-google-chrome-dark-mode",
+    "config": [],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "chrome"
+    ],
+    "evaluator": {
+        "func": "infeasible"
+    }
+}

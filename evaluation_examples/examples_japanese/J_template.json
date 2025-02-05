@@ -1,7 +1,7 @@
 {
     "id": "",
     "snapshot": "libreoffice_calc",
-    "instruction": "JSONファイルに「命令」フィールドはありません。",
+    "instruction": "JSONファイルに「instruction」フィールドが見つかりません。",
     "source": "",
     "config": [
         {

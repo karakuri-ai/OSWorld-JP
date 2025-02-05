@@ -1,0 +1,83 @@
+{
+    "id": "3e3fc409-bff3-4905-bf16-c968eee3f807",
+    "snapshot": "chrome",
+    "instruction": "私は映画の大ファンで、これまで見た映画の記録をつけています。2024年以前に公開されたIMDBトップ30リストの中で、まだ観ていない映画があるかどうか気になります。開いているExcelに「unseen_movies」という別のシートを作成するのを手伝ってください。このシートは同じヘッダーを共有し、IMDBのランキングに従って結果を高い順から低い順に並べ替えてください。",
+    "source": "authors",
+    "config": [
+        {
+            "type": "launch",
+            "parameters": {
+                "command": [
+                    "google-chrome",
+                    "--remote-debugging-port=1337"
+                ]
+            }
+        },
+        {
+            "type": "launch",
+            "parameters": {
+                "command": [
+                    "socat",
+                    "tcp-listen:9222,fork",
+                    "tcp:localhost:1337"
+                ]
+            }
+        },
+        {
+            "type": "chrome_open_tabs",
+            "parameters": {
+                "urls_to_open": [
+                    "https://www.imdb.com"
+                ]
+            }
+        },
+        {
+            "type": "download",
+            "parameters": {
+                "files": [
+                    {
+                        "url": "https://drive.usercontent.google.com/download?id=1KVNVf5qZhprV_7rgEl33Qrkagv603reM&export=download&authuser=0&confirm=t",
+                        "path": "/home/user/Desktop/movies.xlsx"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "launch",
+            "parameters": {
+                "command": [
+                    "libreoffice",
+                    "--calc",
+                    "/home/user/Desktop/movies.xlsx"
+                ]
+            }
+        }
+    ],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "libreoffice_calc",
+        "chrome"
+    ],
+    "evaluator": {
+        "func": "compare_table",
+        "result": {
+            "type": "vm_file",
+            "path": "/home/user/Desktop/movies.xlsx",
+            "dest": "movies.xlsx"
+        },
+        "expected": {
+            "type": "cloud_file",
+            "path": "https://drive.usercontent.google.com/download?id=149QKswQ8AIYk21Aaatic6QSCcBU40uyd&export=download&authuser=0&confirm=t",
+            "dest": "gold_movies.xlsx"
+        },
+        "options": {
+            "rules": [
+                {
+                    "type": "sheet_data",
+                    "sheet_idx0": "RNunseen_movies",
+                    "sheet_idx1": "ENunseen_movies"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "id": "6d72aad6-187a-4392-a4c4-ed87269c51cf",
+    "snapshot": "libreoffice_calc",
+    "instruction": "OpenOffice Impressのプレゼンテーションを動画に変換して、VLCで再生していただけますか？",
+    "source": "https://superuser.com/questions/923171/converting-openoffice-impress-presentation-to-video-without-screen-recording",
+    "config": [],
+    "trajectory": "trajectories/6d72aad6-187a-4392-a4c4-ed87269c51cf",
+    "related_apps": [
+        "libreoffice_calc",
+        "libreoffice_impress",
+        "libreoffice_writer",
+        "vlc"
+    ],
+    "evaluator": {
+        "func": "infeasible"
+    }
+}

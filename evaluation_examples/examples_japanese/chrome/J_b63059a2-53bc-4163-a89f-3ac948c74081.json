@@ -1,0 +1,16 @@
+{
+    "id": "b63059a2-53bc-4163-a89f-3ac948c74081",
+    "snapshot": "chrome",
+    "instruction": "有害なウェブサイトは非常に迷惑です。ブラウザを騙して、自分が自主的にポップアップを開いていると思わせるからです。例えば、動画の再生ボタンをクリックすると、別のウィンドウにアダルトゲームの広告が表示されます。これを止めたいので、可能なすべてのポップアップをブロックするのを手伝ってもらえませんか？",
+    "source": "https://superuser.com/questions/1303418/how-do-i-make-chrome-block-absolutely-all-pop-ups?rq=1",
+    "config": [],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "chrome"
+    ],
+    "evaluator": {
+        "func": "",
+        "result": {},
+        "expected": {}
+    }
+}

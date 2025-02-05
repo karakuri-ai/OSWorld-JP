@@ -1,0 +1,54 @@
+{
+    "id": "98e8e339-5f91-4ed2-b2b2-12647cb134f4",
+    "snapshot": "vs_code",
+    "instruction": "vscodeプロジェクト内のすべての.txtファイルの内容を、デスクトップにある「concat.docx」という単一の文書にまとめてください。マージの区切りは必要ありません。文書全体のフォントサイズを10に設定してください。",
+    "source": "",
+    "config": [
+        {
+            "type": "download",
+            "parameters": {
+                "files": [
+                    {
+                        "url": "https://drive.google.com/uc?export=download&id=1_1J2SvuTQSxSJk6lR2QlEiis7zSwdcmf",
+                        "path": "/home/user/Desktop/doc_proc.zip"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "command",
+            "parameters": {
+                "command": "mkdir -p /home/user/Desktop/doc_proc/; unzip /home/user/Desktop/doc_proc.zip -d /home/user/Desktop/doc_proc/",
+                "shell": true
+            }
+        },
+        {
+            "type": "launch",
+            "parameters": {
+                "command": [
+                    "code",
+                    "-g",
+                    "/home/user/Desktop/doc_proc/"
+                ]
+            }
+        }
+    ],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "vs_code",
+        "libreoffice_writer"
+    ],
+    "evaluator": {
+        "func": "compare_docx_files",
+        "result": {
+            "type": "vm_file",
+            "path": "/home/user/Desktop/concat.docx",
+            "dest": "concat.docx"
+        },
+        "expected": {
+            "type": "cloud_file",
+            "path": "https://drive.google.com/uc?export=download&id=1nNoQoQUOfX-do0ZiFQcdJ0_rt2oGcr9Y",
+            "dest": "concat_gold.docx"
+        }
+    }
+}

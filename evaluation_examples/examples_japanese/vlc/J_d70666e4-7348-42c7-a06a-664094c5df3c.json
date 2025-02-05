@@ -1,0 +1,12 @@
+{
+    "id": "d70666e4-7348-42c7-a06a-664094c5df3c",
+    "snapshot": "base_setup",
+    "instruction": "動画の右上隅（20px, 1800px）にロゴのウォーターマークを追加してください。ロゴファイルはSAVE_PATHにあります。",
+    "source": "https://www.youtube.com/watch?v=XHprwDJ0-fU&t=436s",
+    "config": [],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "vlc"
+    ],
+    "evaluator": "evaluation_dir"
+}

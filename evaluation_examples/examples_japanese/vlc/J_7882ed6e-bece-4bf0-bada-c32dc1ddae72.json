@@ -1,0 +1,21 @@
+{
+    "id": "7882ed6e-bece-4bf0-bada-c32dc1ddae72",
+    "snapshot": "base_setup",
+    "instruction": "Google Playムービー＆TVストアで購入した最新シーズンの「ストレンジャー・シングス」を直接VLCで再生してください。",
+    "source": "https://wiki.videolan.org/Digital_Restrictions_Management/",
+    "config": [
+        {
+            "type": "launch",
+            "parameters": {
+                "command": "vlc"
+            }
+        }
+    ],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "vlc"
+    ],
+    "evaluator": {
+        "func": "infeasible"
+    }
+}

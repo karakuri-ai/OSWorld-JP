@@ -1,0 +1,60 @@
+{
+    "id": "2373b66a-092d-44cb-bfd7-82e86e7a3b4d",
+    "snapshot": "multiapps",
+    "instruction": "私は通常の作業負荷の下で自分のUbuntuシステムのリソース使用状況を理解したいです。`sysstat`ツールキットの`sar`コマンドを使用してシステムの活動を監視し、30秒間にわたって1秒ごとに状況を評価し、その結果をデスクトップの「System_Resources_Report.txt」に出力してください。",
+    "source": "author",
+    "config": [
+        {
+            "type": "command",
+            "parameters": {
+                "command": "echo password | sudo -S apt-get update && echo password | sudo -S apt-get install sysstat",
+                "shell": "true"
+            }
+        }
+    ],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "os",
+        "calc"
+    ],
+    "evaluator": {
+        "func": [
+            "file_contains",
+            "check_line_number"
+        ],
+        "result": [
+            {
+                "type": "vm_file",
+                "path": "/home/user/Desktop/System_Resources_Report.txt",
+                "dest": "System_Resources_Report.txt"
+            },
+            {
+                "type": "vm_file",
+                "path": "/home/user/Desktop/System_Resources_Report.txt",
+                "dest": "System_Resources_Report.txt"
+            }
+        ],
+        "expected": [
+            {
+                "type": "rule",
+                "rules": {
+                    "expected": [
+                        "CPU",
+                        "%user",
+                        "%nice",
+                        "%system",
+                        "%iowait",
+                        "%steal",
+                        "%idle"
+                    ]
+                }
+            },
+            {
+                "type": "rule",
+                "rules": {
+                    "expected": "31"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "id": "0d95d28a-9587-433b-a805-1fbe5467d598",
+    "snapshot": "chrome",
+    "instruction": "現在再生中の動画が入っているフォルダーを開けるのを手伝っていただけますか？",
+    "source": "https://superuser.com/questions/1299036/vlc-how-to-open-the-folder-of-the-current-playing-video?noredirect=1&lq=1",
+    "config": [],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "vlc"
+    ],
+    "evaluator": {
+        "func": "",
+        "result": {},
+        "expected": {}
+    }
+}

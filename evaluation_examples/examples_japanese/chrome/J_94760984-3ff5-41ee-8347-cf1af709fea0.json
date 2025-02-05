@@ -1,0 +1,16 @@
+{
+    "id": "94760984-3ff5-41ee-8347-cf1af709fea0",
+    "snapshot": "chrome",
+    "instruction": "Chromeで読書モードを有効にして、気を散らさずに記事を読めるようにしていただけますか？",
+    "source": "https://support.google.com/chrome/answer/14218344?hl=en",
+    "config": [],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "chrome"
+    ],
+    "evaluator": {
+        "func": "",
+        "result": {},
+        "expected": {}
+    }
+}

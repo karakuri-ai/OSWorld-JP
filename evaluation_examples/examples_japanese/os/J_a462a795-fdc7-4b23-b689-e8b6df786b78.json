@@ -1,0 +1,32 @@
+{
+    "id": "a462a795-fdc7-4b23-b689-e8b6df786b78",
+    "snapshot": "os",
+    "instruction": "「ユーザー 'Charles' にパスワード 'Ex@mpleP@55w0rd!' で切り替えていただけますか？」",
+    "source": "https://ubuntu.com/tutorials/command-line-for-beginners#5-moving-and-manipulating-files",
+    "config": [
+        {
+            "type": "execute",
+            "parameters": {
+                "command": "echo password | sudo -S su - charles",
+                "shell": true
+            }
+        },
+        {
+            "type": "execute",
+            "parameters": {
+                "command": [
+                    "python",
+                    "-c",
+                    "import pyautogui; import time; pyautogui.click(960, 540); time.sleep(0.5);"
+                ]
+            }
+        }
+    ],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "os"
+    ],
+    "evaluator": {
+        "func": "infeasible"
+    }
+}

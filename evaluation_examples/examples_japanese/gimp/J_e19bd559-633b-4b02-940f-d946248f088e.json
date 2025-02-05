@@ -1,0 +1,14 @@
+{
+    "id": "e19bd559-633b-4b02-940f-d946248f088e",
+    "snapshot": "gimp",
+    "instruction": "デスクトップの写真の明るさを少し下げてもらえますか？",
+    "source": "https://www.quora.com/How-do-I-edit-a-photo-in-GIMP",
+    "config": [],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "gimp"
+    ],
+    "evaluator": {
+        "func": "infeasible"
+    }
+}

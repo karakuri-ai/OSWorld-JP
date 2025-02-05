@@ -1,0 +1,96 @@
+{
+    "id": "a16d1eb7-941b-4edd-8c08-344213f939ad",
+    "snapshot": "libreoffice_calc",
+    "instruction": "データを三つの基準に基づいて抽出し、新しいシートに配置していただきたいです。基準は次の通りです：（1）IndicatorNameフィールドから「国内総生産（GDP）」を、（2）シート2にリストされている国のみを含め、（3）2000年から2002年のデータは必要ありません。新しいシートでは、「GDP成長」というタイトルのスタック面グラフを作成し、リストされている国々のGDPの推移を表示してください。最後に、最初の二つの列を固定してください。",
+    "source": "SheetCopilot@76",
+    "config": [
+        {
+            "type": "download",
+            "parameters": {
+                "files": [
+                    {
+                        "url": "https://drive.google.com/uc?id=1vdXYHCk66mZG-03VeKL9saiPkr7ykMZG&export=download",
+                        "path": "/home/user/GDPBreakdown.xlsx"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "open",
+            "parameters": {
+                "path": "/home/user/GDPBreakdown.xlsx"
+            }
+        }
+    ],
+    "trajectory": "trajectories/a16d1eb7-941b-4edd-8c08-344213f939ad",
+    "related_apps": [
+        "libreoffice_calc"
+    ],
+    "evaluator": {
+        "postconfig": [
+            {
+                "type": "activate_window",
+                "parameters": {
+                    "window_name": "GDPBreakdown.xlsx - LibreOffice Calc",
+                    "strict": true
+                }
+            },
+            {
+                "type": "sleep",
+                "parameters": {
+                    "seconds": 0.5
+                }
+            },
+            {
+                "type": "execute",
+                "parameters": {
+                    "command": [
+                        "python",
+                        "-c",
+                        "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
+                    ]
+                }
+            },
+            {
+                "type": "sleep",
+                "parameters": {
+                    "seconds": 0.5
+                }
+            }
+        ],
+        "func": "compare_table",
+        "expected": {
+            "type": "cloud_file",
+            "path": "https://drive.google.com/uc?id=1S_x_aPXel7IzsxkQt0brcicQT2LqoF5M&export=download",
+            "dest": "1_GDPBreakdown_gt1.xlsx"
+        },
+        "result": {
+            "type": "vm_file",
+            "path": "/home/user/GDPBreakdown.xlsx",
+            "dest": "GDPBreakdown.xlsx"
+        },
+        "options": {
+            "rules": [
+                {
+                    "type": "sheet_data",
+                    "sheet_idx0": 0,
+                    "sheet_idx1": "EI0"
+                },
+                {
+                    "type": "chart",
+                    "sheet_idx0": 0,
+                    "sheet_idx1": "EI0",
+                    "chart_props": [
+                        "type",
+                        "title"
+                    ]
+                },
+                {
+                    "type": "freeze",
+                    "sheet_idx0": 0,
+                    "sheet_idx1": "EI0"
+                }
+            ]
+        }
+    }
+}

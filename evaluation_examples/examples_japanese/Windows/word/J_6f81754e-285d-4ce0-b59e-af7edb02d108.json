@@ -1,0 +1,67 @@
+{
+    "id": "6f81754e-285d-4ce0-b59e-af7edb02d108",
+    "snapshot": "word",
+    "instruction": "香港のある鉄道会社は、鉄道システム内の列車を追跡するために信号システムを使用しています。docxファイルの各行は、2022年9月22日の0600から1200の間に駅に停車する列車を示しており、次のフォーマットで記載されています: 時間_HH:MM:SS、列車_id、駅_id、ホーム_no。0600から1200の間に運行されている異なる列車の数を知るために、重複する列車_idを削除したいのですが、手動で行っているため非常に効率が悪いです。手伝っていただけますか？",
+    "source": "https://superuser.com/questions/789473/remove-duplicate-lines-in-libreoffice-openoffice-writer",
+    "config": [
+        {
+            "type": "download",
+            "parameters": {
+                "files": [
+                    {
+                        "url": "https://drive.google.com/uc?id=1cK1AMt_qKVAPp6EndSFG8y8r7KOPsqC1&export=download",
+                        "path": "C:\\Users\\User\\HK_train_record.docx"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "open",
+            "parameters": {
+                "path": "C:\\Users\\User\\HK_train_record.docx"
+            }
+        }
+    ],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "word"
+    ],
+    "evaluator": {
+        "postconfig": [
+            {
+                "type": "activate_window",
+                "parameters": {
+                    "window_name": "HK_train_record - Word",
+                    "strict": true
+                }
+            },
+            {
+                "type": "sleep",
+                "parameters": {
+                    "seconds": 0.5
+                }
+            },
+            {
+                "type": "execute",
+                "parameters": {
+                    "command": [
+                        "python",
+                        "-c",
+                        "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5); "
+                    ]
+                }
+            }
+        ],
+        "func": "compare_docx_lines",
+        "result": {
+            "type": "vm_file",
+            "path": "C:\\Users\\User\\HK_train_record.docx",
+            "dest": "HK_train_record.docx"
+        },
+        "expected": {
+            "type": "cloud_file",
+            "path": "https://drive.google.com/uc?id=1wZ5CKxCD3biB4mFFlrBInZO-bzo36vVG&export=download",
+            "dest": "HK_train_record_Gold.docx"
+        }
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "id": "aceb0368-56b8-4073-b70e-3dc9aee184e0",
+    "snapshot": "libreoffice_calc",
+    "instruction": "私は学生の英語の試験を採点していますが、テストは多肢選択問題だけで構成されています。一つ一つの質問を確認して詳細な点数を記録するのはとても疲れます。残りの学生の回答を解答用紙と比較し、開いているスプレッドシートに詳細な点数を記録するのを手伝ってもらえますか？",
+    "source": "authors",
+    "config": [
+        {
+            "type": "download",
+            "parameters": {
+                "files": [
+                    {
+                        "url": "https://drive.usercontent.google.com/download?id=1CfzBZxhhV1_vUKhxsP_4M574-XFm1qIo&export=download&authuser=0&confirm=t",
+                        "path": "/home/user/exam.zip"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "execute",
+            "parameters": {
+                "command": [
+                    "unzip",
+                    "/home/user/exam.zip",
+                    "-d",
+                    "/home/user/"
+                ]
+            }
+        },
+        {
+            "type": "launch",
+            "parameters": {
+                "command": [
+                    "libreoffice",
+                    "--writer",
+                    "/home/user/exam/ReferenceAnswers.docx"
+                ]
+            }
+        },
+        {
+            "type": "launch",
+            "parameters": {
+                "command": [
+                    "libreoffice",
+                    "--calc",
+                    "/home/user/exam/grades.xlsx"
+                ]
+            }
+        },
+        {
+            "type": "launch",
+            "parameters": {
+                "command": [
+                    "nautilus",
+                    "/home/user/exam/"
+                ]
+            }
+        }
+    ],
+    "trajectory": "trajectories/",
+    "related_apps": [
+        "thunderbird",
+        "os"
+    ],
+    "evaluator": {
+        "func": "compare_table",
+        "expected": {
+            "type": "cloud_file",
+            "path": "https://drive.google.com/uc?id=1a0gZwixcJuZAUtqGR3L5P20JmoWfQU_d&export=download&authuser=0&confirm=t",
+            "dest": "gold_grades.xlsx"
+        },
+        "result": {
+            "type": "vm_file",
+            "path": "/home/user/exam/grades.xlsx",
+            "dest": "grades.xlsx"
+        },
+        "options": {
+            "rules": [
+                {
+                    "type": "sheet_data",
+                    "sheet_idx0": 0,
+                    "sheet_idx1": "EI0"
+                }
+            ]
+        }
+    }
+}
