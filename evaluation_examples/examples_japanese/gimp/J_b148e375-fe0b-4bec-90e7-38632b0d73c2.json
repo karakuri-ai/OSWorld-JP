@@ -1,7 +1,7 @@
 {
     "id": "b148e375-fe0b-4bec-90e7-38632b0d73c2",
     "snapshot": "gimp",
-    "instruction": "新しいレイヤーを追加して、その名前を「スクエア」と付けていただけますか？",
+    "instruction": "新しいレイヤーを追加して、その名前を「Square」と付けていただけますか？",
     "source": "https://www.quora.com/How-do-I-add-layers-in-GIMP",
     "config": [
         {

@@ -1,7 +1,7 @@
 {
     "id": "da52d699-e8d2-4dc5-9191-a2199e0b6a9b",
     "snapshot": "libreoffice_calc",
-    "instruction": "デスクトップのスプレッドシートを確認してください。2022年に読んだ本の記録が含まれています。ウェブサイト https://howlongtoread.com/ を参考にして、1日あたりの単語数で遅い読書ペースの本を特定してください。デスクトップに 'book_list_result.docx' という空のドキュメントがありますので、それを開いてタイトルを記録してください。",
+    "instruction": "デスクトップにある2022年に読んだ本の記録があるスプレッドシートを調べよ。https://howlongtoread.com/のウェブサイトを参考にして、1日に読まれる単語数で最も読み進めが遅い本を特定せよ。デスクトップに「book_list_result.docx」という空のドキュメントがあるから、それを開いてタイトルを記録せよ。",
     "source": "GAIA",
     "config": [
         {

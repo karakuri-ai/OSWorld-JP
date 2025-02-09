@@ -1,7 +1,7 @@
 {
     "id": "21df9241-f8d7-4509-b7f1-37e501a823f7",
     "snapshot": "libreoffice_calc",
-    "instruction": "「パラメーター」列の表記を変更し、百万（M）および十億（B）で表示してください。小数点以下1桁を維持し、数字と単位の間にスペースを入れてください。",
+    "instruction": "「パラメーター」列の表記を変更し、100万（M）および10億（B）で表示してください。小数点以下1桁まで残し、数字と単位の間にスペースを入れてください。",
     "source": "https://www.youtube.com/watch?v=p5C4V_AO1UU",
     "config": [
         {

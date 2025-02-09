@@ -1,7 +1,7 @@
 {
     "id": "0a211154-fda0-48d0-9274-eaac4ce5486d",
     "snapshot": "libreoffice_impress",
-    "instruction": "人物の写真があるスライドの背景色を黄色に設定し、スライド2のタイトルを「始めましょう」に設定してください。",
+    "instruction": "人物の写真があるスライドの背景色を黄色に設定し、スライド2のタイトルを「Let's start」に設定してください。",
     "source": "https://arxiv.org/pdf/2311.01767.pdf",
     "config": [
         {

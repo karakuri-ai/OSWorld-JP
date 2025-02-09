@@ -1,7 +1,7 @@
 {
     "id": "6766f2b8-8a72-417f-a9e5-56fcaa735837",
     "snapshot": "chrome",
-    "instruction": "Chromeで/home/user/Desktop/にある解凍した拡張機能をインストールするのを手伝っていただけますか？",
+    "instruction": "Chromeで/home/user/Desktop/に解凍した拡張機能をインストールするのを手伝っていただけますか？",
     "source": "https://support.google.com/chrome/thread/205881926/it-s-possible-to-load-unpacked-extension-automatically-in-chrome?hl=en",
     "config": [
         {

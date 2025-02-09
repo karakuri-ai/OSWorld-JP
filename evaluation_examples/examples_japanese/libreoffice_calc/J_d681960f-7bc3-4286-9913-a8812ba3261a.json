@@ -1,7 +1,7 @@
 {
     "id": "d681960f-7bc3-4286-9913-a8812ba3261a",
     "snapshot": "libreoffice_calc",
-    "instruction": "上のスケール表に従い、以下の表で各学生の成績を計算して示してください。",
+    "instruction": "上のスケール表に従い、下の表に各学生の成績を計算して示してください。",
     "source": "https://www.youtube.com/shorts/d7U1S_IsTVM",
     "config": [
         {

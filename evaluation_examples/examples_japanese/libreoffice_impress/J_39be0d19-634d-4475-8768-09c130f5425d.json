@@ -1,7 +1,7 @@
 {
     "id": "39be0d19-634d-4475-8768-09c130f5425d",
     "snapshot": "libreoffice_impress",
-    "instruction": "「特長」スライドに、5行2列の表を挿入してください。",
+    "instruction": "「Features」スライドに、5行2列の表を挿入してください。",
     "source": "https://arxiv.org/pdf/2311.01767.pdf",
     "config": [
         {

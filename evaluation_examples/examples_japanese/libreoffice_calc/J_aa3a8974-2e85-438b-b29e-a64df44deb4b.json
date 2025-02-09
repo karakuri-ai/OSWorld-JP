@@ -1,7 +1,7 @@
 {
     "id": "aa3a8974-2e85-438b-b29e-a64df44deb4b",
     "snapshot": "libreoffice_calc",
-    "instruction": "プロジェクトに取り組んでいて、スプレッドシートのセルを一ページに収まるようにサイズ変更し、効率的なプレゼンテーションのためにPDFにエクスポートする必要があります。これについて手伝っていただけますか？",
+    "instruction": "プロジェクトに取り組んでいて、スプレッドシートのセルを一ページに収まるようにサイズ変更し、効率的に表示するためにPDFにエクスポートする必要があります。これを手伝っていただけますか？",
     "source": "https://www.quora.com/Libre-Office-Calc-How-do-I-resize-all-cells-in-a-sheet-to-make-them-fit-to-1-page-for-printing-and-exporting-as-PDF",
     "config": [
         {

@@ -1,7 +1,7 @@
 {
     "id": "c9e7eaf2-b1a1-4efc-a982-721972fa9f02",
     "snapshot": "chrome",
-    "instruction": "エクスペディアで明日シンガポール行きの片道フライトのウェブサイトを見てください。",
+    "instruction": "エクスペディアで明日シンガポール行きの片道フライトのウェブサイトを開いてください。",
     "source": "https://www.youtube.com/watch?v=t6qvLhZ_zc4",
     "config": [],
     "trajectory": "trajectories/",

@@ -1,7 +1,7 @@
 {
     "id": "28047f4a-d877-4bea-95f7-e42b1c919957",
     "snapshot": "libreoffice_calc",
-    "instruction": "各製品の売上をまとめ、新しいシート（Sheet2）に棒グラフで示してください。",
+    "instruction": "各製品の売上をまとめ、新しいシート（シート2）に棒グラフで示してください。",
     "source": "SheetCopilot@108",
     "config": [
         {

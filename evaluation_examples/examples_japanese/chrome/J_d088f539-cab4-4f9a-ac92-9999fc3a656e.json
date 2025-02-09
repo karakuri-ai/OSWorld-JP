@@ -1,7 +1,7 @@
 {
     "id": "d088f539-cab4-4f9a-ac92-9999fc3a656e",
     "snapshot": "chrome",
-    "instruction": "今、いくつか楽しいことを開いています。これらのタブをChromeの上部でまとめて「レジャー」という名前をつけていただけますか？リラックスしたいときにすぐに戻れるので助かります。",
+    "instruction": "今、楽しいことがたくさん開いています。これらのタブをChromeの一番上にまとめて、「レジャー」と名付けていただけますか？リラックスしたいときにすぐに戻れるので助かります。",
     "source": "https://medium.com/@inkverseuk2/useful-tips-and-tricks-for-the-google-chrome-browser-ac7d0d24b3cc",
     "config": [],
     "trajectory": "trajectories/",

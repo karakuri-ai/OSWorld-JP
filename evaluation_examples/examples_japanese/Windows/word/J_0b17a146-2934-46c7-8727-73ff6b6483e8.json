@@ -1,7 +1,7 @@
 {
     "id": "0b17a146-2934-46c7-8727-73ff6b6483e8",
     "snapshot": "word",
-    "instruction": "「H₂O」の「2」を下付き文字にするのを手伝ってください。",
+    "instruction": "\"H2O\"の2を下付き文字に変えるのを手伝ってください。",
     "source": "https://askubuntu.com/questions/245695/how-do-you-insert-subscripts-and-superscripts-into-ordinary-non-formula-text-i",
     "config": [
         {

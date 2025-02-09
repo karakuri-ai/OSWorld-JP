@@ -1,7 +1,7 @@
 {
     "id": "abed40dc-063f-4598-8ba5-9fe749c0615d",
     "snapshot": "libreoffice_calc",
-    "instruction": "「重複のある名前」列の名前を確認し、「ユニークな名前」列にユニークなものを入れてください。元の順序を保ってください。",
+    "instruction": "「重複のある名前」の列をチェックして、「一意な名前」の列にユニークなものを入れてください。元の順序を保ってください。",
     "source": "https://help.libreoffice.org/7.6/ro/text/scalc/guide/remove_duplicates.html?&DbPAR=SHARED&System=UNIX",
     "config": [
         {

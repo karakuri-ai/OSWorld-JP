@@ -1,7 +1,7 @@
 {
     "id": "35253b65-1c19-4304-8aa4-6884b8218fc0",
     "snapshot": "chrome",
-    "instruction": "ねえ、このサイトへの戻り方をすぐに作ってほしいんだけど。デスクトップにショートカットを作ってくれませんか？",
+    "instruction": "ねえ、このサイトに戻るための簡単な方法が必要なんだ。デスクトップにショートカットを作ってもらえるかな？",
     "source": "https://www.laptopmag.com/articles/how-to-create-desktop-shortcuts-for-web-pages-using-chrome",
     "config": [
         {

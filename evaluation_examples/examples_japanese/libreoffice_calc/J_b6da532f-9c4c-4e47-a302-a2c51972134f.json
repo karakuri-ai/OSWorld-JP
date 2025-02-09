@@ -1,7 +1,7 @@
 {
     "id": "b6da532f-9c4c-4e47-a302-a2c51972134f",
     "snapshot": "libreoffice_calc",
-    "instruction": "各期間ごとの年平均率を「Sheet2」という新しいシートに表示してください。",
+    "instruction": "各期間ごとの年平均率を「シート2」という新しいシートに表示してください。",
     "source": "SheetCopilot@126",
     "config": [
         {

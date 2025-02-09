@@ -1,7 +1,7 @@
 {
     "id": "8b1ce5f2-59d2-4dcc-b0b0-666a714b9a14",
     "snapshot": "libreoffice_calc",
-    "instruction": "部分的なカレンダーが与えられた場合、土曜日と日曜日の週末を赤色（#ff0000）でセルの背景としてハイライトしてください。",
+    "instruction": "部分的なカレンダーが与えられた場合、週末（土曜日と日曜日）を赤（#ff0000）のセル背景でハイライトしてください。",
     "source": "https://www.youtube.com/shorts/Hbcwu6IQ1ns",
     "config": [
         {

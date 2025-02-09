@@ -1,7 +1,7 @@
 {
     "id": "cb074a90-17ca-4f2a-be85-6f3c354040be",
     "snapshot": "libreoffice_calc",
-    "instruction": "新しいシート「総営業費」を作成し、各年の総営業費を計算するピボットテーブルを作成してください。",
+    "instruction": "新しいシートに各年の総営業費を計算するピボットテーブルを作成してください。",
     "source": "SheetCopilot@86",
     "config": [
         {

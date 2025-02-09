@@ -1,7 +1,7 @@
 {
     "id": "030eeff7-b492-4218-b312-701ec99ee0cc",
     "snapshot": "chrome",
-    "instruction": "Chromeで「トラッキング防止」機能を有効にして、私のオンラインプライバシーを向上させていただけますか？",
+    "instruction": "Chromeで「トラッキングを防ぐ」機能を有効にして、私のオンラインプライバシーを向上させていただけますか？",
     "source": "https://www.surreycc.gov.uk/website/cookies/do-not-track",
     "config": [
         {

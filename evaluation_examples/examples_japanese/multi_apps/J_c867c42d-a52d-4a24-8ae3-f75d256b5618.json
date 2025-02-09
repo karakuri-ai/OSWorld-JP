@@ -1,7 +1,7 @@
 {
     "id": "c867c42d-a52d-4a24-8ae3-f75d256b5618",
     "snapshot": "thunderbird",
-    "instruction": "私のThunderbirdの個人アドレス帳の連絡先をデスクトップにあるcontacts.csvファイルにエクスポートし、それをLibreOffice Calcで.xlsx形式に変換するのを手伝ってください。",
+    "instruction": "私の個人アドレスブックの連絡先をThunderbirdからデスクトップのcontacts.csvファイルにエクスポートし、それをLibreOffice Calcで.xlsxに変換していただけますか。",
     "source": "https://www.sync.blue/en/sync/mozilla-thunderbird/google-sheets/",
     "config": [
         {

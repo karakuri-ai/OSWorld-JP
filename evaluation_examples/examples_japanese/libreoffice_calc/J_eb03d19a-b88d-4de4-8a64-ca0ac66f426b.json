@@ -1,7 +1,7 @@
 {
     "id": "eb03d19a-b88d-4de4-8a64-ca0ac66f426b",
     "snapshot": "libreoffice_calc",
-    "instruction": "テーブルを転置し、B8から貼り付けてください。",
+    "instruction": "テーブルを転置して、B8から貼り付けてください。",
     "source": "https://www.youtube.com/shorts/t9JLUaT55UQ",
     "config": [
         {

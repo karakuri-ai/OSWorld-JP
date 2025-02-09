@@ -1,7 +1,7 @@
 {
     "id": "26660ad1-6ebb-4f59-8cba-a8432dfe8d38",
     "snapshot": "multiapps",
-    "instruction": "私のノートパソコンが現在いるネットワーク環境の品質をテストしたいです。speedtest.netを通じてネットワークの状況を測定し、測定結果をエクスポートして~/Test/Speedに保存してください（ディレクトリが存在しない場合は、作成してください）。",
+    "instruction": "ノートパソコンが現在いるネットワーク環境の品質をテストしたいです。speedtest.netでネットワーク状況を測定し、測定結果をエクスポートして~/Test/Speedに保存してください（ディレクトリが存在しない場合は、作成してください）。",
     "source": "https://www.speedtest.net/",
     "config": [
         {

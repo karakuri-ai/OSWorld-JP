@@ -1,7 +1,7 @@
 {
     "id": "6e99a1ad-07d2-4b66-a1ce-ece6d99c20a5",
     "snapshot": "libreoffice_calc",
-    "instruction": "「「spent」列を小数点以下2桁でフォーマットするのを手伝ってください。」",
+    "instruction": "「spent」列を小数点以下2桁でフォーマットするのを手伝ってください。",
     "source": "https://www.youtube.com/watch?v=nl-nXjJurhQ",
     "config": [
         {

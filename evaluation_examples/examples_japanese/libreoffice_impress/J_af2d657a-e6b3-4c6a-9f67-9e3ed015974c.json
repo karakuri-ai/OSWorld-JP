@@ -1,7 +1,7 @@
 {
     "id": "af2d657a-e6b3-4c6a-9f67-9e3ed015974c",
     "snapshot": "libreoffice_impress",
-    "instruction": "最初のスライドに「ハッピーファミリー」というタイトルを挿入し、フォントスタイルを「Microsoft JhengHei」に設定してください。",
+    "instruction": "最初のスライドに「Happy Family」というタイトルを挿入し、フォントスタイルを「Microsoft JhengHei」に設定してください。",
     "source": "https://arxiv.org/pdf/2311.01767.pdf",
     "config": [
         {

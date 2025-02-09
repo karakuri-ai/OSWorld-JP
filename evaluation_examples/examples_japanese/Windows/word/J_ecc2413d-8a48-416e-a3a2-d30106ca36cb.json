@@ -1,7 +1,7 @@
 {
     "id": "ecc2413d-8a48-416e-a3a2-d30106ca36cb",
     "snapshot": "word",
-    "instruction": "ねえ、このページのすぐ後に空白のページを入れてくれませんか？",
+    "instruction": "ねえ、このページのすぐ後に空白のページを入れてくれる？",
     "source": "https://www.quora.com/How-can-I-insert-a-blank-page-on-libreoffice",
     "config": [
         {

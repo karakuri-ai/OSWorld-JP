@@ -1,7 +1,7 @@
 {
     "id": "a097acff-6266-4291-9fbd-137af7ecd439",
     "snapshot": "ppt",
-    "instruction": "デスクトップにpre.pptxとしてスライドを保存していただけますか？",
+    "instruction": "デスクトップにスライドをpre.pptxとして保存していただけますか？",
     "source": "https://www.youtube.com/watch?v=DDmEvjs4iBw",
     "config": [
         {

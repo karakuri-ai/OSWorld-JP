@@ -1,7 +1,7 @@
 {
     "id": "99146c54-4f37-4ab8-9327-5f3291665e1e",
     "snapshot": "chrome",
-    "instruction": "ブラウザを閉じるたびに自動的に閲覧データを削除するようにChromeを設定してください。",
+    "instruction": "ブラウザを閉じるたびにChromeが自動的にブラウジングデータを削除するように設定してください。",
     "source": "https://www.youtube.com/watch?v=v0kxqB7Xa6I",
     "config": [
         {

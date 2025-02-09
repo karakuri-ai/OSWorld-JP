@@ -1,7 +1,7 @@
 {
     "id": "1e8df695-bd1b-45b3-b557-e7d599cf7597",
     "snapshot": "libreoffice_calc",
-    "instruction": "「 Profit」という新しい列を追加し、その列で「売上」から「COGS」を引いて各週の利益を計算してください。",
+    "instruction": "「利益」という新しい列を追加し、その列で「売上」から「売上原価」を引いて各週の利益を計算してください。",
     "source": "SheetCopilot@203",
     "config": [
         {

@@ -1,7 +1,7 @@
 {
     "id": "00fa164e-2612-4439-992e-157d019a8436",
     "snapshot": "libreoffice_writer",
-    "instruction": "「今執筆中の報告書に「~/Documents/awesome-desktop/expe-results.xlsx」の実験結果を含める必要があります。具体的には、LLMベースのモデルの結果を抽出し、報告書の「主な結果」セクションに表を挿入してください。」",
+    "instruction": "「今執筆中の報告書に「~/Documents/awesome-desktop/expe-results.xlsx」の実験結果を含める必要があります。具体的には、LLMベースのモデルの結果を抽出し、報告書の「Main Results」セクションに表を挿入してください。」",
     "source": "authors",
     "config": [
         {

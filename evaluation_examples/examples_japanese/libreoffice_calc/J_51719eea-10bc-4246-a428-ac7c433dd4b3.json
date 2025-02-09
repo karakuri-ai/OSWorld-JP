@@ -1,7 +1,7 @@
 {
     "id": "51719eea-10bc-4246-a428-ac7c433dd4b3",
     "snapshot": "libreoffice_calc",
-    "instruction": "新しい列に収益を計算し、各商品の収益をまとめたピボットテーブルを新しいシート（Sheet2）に生成してください。",
+    "instruction": "新しい列に収益を計算し、各商品の収益をまとめたピボットテーブルを新しいシート（シート2）に生成してください。",
     "source": "SheetCopilot@7",
     "config": [
         {

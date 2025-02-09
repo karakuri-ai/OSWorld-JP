@@ -1,7 +1,7 @@
 {
     "id": "550ce7e7-747b-495f-b122-acdc4d0b8e54",
     "snapshot": "ppt",
-    "instruction": "私たちのサッカークラブの前学期のやることリストを確認し、すでに達成した項目に取り消し線を追加しています。ページ5の1行目と2行目に取り消し線を追加するのを手伝っていただけますか？",
+    "instruction": "前学期のサッカークラブのやるべきことリストをチェックして、すでに達成した行に取り消し線を追加しています。5ページ目の1行目と2行目に取り消し線を追加していただけますか？",
     "source": "https://technical-tips.com/blog/software/text-in-libreoffice-strikethrough--6948#:~:text=To%20strikethrough%20Text%20in%20LibreOffice%201%20In%20your,effect%22%20can%20your%20additionally%2C%20for%20example%2C%20double%20underline.",
     "config": [
         {

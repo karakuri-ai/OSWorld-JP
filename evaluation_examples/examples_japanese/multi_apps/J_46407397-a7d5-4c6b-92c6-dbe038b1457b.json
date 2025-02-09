@@ -1,7 +1,7 @@
 {
     "id": "46407397-a7d5-4c6b-92c6-dbe038b1457b",
     "snapshot": "chrome",
-    "instruction": "「メールの「Lecture Document」に届いたdocxファイルから、チャート、グラフ、または他の画像をエクスポートするのを手伝ってください。そして、これらのpngファイルをGoogle Driveのfigures/フォルダにアップロードして、後で使用できるようにしてください（番号を付けて名付けてください）。」",
+    "instruction": "「Lecture Document」という名前のメールで受け取ったdocxファイルからグラフや図などをエクスポートして、これらのpngファイルを後で使用（番号を付けて名前を付ける）するためにGoogle Driveのfigures/フォルダにアップロードしてください。",
     "source": "https://marketplace.uipath.com/listings/merge-pdfs-from-gmail-email-attachments-and-upload-to-gogle-drive",
     "config": [
         {

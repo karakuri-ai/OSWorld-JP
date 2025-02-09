@@ -1,7 +1,7 @@
 {
     "id": "aad10cd7-9337-4b62-b704-a857848cedf2",
     "snapshot": "chrome",
-    "instruction": "ブログの内容を自分の修正のために、https://developer.apple.com/design/human-interface-guidelines/searching のローカルファイル版を取得したいです。このページの主な内容、特に「searching」から「resources」の直前までを保持してください。「notes.docx」としてデスクトップにこのブログを保存する手助けをしてください。",
+    "instruction": "自分で修正するために、https://developer.apple.com/design/human-interface-guidelines/searching にあるブログの内容のローカルファイル版を取得したいです。このページの主な内容、特に「searching」から「resources」の直前までを保持してください。「notes.docx」としてデスクトップにこのブログを保存する手助けをしてください。",
     "source": "authors",
     "config": [
         {

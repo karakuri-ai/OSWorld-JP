@@ -1,7 +1,7 @@
 {
     "id": "7efeb4b1-3d19-4762-b163-63328d66303b",
     "snapshot": "libreoffice_calc",
-    "instruction": "「Seq No.」列に「No. #」として番号を入力してください。",
+    "instruction": "「Seq No.」列には「No. #」の形式で連番を記入してください。",
     "source": "https://www.youtube.com/shorts/4jzXfZNhfmk",
     "config": [
         {

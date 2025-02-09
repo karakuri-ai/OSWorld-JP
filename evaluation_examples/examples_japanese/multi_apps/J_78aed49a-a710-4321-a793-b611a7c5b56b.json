@@ -1,7 +1,7 @@
 {
     "id": "78aed49a-a710-4321-a793-b611a7c5b56b",
     "snapshot": "chrome",
-    "instruction": "最も古いメールのすべての添付ファイルをローカルフォルダの添付ファイルフォルダからGoogleドライブの添付ファイルフォルダに保存して、このメールをローカルフォルダの「have_seen」という別のフォルダに移動していただけますか。",
+    "instruction": "Billsのローカルフォルダの中で最も古いメールのすべての添付ファイルをGoogleドライブのattatchmentフォルダに保存して、このメールをローカルフォルダの「have_seen」という別のフォルダに移動していただけますか。",
     "source": "https://marketplace.uipath.com/listings/upload-email-attachments-from-gmail-to-google-drive",
     "config": [
         {

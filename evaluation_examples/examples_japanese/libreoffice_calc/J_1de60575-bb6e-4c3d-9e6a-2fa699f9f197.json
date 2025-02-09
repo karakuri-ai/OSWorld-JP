@@ -1,7 +1,7 @@
 {
     "id": "1de60575-bb6e-4c3d-9e6a-2fa699f9f197",
     "snapshot": "libreoffice_calc",
-    "instruction": "各プロモーションタイプの総収益を新しいシート（Sheet2）にまとめ、プロモーション名を列見出しとして使用してください。",
+    "instruction": "各プロモーションタイプの総収益を新しいシート（シート2）にまとめ、プロモーション名を列見出しとして使用してください。",
     "source": "SheetCopilot@55",
     "config": [
         {
