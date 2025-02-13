@@ -1,5 +1,5 @@
 {
-    "id": "5c1075ca-bb34-46a3-a7a0-029bd7463e79",
+    "id": "J_5c1075ca-bb34-46a3-a7a0-029bd7463e79",
     "snapshot": "os",
     "instruction": "現在のディレクトリツリー内で「*failed.ipynb」に一致するすべてのファイルを、ディレクトリ階層を保持したまま「./fails」にコピーしてください。",
     "source": "NL2Bash",

@@ -1,5 +1,5 @@
 {
-    "id": "81c425f5-78f3-4771-afd6-3d2973825947",
+    "id": "J_81c425f5-78f3-4771-afd6-3d2973825947",
     "snapshot": "libreoffice_calc",
     "instruction": "データをLibreOffice Calcの現在のシートからLibreOffice Writerのテーブルに移行し、Calcファイルの元の形式を保持するのを手伝っていただけますか？ドキュメントをデスクトップに「price.docx」として保存してください。",
     "source": "authors",

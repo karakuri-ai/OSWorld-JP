@@ -1,5 +1,5 @@
 {
-    "id": "9439a27b-18ae-42d8-9778-5f68f891805e",
+    "id": "J_9439a27b-18ae-42d8-9778-5f68f891805e",
     "snapshot": "vscode",
     "instruction": "VS Codeでデバッグ中にカーソルがエディタに自動的に戻らず、デバッグコンソールにフォーカスしたままにする設定を変更するのを手伝ってください。",
     "source": "https://stackoverflow.com/questions/75832474/how-to-keep-cursor-in-debug-console-when-debugging-in-visual-studio-code",

@@ -1,5 +1,5 @@
 {
-    "id": "4f07fbe9-70de-4927-a4d5-bb28bc12c52c",
+    "id": "J_4f07fbe9-70de-4927-a4d5-bb28bc12c52c",
     "snapshot": "libreoffice_calc",
     "instruction": "ここでは、テキストの中でセルの数値を使いたいです。元の値のセルでは小数点以下の桁数を2に設定できますが、テキストの中でもそれを固定する方法がわかりません。これを手伝ってください。",
     "source": "https://superuser.com/questions/1081048/libreoffice-calc-how-to-pad-number-to-fixed-decimals-when-used-within-formula",

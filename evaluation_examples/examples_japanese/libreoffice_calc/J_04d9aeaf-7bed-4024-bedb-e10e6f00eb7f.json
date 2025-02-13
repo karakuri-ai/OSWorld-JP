@@ -1,5 +1,5 @@
 {
-    "id": "04d9aeaf-7bed-4024-bedb-e10e6f00eb7f",
+    "id": "J_04d9aeaf-7bed-4024-bedb-e10e6f00eb7f",
     "snapshot": "libreoffice_calc",
     "instruction": "新しいシートを作成し、「年」、「流動資産の変化」、「固定資産の変化」、および「その他の資産の変化」という4つのヘッダーを用意して、流動資産、固定資産、その他の資産の年間変化を計算してください。結果はパーセンテージ形式に設定してください。",
     "source": "SheetCopilot@168",

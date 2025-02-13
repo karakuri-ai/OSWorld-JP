@@ -1,5 +1,5 @@
 {
-    "id": "13584542-872b-42d8-b299-866967b5c3ef",
+    "id": "J_13584542-872b-42d8-b299-866967b5c3ef",
     "snapshot": "os",
     "instruction": "ターミナルで「terminal->132x43」と入力してターミナルのサイズを変更しますが、再起動するたびにターミナルのサイズがデフォルトに戻ってしまい、再度変更する必要があります。サイズを永久に設定する方法を教えてください。",
     "source": "https://superuser.com/questions/72176/linux-set-default-terminal-size-and-screen-position",

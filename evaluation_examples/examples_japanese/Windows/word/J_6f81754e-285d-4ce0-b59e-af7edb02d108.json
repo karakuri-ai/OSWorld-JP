@@ -1,5 +1,5 @@
 {
-    "id": "6f81754e-285d-4ce0-b59e-af7edb02d108",
+    "id": "J_6f81754e-285d-4ce0-b59e-af7edb02d108",
     "snapshot": "word",
     "instruction": "香港のある鉄道会社は、その鉄道システム内で列車を追跡するために信号システムを使用しています。docxファイルの各行は、2022年9月22日の0600から1200の間に駅に停車する列車を示しており、以下の形式になっています：time_HH:MM:SS、train_id、station_id、platform_no。0600から1200の間に運行されている異なる列車の数を把握するために、重複する列車IDを削除したいのですが、手動で行っているため非常に非効率です。手伝っていただけますか？",
     "source": "https://superuser.com/questions/789473/remove-duplicate-lines-in-libreoffice-openoffice-writer",

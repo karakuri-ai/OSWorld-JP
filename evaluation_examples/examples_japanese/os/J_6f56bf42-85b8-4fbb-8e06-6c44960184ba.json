@@ -1,5 +1,5 @@
 {
-    "id": "6f56bf42-85b8-4fbb-8e06-6c44960184ba",
+    "id": "J_6f56bf42-85b8-4fbb-8e06-6c44960184ba",
     "snapshot": "os",
     "instruction": "'file1'ファイルを'dir1'、'dir2'、'dir3'の各ディレクトリにコピーします。",
     "source": "NL2Bash",

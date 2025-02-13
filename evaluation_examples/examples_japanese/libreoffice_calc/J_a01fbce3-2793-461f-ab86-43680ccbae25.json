@@ -1,5 +1,5 @@
 {
-    "id": "a01fbce3-2793-461f-ab86-43680ccbae25",
+    "id": "J_a01fbce3-2793-461f-ab86-43680ccbae25",
     "snapshot": "libreoffice_calc",
     "instruction": "ローカライズされたデータ表記と明確な表示のために、小数点の区切り文字をカンマ（,）に設定する必要があります。シート内のすべての数字を更新するのを手伝っていただけますか？また、小数部分はそのままにしておいてください。",
     "source": "https://superuser.com/questions/1250677/how-to-set-decimal-separator-in-libre-office-calc",

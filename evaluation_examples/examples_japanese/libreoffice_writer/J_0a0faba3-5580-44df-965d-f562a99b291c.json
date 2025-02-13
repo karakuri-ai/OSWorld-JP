@@ -1,5 +1,5 @@
 {
-    "id": "0a0faba3-5580-44df-965d-f562a99b291c",
+    "id": "J_0a0faba3-5580-44df-965d-f562a99b291c",
     "snapshot": "libreoffice_writer",
     "instruction": "文章の最初の三語を左揃えにし、残りを右揃えにしてほしいです。中央には写真を追加するための空白を確保したいと考えています。すべての文章には少なくとも三語含まれているものとします。タブストップを使って、配置の手助けをしていただけますか？",
     "source": "https://stackoverflow.com/questions/64528055/how-to-make-part-of-my-sentence-left-aligned-and-rest-as-right-aligned",

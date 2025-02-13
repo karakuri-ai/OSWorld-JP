@@ -1,5 +1,5 @@
 {
-    "id": "0f84bef9-9790-432e-92b7-eece357603fb",
+    "id": "J_0f84bef9-9790-432e-92b7-eece357603fb",
     "snapshot": "libreoffice_impress",
     "instruction": "LibreOffice Impressを起動するたびに、現在のスライドと次のスライド用の画面と、実際のプレゼンテーション用の画面の2つを使用しています。私が望んでいるのは、プレゼンテーションを表示するための1つのモニターだけを使用することです。現在のスライドと次のスライドの画面は不要なので、他の目的に利用できるようにしたいです。これをどうやって実現すればいいでしょうか？",
     "source": "https://stackoverflow.com/questions/29036788/how-to-disable-libreoffice-impress-to-use-multiple-display",

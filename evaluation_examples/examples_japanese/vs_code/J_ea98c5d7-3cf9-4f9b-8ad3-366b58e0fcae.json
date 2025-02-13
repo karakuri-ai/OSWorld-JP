@@ -1,5 +1,5 @@
 {
-    "id": "ea98c5d7-3cf9-4f9b-8ad3-366b58e0fcae",
+    "id": "J_ea98c5d7-3cf9-4f9b-8ad3-366b58e0fcae",
     "snapshot": "vscode",
     "instruction": "VS Codeのエクスプローラーのツリービュー検索（エクスプローラー検索）において、ショートカットの「ctrl+f」を削除する手助けをお願い致します。ショートカットの競合を避けるためです。",
     "source": [

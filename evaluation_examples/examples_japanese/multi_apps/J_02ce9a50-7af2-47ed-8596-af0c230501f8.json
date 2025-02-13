@@ -1,5 +1,5 @@
 {
-    "id": "02ce9a50-7af2-47ed-8596-af0c230501f8",
+    "id": "J_02ce9a50-7af2-47ed-8596-af0c230501f8",
     "snapshot": "libreoffice_writer",
     "instruction": "現在、LibreOffice Writerを使ってLinuxのチュートリアルを作成しています。/home/user で「ls」コマンドを実行した結果を表示するつもりです。このコマンドを実行し、スクリーンショットを「ls.png」としてデスクトップに保存してください。",
     "source": "authors",

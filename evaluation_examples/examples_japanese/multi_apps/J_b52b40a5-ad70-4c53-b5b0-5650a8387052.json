@@ -1,5 +1,5 @@
 {
-    "id": "b52b40a5-ad70-4c53-b5b0-5650a8387052",
+    "id": "J_b52b40a5-ad70-4c53-b5b0-5650a8387052",
     "snapshot": "chrome",
     "instruction": "Thunderbirdの「論文推薦」メールの添付ファイルにあるすべてのPDFファイルを一つにまとめて、attachment_full.pdfとしてGoogle Driveにアップロードしていただけますか？",
     "source": "https://marketplace.uipath.com/listings/merge-pdfs-from-gmail-email-attachments-and-upload-to-gogle-drive",

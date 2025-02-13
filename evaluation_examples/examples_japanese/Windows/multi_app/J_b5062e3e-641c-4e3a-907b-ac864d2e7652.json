@@ -1,5 +1,5 @@
 {
-    "id": "b5062e3e-641c-4e3a-907b-ac864d2e7652",
+    "id": "J_b5062e3e-641c-4e3a-907b-ac864d2e7652",
     "snapshot": "libreoffice_calc",
     "instruction": "フォルダー内の各論文から筆頭著者の名前、メールアドレス、所属を抽出して、Excelテーブルに整理してください。各フィールドのヘッダーを含めてください。著者をフルネームのアルファベット順に並べ替え、「Documents\\authors.xlsx」としてテーブルを保存してください。",
     "source": "authors",

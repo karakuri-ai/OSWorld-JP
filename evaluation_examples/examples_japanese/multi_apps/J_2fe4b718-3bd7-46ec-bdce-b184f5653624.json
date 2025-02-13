@@ -1,5 +1,5 @@
 {
-    "id": "2fe4b718-3bd7-46ec-bdce-b184f5653624",
+    "id": "J_2fe4b718-3bd7-46ec-bdce-b184f5653624",
     "snapshot": "vlc",
     "instruction": "デスクトップにある「src.mp4」という動画ファイルから、00:03から始まる5秒間のクリップを使って、VLCとGIMPを使用してAnimated GIF「src_clip.gif」を作成するのを手伝っていただけますか？",
     "source": "https://www.maketecheasier.com/create-gif-from-video-gimp/",

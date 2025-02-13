@@ -1,5 +1,5 @@
 {
-    "id": "3aaa4e37-dc91-482e-99af-132a612d40f3",
+    "id": "J_3aaa4e37-dc91-482e-99af-132a612d40f3",
     "snapshot": "libreoffice_calc",
     "instruction": "現在のシートをCSVファイルにエクスポートするのを手伝っていただけますか？表示されている内容をそのままエクスポートしてください。他のオプションはそのままにしてください。デフォルトのCSV形式で問題ありません。CSVファイルは元のxlsxと同じファイル名にしてください。",
     "source": "https://www.quora.com/How-can-you-import-export-CSV-files-with-LibreOffice-Calc-or-OpenOffice",

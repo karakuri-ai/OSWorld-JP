@@ -1,5 +1,5 @@
 {
-    "id": "67890eb6-6ce5-4c00-9e3d-fb4972699b06",
+    "id": "J_67890eb6-6ce5-4c00-9e3d-fb4972699b06",
     "snapshot": "libreoffice_calc",
     "instruction": "私はNLP研究者です。2019年から2022年までのACLの最優秀長期論文賞を確認し、'タイトル'、'年'、'著者リスト'、'PDFリンク'をデスクトップのbest_awards_acl.xlsxに記録してください。著者はカンマでのみ区切り、arXivではなく公式のaclanthologyのURLを使用し、行は年の降順で並べ替えてください。",
     "source": "authors",

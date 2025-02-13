@@ -1,5 +1,5 @@
 {
-    "id": "0acbd372-ca7a-4507-b949-70673120190f",
+    "id": "J_0acbd372-ca7a-4507-b949-70673120190f",
     "snapshot": "libreoffice_calc",
     "instruction": "新しい列に「純利益」という見出しをつけて純利益を計算し、すべてのデータを会計数値形式にフォーマットしてください。",
     "source": "SheetCopilot@121",

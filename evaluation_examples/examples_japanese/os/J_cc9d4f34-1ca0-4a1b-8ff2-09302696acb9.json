@@ -1,5 +1,5 @@
 {
-    "id": "cc9d4f34-1ca0-4a1b-8ff2-09302696acb9",
+    "id": "J_cc9d4f34-1ca0-4a1b-8ff2-09302696acb9",
     "snapshot": "os",
     "instruction": "現在、システムで my_process.sh が実行中ですが、このプロセスを終了したいです。助けていただけますか？",
     "source": "https://stackoverflow.com/questions/9346211/how-to-kill-a-process-on-a-port-on-ubuntu",

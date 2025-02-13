@@ -1,5 +1,5 @@
 {
-    "id": "64db6b55-06de-451d-b325-17c487fdfee5",
+    "id": "J_64db6b55-06de-451d-b325-17c487fdfee5",
     "snapshot": "libreoffice_calc",
     "instruction": "新しいシートに各日の合計ユニットをまとめ、縦棒グラフでその関係を示してください。",
     "source": "SheetCopilot@109",

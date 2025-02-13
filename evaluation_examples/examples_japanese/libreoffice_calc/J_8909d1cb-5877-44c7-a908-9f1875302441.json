@@ -1,5 +1,5 @@
 {
-    "id": "8909d1cb-5877-44c7-a908-9f1875302441",
+    "id": "J_8909d1cb-5877-44c7-a908-9f1875302441",
     "snapshot": "libreoffice_calc",
     "instruction": "「Sales Channel」が「E-mail Coupon」である行の「Date」と「Revenue ($)」の値を新しいシートにコピーしてください。",
     "source": "SheetCopilot@177",

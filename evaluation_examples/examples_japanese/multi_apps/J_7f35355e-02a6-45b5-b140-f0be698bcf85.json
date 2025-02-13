@@ -1,5 +1,5 @@
 {
-    "id": "7f35355e-02a6-45b5-b140-f0be698bcf85",
+    "id": "J_7f35355e-02a6-45b5-b140-f0be698bcf85",
     "snapshot": "libreoffice_calc",
     "instruction": "テーブルをCSVファイルにエクスポートし、その後、中央値を見つけるためのコードを書いてください（空の値は平均値で埋めてください）。結果を「result.txt」に保存してください。",
     "source": "",

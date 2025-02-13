@@ -1,5 +1,5 @@
 {
-    "id": "4e9f0faf-2ecc-4ae8-a804-28c9a75d1ddc",
+    "id": "J_4e9f0faf-2ecc-4ae8-a804-28c9a75d1ddc",
     "snapshot": "chrome",
     "instruction": "新しくアップロードした請求書からGoogle Driveの表のデータを抽出して、デスクトップにLibreOffice Calcの.xlsxファイルとしてエクスポートしてもらえますか？",
     "source": "https://marketplace.uipath.com/listings/extract-data-from-a-new-invoice-file-in-google-drive-and-store-it-in-google-sheets4473",

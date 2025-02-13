@@ -1,5 +1,5 @@
 {
-    "id": "663876c7-3471-43db-ba51-f410b13d9d7d",
+    "id": "J_663876c7-3471-43db-ba51-f410b13d9d7d",
     "snapshot": "libreoffice_writer",
     "instruction": "カーソルの位置に式「(a + b)² = a² + 2ab + b²」を挿入してください。",
     "source": "https://askubuntu.com/questions/319593/how-to-type-science-equations-in-libre-office",

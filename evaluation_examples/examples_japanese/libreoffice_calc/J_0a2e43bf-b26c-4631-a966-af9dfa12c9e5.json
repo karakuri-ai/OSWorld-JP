@@ -1,5 +1,5 @@
 {
-    "id": "0a2e43bf-b26c-4631-a966-af9dfa12c9e5",
+    "id": "J_0a2e43bf-b26c-4631-a966-af9dfa12c9e5",
     "snapshot": "libreoffice_calc",
     "instruction": "新しい行「合計」として月間総売上を計算し、その結果を示すために折れ線グラフを作成してください（x軸は月とします）。",
     "source": "SheetCopilot@154",

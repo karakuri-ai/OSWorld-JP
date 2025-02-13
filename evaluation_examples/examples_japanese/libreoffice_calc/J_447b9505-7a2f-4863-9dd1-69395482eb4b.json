@@ -1,5 +1,5 @@
 {
-    "id": "447b9505-7a2f-4863-9dd1-69395482eb4b",
+    "id": "J_447b9505-7a2f-4863-9dd1-69395482eb4b",
     "snapshot": "libreoffice_calc",
     "instruction": "C列からP列の値を100万で割り、その結果と年の見出しを新しいシートに記入してください。",
     "source": "SheetCopilot@28",

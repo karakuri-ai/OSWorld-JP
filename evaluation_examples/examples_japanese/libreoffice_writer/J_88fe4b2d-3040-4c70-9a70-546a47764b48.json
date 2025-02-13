@@ -1,5 +1,5 @@
 {
-    "id": "88fe4b2d-3040-4c70-9a70-546a47764b48",
+    "id": "J_88fe4b2d-3040-4c70-9a70-546a47764b48",
     "snapshot": "libreoffice_writer",
     "instruction": "私は私のコースの学生のためのガイドラインを作成していますが、最初の段落の各文を分けて読みやすくしたいと考えています。各文の後に空行を一つ作成して、文を分けてください。文を一つずつ分けるのが難しいので。",
     "source": "https://stackoverflow.com/questions/56554555/libreoffice-writer-how-to-create-empty-line-space-after-every-period-in-a-par",

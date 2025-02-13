@@ -1,5 +1,5 @@
 {
-    "id": "2373b66a-092d-44cb-bfd7-82e86e7a3b4d",
+    "id": "J_2373b66a-092d-44cb-bfd7-82e86e7a3b4d",
     "snapshot": "multiapps",
     "instruction": "私は通常の作業負荷の下で自分のUbuntuシステムのリソース使用状況を理解したいです。`sysstat`ツールキットの`sar`コマンドを使用してシステムの活動を監視し、30秒間にわたって1秒ごとに状況を評価し、その結果をデスクトップの「System_Resources_Report.txt」に出力してください。",
     "source": "author",

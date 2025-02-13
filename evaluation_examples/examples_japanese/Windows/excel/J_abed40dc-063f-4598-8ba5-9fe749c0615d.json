@@ -1,5 +1,5 @@
 {
-    "id": "abed40dc-063f-4598-8ba5-9fe749c0615d",
+    "id": "J_abed40dc-063f-4598-8ba5-9fe749c0615d",
     "snapshot": "excel",
     "instruction": "「重複のある名前」の列をチェックして、「一意な名前」の列にユニークなものを入れてください。元の順序を保ってください。",
     "source": "https://201nimaruichi.web.fc2.com/tech/duplicate01.html",

@@ -1,5 +1,5 @@
 {
-    "id": "5f8601f8-6e90-4d2c-91bb-eb5836ad1d5c",
+    "id": "J_5f8601f8-6e90-4d2c-91bb-eb5836ad1d5c",
     "snapshot": "libreoffice_calc",
     "instruction": "新しいシートに各経費アカウントの合計小計をまとめてください。結果は棒グラフで表示してください。",
     "source": "SheetCopilot@68",

@@ -1,5 +1,5 @@
 {
-    "id": "c9e7eaf2-b1a1-4efc-a982-721972fa9f02",
+    "id": "J_c9e7eaf2-b1a1-4efc-a982-721972fa9f02",
     "snapshot": "thunderbird",
     "instruction": "Thunderbirdのメッセージフィルターは、受信トレイでのみ自動的に作動するようです。サブフォルダーでフィルタリングしたい場合は、このフィルターを手動で起動する必要があります。フィルターを自動的に適用することができるか気になっています。サブフォルダーに自動メッセージフィルターを適用する手助けをしていただけますか？",
     "source": "https://superuser.com/questions/544480/how-to-apply-automatic-message-filters-to-subfolders-too?noredirect=1&lq=1",

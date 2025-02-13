@@ -1,5 +1,5 @@
 {
-    "id": "74d5859f-ed66-4d3e-aa0e-93d7a592ce41",
+    "id": "J_74d5859f-ed66-4d3e-aa0e-93d7a592ce41",
     "snapshot": "chrome",
     "instruction": "ウェブツールを使って、「happy-extension v0.0.1」というタグを付けて初期ウェブ拡張プロジェクトを設定してください。説明は今のところ空白のままで構いません。バックグラウンドスクリプトとブラウザーアクションを含めて、その他の機能は必要ありません。自動生成されたフォルダーは「Documents\\Projects」に解凍してください。",
     "source": "authors",

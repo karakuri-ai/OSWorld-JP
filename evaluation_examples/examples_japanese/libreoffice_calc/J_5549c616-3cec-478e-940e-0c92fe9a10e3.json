@@ -1,5 +1,5 @@
 {
-    "id": "5549c616-3cec-478e-940e-0c92fe9a10e3",
+    "id": "J_5549c616-3cec-478e-940e-0c92fe9a10e3",
     "snapshot": "libreoffice_calc",
     "instruction": "新しいシートに「売上」と「売上原価」の合計を各週ごとに計算してください。",
     "source": "SheetCopilot@202",

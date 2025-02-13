@@ -1,5 +1,5 @@
 {
-    "id": "4188d3a4-077d-46b7-9c86-23e1a036f6c1",
+    "id": "J_4188d3a4-077d-46b7-9c86-23e1a036f6c1",
     "snapshot": "libreoffice_calc",
     "instruction": "このシートのA1:B1範囲を固定して、ヘッダーを常に表示できるように手伝ってください。",
     "source": "https://www.libreofficehelp.com/freeze-unfreeze-rows-columns-ranges-calc/",

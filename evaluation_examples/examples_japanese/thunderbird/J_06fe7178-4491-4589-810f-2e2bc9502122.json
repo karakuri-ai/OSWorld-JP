@@ -1,5 +1,5 @@
 {
-    "id": "06fe7178-4491-4589-810f-2e2bc9502122",
+    "id": "J_06fe7178-4491-4589-810f-2e2bc9502122",
     "snapshot": "thunderbird",
     "instruction": "受信トレイのすべてのメールファイルを ~/emails.bak にバックアップしていただけますか？それらを eml 形式で別々に保存してください。",
     "source": "https://www.quora.com/How-do-I-backup-email-files-in-Mozilla-Thunderbird",

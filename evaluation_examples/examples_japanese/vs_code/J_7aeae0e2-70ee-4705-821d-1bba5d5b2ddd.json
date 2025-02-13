@@ -1,5 +1,5 @@
 {
-    "id": "7aeae0e2-70ee-4705-821d-1bba5d5b2ddd",
+    "id": "J_7aeae0e2-70ee-4705-821d-1bba5d5b2ddd",
     "snapshot": "vscode",
     "instruction": "現在のPythonファイル内のすべてのNumPy配列をVS Codeで可視化してください。",
     "source": "",

@@ -1,5 +1,5 @@
 {
-    "id": "bf4e9888-f10f-47af-8dba-76413038b73c",
+    "id": "J_bf4e9888-f10f-47af-8dba-76413038b73c",
     "snapshot": "libreoffice_impress",
     "instruction": "デスクトップに pic1.png、pic2.png、...、pic6.png という一連の .png 画像があります。これらの画像を現在の空白のプレゼンテーションに挿入して、キオスクやマルチメディアショーで連続して実行できる文書を作成したいのですが、手伝っていただけますか？",
     "source": "https://help.libreoffice.org/6.4/en-US/text/simpress/guide/photo_album.html?DbPAR=IMPRESS",

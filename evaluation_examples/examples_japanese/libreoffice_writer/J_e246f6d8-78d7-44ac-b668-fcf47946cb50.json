@@ -1,5 +1,5 @@
 {
-    "id": "e246f6d8-78d7-44ac-b668-fcf47946cb50",
+    "id": "J_e246f6d8-78d7-44ac-b668-fcf47946cb50",
     "snapshot": "libreoffice_writer",
     "instruction": "イタリック体は通常のテキストと非常に区別しにくいと感じています。フォントのサイズが同じで、両方とも濃い黒です。現在のフォントサイズは12で、イタリック体の単語のフォントサイズを14に変更して、もっと見やすくしたいです。手伝っていただけますか？",
     "source": "https://ask.libreoffice.org/t/how-to-change-text-size-color-of-italic-font/77712",

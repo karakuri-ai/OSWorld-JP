@@ -1,5 +1,5 @@
 {
-    "id": "fe29cdf3-d317-47b3-a657-d61f97f00b88",
+    "id": "J_fe29cdf3-d317-47b3-a657-d61f97f00b88",
     "snapshot": "libreoffice_calc",
     "instruction": "新しいシートで各月の総収益を計算し、その結果の棒グラフを作成してください。",
     "source": "SheetCopilot@61",

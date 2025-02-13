@@ -1,5 +1,5 @@
 {
-    "id": "337d318b-aa07-4f4f-b763-89d9a2dd013f",
+    "id": "J_337d318b-aa07-4f4f-b763-89d9a2dd013f",
     "snapshot": "libreoffice_calc",
     "instruction": "請求書を銀行明細書と照合し、不一致を特定してください。それから、明細書と合わない請求書を取り出し、「problematic」フォルダに入れてください。",
     "source": "authors",

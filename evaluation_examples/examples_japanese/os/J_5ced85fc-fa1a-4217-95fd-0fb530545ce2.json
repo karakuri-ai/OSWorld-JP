@@ -1,5 +1,5 @@
 {
-    "id": "5ced85fc-fa1a-4217-95fd-0fb530545ce2",
+    "id": "J_5ced85fc-fa1a-4217-95fd-0fb530545ce2",
     "snapshot": "os",
     "instruction": "\"<br/>\"を\"1\\n2\\n3\"の各行の終わりに追加し、output.txtに保存してください。",
     "source": "NL2Bash",

@@ -1,5 +1,5 @@
 {
-    "id": "d16c99dc-2a1e-46f2-b350-d97c86c85c15",
+    "id": "J_d16c99dc-2a1e-46f2-b350-d97c86c85c15",
     "snapshot": "gimp",
     "instruction": "画像のレイヤーを一つだけサイズ変更するのを手伝っていただけますか？元のアスペクト比を維持しながら、高さを512ピクセルに調整する必要があります。",
     "source": "https://stackoverflow.com/questions/75185543/use-gimp-to-resize-image-in-one-layer-only",

@@ -1,5 +1,5 @@
 {
-    "id": "f918266a-b3e0-4914-865d-4faa564f1aef",
+    "id": "J_f918266a-b3e0-4914-865d-4faa564f1aef",
     "snapshot": "vscode",
     "instruction": "デスクトップにあるPythonスクリプト「calculator.py」を実行して出力を取得し、その出力を同じディレクトリに「log.txt」として保存してください。",
     "source": "GAIA",

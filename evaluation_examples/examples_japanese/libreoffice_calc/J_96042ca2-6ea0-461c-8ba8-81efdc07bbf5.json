@@ -1,5 +1,5 @@
 {
-    "id": "96042ca2-6ea0-461c-8ba8-81efdc07bbf5",
+    "id": "J_96042ca2-6ea0-461c-8ba8-81efdc07bbf5",
     "snapshot": "libreoffice_calc",
     "instruction": "データを日付の列で昇順に並べ替えてください。そして、各日付の合計ロール番号を新しいシートにまとめてください。その後、新しいシートに時間の経過に伴う傾向を示す折れ線グラフを作成してください。",
     "source": "SheetCopilot@142",

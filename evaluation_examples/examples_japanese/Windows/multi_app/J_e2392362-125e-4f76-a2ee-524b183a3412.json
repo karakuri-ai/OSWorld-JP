@@ -1,5 +1,5 @@
 {
-    "id": "e2392362-125e-4f76-a2ee-524b183a3412",
+    "id": "J_e2392362-125e-4f76-a2ee-524b183a3412",
     "snapshot": "chrome",
     "instruction": "最近、academicpages.github.ioの有名な個人用アカデミックホームページテンプレートを使って自分の個人ホームページを作り始めました。これを自分のローカルのDocuments\\Code\\Websiteフォルダにクローンしました。オンラインチュートリアルによると、_config.yamlファイルで自分の名前と連絡先情報を設定できるそうです。しかし、YAMLファイル形式には詳しくありません。このファイルの名前と連絡先情報に関連する部分を見つけて、「Test Account」と「Test@gmail.com」に変更するのを手伝ってください。",
     "source": "authors",

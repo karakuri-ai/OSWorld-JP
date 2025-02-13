@@ -1,5 +1,5 @@
 {
-    "id": "1954cced-e748-45c4-9c26-9855b97fbc5e",
+    "id": "J_1954cced-e748-45c4-9c26-9855b97fbc5e",
     "snapshot": "libreoffice_calc",
     "instruction": "新しいシート（Sheet2）にピボットテーブルを作成し、各「請求書番号」が何回出現するかをカウントしてください。",
     "source": "SheetCopilot@104",

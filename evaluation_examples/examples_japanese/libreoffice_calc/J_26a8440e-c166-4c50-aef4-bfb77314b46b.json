@@ -1,5 +1,5 @@
 {
-    "id": "26a8440e-c166-4c50-aef4-bfb77314b46b",
+    "id": "J_26a8440e-c166-4c50-aef4-bfb77314b46b",
     "snapshot": "libreoffice_calc",
     "instruction": "全ての月の総売上を表示するために、2つのヘッダー（「月」と「合計」）を持つテーブルを新しいシートに作成してください。",
     "source": "SheetCopilot@152",

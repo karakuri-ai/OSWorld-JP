@@ -1,5 +1,5 @@
 {
-    "id": "30167b0c-976b-491b-a9e5-7747607c6a3c",
+    "id": "J_30167b0c-976b-491b-a9e5-7747607c6a3c",
     "snapshot": "vscode",
     "instruction": "現在のVS Codeプロジェクトで「import openai」を含むファイルを見つけて、そのファイルを開いていただけますか。",
     "source": "https://download.microsoft.com/download/8/A/4/8A48E46A-C355-4E5C-8417-E6ACD8A207D4/VisualStudioCode-TipsAndTricks-Vol.1.pdf",

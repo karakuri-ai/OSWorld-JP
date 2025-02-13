@@ -1,5 +1,5 @@
 {
-    "id": "788b3701-3ec9-4b67-b679-418bfa726c22",
+    "id": "J_788b3701-3ec9-4b67-b679-418bfa726c22",
     "snapshot": "chrome",
     "instruction": "短編小説の更新を追跡しています。 https://github.com/liangjs333/4th-year-in-tsinghua-eng で設定されています。すでにいくつかの章をダウンロードして読んだりアーカイブしたりしました。まだ取得していない次の章をダウンロードして、小説コレクションフォルダーに保存してください。",
     "source": "authors",

@@ -1,5 +1,5 @@
 {
-    "id": "48c46dc7-fe04-4505-ade7-723cba1aa6f6",
+    "id": "J_48c46dc7-fe04-4505-ade7-723cba1aa6f6",
     "snapshot": "chrome",
     "instruction": "私の作業スペースを自動的に設定してください。具体的には、ターミナルとファイルマネージャーでOSWorldのプロジェクトディレクトリを開き、それからChromeブラウザでGitHubのホームページとPythonのオンラインドキュメントを開いてください。",
     "source": "authors",

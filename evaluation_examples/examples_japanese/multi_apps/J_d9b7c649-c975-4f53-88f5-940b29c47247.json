@@ -1,5 +1,5 @@
 {
-    "id": "d9b7c649-c975-4f53-88f5-940b29c47247",
+    "id": "J_d9b7c649-c975-4f53-88f5-940b29c47247",
     "snapshot": "thunderbird",
     "instruction": "Thunderbirdのデイリーフォルダーから最新の5通のメールを、時間順に最も古いものから最近のものへ抽出し、デスクトップに「report.xlsx」というLibreOffice Calcレポートを作成して、送信者名、送信者アドレス、件名、CC、添付ファイルの数を保存してください。",
     "source": "https://marketplace.uipath.com/listings/extract-the-first-1000-gmail-emails-from-the-current-month-in-a-new-google-sheets-report",

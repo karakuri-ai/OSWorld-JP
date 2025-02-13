@@ -1,5 +1,5 @@
 {
-    "id": "f7dfbef3-7697-431c-883a-db8583a4e4f9",
+    "id": "J_f7dfbef3-7697-431c-883a-db8583a4e4f9",
     "snapshot": "libreoffice_writer",
     "instruction": "現在のディレクトリにあるすべての `.doc` ファイルを、コマンドラインで一度に PDF に変換していただけませんか？",
     "source": "https://www.thegeekdiary.com/libreoffice-command-examples-in-linux/",

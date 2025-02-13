@@ -1,5 +1,5 @@
 {
-    "id": "48d05431-6cd5-4e76-82eb-12b60d823f7d",
+    "id": "J_48d05431-6cd5-4e76-82eb-12b60d823f7d",
     "snapshot": "os",
     "instruction": "ターミナルで「conda install datasets」を実行したところ、「conda: コマンドが見つかりません」と表示されました。解決する手助けをしていただけますか？",
     "source": "authors",

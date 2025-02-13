@@ -1,5 +1,5 @@
 {
-    "id": "3a7c8185-25c1-4941-bd7b-96e823c9f21f",
+    "id": "J_3a7c8185-25c1-4941-bd7b-96e823c9f21f",
     "snapshot": "libreoffice_calc",
     "instruction": "データを列Aの昇順に並べ替え、その後、X軸に「日時」列、Y軸に数量を使って折れ線グラフを作成してください。",
     "source": "SheetCopilot@5",

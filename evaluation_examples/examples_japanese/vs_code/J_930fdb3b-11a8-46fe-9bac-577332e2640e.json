@@ -1,5 +1,5 @@
 {
-    "id": "930fdb3b-11a8-46fe-9bac-577332e2640e",
+    "id": "J_930fdb3b-11a8-46fe-9bac-577332e2640e",
     "snapshot": "vscode",
     "instruction": "VS Codeでターミナルからエディターにカーソルフォーカスを移すショートカット「ctrl+j」を作成してください。",
     "source": "https://superuser.com/questions/1270103/how-to-switch-the-cursor-between-terminal-and-code-in-vscode",

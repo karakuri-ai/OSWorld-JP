@@ -1,5 +1,5 @@
 {
-    "id": "ec71221e-ac43-46f9-89b8-ee7d80f7e1c5",
+    "id": "J_ec71221e-ac43-46f9-89b8-ee7d80f7e1c5",
     "snapshot": "vscode",
     "instruction": "2行目から10行目までのインデントを1タブ分増やしていただけますか。",
     "source": "https://stackoverflow.com/questions/47903209/how-to-shift-a-block-of-code-left-right-by-one-space-in-vscode",

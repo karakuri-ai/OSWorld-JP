@@ -1,5 +1,5 @@
 {
-    "id": "43c2d64c-bab5-4dcb-a30c-b888321c319a",
+    "id": "J_43c2d64c-bab5-4dcb-a30c-b888321c319a",
     "snapshot": "os",
     "instruction": "現在のコンピューターのルートディレクトリに「test」という名前のディレクトリを作成してください。",
     "source": "https://ubuntu.com/tutorials/command-line-for-beginners#4-creating-folders-and-files",

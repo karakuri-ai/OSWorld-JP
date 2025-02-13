@@ -1,5 +1,5 @@
 {
-    "id": "cd159658-fff3-4f94-a518-fad4007a152a",
+    "id": "J_cd159658-fff3-4f94-a518-fad4007a152a",
     "snapshot": "libreoffice_calc",
     "instruction": "新しいシートに各月の総収益を示す表を作成し、その後、月をx軸のラベルとして折れ線グラフを作成してください。",
     "source": "SheetCopilot@181",

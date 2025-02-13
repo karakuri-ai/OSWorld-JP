@@ -1,5 +1,5 @@
 {
-    "id": "20236825-b5df-46e7-89bf-62e1d640a897",
+    "id": "J_20236825-b5df-46e7-89bf-62e1d640a897",
     "snapshot": "vscode",
     "instruction": "現在、「bubble_Sort_tutorial.docx」という文書を使ってアルゴリズムの練習をしています。「bubbleSort.py」ファイル内の'bubbleSort'関数を完成させ、その出力をデスクトップに'res.txt'という名前で保存してください。",
     "source": "authors",

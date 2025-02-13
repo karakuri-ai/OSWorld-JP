@@ -1,5 +1,5 @@
 {
-    "id": "12382c62-0cd1-4bf2-bdc8-1d20bf9b2371",
+    "id": "J_12382c62-0cd1-4bf2-bdc8-1d20bf9b2371",
     "snapshot": "libreoffice_calc",
     "instruction": "新しいシートに各週の売上と売上原価のデータを示すクラスタ化縦棒グラフを作成してください。グラフのタイトルは「売上 & 売上原価」と設定してください。",
     "source": "SheetCopilot@210",

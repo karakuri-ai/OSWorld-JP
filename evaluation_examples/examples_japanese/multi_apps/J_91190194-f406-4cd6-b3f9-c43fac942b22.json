@@ -1,5 +1,5 @@
 {
-    "id": "91190194-f406-4cd6-b3f9-c43fac942b22",
+    "id": "J_91190194-f406-4cd6-b3f9-c43fac942b22",
     "snapshot": "gimp",
     "instruction": "コマンドラインからGIMPを起動し、「cola.png」を編集して、画像の上部20%を切り取って「cropped.png」として保存してください。",
     "source": "",

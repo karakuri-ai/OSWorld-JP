@@ -1,5 +1,5 @@
 {
-    "id": "357ef137-7eeb-4c80-a3bb-0951f26a8aff",
+    "id": "J_357ef137-7eeb-4c80-a3bb-0951f26a8aff",
     "snapshot": "libreoffice_calc",
     "instruction": "一日ごとの作業時間から総作業時間を計算しました。そして、時給もわかっています。総作業時間に時給を掛けて合計金額を得たいのですが、直接2つのセルを掛けても正しい答えが出ません。「総作業時間」は時間であり、「時間給」はただの数字です。どうすれば正しい積を得られるのでしょうか？",
     "source": "https://www.reddit.com/r/excel/comments/17zny8u/calculating_total_amount_earned_from_total_hours/",
