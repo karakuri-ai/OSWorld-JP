@@ -18,7 +18,7 @@
                         "trash": false
                     },
                     {
-                        "url": "https://drive.usercontent.google.com/download?id=1KAhoPFM0AU2dgn_NRt3y7CjOr9Er4vwD&export=download&authuser=0&confirm=t&uuid=e8528cd1-5106-45f3-a644-e1bbf5e08278&at=APZUnTUnTuXfV2Ted_9Wv2QomMvA:1706181110208",
+                        "url": "https://drive.usercontent.google.com/download?id=1DERw8XyqZLy_ZK05FNqgIwr0jgHlzGp&export=download",
                         "path": [
                             "invoice.pdf"
                         ]
@@ -76,7 +76,7 @@
         },
         "expected": {
             "type": "cloud_file",
-            "path": "https://drive.usercontent.google.com/download?id=1gkATnr8bk4JKQbzXZvzifoAQUA2sx5da&export=download&authuser=0&confirm=t&uuid=64ed0549-1627-49e8-8228-1e1925d6f6f7&at=APZUnTXkCm24SrOPuO5C6v4M3BiB:1706181091638",
+            "path": "https://drive.usercontent.google.com/download?id=1Eo6VANhcnkRxEgrwQBviLn_6rtuMmcF4&export=download",
             "dest": "invoice_gold.xlsx"
         },
         "options": {

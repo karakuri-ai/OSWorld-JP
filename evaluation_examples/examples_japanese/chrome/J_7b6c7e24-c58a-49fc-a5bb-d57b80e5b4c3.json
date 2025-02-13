@@ -27,8 +27,8 @@
             "type": "chrome_open_tabs",
             "parameters": {
                 "urls_to_open": [
-                    "https://www.amazon.com",
-                    "https://www.amazon.com/s?k=huggingface+transformers+book"
+                    "https://www.amazon.co.jp",
+                    "https://www.amazon.co.jp/s?k=huggingface+transformers+book"
                 ]
             }
         }
@@ -48,7 +48,7 @@
             "rules": {
                 "type": "domains",
                 "domains": [
-                    ".amazon.com"
+                    ".amazon.co.jp"
                 ]
             }
         }

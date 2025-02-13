@@ -1,7 +1,7 @@
 {
     "id": "42e0a640-4f19-4b28-973d-729602b5a4a7",
     "snapshot": "libreoffice_calc",
-    "instruction": "「収益」と「総費用」を計算し、その結果を新しいシートの「総収益」と「総費用」という2つの列の下に記入してください。",
+    "instruction": "「総収益」と「総費用」を計算し、その結果を新しいシートの「総収益」と「総費用」という2つの列の下に記入してください。",
     "source": "SheetCopilot@122",
     "config": [
         {
@@ -9,7 +9,7 @@
             "parameters": {
                 "files": [
                     {
-                        "url": "https://drive.google.com/uc?id=1VoEpRbXGxxrxIp-a2iGPqgVPQNdswQB-&export=download",
+                        "url": "https://drive.google.com/uc?id=1wHn2aAdyzfwF2vqwC1ipcdWz-id0z2KH&export=download",
                         "path": "/home/user/NetIncome.xlsx"
                     }
                 ]
@@ -61,7 +61,7 @@
         "func": "compare_table",
         "expected": {
             "type": "cloud_file",
-            "path": "https://drive.google.com/uc?id=1gYnzmQWbNzOJPXpfjyqUj36DXn7m9oUE&export=download",
+            "path": "https://drive.google.com/uc?id=1eBpFnpu9j565o-vECXZkRchcg1AN-GBc&export=download",
             "dest": "2_NetIncome_gt1.xlsx"
         },
         "result": {

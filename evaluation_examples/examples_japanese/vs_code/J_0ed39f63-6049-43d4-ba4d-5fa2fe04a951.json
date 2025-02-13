@@ -1,7 +1,7 @@
 {
     "id": "0ed39f63-6049-43d4-ba4d-5fa2fe04a951",
     "snapshot": "vscode",
-    "instruction": "この文書内の「text」と書かれている場所をすべて「test」に変えていただけますか。",
+    "instruction": "この文書内の「テキスト」と書かれている場所をすべて「テスト」に変えていただけますか。",
     "source": "https://www.quora.com/How-do-you-find-and-replace-text-in-Visual-Studio-Code",
     "config": [
         {
@@ -9,7 +9,7 @@
             "parameters": {
                 "files": [
                     {
-                        "url": "https://drive.usercontent.google.com/download?id=1I0tp77_4Qwuz_JW0Tluo_DJzScTARkOZ&export=download&authuser=0&confirm=t&uuid=3e090432-df3f-4f68-8c77-f0f06d399d08&at=APZUnTUFLQTdU4MtnLGUnOVAVcxW:1704282082382",
+                        "url": "https://drive.usercontent.google.com/download?id=1qsJlmLfDJse1_O8nAEdkk2VS2P6A24hX&export=download",
                         "path": "/home/user/Desktop/vscode_replace_text.txt"
                     }
                 ]
@@ -69,8 +69,7 @@
         "func": "compare_text_file",
         "expected": {
             "type": "cloud_file",
-            "path": "https://drive.usercontent.google.com/download?id=141LWiPgICRc62T7oFQPVgDqA58E4mxWS&export=download&authuser=0&confirm=t&uuid=452959a6-40af-4f60-9edf-93656466d3cb&at=APZUnTUHYqRUaVmmPqAutatE38KH:1704282217307",
-            "dest": "vscode_replace_text_gold.txt"
+            "path": "https://drive.usercontent.google.com/download?id=1fhAPL77LDjpWj1mZKNOzwrUgSJRHx0q1&export=download"
         },
         "result": {
             "type": "vm_file",

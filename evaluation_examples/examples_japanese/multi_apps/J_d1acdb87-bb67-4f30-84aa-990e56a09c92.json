@@ -1,7 +1,7 @@
 {
     "id": "d1acdb87-bb67-4f30-84aa-990e56a09c92",
     "snapshot": "libreoffice_calc",
-    "instruction": "こんにちは！私は香港への料理の冒険を心待ちにしており、ぜひ訪れたいレストランのリストを作成しました。しかし、これらの店舗に関するいくつかの必要な詳細をまとめるために、少し助けていただけると助かります。これらのレストランをGoogleマップで検索していただけますでしょうか。特に、住所や利用可能なウェブサイト、連絡先電話番号を取得したいと思っています。この情報を集めて私のフォームファイルに入力していただければ、非常に感謝いたします。どうぞよろしくお願いします！",
+    "instruction": "こんにちは！私は東京への料理の冒険を心待ちにしており、ぜひ訪れたいレストランのリストを作成しました。しかし、これらの店舗に関するいくつかの必要な詳細をまとめるために、少し助けていただけると助かります。これらのレストランをGoogleマップで検索していただけますでしょうか。特に、住所や利用可能なウェブサイト、連絡先電話番号を取得したいと思っています。この情報を集めて私のフォームファイルに入力していただければ、非常に感謝いたします。どうぞよろしくお願いします！",
     "source": "authors",
     "config": [
         {
@@ -10,11 +10,11 @@
                 "files": [
                     {
                         "path": "/home/user/Desktop/restaurants.txt",
-                        "url": "https://drive.google.com/uc?id=1IehFLJPZcFv8Ujk31ExbyGLji9AylmmJ&export=download"
+                        "url": "https://drive.google.com/uc?id=1aTIcnr94TsBv9AY3teng-jok8nvQuA7S&export=download"
                     },
                     {
                         "path": "/home/user/Desktop/MUST_VISIT.xlsx",
-                        "url": "https://drive.google.com/uc?id=1fXmjvZcwkIcckMIAXi3Hv_JAbVWpgs_l&export=download"
+                        "url": "https://drive.google.com/uc?id=1XxsRC6XPI7dQO56t2dfT-XXDXUdy0VlS&export=download"
                     }
                 ]
             }
@@ -91,7 +91,7 @@
         },
         "expected": {
             "type": "cloud_file",
-            "path": "https://drive.google.com/uc?id=1MV6jBvRbbYwPqeFTd_nX40xzyltNhphl&export=download",
+            "path": "https://drive.google.com/uc?id=10dhHnHnCTAB0KFRDBfF1tOUZEKrsq2Sl&export=download",
             "dest": "MUST_VISIT-gt.xlsx"
         },
         "options": {

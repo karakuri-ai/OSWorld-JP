@@ -92,7 +92,7 @@
         },
         "expected": {
             "type": "cloud_file",
-            "path": "https://drive.usercontent.google.com/download?id=118wb7zmG8yP7DS1cImP9-GcOeKib3fLp&export=download&authuser=0&confirm=t&uuid=b82542fa-7731-4014-8ebc-d940f0fb83fe&at=APZUnTVkmL9rk3EpA0Ak5JLPEnJZ:1706101389421",
+            "path": "https://drive.usercontent.google.com/download?id=1n6PAt-Aoqba6BpFjE_4Gzta7nbsXuYBb&export=download",
             "dest": "form_gold.pdf"
         }
     }

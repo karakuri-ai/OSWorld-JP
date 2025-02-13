@@ -76,7 +76,7 @@
         },
         "expected": {
             "type": "cloud_file",
-            "path": "https://drive.google.com/uc?id=1fttbvfHuoQfsQUk3fVXkJsCu231jhnQj&export=download",
+            "path": "https://drive.google.com/uc?id=1J7Ukdv1uh9UWBl9A5e7xuso5mbJYfxJ4&export=download",
             "dest": "authors-gt.xlsx"
         },
         "options": {

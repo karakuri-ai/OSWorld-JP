@@ -2,7 +2,7 @@
     "id": "35253b65-1c19-4304-8aa4-6884b8218fc0",
     "snapshot": "chrome",
     "instruction": "ねえ、このサイトに戻るための簡単な方法が必要なんだ。デスクトップにショートカットを作ってもらえるかな？",
-    "source": "https://www.laptopmag.com/articles/how-to-create-desktop-shortcuts-for-web-pages-using-chrome",
+    "source": "https://support.google.com/chrome/answer/15085120",
     "config": [
         {
             "type": "launch",
@@ -27,7 +27,7 @@
             "type": "chrome_open_tabs",
             "parameters": {
                 "urls_to_open": [
-                    "https://www.mathsisfun.com/games/2048.html"
+                    "https://play2048.co/"
                 ]
             }
         }
@@ -45,7 +45,7 @@
             "type": "rule",
             "rules": {
                 "type": "name",
-                "name": "Play Puzzle Game 2048"
+                "name": "2048_by_Gabriele_Cirulli"
             }
         }
     }

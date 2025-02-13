@@ -1,7 +1,7 @@
 {
     "id": "a96b564e-dbe9-42c3-9ccf-b4498073438a",
     "snapshot": "chrome",
-    "instruction": "コミュニティに関するディスカッションを見つけて、最も返信が多いものを開いてください。",
+    "instruction": "エッセイのハッシュタグがついている記事のうち最も累計のいいね数が多い記事を調べて開きなさい。",
     "source": "test_task_0",
     "config": [
         {
@@ -27,7 +27,7 @@
             "type": "chrome_open_tabs",
             "parameters": {
                 "urls_to_open": [
-                    "https://www.flightaware.com/"
+                    "https://note.com/"
                 ]
             }
         },
@@ -62,7 +62,7 @@
             "type": "rule",
             "rules": {
                 "type": "url",
-                "url": "https://discussions.flightaware.com/t/the-banter-thread/4412"
+                "url": "https://note.com/hybridrainbow/n/n66c6edf9badd"
             }
         }
     }
