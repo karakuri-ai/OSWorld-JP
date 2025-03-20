@@ -9,27 +9,27 @@
             "parameters": {
                 "files": [
                     {
-                        "path": "/home/user/Desktop/my_bookkeeping.xlsx",
+                        "path": "/home/user/デスクトップ/my_bookkeeping.xlsx",
                         "url": "https://drive.google.com/uc?id=1QOSpTZPFzFZeC0tng4Gfws544LFln836&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/receipt_0.jpeg",
+                        "path": "/home/user/デスクトップ/receipt_0.jpeg",
                         "url": "https://drive.google.com/uc?id=1b0BRc-BzXObVCUEonJfRbDsrgxZugj3U&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/receipt_1.jpg",
+                        "path": "/home/user/デスクトップ/receipt_1.jpg",
                         "url": "https://drive.google.com/uc?id=1S-JBDqwEf7Z_JXDItK_F4BOHgScTjlyN&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/receipt_2.jpg",
+                        "path": "/home/user/デスクトップ/receipt_2.jpg",
                         "url": "https://drive.google.com/uc?id=1Ys2abZi9_0y8sxuj2vCbC0OhjC6YdrC-&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/receipt_3.pdf",
+                        "path": "/home/user/デスクトップ/receipt_3.pdf",
                         "url": "https://drive.google.com/uc?id=1sKvBbGDpmUkv891xTqX7w5dtEvchQahd&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/receipt_4.jpg",
+                        "path": "/home/user/デスクトップ/receipt_4.jpg",
                         "url": "https://drive.google.com/uc?id=1kW7xH5bc2jRaKGDKHDrgSehTrPgkyzkc&export=download"
                     }
                 ]
@@ -38,7 +38,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/my_bookkeeping.xlsx"
+                "path": "/home/user/デスクトップ/my_bookkeeping.xlsx"
             }
         }
     ],
@@ -84,7 +84,7 @@
         "func": "compare_table",
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/my_bookkeeping.xlsx",
+            "path": "/home/user/デスクトップ/my_bookkeeping.xlsx",
             "dest": "my_bookkeeping.xlsx"
         },
         "expected": {

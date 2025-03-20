@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?export=download&id=19wUxTQeoKr6ihJWJ_9cu2tzKQH0cnxWH",
-                        "path": "/home/user/Desktop/ConferenceCity.xlsx"
+                        "path": "/home/user/デスクトップ/ConferenceCity.xlsx"
                     }
                 ]
             }
@@ -18,7 +18,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/ConferenceCity.xlsx"
+                "path": "/home/user/デスクトップ/ConferenceCity.xlsx"
             }
         }
     ],
@@ -36,7 +36,7 @@
                     "files": [
                         {
                             "url": "https://drive.google.com/uc?export=download&id=1ZcITkIOs2Z86S5L6MShSohFs3_xVfeCP",
-                            "path": "/home/user/Desktop/ConferenceCity_Gold.xlsx"
+                            "path": "/home/user/デスクトップ/ConferenceCity_Gold.xlsx"
                         }
                     ]
                 }
@@ -102,7 +102,7 @@
         },
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/ConferenceCity.xlsx",
+            "path": "/home/user/デスクトップ/ConferenceCity.xlsx",
             "dest": "ConferenceCity.xlsx"
         }
     }

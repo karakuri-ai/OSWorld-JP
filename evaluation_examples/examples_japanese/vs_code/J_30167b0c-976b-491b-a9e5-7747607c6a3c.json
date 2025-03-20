@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://codeload.github.com/onlyphantom/llm-python/zip/refs/heads/main",
-                        "path": "/home/user/Downloads/llm-python-main.zip"
+                        "path": "/home/user/ダウンロード/llm-python-main.zip"
                     }
                 ]
             }
@@ -30,7 +30,7 @@
             "parameters": {
                 "command": [
                     "code",
-                    "/home/user/Downloads/llm-python-main/"
+                    "/home/user/ダウンロード/llm-python-main/"
                 ]
             }
         },

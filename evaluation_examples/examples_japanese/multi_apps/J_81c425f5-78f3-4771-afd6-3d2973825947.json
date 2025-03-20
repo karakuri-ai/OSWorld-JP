@@ -9,7 +9,7 @@
             "parameters": {
                 "files": [
                     {
-                        "path": "/home/user/Desktop/OSP_Envelope_Price-List_2023_5000.xlsx",
+                        "path": "/home/user/デスクトップ/OSP_Envelope_Price-List_2023_5000.xlsx",
                         "url": "https://drive.usercontent.google.com/download?id=1tXhQ1aG0JMbp3Yz643QRCmJBCHKE_trr&export=download&authuser=0&confirm=t&uuid=b4441d6c-48ce-4d49-a8cb-9239e8e20d1a&at=APZUnTU-Ba8Vx0N8e1nuomP_-4mm:1709556978086"
                     }
                 ]
@@ -18,7 +18,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/OSP_Envelope_Price-List_2023_5000.xlsx"
+                "path": "/home/user/デスクトップ/OSP_Envelope_Price-List_2023_5000.xlsx"
             }
         }
     ],
@@ -57,7 +57,7 @@
         "func": "compare_docx_tables",
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/price.docx",
+            "path": "/home/user/デスクトップ/price.docx",
             "dest": "price.docx"
         },
         "expected": {

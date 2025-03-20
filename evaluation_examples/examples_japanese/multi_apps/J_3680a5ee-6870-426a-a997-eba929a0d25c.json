@@ -10,11 +10,11 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1ofMPSBPXtt0h6t0arjYo0GMtKAAhfEPz&export=download",
-                        "path": "/home/user/Desktop/file1.xlsx"
+                        "path": "/home/user/デスクトップ/file1.xlsx"
                     },
                     {
                         "url": "https://drive.usercontent.google.com/download?id=15QOxr0_MiHR80ppMX02aHnnsWs25aXgZ&export=download",
-                        "path": "/home/user/Desktop/file2.ods"
+                        "path": "/home/user/デスクトップ/file2.ods"
                     }
                 ]
             }
@@ -22,7 +22,7 @@
         {
             "type": "execute",
             "parameters": {
-                "command": "export DBUS_SESSION_BUS_ADDRESS='unix:path=/run/user/1000/bus'\ngnome-terminal --maximize --working-directory=/home/user/Desktop",
+                "command": "export DBUS_SESSION_BUS_ADDRESS='unix:path=/run/user/1000/bus'\ngnome-terminal --maximize --working-directory=/home/user/デスクトップ",
                 "shell": true
             }
         }
@@ -48,7 +48,7 @@
             },
             {
                 "type": "vm_file",
-                "path": "/home/user/Desktop/output.csv",
+                "path": "/home/user/デスクトップ/output.csv",
                 "dest": "output.csv"
             }
         ],

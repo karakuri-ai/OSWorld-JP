@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?export=download&id=1_1J2SvuTQSxSJk6lR2QlEiis7zSwdcmf",
-                        "path": "/home/user/Desktop/doc_proc.zip"
+                        "path": "/home/user/デスクトップ/doc_proc.zip"
                     }
                 ]
             }
@@ -18,7 +18,7 @@
         {
             "type": "command",
             "parameters": {
-                "command": "mkdir -p /home/user/Desktop/doc_proc/; unzip /home/user/Desktop/doc_proc.zip -d /home/user/Desktop/doc_proc/",
+                "command": "mkdir -p /home/user/デスクトップ/doc_proc/; unzip /home/user/デスクトップ/doc_proc.zip -d /home/user/デスクトップ/doc_proc/",
                 "shell": true
             }
         },
@@ -28,7 +28,7 @@
                 "command": [
                     "code",
                     "-g",
-                    "/home/user/Desktop/doc_proc/"
+                    "/home/user/デスクトップ/doc_proc/"
                 ]
             }
         }
@@ -42,7 +42,7 @@
         "func": "compare_docx_files",
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/concat.docx",
+            "path": "/home/user/デスクトップ/concat.docx",
             "dest": "concat.docx"
         },
         "expected": {

@@ -35,7 +35,7 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1IlJ8kU5MlR6OqJHchsSUJzLCmcrG-8N7&export=download&authuser=0&confirm=t&uuid=d2a1810f-edea-4bfd-9d79-e668b9f11876&at=APZUnTVv_eqtC86YzkEU8_jIhC9W:1709522229162",
-                        "path": "/home/user/Desktop/2206.08853.pdf"
+                        "path": "/home/user/デスクトップ/2206.08853.pdf"
                     }
                 ]
             }
@@ -43,7 +43,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/2206.08853.pdf"
+                "path": "/home/user/デスクトップ/2206.08853.pdf"
             }
         },
         {

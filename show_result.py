@@ -1,62 +1,96 @@
 import os
+import logging
 
+logger = logging.getLogger(__name__)
 
 def get_result(action_space, use_model, observation_type, result_dir):
-    target_dir = os.path.join(result_dir, action_space, observation_type, use_model)
+    target_dir = "results/main_0219/pyautogui/screenshot/gemini-1.5-pro-latest/"#os.path.join(result_dir, action_space, observation_type, use_model)
+    #target_dir = "results/main_0219/pyautogui/screenshot/gpt-4o-2024-11-20/"
     if not os.path.exists(target_dir):
         print("New experiment, no result yet.")
         return None
 
     all_result = []
-    domain_result = {}
-    all_result_for_analysis = {}
+    domain_result = {}          # ドメインごとの結果リスト
+    all_result_for_analysis = {}  # ドメイン・各例の結果
+    error_counts = {}           # ドメインごとのエラー件数
 
+    # 各ドメインのフォルダを走査
     for domain in os.listdir(target_dir):
         domain_path = os.path.join(target_dir, domain)
         if os.path.isdir(domain_path):
+            domain_result[domain] = []
+            error_counts[domain] = 0  # 初期化
             for example_id in os.listdir(domain_path):
                 example_path = os.path.join(domain_path, example_id)
                 if os.path.isdir(example_path):
-                    if "result.txt" in os.listdir(example_path):
-                        # empty all files under example_id
-                        if domain not in domain_result:
-                            domain_result[domain] = []
-                        result = open(os.path.join(example_path, "result.txt"), "r").read()
+                    result_file = os.path.join(example_path, "result.txt")
+                    if os.path.exists(result_file):
                         try:
-                            domain_result[domain].append(float(result))
-                        except:
-                            domain_result[domain].append(float(eval(result)))
-
-                        if domain not in all_result_for_analysis:
-                            all_result_for_analysis[domain] = {}
-                        all_result_for_analysis[domain][example_id] = domain_result[domain][-1]
-
-                        try:
-                            result = open(os.path.join(example_path, "result.txt"), "r").read()
+                            with open(result_file, "r", encoding="utf-8") as f:
+                                result_str = f.read().strip()
+                            # 数値に変換を試みる
                             try:
-                                all_result.append(float(result))
-                            except:
-                                all_result.append(float(bool(result)))
-                        except:
-                            all_result.append(0.0)
+                                result_value = float(result_str)
+                            except Exception as conv_e:
+                                logger.error("Error converting result in %s: %s", example_path, conv_e)
+                                result_value = 0.0
+                                error_counts[domain] += 1
+                        except Exception as e:
+                            logger.error("Error reading result.txt in %s: %s", example_path, e)
+                            result_value = 0.0
+                            error_counts[domain] += 1
+                    else:
+                        logger.warning("result.txt not found in %s", example_path)
+                        result_value = 0.0
+                        error_counts[domain] += 1
 
-    for domain in domain_result:
-        print("Domain:", domain, "Runned:", len(domain_result[domain]), "Success Rate:",
-              sum(domain_result[domain]) / len(domain_result[domain]) * 100, "%")
+                    domain_result[domain].append(result_value)
+                    all_result_for_analysis.setdefault(domain, {})[example_id] = result_value
+                    all_result.append(result_value)
 
-    print(">>>>>>>>>>>>>")
-    print("Office", "Success Rate:", sum(
-        domain_result["libreoffice_calc"] + domain_result["libreoffice_impress"] + domain_result[
-            "libreoffice_writer"]) / len(
-        domain_result["libreoffice_calc"] + domain_result["libreoffice_impress"] + domain_result[
-            "libreoffice_writer"]) * 100, "%")
-    print("Daily", "Success Rate:",
-          sum(domain_result["vlc"] + domain_result["thunderbird"] + domain_result["chrome"]) / len(
-              domain_result["vlc"] + domain_result["thunderbird"] + domain_result["chrome"]) * 100, "%")
-    print("Professional", "Success Rate:", sum(domain_result["gimp"] + domain_result["vs_code"]) / len(
-        domain_result["gimp"] + domain_result["vs_code"]) * 100, "%")
+    # 各ドメインごとの集計結果を表示
+    for domain, results in domain_result.items():
+        num_runs = len(results)
+        if num_runs > 0:
+            success_rate = sum(results) / num_runs * 100
+        else:
+            success_rate = 0.0
+        print(f"Domain: {domain}, Runned: {num_runs}, Success Rate: {success_rate:.2f}%, Error Count: {error_counts[domain]}")
 
-    with open(os.path.join(target_dir, "all_result.json"), "w") as f:
+    # 例としてOffice, Daily, Professionalドメインの集計も出力する
+    try:
+        office_domains = domain_result["libreoffice_calc"] + domain_result["libreoffice_impress"] + domain_result["libreoffice_writer"]
+        office_rate = sum(office_domains) / len(office_domains) * 100
+        print(">>>>>>>>>>>>>")
+        print("Office", "Success Rate:", f"{office_rate:.2f}%", "Total Errors:",
+              error_counts.get("libreoffice_calc", 0) +
+              error_counts.get("libreoffice_impress", 0) +
+              error_counts.get("libreoffice_writer", 0))
+    except KeyError:
+        print("Office domain data missing.")
+
+    try:
+        daily_domains = domain_result["vlc"] + domain_result["thunderbird"] + domain_result["chrome"]
+        daily_rate = sum(daily_domains) / len(daily_domains) * 100
+        print("Daily", "Success Rate:", f"{daily_rate:.2f}%", "Total Errors:",
+              error_counts.get("vlc", 0) +
+              error_counts.get("thunderbird", 0) +
+              error_counts.get("chrome", 0))
+    except KeyError:
+        print("Daily domain data missing.")
+
+    try:
+        prof_domains = domain_result["gimp"] + domain_result["vs_code"]
+        prof_rate = sum(prof_domains) / len(prof_domains) * 100
+        print("Professional", "Success Rate:", f"{prof_rate:.2f}%", "Total Errors:",
+              error_counts.get("gimp", 0) +
+              error_counts.get("vs_code", 0))
+    except KeyError:
+        print("Professional domain data missing.")
+
+    # 分析用の全結果をjsonとして保存
+    with open(os.path.join(target_dir, "all_result.json"), "w", encoding="utf-8") as f:
         f.write(str(all_result_for_analysis))
 
     if not all_result:
@@ -66,6 +100,6 @@ def get_result(action_space, use_model, observation_type, result_dir):
         print("Runned:", len(all_result), "Current Success Rate:", sum(all_result) / len(all_result) * 100, "%")
         return all_result
 
-
 if __name__ == '__main__':
-    get_result("pyautogui", "gpt-4o", "a11y_tree", "./results")
+    get_result("pyautogui", "gemini-1.5-pro-latest ", "screenshot", "./results/main_0219")
+#results/main_0219/pyautogui/screenshot/gemini-1.5-pro-latest/chrome

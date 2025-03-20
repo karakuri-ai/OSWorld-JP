@@ -10,11 +10,11 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1AQtZ8Hrf7WtyUtaHMtDN-UErKRXnW64d&export=download&authuser=0&confirm=t&uuid=bf7f2b4b-ecf9-4260-b74e-db0cd40b58ca&at=APZUnTVimJzbmwJ8-4E1lq9ipJf_:1709624149129",
-                        "path": "/home/user/Desktop/bubbleSort.zip"
+                        "path": "/home/user/デスクトップ/bubbleSort.zip"
                     },
                     {
                         "url": "https://drive.usercontent.google.com/download?id=168ZHCnK6v5PEZ8G5M25ZUW9fICk4OlfE&export=download&authuser=0&confirm=t&uuid=3642df08-dc40-4d37-93a0-8532e3012fb0&at=APZUnTUP1OTlq0kIgqcj7YSWw6MB:1709622592489",
-                        "path": "/home/user/Desktop/Bubble_Sort_tutorial.docx"
+                        "path": "/home/user/デスクトップ/Bubble_Sort_tutorial.docx"
                     }
                 ]
             }
@@ -25,14 +25,14 @@
                 "command": [
                     "/bin/bash",
                     "-c",
-                    "unzip /home/user/Desktop/bubbleSort.zip -d /home/user/Desktop/ && rm -rf /home/user/Desktop/bubbleSort.zip"
+                    "unzip /home/user/デスクトップ/bubbleSort.zip -d /home/user/デスクトップ/ && rm -rf /home/user/デスクトップ/bubbleSort.zip"
                 ]
             }
         },
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/Bubble_Sort_tutorial.docx"
+                "path": "/home/user/デスクトップ/Bubble_Sort_tutorial.docx"
             }
         }
     ],
@@ -51,7 +51,7 @@
         },
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/res.txt",
+            "path": "/home/user/デスクトップ/res.txt",
             "dest": "res.txt"
         }
     }

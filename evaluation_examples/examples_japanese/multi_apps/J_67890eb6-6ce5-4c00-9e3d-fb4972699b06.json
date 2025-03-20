@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?export=download&id=1v5DgViUgAL771kBWy-qBddVGyjGmgFhK",
-                        "path": "/home/user/Desktop/best_awards_acl.xlsx"
+                        "path": "/home/user/デスクトップ/best_awards_acl.xlsx"
                     }
                 ]
             }
@@ -18,7 +18,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/best_awards_acl.xlsx"
+                "path": "/home/user/デスクトップ/best_awards_acl.xlsx"
             }
         },
         {
@@ -89,7 +89,7 @@
         "func": "compare_table",
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/best_awards_acl.xlsx",
+            "path": "/home/user/デスクトップ/best_awards_acl.xlsx",
             "dest": "best_awards_acl.xlsx"
         },
         "expected": {

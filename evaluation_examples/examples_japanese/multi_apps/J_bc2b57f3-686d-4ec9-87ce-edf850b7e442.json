@@ -10,11 +10,11 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1ZEX26Ns6BWyUKe4FKlGUeKO7G7xSN14x&export=download&authuser=0&confirm=t&uuid=68789dfd-5725-4f2c-9653-7988d2d3b1ff&at=APZUnTWwT4sNxjJwmmYhG-X8uMsb:1709372377572",
-                        "path": "/home/user/Desktop/workbook-with-sample-database.xlsx"
+                        "path": "/home/user/デスクトップ/workbook-with-sample-database.xlsx"
                     },
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1jlVlK1Ps2JCxT9UiREjABEt8HlhkMb52&export=download&authuser=0&confirm=t&uuid=2fd4d607-c67c-4600-8f42-d7ed90b2dc4f&at=APZUnTVkTeiVpplx8qx3w2ek1j6f:1709373115860",
-                        "path": "/home/user/Desktop/reminder.docx"
+                        "path": "/home/user/デスクトップ/reminder.docx"
                     }
                 ]
             }
@@ -22,7 +22,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/workbook-with-sample-database.xlsx"
+                "path": "/home/user/デスクトップ/workbook-with-sample-database.xlsx"
             }
         }
     ],
@@ -66,7 +66,7 @@
         "func": "compare_table",
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/workbook-with-sample-database.xlsx",
+            "path": "/home/user/デスクトップ/workbook-with-sample-database.xlsx",
             "dest": "workbook-with-sample-database.xlsx"
         },
         "expected": {

@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?export=download&id=14r8Y0Cq8yTtQ5kfqhwWij5ow3LWApy2n",
-                        "path": "/home/user/Desktop/low_resolution.jpeg"
+                        "path": "/home/user/デスクトップ/low_resolution.jpeg"
                     }
                 ]
             }
@@ -20,7 +20,7 @@
             "parameters": {
                 "command": [
                     "gimp",
-                    "/home/user/Desktop/low_resolution.jpeg"
+                    "/home/user/デスクトップ/low_resolution.jpeg"
                 ]
             }
         }

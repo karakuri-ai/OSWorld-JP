@@ -18,7 +18,7 @@
                         "trash": false
                     },
                     {
-                        "url": "https://drive.usercontent.google.com/download?id=1DERw8XyqZLy_ZK05FNqgIwr0jgHlzGp&export=download",
+                        "url": "https://drive.google.com/uc?export=download&id=1DERw8XyqZLy_ZK05FNqgIwr0jgHlzGp_",
                         "path": [
                             "invoice.pdf"
                         ]
@@ -71,12 +71,12 @@
         "func": "compare_table",
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/invoice.xlsx",
+            "path": "/home/user/デスクトップ/invoice.xlsx",
             "dest": "invoice.xlsx"
         },
         "expected": {
             "type": "cloud_file",
-            "path": "https://drive.usercontent.google.com/download?id=1Eo6VANhcnkRxEgrwQBviLn_6rtuMmcF4&export=download",
+            "path": "https://docs.google.com/spreadsheets/d/1Eo6VANhcnkRxEgrwQBviLn_6rtuMmcF4/export?format=xlsx",
             "dest": "invoice_gold.xlsx"
         },
         "options": {

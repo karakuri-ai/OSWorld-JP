@@ -9,7 +9,7 @@
             "parameters": {
                 "files": [
                     {
-                        "path": "/home/user/Desktop/Unlocking-the-Power-of-ChatGPT.pptx",
+                        "path": "/home/user/デスクトップ/Unlocking-the-Power-of-ChatGPT.pptx",
                         "url": "https://drive.usercontent.google.com/download?id=15JpEBadJeJXmkaMOMNHV5QjyVmuofQMB&export=download&authuser=0&confirm=t&uuid=308636e7-6d09-4b72-81df-cc791fc83d30&at=APZUnTV4I6P3uydAZJ-Ls1n_i8sK:1709558907727"
                     }
                 ]
@@ -18,7 +18,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/Unlocking-the-Power-of-ChatGPT.pptx"
+                "path": "/home/user/デスクトップ/Unlocking-the-Power-of-ChatGPT.pptx"
             }
         }
     ],
@@ -57,7 +57,7 @@
         "func": "compare_docx_files",
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/script.docx",
+            "path": "/home/user/デスクトップ/script.docx",
             "dest": "script.docx"
         },
         "expected": {

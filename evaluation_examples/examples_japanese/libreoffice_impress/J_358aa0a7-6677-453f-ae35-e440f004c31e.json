@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1ot4dssmIzd4_qkATrmwcmJAGVChg8b3M&export=download&authuser=0&confirm=t&uuid=442b7baf-95e0-4983-82e0-8b59f946e508&at=APZUnTUyzyB-2iFPUDdcT2ntpdCQ:1707296688907",
-                        "path": "/home/user/Desktop/note-taking-strategies.pptx"
+                        "path": "/home/user/デスクトップ/note-taking-strategies.pptx"
                     }
                 ]
             }
@@ -18,7 +18,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/note-taking-strategies.pptx"
+                "path": "/home/user/デスクトップ/note-taking-strategies.pptx"
             }
         }
     ],
@@ -66,7 +66,7 @@
         },
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/note-taking-strategies.pptx",
+            "path": "/home/user/デスクトップ/note-taking-strategies.pptx",
             "dest": "note-taking-strategies.pptx"
         },
         "options": {

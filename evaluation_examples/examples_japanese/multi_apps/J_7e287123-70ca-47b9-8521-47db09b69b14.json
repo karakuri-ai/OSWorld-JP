@@ -114,8 +114,8 @@
                         "--convert-to",
                         "csv:Text - txt - csv (StarCalc):44,34,UTF-8,,,,false,true,true,false,false,1",
                         "--outdir",
-                        "/home/user/Desktop",
-                        "/home/user/Desktop/GRF-p5y.xlsx"
+                        "/home/user/デスクトップ",
+                        "/home/user/デスクトップ/GRF-p5y.xlsx"
                     ]
                 }
             }
@@ -124,8 +124,8 @@
         "result": {
             "type": "vm_file",
             "path": [
-                "/home/user/Desktop/GRF-p5y.xlsx",
-                "/home/user/Desktop/GRF-p5y-Sheet1.csv"
+                "/home/user/デスクトップ/GRF-p5y.xlsx",
+                "/home/user/デスクトップ/GRF-p5y-Sheet1.csv"
             ],
             "dest": [
                 "GRF-p5y.xlsx",

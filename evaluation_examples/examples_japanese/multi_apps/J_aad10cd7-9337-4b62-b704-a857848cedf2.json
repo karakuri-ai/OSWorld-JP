@@ -63,7 +63,7 @@
         },
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/notes.docx",
+            "path": "/home/user/デスクトップ/notes.docx",
             "dest": "notes.docx"
         }
     }

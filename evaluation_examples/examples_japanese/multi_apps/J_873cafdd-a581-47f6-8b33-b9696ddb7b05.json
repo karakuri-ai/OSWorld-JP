@@ -29,7 +29,7 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?export=download&id=1EMpoFNW3reLgZE0lj6scRFmL-OPjWuzf",
-                        "path": "/home/user/Desktop/Recommended_plugin_list.docx"
+                        "path": "/home/user/デスクトップ/Recommended_plugin_list.docx"
                     }
                 ]
             }
@@ -37,7 +37,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/Recommended_plugin_list.docx"
+                "path": "/home/user/デスクトップ/Recommended_plugin_list.docx"
             }
         },
         {

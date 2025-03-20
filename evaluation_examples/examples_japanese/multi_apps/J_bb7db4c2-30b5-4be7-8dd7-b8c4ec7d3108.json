@@ -10,11 +10,11 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?export=download&id=1c5YIFwlO204Nz7dno68D_I2ib1uXRyHN",
-                        "path": "/home/user/Desktop/anmi.png"
+                        "path": "/home/user/デスクトップ/anmi.png"
                     },
                     {
                         "url": "https://drive.google.com/uc?export=download&id=1d7vM939tJQ_vQLSODNWWfW749tEcomBQ",
-                        "path": "/home/user/Desktop/index.html"
+                        "path": "/home/user/デスクトップ/index.html"
                     }
                 ]
             }
@@ -24,7 +24,7 @@
             "parameters": {
                 "command": [
                     "gimp",
-                    "/home/user/Desktop/anmi.png"
+                    "/home/user/デスクトップ/anmi.png"
                 ]
             }
         }
@@ -42,19 +42,19 @@
         "result": [
             {
                 "type": "vm_file",
-                "path": "/home/user/Desktop/anmi_sharper.png",
+                "path": "/home/user/デスクトップ/anmi_sharper.png",
                 "dest": "anmi_sharper.png"
             },
             {
                 "type": "vm_file",
-                "path": "/home/user/Desktop/index.html",
+                "path": "/home/user/デスクトップ/index.html",
                 "dest": "index.html"
             }
         ],
         "expected": [
             {
                 "type": "vm_file",
-                "path": "/home/user/Desktop/anmi.png",
+                "path": "/home/user/デスクトップ/anmi.png",
                 "dest": "anmi.png"
             },
             {

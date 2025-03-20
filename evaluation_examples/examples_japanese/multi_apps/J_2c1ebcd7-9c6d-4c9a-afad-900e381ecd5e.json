@@ -10,11 +10,11 @@
                 "command": [
                     "mkdir",
                     "-p",
-                    "/home/user/Desktop/students work/",
-                    "/home/user/Desktop/Lec powerpoint/",
-                    "/home/user/Desktop/Grammar test/",
-                    "/home/user/Desktop/Grammar rules PDF/",
-                    "/home/user/Desktop/FDI/"
+                    "/home/user/デスクトップ/students work/",
+                    "/home/user/デスクトップ/Lec powerpoint/",
+                    "/home/user/デスクトップ/Grammar test/",
+                    "/home/user/デスクトップ/Grammar rules PDF/",
+                    "/home/user/デスクトップ/FDI/"
                 ]
             }
         },
@@ -23,63 +23,63 @@
             "parameters": {
                 "files": [
                     {
-                        "path": "/home/user/Desktop/students work/Zheng He .docx",
+                        "path": "/home/user/デスクトップ/students work/Zheng He .docx",
                         "url": "https://drive.google.com/uc?id=1wI4141LAthnY5m6qcCUaGgDooe4wiTgz&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/students work/The literature reviews of weekly readings.docx",
+                        "path": "/home/user/デスクトップ/students work/The literature reviews of weekly readings.docx",
                         "url": "https://drive.google.com/uc?id=18zoZCNtP-wTkxXp2FhH3O_NdLZKVMPIr&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/students work/The British Justice System.docx",
+                        "path": "/home/user/デスクトップ/students work/The British Justice System.docx",
                         "url": "https://drive.google.com/uc?id=1z3YHSN4CvC5kN1AwTWB_-plRS4p5GAch&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/students work/quiz2.docx",
+                        "path": "/home/user/デスクトップ/students work/quiz2.docx",
                         "url": "https://drive.google.com/uc?id=1R5Bii_kvnv_fZVXV-6DMt6Hgq-1gXMo1&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/students work/quiz.docx",
+                        "path": "/home/user/デスクトップ/students work/quiz.docx",
                         "url": "https://drive.google.com/uc?id=1PvlGMVX7YkricrjoPRe0e5VQlHeozRPD&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/students work/Q1&2&3.docx",
+                        "path": "/home/user/デスクトップ/students work/Q1&2&3.docx",
                         "url": "https://drive.google.com/uc?id=1kLQ3lnba6p9lqikHhKDdbqrYagHnZWU_&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/students work/Photo Ethics in Journalism.docx",
+                        "path": "/home/user/デスクトップ/students work/Photo Ethics in Journalism.docx",
                         "url": "https://drive.google.com/uc?id=1V6nG6HP_9Kb5KBCRTpaGsRTdPxnJSmRm&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/students work/cassie.docx",
+                        "path": "/home/user/デスクトップ/students work/cassie.docx",
                         "url": "https://drive.google.com/uc?id=1cW9TGJy56vossXxDsdnutPyCbR70af7M&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/students work/case study.docx",
+                        "path": "/home/user/デスクトップ/students work/case study.docx",
                         "url": "https://drive.google.com/uc?id=11GzpoZvp4qnL2ukXdpbhH-a3zOIHhtDx&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Grammar rules PDF/irregularrules02.pdf",
+                        "path": "/home/user/デスクトップ/Grammar rules PDF/irregularrules02.pdf",
                         "url": "https://drive.google.com/uc?id=1Eln9ehX6y6Df2-S_Hp7Ao1teKRu6I1Tg&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Grammar rules PDF/irregularrules01.pdf",
+                        "path": "/home/user/デスクトップ/Grammar rules PDF/irregularrules01.pdf",
                         "url": "https://drive.google.com/uc?id=1krdEEdNWvTwMKZU14QtI_xc2lCFVeVcl&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Grammar rules PDF/fragrules.pdf",
+                        "path": "/home/user/デスクトップ/Grammar rules PDF/fragrules.pdf",
                         "url": "https://drive.google.com/uc?id=1IXyI2KeiXsuh6XV2LelcmhZ2PDh_dBQf&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Grammar rules PDF/csfsrules.pdf",
+                        "path": "/home/user/デスクトップ/Grammar rules PDF/csfsrules.pdf",
                         "url": "https://drive.google.com/uc?id=1ernwGGrjhYNoHVNAevdb2qNKQ0I5n3RP&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Public Lecture Teaching Plan.docx",
+                        "path": "/home/user/デスクトップ/Public Lecture Teaching Plan.docx",
                         "url": "https://drive.google.com/uc?id=1ywfVFTEbiSkypZpzLjLmq_ppSbQIC8s8&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Course Timetable.xlsx",
+                        "path": "/home/user/デスクトップ/Course Timetable.xlsx",
                         "url": "https://drive.google.com/uc?id=1NGtahknRq_kXsXlw0tRQ1_CZp9SljoVg&export=download"
                     }
                 ]
@@ -122,7 +122,7 @@
         },
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/students work/case study.docx",
+            "path": "/home/user/デスクトップ/students work/case study.docx",
             "dest": "case study.docx"
         },
         "options": {

@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?export=download&id=1bS4xGh8bhQVSuRCwFscYZO_xzymAJgM8",
-                        "path": "/home/user/Desktop/berry.png"
+                        "path": "/home/user/デスクトップ/berry.png"
                     }
                 ]
             }
@@ -20,7 +20,7 @@
             "parameters": {
                 "command": [
                     "gimp",
-                    "/home/user/Desktop/berry.png"
+                    "/home/user/デスクトップ/berry.png"
                 ]
             }
         }
@@ -83,12 +83,12 @@
         "func": "check_image_mirror",
         "expected": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/berry.png",
+            "path": "/home/user/デスクトップ/berry.png",
             "dest": "berry.png"
         },
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/berry_mirror.png",
+            "path": "/home/user/デスクトップ/berry_mirror.png",
             "dest": "berry_mirror.png"
         }
     }

@@ -10,11 +10,11 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?export=download&id=19U28YF5e3bpoCUW3zmoUl2HVR9IgrfXR",
-                        "path": "/home/user/Desktop/character.png"
+                        "path": "/home/user/デスクトップ/character.png"
                     },
                     {
                         "url": "https://drive.google.com/uc?export=download&id=1l4AzlSZ2E4w0NrFkZ1ForTAmM5CSxveI",
-                        "path": "/home/user/Desktop/character_no_background_gold.png"
+                        "path": "/home/user/デスクトップ/character_no_background_gold.png"
                     }
                 ]
             }
@@ -24,7 +24,7 @@
             "parameters": {
                 "command": [
                     "gimp",
-                    "/home/user/Desktop/character.png"
+                    "/home/user/デスクトップ/character.png"
                 ]
             }
         }
@@ -42,24 +42,24 @@
         "result": [
             {
                 "type": "vm_file",
-                "path": "/home/user/Desktop/character_gimp.png",
+                "path": "/home/user/デスクトップ/character_gimp.png",
                 "dest": "character_gimp.png"
             },
             {
                 "type": "vm_file",
-                "path": "/home/user/Desktop/character_code.png",
+                "path": "/home/user/デスクトップ/character_code.png",
                 "dest": "character_code.png"
             }
         ],
         "expected": [
             {
                 "type": "vm_file",
-                "path": "/home/user/Desktop/character_no_background_gold.png",
+                "path": "/home/user/デスクトップ/character_no_background_gold.png",
                 "dest": "character_no_background_gold.png"
             },
             {
                 "type": "vm_file",
-                "path": "/home/user/Desktop/character_no_background_gold.png",
+                "path": "/home/user/デスクトップ/character_no_background_gold.png",
                 "dest": "character_no_background_gold.png"
             }
         ]

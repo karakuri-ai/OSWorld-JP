@@ -32,7 +32,7 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1H7R6flpv6vgyBOHurzR0CyvPRIobuIpI&export=download&authuser=0&confirm=t&uuid=1b41e87d-7a84-4aa6-af40-cf940e80d956&at=APZUnTWus2n1pP6l2wmIyXkCUHGs:1706196492307",
-                        "path": "/home/user/Desktop/photos/vacation/thailand/monk252520thailand252520wat252520arun252520scaled25255B225255D.jpg"
+                        "path": "/home/user/デスクトップ/photos/vacation/thailand/monk252520thailand252520wat252520arun252520scaled25255B225255D.jpg"
                     }
                 ]
             }
@@ -43,7 +43,7 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1Mh3kIViHaayxNC88TpgpjbmIEl17LA3d&export=download&authuser=0&confirm=t&uuid=a8355b84-aa2e-4502-8d0f-3723ffe7d442&at=APZUnTW4nzDFgDgNeERMRKEQ4bTU:1706196493503",
-                        "path": "/home/user/Desktop/photos/vacation/hk/hong-kong-china.jpg"
+                        "path": "/home/user/デスクトップ/photos/vacation/hk/hong-kong-china.jpg"
                     }
                 ]
             }
@@ -54,7 +54,7 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1EhmbZ3QP_mdvvppC5zKA3o--Ce2F-ocO&export=download&authuser=0&confirm=t&uuid=70e05133-dcac-4168-b555-82da15a10d58&at=APZUnTXJ371jG7qiPLHBLt2zy7ij:1706196494612",
-                        "path": "/home/user/Desktop/photos/vacation/hk/hk_group_photo.jpg"
+                        "path": "/home/user/デスクトップ/photos/vacation/hk/hk_group_photo.jpg"
                     }
                 ]
             }
@@ -65,7 +65,7 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1p_r_BMCLFG872uH9Qa-sLnqXppHvDx95&export=download&authuser=0&confirm=t&uuid=af59d107-8e46-4d2c-b72a-e4b42655959a&at=APZUnTU2hBidSnefJuUQTyJCEVFx:1706196491030",
-                        "path": "/home/user/Desktop/photos/family/us_3.png"
+                        "path": "/home/user/デスクトップ/photos/family/us_3.png"
                     }
                 ]
             }
@@ -76,7 +76,7 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1YxryNHfLPcFODnUh31CYGHGj3ZFRhvbA&export=download&authuser=0&confirm=t&uuid=0925ae33-ab33-42b9-901c-d90f11e0afcd&at=APZUnTVey7VeC9zYOmTwl0x02Iwf:1706196495770",
-                        "path": "/home/user/Desktop/photos/events/emnlp2023.jpg"
+                        "path": "/home/user/デスクトップ/photos/events/emnlp2023.jpg"
                     }
                 ]
             }
@@ -99,7 +99,7 @@
         "func": "check_moved_jpgs",
         "result": {
             "type": "list_directory",
-            "path": "/home/user/Desktop/cpjpg"
+            "path": "/home/user/デスクトップ/cpjpg"
         },
         "expected": {
             "type": "rule",

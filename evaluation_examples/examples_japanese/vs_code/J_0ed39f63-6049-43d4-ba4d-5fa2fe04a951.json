@@ -9,8 +9,8 @@
             "parameters": {
                 "files": [
                     {
-                        "url": "https://drive.usercontent.google.com/download?id=1qsJlmLfDJse1_O8nAEdkk2VS2P6A24hX&export=download",
-                        "path": "/home/user/Desktop/vscode_replace_text.txt"
+                        "url": "https://drive.google.com/uc?export=download&id=1qsJlmLfDJse1_O8nAEdkk2VS2P6A24hX",
+                        "path": "/home/user/デスクトップ/vscode_replace_text.txt"
                     }
                 ]
             }
@@ -20,7 +20,7 @@
             "parameters": {
                 "command": [
                     "code",
-                    "/home/user/Desktop/vscode_replace_text.txt"
+                    "/home/user/デスクトップ/vscode_replace_text.txt"
                 ]
             }
         },
@@ -69,11 +69,11 @@
         "func": "compare_text_file",
         "expected": {
             "type": "cloud_file",
-            "path": "https://drive.usercontent.google.com/download?id=1fhAPL77LDjpWj1mZKNOzwrUgSJRHx0q1&export=download"
+            "path": "https://drive.google.com/uc?export=download&id=1fhAPL77LDjpWj1mZKNOzwrUgSJRHx0q1"
         },
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/vscode_replace_text.txt",
+            "path": "/home/user/デスクトップ/vscode_replace_text.txt",
             "dest": "vscode_replace_text.txt"
         }
     }

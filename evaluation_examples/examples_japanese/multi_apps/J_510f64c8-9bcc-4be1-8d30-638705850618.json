@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=172YIofjzf_J4z1CIxqoqS-6t7Ng-ENg4&export=download",
-                        "path": "/home/user/Downloads/vscodeEvalExtension.zip"
+                        "path": "/home/user/ダウンロード/vscodeEvalExtension.zip"
                     }
                 ]
             }
@@ -21,7 +21,7 @@
                 "command": [
                     "/bin/bash",
                     "-c",
-                    "cd /home/user/Downloads && unzip -q vscodeEvalExtension.zip && code --install-extension vscodeEvalExtension/eval-0.0.1.vsix && rm -rf vscodeEvalExtension vscodeEvalExtension.zip && mkdir -p ~/Desktop/project/.vscode && history -c && echo > ~/.bash_history"
+                    "cd /home/user/ダウンロード && unzip -q vscodeEvalExtension.zip && code --install-extension vscodeEvalExtension/eval-0.0.1.vsix && rm -rf vscodeEvalExtension vscodeEvalExtension.zip && mkdir -p ~/Desktop/project/.vscode && history -c && echo > ~/.bash_history"
                 ]
             }
         },
@@ -31,15 +31,15 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1Oz-JsoViKlS5hLBUJ772Bf8ErLCqfkVd&export=download&authuser=0&confirm=t&uuid=a957ab75-c9cc-4bb1-9fde-a9f6787d945b&at=APZUnTWNqtAOz6CZyaSmeHqyT4TL:1723046687217",
-                        "path": "/home/user/Desktop/project/main.py"
+                        "path": "/home/user/デスクトップ/project/main.py"
                     },
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1vvHi6PL7RpX-i4OORf5BADkoeQ-mi4mC&export=download",
-                        "path": "/home/user/Desktop/project/README.md"
+                        "path": "/home/user/デスクトップ/project/README.md"
                     },
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1rPs76hfueGaZQ8y4PePT2yeLYzYAlkNX&export=download",
-                        "path": "/home/user/Desktop/project/.vscode/settings.json"
+                        "path": "/home/user/デスクトップ/project/.vscode/settings.json"
                     }
                 ]
             }

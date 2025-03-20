@@ -9,12 +9,12 @@
             "parameters": {
                 "files": [
                     {
-                        "url": "https://drive.usercontent.google.com/download?id=1IJpePG80TA3b8v2RE0uEJ9gUsnMEcuGF&export=download",
-                        "path": "/home/user/Desktop/lecture1-2021-with-ink.pptx"
+                        "url": "https://docs.google.com/presentation/d/1IJpePG80TA3b8v2RE0uEJ9gUsnMEcuGF/export?format=pptx",
+                        "path": "/home/user/デスクトップ/lecture1-2021-with-ink.pptx"
                     },
                     {
-                        "url": "https://drive.usercontent.google.com/download?id=1h9GfcpcwgKF87v6-xU8e_ckxFBmaEHH7&export=download",
-                        "path": "/home/user/Desktop/notes.docx"
+                        "url": "https://docs.google.com/document/d/1h9GfcpcwgKF87v6-xU8e_ckxFBmaEHH7/export?format=docx",
+                        "path": "/home/user/デスクトップ/notes.docx"
                     }
                 ]
             }
@@ -22,7 +22,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/lecture1-2021-with-ink.pptx"
+                "path": "/home/user/デスクトップ/lecture1-2021-with-ink.pptx"
             }
         }
     ],
@@ -66,12 +66,12 @@
         "func": "compare_pptx_files",
         "expected": {
             "type": "cloud_file",
-            "path": "https://drive.usercontent.google.com/download?id=1700pZoLMgv-6_IFtBenUvuUOCrjcSUt0&export=download",
+            "path": "https://docs.google.com/presentation/d/1700pZoLMgv-6_IFtBenUvuUOCrjcSUt0/export?format=pptx",
             "dest": "lecture1-2021-with-ink_Gold.pptx"
         },
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/lecture1-2021-with-ink.pptx",
+            "path": "/home/user/デスクトップ/lecture1-2021-with-ink.pptx",
             "dest": "lecture1-2021-with-ink.pptx"
         },
         "options": {

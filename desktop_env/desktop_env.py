@@ -29,7 +29,7 @@ class DesktopEnv(gym.Env):
             provider_name: str = "vmware",
             region: str = None,
             path_to_vm: str = None,
-            snapshot_name: str = "japanese", #"init_state",
+            snapshot_name: str = "japanese_3", #"init_state",
             action_space: str = "computer_13",
             cache_dir: str = "cache",
             screen_size: Tuple[int] = (1920, 1080),

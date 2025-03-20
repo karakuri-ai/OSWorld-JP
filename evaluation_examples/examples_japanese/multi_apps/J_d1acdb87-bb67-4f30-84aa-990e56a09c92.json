@@ -9,12 +9,12 @@
             "parameters": {
                 "files": [
                     {
-                        "path": "/home/user/Desktop/restaurants.txt",
-                        "url": "https://drive.google.com/uc?id=1aTIcnr94TsBv9AY3teng-jok8nvQuA7S&export=download"
+                        "path": "/home/user/デスクトップ/restaurants.txt",
+                        "url": "https://drive.google.com/uc?export=download&id=1aTIcnr94TsBv9AY3teng-jok8nvQuA7S"
                     },
                     {
-                        "path": "/home/user/Desktop/MUST_VISIT.xlsx",
-                        "url": "https://drive.google.com/uc?id=1XxsRC6XPI7dQO56t2dfT-XXDXUdy0VlS&export=download"
+                        "path": "/home/user/デスクトップ/MUST_VISIT.xlsx",
+                        "url": "https://docs.google.com/spreadsheets/d/1XxsRC6XPI7dQO56t2dfT-XXDXUdy0VlS/export?format=xlsx"
                     }
                 ]
             }
@@ -22,13 +22,13 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/MUST_VISIT.xlsx"
+                "path": "/home/user/デスクトップ/MUST_VISIT.xlsx"
             }
         },
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/restaurants.txt"
+                "path": "/home/user/デスクトップ/restaurants.txt"
             }
         },
         {
@@ -86,12 +86,12 @@
         "func": "compare_table",
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/MUST_VISIT.xlsx",
+            "path": "/home/user/デスクトップ/MUST_VISIT.xlsx",
             "dest": "MUST_VISIT.xlsx"
         },
         "expected": {
             "type": "cloud_file",
-            "path": "https://drive.google.com/uc?id=10dhHnHnCTAB0KFRDBfF1tOUZEKrsq2Sl&export=download",
+            "path": "https://docs.google.com/spreadsheets/d/10dhHnHnCTAB0KFRDBfF1tOUZEKrsq2Sl/export?format=xlsx",
             "dest": "MUST_VISIT-gt.xlsx"
         },
         "options": {

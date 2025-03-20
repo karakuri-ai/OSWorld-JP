@@ -18,7 +18,7 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1krQ_vN3QiboMttWrjDY-YROCWZq6cBtb&export=download",
-                        "path": "/home/user/Desktop/src.mp4"
+                        "path": "/home/user/デスクトップ/src.mp4"
                     }
                 ]
             }
@@ -41,7 +41,7 @@
         "func": "compare_images",
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/src_clip.gif",
+            "path": "/home/user/デスクトップ/src_clip.gif",
             "dest": "src_clip.gif"
         },
         "expected": {

@@ -1,1 +1,0 @@
-{"step_num": 1, "action_timestamp": "20250203@225520", "action": "import pyautogui\nimport time\n\n# Click on \"Keep Old Names\" button\npyautogui.click(x=860, y=799)\ntime.sleep(0.5)", "reward": 0, "done": false, "info": {}, "screenshot_file": "step_1_20250203@225520.png"}

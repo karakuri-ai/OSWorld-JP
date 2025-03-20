@@ -10,7 +10,7 @@
                 "command": [
                     "mkdir",
                     "-p",
-                    "/home/user/Documents/Papers"
+                    "/home/user/ドキュメント/Papers"
                 ]
             }
         },
@@ -19,19 +19,19 @@
             "parameters": {
                 "files": [
                     {
-                        "path": "/home/user/Documents/Papers/zhang_appagent.pdf",
+                        "path": "/home/user/ドキュメント/Papers/zhang_appagent.pdf",
                         "url": "https://arxiv.org/pdf/2312.13771.pdf"
                     },
                     {
-                        "path": "/home/user/Documents/Papers/niu_screenagent.pdf",
+                        "path": "/home/user/ドキュメント/Papers/niu_screenagent.pdf",
                         "url": "https://arxiv.org/pdf/2402.07945.pdf"
                     },
                     {
-                        "path": "/home/user/Documents/Papers/koh_visualwebarena.pdf",
+                        "path": "/home/user/ドキュメント/Papers/koh_visualwebarena.pdf",
                         "url": "https://arxiv.org/pdf/2401.13649.pdf"
                     },
                     {
-                        "path": "/home/user/Documents/Papers/deng_mind2web.pdf",
+                        "path": "/home/user/ドキュメント/Papers/deng_mind2web.pdf",
                         "url": "https://papers.nips.cc/paper_files/paper/2023/file/5950bf290a1570ea401bf98882128160-Paper-Datasets_and_Benchmarks.pdf"
                     }
                 ]
@@ -42,7 +42,7 @@
             "parameters": {
                 "command": [
                     "nautilus",
-                    "/home/user/Documents/Papers"
+                    "/home/user/ドキュメント/Papers"
                 ]
             }
         }
@@ -76,7 +76,7 @@
         },
         "expected": {
             "type": "cloud_file",
-            "path": "https://drive.google.com/uc?id=1J7Ukdv1uh9UWBl9A5e7xuso5mbJYfxJ4&export=download",
+            "path": "https://docs.google.com/spreadsheets/d/1J7Ukdv1uh9UWBl9A5e7xuso5mbJYfxJ4/export?format=xlsx",
             "dest": "authors-gt.xlsx"
         },
         "options": {

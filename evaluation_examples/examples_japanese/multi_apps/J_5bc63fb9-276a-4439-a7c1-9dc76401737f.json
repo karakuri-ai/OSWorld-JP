@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?export=download&id=1OtN8poSktw5s9w7y28wr5JmXszMOpn2q",
-                        "path": "/home/user/Desktop/llm_answers.json"
+                        "path": "/home/user/デスクトップ/llm_answers.json"
                     }
                 ]
             }
@@ -18,7 +18,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/llm_answers.json"
+                "path": "/home/user/デスクトップ/llm_answers.json"
             }
         }
     ],
@@ -60,7 +60,7 @@
         },
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/gemini_results.docx",
+            "path": "/home/user/デスクトップ/gemini_results.docx",
             "dest": "gemini_results.docx"
         },
         "options": {

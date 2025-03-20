@@ -67,7 +67,7 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1mIPe4P5b5WPoYI1zegSXjZ1Fhjjvr5Zk&export=download&authuser=0&confirm=t",
-                        "path": "/home/user/Desktop/Meeting-Agenda.docx"
+                        "path": "/home/user/デスクトップ/Meeting-Agenda.docx"
                     }
                 ]
             }
@@ -78,7 +78,7 @@
                 "command": [
                     "libreoffice",
                     "--writer",
-                    "/home/user/Desktop/Meeting-Agenda.docx"
+                    "/home/user/デスクトップ/Meeting-Agenda.docx"
                 ]
             }
         }

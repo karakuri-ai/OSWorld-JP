@@ -9,7 +9,7 @@
             "parameters": {
                 "files": [
                     {
-                        "path": "/home/user/Desktop/QTdHniCqfJbBLJe3L3nijU-1200-80.xcf",
+                        "path": "/home/user/デスクトップ/QTdHniCqfJbBLJe3L3nijU-1200-80.xcf",
                         "url": "https://drive.usercontent.google.com/download?id=1BGoDOu9bYIG7Twj5dVTxRIWDUgWzzDtP&export=download&authuser=0&confirm=t&uuid=235d1bb2-37a0-4d96-82bf-a87f31d03cb4&at=APZUnTX53EdR1stASFS3OH5luAtB:1709617456061"
                     }
                 ]
@@ -57,7 +57,7 @@
         "func": "compare_docx_images",
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/image.docx",
+            "path": "/home/user/デスクトップ/image.docx",
             "dest": "image.docx"
         },
         "expected": {

@@ -9,11 +9,11 @@
             "parameters": {
                 "files": [
                     {
-                        "path": "/home/user/Desktop/Employee Performance Evaluation Summary.xlsx",
+                        "path": "/home/user/デスクトップ/Employee Performance Evaluation Summary.xlsx",
                         "url": "https://drive.google.com/uc?id=1uOzi66bzO_WUnoS4Oqsodrd7_YPLatEk&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/review_template.pdf",
+                        "path": "/home/user/デスクトップ/review_template.pdf",
                         "url": "https://drive.google.com/uc?id=1YJ4RPGFUuS48tBh31gBerA16JSMw498w&export=download"
                     }
                 ]
@@ -22,7 +22,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/Employee Performance Evaluation Summary.xlsx"
+                "path": "/home/user/デスクトップ/Employee Performance Evaluation Summary.xlsx"
             }
         },
         {
@@ -34,7 +34,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/review_template.pdf"
+                "path": "/home/user/デスクトップ/review_template.pdf"
             }
         }
     ],
@@ -80,13 +80,13 @@
         "expected": {
             "type": "vm_file",
             "path": [
-                "/home/user/Desktop/Alex Lee.pdf",
-                "/home/user/Desktop/David Wilson.pdf",
-                "/home/user/Desktop/Emily Johnson.pdf",
-                "/home/user/Desktop/John Doe.pdf",
-                "/home/user/Desktop/Linda Green.pdf",
-                "/home/user/Desktop/Michael Brown.pdf",
-                "/home/user/Desktop/Sophia Carter.pdf"
+                "/home/user/デスクトップ/Alex Lee.pdf",
+                "/home/user/デスクトップ/David Wilson.pdf",
+                "/home/user/デスクトップ/Emily Johnson.pdf",
+                "/home/user/デスクトップ/John Doe.pdf",
+                "/home/user/デスクトップ/Linda Green.pdf",
+                "/home/user/デスクトップ/Michael Brown.pdf",
+                "/home/user/デスクトップ/Sophia Carter.pdf"
             ],
             "dest": [
                 "Alex Lee.pdf",

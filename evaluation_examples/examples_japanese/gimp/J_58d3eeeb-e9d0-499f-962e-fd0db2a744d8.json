@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?export=download&id=1w9R8RYkbFl88n8_Vgk_zZeD5J4t4yrzC",
-                        "path": "/home/user/Desktop/heron.jpeg"
+                        "path": "/home/user/デスクトップ/heron.jpeg"
                     }
                 ]
             }
@@ -20,7 +20,7 @@
             "parameters": {
                 "command": [
                     "gimp",
-                    "/home/user/Desktop/heron.jpeg"
+                    "/home/user/デスクトップ/heron.jpeg"
                 ]
             }
         }

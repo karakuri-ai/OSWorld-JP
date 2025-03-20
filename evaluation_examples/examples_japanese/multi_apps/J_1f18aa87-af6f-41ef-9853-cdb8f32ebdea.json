@@ -10,11 +10,11 @@
                 "command": [
                     "mkdir",
                     "-p",
-                    "/home/user/Desktop/students work/",
-                    "/home/user/Desktop/Lec powerpoint/",
-                    "/home/user/Desktop/Grammar test/",
-                    "/home/user/Desktop/Grammar rules PDF/",
-                    "/home/user/Desktop/FDI/"
+                    "/home/user/デスクトップ/students work/",
+                    "/home/user/デスクトップ/Lec powerpoint/",
+                    "/home/user/デスクトップ/Grammar test/",
+                    "/home/user/デスクトップ/Grammar rules PDF/",
+                    "/home/user/デスクトップ/FDI/"
                 ]
             }
         },
@@ -23,43 +23,43 @@
             "parameters": {
                 "files": [
                     {
-                        "path": "/home/user/Desktop/Grammer test 1.docx",
+                        "path": "/home/user/デスクトップ/Grammer test 1.docx",
                         "url": "https://drive.google.com/uc?id=1VaXQ9XdzMv079xKFs0Y2XrwdmwFHIvBK&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Grammer test 2.docx",
+                        "path": "/home/user/デスクトップ/Grammer test 2.docx",
                         "url": "https://drive.google.com/uc?id=1k2T88WreTwi-Yyp9mEJnreEQC3DdkJ2x&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Grammer test 3.docx",
+                        "path": "/home/user/デスクトップ/Grammer test 3.docx",
                         "url": "https://drive.google.com/uc?id=1QgyQWVOcAJuPaSlrywb9nuFiQDySsTb2&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Answer.docx",
+                        "path": "/home/user/デスクトップ/Answer.docx",
                         "url": "https://drive.google.com/uc?id=1BC2DuWJuZggmf6fXl6Ys9xQMZzU6a1br&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Grammar rules PDF/irregularrules02.pdf",
+                        "path": "/home/user/デスクトップ/Grammar rules PDF/irregularrules02.pdf",
                         "url": "https://drive.google.com/uc?id=1Eln9ehX6y6Df2-S_Hp7Ao1teKRu6I1Tg&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Grammar rules PDF/irregularrules01.pdf",
+                        "path": "/home/user/デスクトップ/Grammar rules PDF/irregularrules01.pdf",
                         "url": "https://drive.google.com/uc?id=1krdEEdNWvTwMKZU14QtI_xc2lCFVeVcl&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Grammar rules PDF/fragrules.pdf",
+                        "path": "/home/user/デスクトップ/Grammar rules PDF/fragrules.pdf",
                         "url": "https://drive.google.com/uc?id=1IXyI2KeiXsuh6XV2LelcmhZ2PDh_dBQf&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Grammar rules PDF/csfsrules.pdf",
+                        "path": "/home/user/デスクトップ/Grammar rules PDF/csfsrules.pdf",
                         "url": "https://drive.google.com/uc?id=1ernwGGrjhYNoHVNAevdb2qNKQ0I5n3RP&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Public Lecture Teaching Plan.docx",
+                        "path": "/home/user/デスクトップ/Public Lecture Teaching Plan.docx",
                         "url": "https://drive.google.com/uc?id=1ywfVFTEbiSkypZpzLjLmq_ppSbQIC8s8&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Course Timetable.xlsx",
+                        "path": "/home/user/デスクトップ/Course Timetable.xlsx",
                         "url": "https://drive.google.com/uc?id=1NGtahknRq_kXsXlw0tRQ1_CZp9SljoVg&export=download"
                     }
                 ]
@@ -105,7 +105,7 @@
         },
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/Answer.docx",
+            "path": "/home/user/デスクトップ/Answer.docx",
             "dest": "Answer.docx"
         },
         "options": {

@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1aANBCEHT6K8GmHDMEYtL1LQXdApqVoGv&export=download",
-                        "path": "/home/user/Downloads/binder.zip"
+                        "path": "/home/user/ダウンロード/binder.zip"
                     }
                 ]
             }
@@ -31,7 +31,7 @@
                 "command": [
                     "/bin/bash",
                     "-c",
-                    "unzip -q /home/user/Downloads/binder.zip -d /home/user/projects/ && cd /home/user/projects/binder && git init --initial-branch main && git remote add origin /home/user/projects/remote_project"
+                    "unzip -q /home/user/ダウンロード/binder.zip -d /home/user/projects/ && cd /home/user/projects/binder && git init --initial-branch main && git remote add origin /home/user/projects/remote_project"
                 ]
             }
         },

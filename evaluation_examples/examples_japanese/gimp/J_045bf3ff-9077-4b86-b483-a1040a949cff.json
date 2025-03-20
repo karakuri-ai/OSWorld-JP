@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?export=download&id=1YnUq4q9rv7pr1MZPdaD2mVFZRrsgISmn",
-                        "path": "/home/user/Desktop/gate.jpeg"
+                        "path": "/home/user/デスクトップ/gate.jpeg"
                     }
                 ]
             }
@@ -20,7 +20,7 @@
             "parameters": {
                 "command": [
                     "gimp",
-                    "/home/user/Desktop/gate.jpeg"
+                    "/home/user/デスクトップ/gate.jpeg"
                 ]
             }
         }

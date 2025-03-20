@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?export=download&id=1GdtkwADABIVBaDsQEsHGee3V5idByMeF",
-                        "path": "/home/user/Desktop/tilearray.png"
+                        "path": "/home/user/デスクトップ/tilearray.png"
                     }
                 ]
             }
@@ -35,7 +35,7 @@
         "func": "check_structure_sim",
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/rearranged.png",
+            "path": "/home/user/デスクトップ/rearranged.png",
             "dest": "rearranged.png"
         },
         "expected": {

@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?export=download&id=1fe-MuG57hf12cEi4qI4dEI3OYJOHYoY2",
-                        "path": "/home/user/Desktop/helloExtension.zip"
+                        "path": "/home/user/デスクトップ/helloExtension.zip"
                     }
                 ]
             }
@@ -18,7 +18,7 @@
         {
             "type": "execute",
             "parameters": {
-                "command": "echo password | sudo -S apt-get update -y && echo password | sudo -S apt-get install unzip -y && unzip /home/user/Desktop/helloExtension.zip -d /home/user/Desktop/ && rm /home/user/Desktop/helloExtension.zip",
+                "command": "echo password | sudo -S apt-get update -y && echo password | sudo -S apt-get install unzip -y && unzip /home/user/デスクトップ/helloExtension.zip -d /home/user/デスクトップ/ && rm /home/user/デスクトップ/helloExtension.zip",
                 "shell": true
             }
         },
@@ -55,7 +55,7 @@
         "expected": {
             "type": "rule",
             "rules": {
-                "expected": "/home/user/Desktop/helloExtension"
+                "expected": "/home/user/デスクトップ/helloExtension"
             }
         }
     }

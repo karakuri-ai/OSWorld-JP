@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1KDDJCei7KE1yRWGNUSmUnFnpZBH2gDeE&export=download&authuser=0&confirm=t&uuid=8ce4d382-33a7-4198-ac5c-75b6229dd8c5&at=APZUnTXSeOg_uw4ClXrbeBkNn78h:1708425555159",
-                        "path": "/home/user/Desktop/109_4.pptx"
+                        "path": "/home/user/デスクトップ/109_4.pptx"
                     }
                 ]
             }
@@ -18,7 +18,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/109_4.pptx"
+                "path": "/home/user/デスクトップ/109_4.pptx"
             }
         }
     ],
@@ -66,7 +66,7 @@
         },
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/109_4.pptx",
+            "path": "/home/user/デスクトップ/109_4.pptx",
             "dest": "109_4.pptx"
         },
         "options": {}

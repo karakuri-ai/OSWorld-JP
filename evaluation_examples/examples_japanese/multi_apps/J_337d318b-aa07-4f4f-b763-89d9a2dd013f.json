@@ -9,19 +9,19 @@
             "parameters": {
                 "files": [
                     {
-                        "path": "/home/user/Desktop/invoice TII-20220301-90.pdf",
+                        "path": "/home/user/デスクトップ/invoice TII-20220301-90.pdf",
                         "url": "https://drive.google.com/uc?id=13y1Dkh9dJUaWeMSk6pg_UY-R7K4bhAJM&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Invoice # GES-20220215-82.pdf",
+                        "path": "/home/user/デスクトップ/Invoice # GES-20220215-82.pdf",
                         "url": "https://drive.google.com/uc?id=1zZYJQVpbGmqT_eH0x9Z5O7WoIFrQo3sN&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Invoice # 243729.pdf",
+                        "path": "/home/user/デスクトップ/Invoice # 243729.pdf",
                         "url": "https://drive.google.com/uc?id=1a7fnWpsAdFQkFWl2BqAA_gTwlZ6nvGAx&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/Bank-Statement.pdf",
+                        "path": "/home/user/デスクトップ/Bank-Statement.pdf",
                         "url": "https://drive.google.com/uc?id=1-KS6p0aip56iPmH4okhXZhLgqVwrcjfw&export=download"
                     }
                 ]
@@ -37,7 +37,7 @@
         "func": "compare_pdfs",
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/problematic/Invoice # 243729.pdf",
+            "path": "/home/user/デスクトップ/problematic/Invoice # 243729.pdf",
             "dest": "Invoice # 243729.pdf"
         },
         "expected": {

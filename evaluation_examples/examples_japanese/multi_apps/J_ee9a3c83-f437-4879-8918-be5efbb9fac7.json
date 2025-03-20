@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1V6e4KB6Sabp6nAHkq5Seun0qbjwEfdaF&export=download",
-                        "path": "/home/user/Desktop/file_example_ODS_5000.ods"
+                        "path": "/home/user/デスクトップ/file_example_ODS_5000.ods"
                     }
                 ]
             }
@@ -18,7 +18,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/file_example_ODS_5000.ods"
+                "path": "/home/user/デスクトップ/file_example_ODS_5000.ods"
             }
         },
         {
@@ -34,7 +34,7 @@
         {
             "type": "execute",
             "parameters": {
-                "command": "export DBUS_SESSION_BUS_ADDRESS='unix:path=/run/user/1000/bus'\ngnome-terminal --maximize --working-directory=/home/user/Desktop",
+                "command": "export DBUS_SESSION_BUS_ADDRESS='unix:path=/run/user/1000/bus'\ngnome-terminal --maximize --working-directory=/home/user/デスクトップ",
                 "shell": true
             }
         }
@@ -72,7 +72,7 @@
             },
             {
                 "type": "vm_file",
-                "path": "/home/user/Desktop/file_example_ODS_5000.csv",
+                "path": "/home/user/デスクトップ/file_example_ODS_5000.csv",
                 "dest": "file_example_ODS_5000.csv"
             }
         ],

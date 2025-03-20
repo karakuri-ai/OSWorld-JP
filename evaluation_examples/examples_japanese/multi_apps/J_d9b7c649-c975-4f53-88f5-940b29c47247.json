@@ -47,7 +47,7 @@
         "func": "compare_table",
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/report.xlsx",
+            "path": "/home/user/デスクトップ/report.xlsx",
             "dest": "report.xlsx"
         },
         "expected": {

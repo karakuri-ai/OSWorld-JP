@@ -31,7 +31,7 @@
         },
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/receipt.pdf",
+            "path": "/home/user/デスクトップ/receipt.pdf",
             "dest": "receipt.pdf"
         }
     }

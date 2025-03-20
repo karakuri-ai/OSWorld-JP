@@ -61,12 +61,12 @@
         "result": [
             {
                 "type": "vm_file",
-                "path": "/home/user/Desktop/contacts.csv",
+                "path": "/home/user/デスクトップ/contacts.csv",
                 "dest": "contacts.csv"
             },
             {
                 "type": "vm_file",
-                "path": "/home/user/Desktop/contacts.xlsx",
+                "path": "/home/user/デスクトップ/contacts.xlsx",
                 "dest": "contacts.xlsx"
             }
         ],

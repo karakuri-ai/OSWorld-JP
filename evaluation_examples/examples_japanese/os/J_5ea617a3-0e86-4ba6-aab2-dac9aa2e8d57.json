@@ -11,7 +11,7 @@
                 "files": [
                     {
                         "url": "https://drive.usercontent.google.com/download?id=1XaTnC_lLbR_tGTz8tcN2Tp6cNrMlNW3R&export=download&authuser=0&confirm=t&uuid=89e69a23-43cf-4316-833a-fb9d3e281460&at=APZUnTWn5zZTH4GlClO6lV1i4WwP:1706184669922",
-                        "path": "/home/user/Desktop/poster_party_night.webp"
+                        "path": "/home/user/デスクトップ/poster_party_night.webp"
                     }
                 ]
             }
@@ -19,7 +19,7 @@
         {
             "type": "execute",
             "parameters": {
-                "command": "gio trash /home/user/Desktop/poster_party_night.webp",
+                "command": "gio trash /home/user/デスクトップ/poster_party_night.webp",
                 "shell": true
             }
         },
@@ -41,7 +41,7 @@
         "func": "exact_match",
         "result": {
             "type": "vm_command_line",
-            "command": "[ -f /home/user/Desktop/poster_party_night.webp ] && echo 'File exists.' || echo 'File does not exist.'",
+            "command": "[ -f /home/user/デスクトップ/poster_party_night.webp ] && echo 'File exists.' || echo 'File does not exist.'",
             "shell": true
         },
         "expected": {

@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?export=download&id=1zcxzbQ5dp-mgpu0mom-LB8BKJH-V01Kr",
-                        "path": "/home/user/Desktop/yicun.raw"
+                        "path": "/home/user/デスクトップ/yicun.raw"
                     }
                 ]
             }
@@ -20,7 +20,7 @@
             "parameters": {
                 "command": [
                     "gimp",
-                    "/home/user/Desktop/yicun.raw"
+                    "/home/user/デスクトップ/yicun.raw"
                 ]
             }
         }

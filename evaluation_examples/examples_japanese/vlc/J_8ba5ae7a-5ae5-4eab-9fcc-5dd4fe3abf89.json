@@ -30,7 +30,7 @@
         "expected": {
             "type": "rule",
             "rules": {
-                "recording_file_path": "/home/user/Desktop"
+                "recording_file_path": "/home/user/デスクトップ"
             }
         },
         "result": {

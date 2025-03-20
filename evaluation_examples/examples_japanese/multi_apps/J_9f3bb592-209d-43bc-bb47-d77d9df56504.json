@@ -53,7 +53,7 @@
                     "files": [
                         {
                             "url": "https://drive.usercontent.google.com/download?id=19ooP4gPY2HYQVI9n31CtMlJ3q-1dr6cU&export=download&authuser=0&confirm=t&uuid=ba968219-3a9b-44d1-bee6-64e289ce4ffe&at=APZUnTXlL0jQBoia7KuzELsBCVxE:1709972303196",
-                            "path": "/home/user/Desktop/subtitles_script.py"
+                            "path": "/home/user/デスクトップ/subtitles_script.py"
                         }
                     ]
                 }
@@ -69,7 +69,7 @@
         "func": "exact_match",
         "result": {
             "type": "vm_command_line",
-            "command": "python /home/user/Desktop/subtitles_script.py",
+            "command": "python /home/user/デスクトップ/subtitles_script.py",
             "shell": "true"
         },
         "expected": {

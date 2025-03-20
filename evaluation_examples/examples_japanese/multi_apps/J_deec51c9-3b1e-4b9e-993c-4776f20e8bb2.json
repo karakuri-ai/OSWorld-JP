@@ -9,7 +9,7 @@
             "parameters": {
                 "files": [
                     {
-                        "path": "/home/user/Desktop/New Large Language Models.xlsx",
+                        "path": "/home/user/デスクトップ/New Large Language Models.xlsx",
                         "url": "https://drive.google.com/uc?id=1NJFAUDzatd5TbBqXeCy3-ok4BWj-xayT&export=download"
                     }
                 ]
@@ -18,7 +18,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/New Large Language Models.xlsx"
+                "path": "/home/user/デスクトップ/New Large Language Models.xlsx"
             }
         }
     ],
@@ -63,7 +63,7 @@
         "func": "compare_table",
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/New Large Language Models.xlsx",
+            "path": "/home/user/デスクトップ/New Large Language Models.xlsx",
             "dest": "New Large Language Models.xlsx"
         },
         "expected": {

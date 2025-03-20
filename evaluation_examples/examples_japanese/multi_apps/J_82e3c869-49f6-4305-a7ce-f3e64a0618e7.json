@@ -10,7 +10,7 @@
                 "command": [
                     "mkdir",
                     "-p",
-                    "/home/user/Desktop/IDS LLM seminar/"
+                    "/home/user/デスクトップ/IDS LLM seminar/"
                 ]
             }
         },
@@ -19,27 +19,27 @@
             "parameters": {
                 "files": [
                     {
-                        "path": "/home/user/Desktop/IDS LLM seminar/DSC00659.jpg",
+                        "path": "/home/user/デスクトップ/IDS LLM seminar/DSC00659.jpg",
                         "url": "https://drive.google.com/uc?id=1NjnSab2aEtJytYajM9FqeXsLm4ItxTsJ&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/IDS LLM seminar/DSC00657.jpg",
+                        "path": "/home/user/デスクトップ/IDS LLM seminar/DSC00657.jpg",
                         "url": "https://drive.google.com/uc?id=1untYr5vS_wCVd3-5cfdUegBBILT4tHzF&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/IDS LLM seminar/DSC00574.jpg",
+                        "path": "/home/user/デスクトップ/IDS LLM seminar/DSC00574.jpg",
                         "url": "https://drive.google.com/uc?id=1V3g4z2QhIHx48LbeaNx31nMosxYPgtzY&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/IDS LLM seminar/DSC00554.jpg",
+                        "path": "/home/user/デスクトップ/IDS LLM seminar/DSC00554.jpg",
                         "url": "https://drive.google.com/uc?id=1DNz3iZmNk6-dazqXilOFkRpgUahU57zd&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/IDS LLM seminar/DSC00495.jpg",
+                        "path": "/home/user/デスクトップ/IDS LLM seminar/DSC00495.jpg",
                         "url": "https://drive.google.com/uc?id=1_crKe2tdI4Kjg0Xop8vHo7yN9KACJTJF&export=download"
                     },
                     {
-                        "path": "/home/user/Desktop/IDS LLM seminar/DSC00454.jpg",
+                        "path": "/home/user/デスクトップ/IDS LLM seminar/DSC00454.jpg",
                         "url": "https://drive.google.com/uc?id=1t9L7fVQVxjovTQufetlogulIctn7DF_L&export=download"
                     }
                 ]
@@ -59,7 +59,7 @@
                     "command": [
                         "rm",
                         "-rf",
-                        "/home/user/Desktop/presenter"
+                        "/home/user/デスクトップ/presenter"
                     ]
                 }
             },
@@ -68,9 +68,9 @@
                 "parameters": {
                     "command": [
                         "unzip",
-                        "/home/user/Desktop/presenter.zip",
+                        "/home/user/デスクトップ/presenter.zip",
                         "-d",
-                        "/home/user/Desktop"
+                        "/home/user/デスクトップ"
                     ]
                 }
             }
@@ -79,10 +79,10 @@
         "result": {
             "type": "vm_file",
             "path": [
-                "/home/user/Desktop/presenter/DSC00657.jpg",
-                "/home/user/Desktop/presenter/DSC00574.jpg",
-                "/home/user/Desktop/presenter/DSC00554.jpg",
-                "/home/user/Desktop/presenter/DSC00495.jpg"
+                "/home/user/デスクトップ/presenter/DSC00657.jpg",
+                "/home/user/デスクトップ/presenter/DSC00574.jpg",
+                "/home/user/デスクトップ/presenter/DSC00554.jpg",
+                "/home/user/デスクトップ/presenter/DSC00495.jpg"
             ],
             "dest": [
                 "DSC00657.jpg",

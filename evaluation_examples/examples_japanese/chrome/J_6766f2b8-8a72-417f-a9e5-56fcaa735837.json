@@ -1,7 +1,7 @@
 {
     "id": "J_6766f2b8-8a72-417f-a9e5-56fcaa735837",
     "snapshot": "chrome",
-    "instruction": "Chromeで/home/user/Desktop/に解凍した拡張機能をインストールするのを手伝っていただけますか？",
+    "instruction": "Chromeで/home/user/デスクトップ/に解凍した拡張機能をインストールするのを手伝っていただけますか？",
     "source": "https://support.google.com/chrome/thread/205881926/it-s-possible-to-load-unpacked-extension-automatically-in-chrome?hl=en",
     "config": [
         {
@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?id=1t-6Qrpgox0UvqQ0EAhkCnSV8Rqsp4cMF&export=download",
-                        "path": "/home/user/Desktop/helloExtension.zip"
+                        "path": "/home/user/デスクトップ/helloExtension.zip"
                     }
                 ]
             }
@@ -18,7 +18,7 @@
         {
             "type": "execute",
             "parameters": {
-                "command": "echo password | sudo -S apt-get update -y && echo password | sudo -S apt-get install unzip -y && unzip /home/user/Desktop/helloExtension.zip -d /home/user/Desktop/ && rm /home/user/Desktop/helloExtension.zip",
+                "command": "echo password | sudo -S apt-get update -y && echo password | sudo -S apt-get install unzip -y && unzip /home/user/デスクトップ/helloExtension.zip -d /home/user/デスクトップ/ && rm /home/user/デスクトップ/helloExtension.zip",
                 "shell": true
             }
         },
@@ -54,7 +54,7 @@
         "expected": {
             "type": "rule",
             "rules": {
-                "expected": "/home/user/Desktop/helloExtension"
+                "expected": "/home/user/デスクトップ/helloExtension"
             }
         }
     }

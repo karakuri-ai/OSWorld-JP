@@ -24,7 +24,7 @@
         "func": "check_image_file_size",
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/compressed.jpeg",
+            "path": "/home/user/デスクトップ/compressed.jpeg",
             "dest": "compressed.jpeg"
         },
         "expected": {

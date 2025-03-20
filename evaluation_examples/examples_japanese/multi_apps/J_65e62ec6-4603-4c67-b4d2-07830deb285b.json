@@ -10,7 +10,7 @@
                 "files": [
                     {
                         "url": "https://drive.google.com/uc?id=1V2Ic9V3_5sxwynRMkLCDyqwBVUNe7PSK&export=download",
-                        "path": "/home/user/Desktop/answers.json"
+                        "path": "/home/user/デスクトップ/answers.json"
                     }
                 ]
             }
@@ -18,7 +18,7 @@
         {
             "type": "open",
             "parameters": {
-                "path": "/home/user/Desktop/answers.json"
+                "path": "/home/user/デスクトップ/answers.json"
             }
         }
     ],
@@ -60,7 +60,7 @@
         },
         "result": {
             "type": "vm_file",
-            "path": "/home/user/Desktop/results.docx",
+            "path": "/home/user/デスクトップ/results.docx",
             "dest": "results.docx"
         },
         "options": {

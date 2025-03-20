@@ -21,8 +21,10 @@ from google.api_core.exceptions import InvalidArgument, ResourceExhausted, Inter
 from groq import Groq
 from requests.exceptions import SSLError
 
+from requests_aws4auth import AWS4Auth
+
 from mm_agents.accessibility_tree_wrap.heuristic_retrieve import filter_nodes, draw_bounding_boxes
-from mm_agents.prompts import SYS_PROMPT_IN_SCREENSHOT_OUT_CODE, SYS_PROMPT_IN_SCREENSHOT_OUT_ACTION, \
+from mm_agents.prompts_japanese import SYS_PROMPT_IN_SCREENSHOT_OUT_CODE, SYS_PROMPT_IN_SCREENSHOT_OUT_ACTION, \
     SYS_PROMPT_IN_A11Y_OUT_CODE, SYS_PROMPT_IN_A11Y_OUT_ACTION, \
     SYS_PROMPT_IN_BOTH_OUT_CODE, SYS_PROMPT_IN_BOTH_OUT_ACTION, \
     SYS_PROMPT_IN_SOM_OUT_TAG
@@ -610,56 +612,72 @@ class PromptAgent:
                     "role": message["role"],
                     "content": []
                 }
+                # Ensure each message has one text or one text with one image
                 assert len(message["content"]) in [1, 2], "One text, or one text with one image"
                 for part in message["content"]:
-
-                    if part['type'] == "image_url":
-                        image_source = {}
-                        image_source["type"] = "base64"
-                        image_source["media_type"] = "image/png"
-                        image_source["data"] = part['image_url']['url'].replace("data:image/png;base64,", "")
-                        claude_message['content'].append({"type": "image", "source": image_source})
-
-                    if part['type'] == "text":
-                        claude_message['content'].append({"type": "text", "text": part['text']})
-
+                    if part["type"] == "image_url":
+                        image_source = {
+                            "type": "base64",
+                            "media_type": "image/png",
+                            "data": part["image_url"]["url"].replace("data:image/png;base64,", "")
+                        }
+                        claude_message["content"].append({"type": "image", "source": image_source})
+                    elif part["type"] == "text":
+                        claude_message["content"].append({"type": "text", "text": part["text"]})
                 claude_messages.append(claude_message)
 
-            # the claude not support system message in our endpoint, so we concatenate it at the first user message
-            if claude_messages[0]['role'] == "system":
-                claude_system_message_item = claude_messages[0]['content'][0]
-                claude_messages[1]['content'].insert(0, claude_system_message_item)
+            # Since the endpoint doesn’t support system messages, we inject it into the first user message.
+            if claude_messages[0]["role"] == "system":
+                system_item = claude_messages[0]["content"][0]
+                claude_messages[1]["content"].insert(0, system_item)
                 claude_messages.pop(0)
 
             logger.debug("CLAUDE MESSAGE: %s", repr(claude_messages))
 
-            headers = {
-                "x-api-key": os.environ["ANTHROPIC_API_KEY"],
-                "anthropic-version": "2023-06-01",
-                "content-type": "application/json"
-            }
-
+            # Build payload with the fixed modelId
             payload = {
-                "model": self.model,
+                "modelId": "anthropic.claude-3-5-sonnet-20241022-v2:0",
                 "max_tokens": max_tokens,
                 "messages": claude_messages,
                 "temperature": temperature,
                 "top_p": top_p
             }
 
+            # Headers (no API key needed now)
+            headers = {
+                "anthropic-version": "2023-06-01",
+                "content-type": "application/json"
+            }
+
+            # Set up AWS SigV4 authentication using credentials from environment variables.
+            aws_access_key = os.environ["AWS_ACCESS_KEY_ID"]
+            aws_secret_key = os.environ["AWS_SECRET_ACCESS_KEY"]
+            aws_session_token = os.environ.get("AWS_SESSION_TOKEN")
+            region = os.environ.get("AWS_REGION", "ap-northeast-1")  # adjust as needed
+            service = "execute-api"  # adjust if calling a different AWS service
+
+            aws_auth = AWS4Auth(
+                aws_access_key,
+                aws_secret_key,
+                region,
+                service,
+                session_token=aws_session_token
+            )
+
+            # Make the POST request (ensure the endpoint URL is correct for your AWS-backed API)
             response = requests.post(
-                "https://api.anthropic.com/v1/messages",
+                "https://api.anthropic.com/v1/messages",  # Update endpoint URL if needed
+                auth=aws_auth,
                 headers=headers,
                 json=payload
             )
 
             if response.status_code != 200:
-
                 logger.error("Failed to call LLM: " + response.text)
                 time.sleep(5)
                 return ""
             else:
-                return response.json()['content'][0]['text']
+                return response.json()["content"][0]["text"]
 
         elif self.model.startswith("mistral"):
             messages = payload["messages"]
@@ -765,152 +783,85 @@ class PromptAgent:
                 print("Failed to call LLM: ", response.status_code)
                 return ""
 
-        elif self.model in ["gemini-pro", "gemini-pro-vision"]:
+        elif self.model in ["gemini-pro", "gemini-pro-vision", "gemini-1.5-pro-latest", "gemini-2.0-flash-001"]:
             messages = payload["messages"]
             max_tokens = payload["max_tokens"]
             top_p = payload["top_p"]
             temperature = payload["temperature"]
 
+            # gemini-pro はテキスト入力のみをサポートしているためチェック
             if self.model == "gemini-pro":
-                assert self.observation_type in pure_text_settings, f"The model {self.model} can only support text-based input, please consider change based model or settings"
+                assert self.observation_type in pure_text_settings, (
+                    f"The model {self.model} can only support text-based input. Please change model or settings."
+                )
 
             gemini_messages = []
+            role_mapping = {"assistant": "model", "user": "user", "system": "system"}
             for i, message in enumerate(messages):
-                role_mapping = {
-                    "assistant": "model",
-                    "user": "user",
-                    "system": "system"
-                }
-                gemini_message = {
-                    "role": role_mapping[message["role"]],
-                    "parts": []
-                }
-                assert len(message["content"]) in [1, 2], "One text, or one text with one image"
+                # 各メッセージはテキストのみ、またはテキストと1枚の画像である必要がある
+                assert len(message["content"]) in [1, 2], "Each message must have one text or one text with one image."
+                gemini_message = {"role": role_mapping[message["role"]], "parts": []}
 
-                # The gemini only support the last image as single image input
-                if i == len(messages) - 1:
-                    for part in message["content"]:
-                        gemini_message['parts'].append(part['text']) if part['type'] == "text" \
-                            else gemini_message['parts'].append(encoded_img_to_pil_img(part['image_url']['url']))
-                else:
-                    for part in message["content"]:
-                        gemini_message['parts'].append(part['text']) if part['type'] == "text" else None
-
-                gemini_messages.append(gemini_message)
-
-            # the gemini not support system message in our endpoint, so we concatenate it at the first user message
-            if gemini_messages[0]['role'] == "system":
-                gemini_messages[1]['parts'][0] = gemini_messages[0]['parts'][0] + "\n" + gemini_messages[1]['parts'][0]
-                gemini_messages.pop(0)
-
-            # since the gemini-pro-vision donnot support multi-turn message
-            if self.model == "gemini-pro-vision":
-                message_history_str = ""
-                for message in gemini_messages:
-                    message_history_str += "<|" + message['role'] + "|>\n" + message['parts'][0] + "\n"
-                gemini_messages = [{"role": "user", "parts": [message_history_str, gemini_messages[-1]['parts'][1]]}]
-                # gemini_messages[-1]['parts'][1].save("output.png", "PNG")
-
-            # print(gemini_messages)
-            api_key = os.environ.get("GENAI_API_KEY")
-            assert api_key is not None, "Please set the GENAI_API_KEY environment variable"
-            genai.configure(api_key=api_key)
-            logger.info("Generating content with Gemini model: %s", self.model)
-            request_options = {"timeout": 120}
-            gemini_model = genai.GenerativeModel(self.model)
-
-            response = gemini_model.generate_content(
-                gemini_messages,
-                generation_config={
-                    "candidate_count": 1,
-                    # "max_output_tokens": max_tokens,
-                    "top_p": top_p,
-                    "temperature": temperature
-                },
-                safety_settings={
-                    "harassment": "block_none",
-                    "hate": "block_none",
-                    "sex": "block_none",
-                    "danger": "block_none"
-                },
-                request_options=request_options
-            )
-            return response.text
-
-        elif self.model == "gemini-1.5-pro-latest":
-            messages = payload["messages"]
-            max_tokens = payload["max_tokens"]
-            top_p = payload["top_p"]
-            temperature = payload["temperature"]
-
-            gemini_messages = []
-            for i, message in enumerate(messages):
-                role_mapping = {
-                    "assistant": "model",
-                    "user": "user",
-                    "system": "system"
-                }
-                assert len(message["content"]) in [1, 2], "One text, or one text with one image"
-                gemini_message = {
-                    "role": role_mapping[message["role"]],
-                    "parts": []
-                }
-
-                # The gemini only support the last image as single image input
+                # 画像がある場合は先頭に挿入、テキストは末尾に追加
                 for part in message["content"]:
-
-                    if part['type'] == "image_url":
-                        # Put the image at the beginning of the message
-                        gemini_message['parts'].insert(0, encoded_img_to_pil_img(part['image_url']['url']))
-                    elif part['type'] == "text":
-                        gemini_message['parts'].append(part['text'])
+                    if part["type"] == "image_url":
+                        gemini_message["parts"].insert(0, encoded_img_to_pil_img(part["image_url"]["url"]))
+                    elif part["type"] == "text":
+                        gemini_message["parts"].append(part["text"])
                     else:
-                        raise ValueError("Invalid content type: " + part['type'])
-
+                        raise ValueError("Invalid content type: " + part["type"])
                 gemini_messages.append(gemini_message)
 
-            # the system message of gemini-1.5-pro-latest need to be inputted through model initialization parameter
+            # システムメッセージの処理
             system_instruction = None
-            if gemini_messages[0]['role'] == "system":
-                system_instruction = gemini_messages[0]['parts'][0]
-                gemini_messages.pop(0)
+            if gemini_messages and gemini_messages[0]["role"] == "system":
+                # gemini-1.5-pro-latest と gemini-2.0-flash-001 では先頭のシステムメッセージを抽出
+                if self.model in ["gemini-1.5-pro-latest", "gemini-2.0-flash-001"]:
+                    system_instruction = gemini_messages[0]["parts"][0]
+                    gemini_messages.pop(0)
+                else:
+                    if len(gemini_messages) > 1:
+                        gemini_messages[1]["parts"][0] = (
+                            gemini_messages[0]["parts"][0] + "\n" + gemini_messages[1]["parts"][0]
+                        )
+                        gemini_messages.pop(0)
+                    else:
+                        system_instruction = gemini_messages[0]["parts"][0]
+                        gemini_messages.pop(0)
 
-            api_key = os.environ.get("GENAI_API_KEY")
-            assert api_key is not None, "Please set the GENAI_API_KEY environment variable"
-            genai.configure(api_key=api_key)
+            # Google Application Default Credentials 経由の認証を利用（事前に環境変数に認証情報ファイルパスを設定）
+            genai.configure()
             logger.info("Generating content with Gemini model: %s", self.model)
             request_options = {"timeout": 120}
-            gemini_model = genai.GenerativeModel(
-                self.model,
-                system_instruction=system_instruction
-            )
 
-            with open("response.json", "w") as f:
-                messages_to_save = []
-                for message in gemini_messages:
-                    messages_to_save.append({
-                        "role": message["role"],
-                        "content": [part if isinstance(part, str) else "image" for part in message["parts"]]
-                    })
-                json.dump(messages_to_save, f, indent=4)
+            # モデル初期化：gemini-1.5-pro-latest および gemini-2.0-flash-001 はシステム指示を渡す
+            if self.model in ["gemini-1.5-pro-latest", "gemini-2.0-flash-001"]:
+                gemini_model = genai.GenerativeModel(self.model, system_instruction=system_instruction)
+            else:
+                gemini_model = genai.GenerativeModel(self.model)
+
+            # generation_config に max_tokens を追加（max_output_tokens として）
+            generation_config = {
+                "candidate_count": 1,
+                "max_output_tokens": max_tokens,
+                "top_p": top_p,
+                "temperature": temperature
+            }
+
+            # 安全設定：ドキュメントに準拠したキー・値で指定
+            safety_settings = {
+                "HARM_CATEGORY_HARASSMENT": "BLOCK_NONE",
+                "HARM_CATEGORY_HATE_SPEECH": "BLOCK_NONE",
+                "HARM_CATEGORY_SEXUALLY_EXPLICIT": "BLOCK_NONE",
+                "HARM_CATEGORY_DANGEROUS_CONTENT": "BLOCK_NONE"
+            }
 
             response = gemini_model.generate_content(
                 gemini_messages,
-                generation_config={
-                    "candidate_count": 1,
-                    # "max_output_tokens": max_tokens,
-                    "top_p": top_p,
-                    "temperature": temperature
-                },
-                safety_settings={
-                    "harassment": "block_none",
-                    "hate": "block_none",
-                    "sex": "block_none",
-                    "danger": "block_none"
-                },
+                generation_config=generation_config,
+                safety_settings=safety_settings,
                 request_options=request_options
             )
-
             return response.text
 
         elif self.model == "llama3-70b":

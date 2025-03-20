@@ -25,12 +25,12 @@
         "result": [
             {
                 "type": "vm_file",
-                "path": "/home/user/Desktop/System_Resources_Report.txt",
+                "path": "/home/user/デスクトップ/System_Resources_Report.txt",
                 "dest": "System_Resources_Report.txt"
             },
             {
                 "type": "vm_file",
-                "path": "/home/user/Desktop/System_Resources_Report.txt",
+                "path": "/home/user/デスクトップ/System_Resources_Report.txt",
                 "dest": "System_Resources_Report.txt"
             }
         ],
