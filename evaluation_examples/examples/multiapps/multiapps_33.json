@@ -1,5 +1,5 @@
 {
-  "id": "48d05431-6cd5-4e76-82eb-12b60d823f7d",
+  "id": "multiapps_33",
   "snapshot": "os",
   "instruction": "When I ran \"conda install datasets\" in terminal, I got \"conda: command not found\". Could you help me solve it?",
   "source": "authors",

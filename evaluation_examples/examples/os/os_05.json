@@ -1,5 +1,5 @@
 {
-  "id": "37887e8c-da15-4192-923c-08fa390a176d",
+  "id": "os_05",
   "snapshot": "os",
   "instruction": "Compress all files in the \"/tmp/test_files\" directory tree that were last modified 30 days ago",
   "source": "NL2Bash",
@@ -83,8 +83,7 @@
         "include": [
           "Success: The task was completed correctly."
         ],
-        "exclude": [
-        ]
+        "exclude": []
       }
     }
   }

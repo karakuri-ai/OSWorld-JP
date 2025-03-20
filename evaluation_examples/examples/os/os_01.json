@@ -1,5 +1,5 @@
 {
-  "id": "0b35aee5-6f2a-4c71-b2da-aed0105fdbde",
+  "id": "os_01",
   "snapshot": "os",
   "instruction": "Calculate the md5 sum of \"submission.cpp\" with less sensitivity to superficial changes like comments or whitespace",
   "source": "NL2Bash",

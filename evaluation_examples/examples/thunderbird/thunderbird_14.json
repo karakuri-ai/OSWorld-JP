@@ -1,5 +1,5 @@
 {
-  "id": "c9e7eaf2-b1a1-4efc-a982-721972fa9f02",
+  "id": "thunderbird_14",
   "snapshot": "thunderbird",
   "instruction": "Thunderbird's message filters seem to only fire on Inbox automatically. If you want to filter on subfolders, you'd have to start this filter manually. I am wondering if the filter can be applied automatically. Could you help me apply automatic message filters to subfolders",
   "source": "https://superuser.com/questions/544480/how-to-apply-automatic-message-filters-to-subfolders-too?noredirect=1&lq=1",

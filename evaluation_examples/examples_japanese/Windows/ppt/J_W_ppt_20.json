@@ -1,73 +1,73 @@
 {
-    "id": "J_5d901039-a89c-4bfb-967b-bf66f4df075e",
-    "snapshot": "ppt",
-    "instruction": "最初のページにあるコロンブスの長方形の画像を表紙にしたいです。この画像をページ全体に合わせて引き伸ばし、比率を保ちながら中央に配置するのを手伝っていただけますか？",
-    "source": "https://superuser.com/questions/986776/how-can-i-stretch-an-image-in-a-libreoffice-impress-presentation-to-fill-the-pag",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://docs.google.com/presentation/d/1Y-MapQ2WrJoz0xcpLe3VZeK9VdN6hQ_1/export/pptx",
-                        "path": "C:\\Users\\User\\CPD_Background_Investigation_Process.pptx"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "open",
-            "parameters": {
-                "path": "C:\\Users\\User\\CPD_Background_Investigation_Process.pptx"
-            }
-        }
-    ],
-    "trajectory": "trajectories/5d901039-a89c-4bfb-967b-bf66f4df075e",
-    "related_apps": [
-        "ppt"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "activate_window",
-                "parameters": {
-                    "window_name": "CPD_Background_Investigation_Process - PowerPoint",
-                    "strict": true
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            },
-            {
-                "type": "execute",
-                "parameters": {
-                    "command": [
-                        "python",
-                        "-c",
-                        "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5);"
-                    ]
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            }
-        ],
-        "func": "check_image_stretch_and_center",
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://docs.google.com/presentation/d/1Y-MapQ2WrJoz0xcpLe3VZeK9VdN6hQ_1/export/pptx",
-            "dest": "CPD_Background_Investigation_Process_Original.pptx"
-        },
-        "result": {
-            "type": "vm_file",
-            "path": "C:\\Users\\User\\CPD_Background_Investigation_Process.pptx",
-            "dest": "CPD_Background_Investigation_Process.pptx"
-        }
+  "id": "J_W_ppt_20",
+  "snapshot": "ppt",
+  "instruction": "最初のページにあるコロンブスの長方形の画像を表紙にしたいです。この画像をページ全体に合わせて引き伸ばし、比率を保ちながら中央に配置するのを手伝っていただけますか？",
+  "source": "https://superuser.com/questions/986776/how-can-i-stretch-an-image-in-a-libreoffice-impress-presentation-to-fill-the-pag",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://docs.google.com/presentation/d/1Y-MapQ2WrJoz0xcpLe3VZeK9VdN6hQ_1/export/pptx",
+            "path": "C:\\Users\\User\\CPD_Background_Investigation_Process.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\CPD_Background_Investigation_Process.pptx"
+      }
     }
+  ],
+  "trajectory": "trajectories/5d901039-a89c-4bfb-967b-bf66f4df075e",
+  "related_apps": [
+    "ppt"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "CPD_Background_Investigation_Process - PowerPoint",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5);"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ],
+    "func": "check_image_stretch_and_center",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://docs.google.com/presentation/d/1Y-MapQ2WrJoz0xcpLe3VZeK9VdN6hQ_1/export/pptx",
+      "dest": "CPD_Background_Investigation_Process_Original.pptx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\CPD_Background_Investigation_Process.pptx",
+      "dest": "CPD_Background_Investigation_Process.pptx"
+    }
+  }
 }

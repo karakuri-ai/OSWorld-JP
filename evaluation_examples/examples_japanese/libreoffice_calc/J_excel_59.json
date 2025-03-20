@@ -1,95 +1,95 @@
 {
-    "id": "J_97dd78c1-4ba3-4bfd-bbd4-c938532dbcc6",
-    "snapshot": "libreoffice_calc",
-    "instruction": "各従業員の総売上を「合計」という新しい列に計算し、各月の総売上を「合計」という新しい行に計算してください。その後、総売上が最も多い従業員を青く塗りつぶし、最も少ない従業員を赤く塗りつぶしてください。",
-    "source": "SheetCopilot@150",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://drive.google.com/uc?id=1Non152JxCxXJI2jL-nVf58YlxoTQXOhw&export=download",
-                        "path": "/home/user/SalesRep.xlsx"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "open",
-            "parameters": {
-                "path": "/home/user/SalesRep.xlsx"
-            }
-        }
-    ],
-    "trajectory": "trajectories/97dd78c1-4ba3-4bfd-bbd4-c938532dbcc6",
-    "related_apps": [
-        "libreoffice_calc"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "activate_window",
-                "parameters": {
-                    "window_name": "SalesRep.xlsx - LibreOffice Calc",
-                    "strict": true
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            },
-            {
-                "type": "execute",
-                "parameters": {
-                    "command": [
-                        "python",
-                        "-c",
-                        "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
-                    ]
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            }
-        ],
-        "func": "compare_table",
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://drive.google.com/uc?id=1csjMkqqs_6Few5TySjFVHBuW4jVOJDdq&export=download",
-            "dest": "1_SalesRep_gt1.xlsx"
-        },
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/SalesRep.xlsx",
-            "dest": "SalesRep.xlsx"
-        },
-        "options": {
-            "rules": [
-                {
-                    "type": "sheet_data",
-                    "sheet_idx0": 0,
-                    "sheet_idx1": "EI0"
-                },
-                {
-                    "type": "style",
-                    "sheet_idx0": 0,
-                    "sheet_idx1": "EI0",
-                    "props": [
-                        "font_bold",
-                        "font_color",
-                        "bgcolor",
-                        "font_name",
-                        "font_italic",
-                        "font_underline"
-                    ]
-                }
-            ]
-        }
+  "id": "J_excel_59",
+  "snapshot": "libreoffice_calc",
+  "instruction": "各従業員の総売上を「合計」という新しい列に計算し、各月の総売上を「合計」という新しい行に計算してください。その後、総売上が最も多い従業員を青く塗りつぶし、最も少ない従業員を赤く塗りつぶしてください。",
+  "source": "SheetCopilot@150",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://drive.google.com/uc?id=1Non152JxCxXJI2jL-nVf58YlxoTQXOhw&export=download",
+            "path": "/home/user/SalesRep.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/SalesRep.xlsx"
+      }
     }
+  ],
+  "trajectory": "trajectories/97dd78c1-4ba3-4bfd-bbd4-c938532dbcc6",
+  "related_apps": [
+    "libreoffice_calc"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "SalesRep.xlsx - LibreOffice Calc",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ],
+    "func": "compare_table",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://drive.google.com/uc?id=1csjMkqqs_6Few5TySjFVHBuW4jVOJDdq&export=download",
+      "dest": "1_SalesRep_gt1.xlsx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/SalesRep.xlsx",
+      "dest": "SalesRep.xlsx"
+    },
+    "options": {
+      "rules": [
+        {
+          "type": "sheet_data",
+          "sheet_idx0": 0,
+          "sheet_idx1": "EI0"
+        },
+        {
+          "type": "style",
+          "sheet_idx0": 0,
+          "sheet_idx1": "EI0",
+          "props": [
+            "font_bold",
+            "font_color",
+            "bgcolor",
+            "font_name",
+            "font_italic",
+            "font_underline"
+          ]
+        }
+      ]
+    }
+  }
 }

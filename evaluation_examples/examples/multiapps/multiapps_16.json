@@ -1,5 +1,5 @@
 {
-  "id": "2c1ebcd7-9c6d-4c9a-afad-900e381ecd5e",
+  "id": "multiapps_16",
   "snapshot": "libreoffice_calc",
   "instruction": "Could you please take a moment to review the 'case study' file located within the 'student work' folder? I'm particularly interested in ensuring that the references section at the end of the document adheres to the APA 7th edition formatting guidelines. Making the necessary adjustments if it turns out that the current formatting does not align with APA 7 standards or exists some errors.",
   "source": "authors",
@@ -87,8 +87,7 @@
     }
   ],
   "trajectory": "trajectories/2c1ebcd7-9c6d-4c9a-afad-900e381ecd5e",
-  "related_apps": [
-  ],
+  "related_apps": [],
   "evaluator": {
     "postconfig": [
       {

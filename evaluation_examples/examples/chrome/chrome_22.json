@@ -1,5 +1,5 @@
 {
-  "id": "7a5a7856-f1b6-42a4-ade9-1ca81ca0f263",
+  "id": "chrome_22",
   "snapshot": "chrome",
   "instruction": "Can you save this webpage I'm looking at to bookmarks bar so I can come back to it later?",
   "source": "https://www.youtube.com/watch?v=ZaZ8GcTxjXA",
@@ -46,7 +46,9 @@
       "type": "rule",
       "rules": {
         "type": "bookmark_bar_websites_urls",
-        "urls": ["https://jalammar.github.io/illustrated-transformer/"]
+        "urls": [
+          "https://jalammar.github.io/illustrated-transformer/"
+        ]
       }
     }
   }

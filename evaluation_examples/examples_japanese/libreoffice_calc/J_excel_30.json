@@ -1,82 +1,82 @@
 {
-    "id": "J_4172ea6e-6b77-4edb-a9cc-c0014bd1603b",
-    "snapshot": "libreoffice_calc",
-    "instruction": "すべてのローンの満期日を算出したいです。「満期日」という見出しの新しい列にお願いします。",
-    "source": "SheetCopilot@113",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://drive.google.com/uc?id=1OnZMwITcG2Jboz1SUuDO26vrg55ZOHvy&export=download",
-                        "path": "/home/user/MaturityDate.xlsx"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "open",
-            "parameters": {
-                "path": "/home/user/MaturityDate.xlsx"
-            }
-        }
-    ],
-    "trajectory": "trajectories/4172ea6e-6b77-4edb-a9cc-c0014bd1603b",
-    "related_apps": [
-        "libreoffice_calc"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "activate_window",
-                "parameters": {
-                    "window_name": "MaturityDate.xlsx - LibreOffice Calc",
-                    "strict": true
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            },
-            {
-                "type": "execute",
-                "parameters": {
-                    "command": [
-                        "python",
-                        "-c",
-                        "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
-                    ]
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            }
-        ],
-        "func": "compare_table",
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://drive.google.com/uc?id=1UilBUlOjzD97t7kYyslbNhJidIkKApKA&export=download",
-            "dest": "1_MaturityDate_gt1.xlsx"
-        },
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/MaturityDate.xlsx",
-            "dest": "MaturityDate.xlsx"
-        },
-        "options": {
-            "rules": [
-                {
-                    "type": "sheet_data",
-                    "sheet_idx0": 0,
-                    "sheet_idx1": "EI0"
-                }
-            ]
-        }
+  "id": "J_excel_30",
+  "snapshot": "libreoffice_calc",
+  "instruction": "すべてのローンの満期日を算出したいです。「満期日」という見出しの新しい列にお願いします。",
+  "source": "SheetCopilot@113",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://drive.google.com/uc?id=1OnZMwITcG2Jboz1SUuDO26vrg55ZOHvy&export=download",
+            "path": "/home/user/MaturityDate.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/MaturityDate.xlsx"
+      }
     }
+  ],
+  "trajectory": "trajectories/4172ea6e-6b77-4edb-a9cc-c0014bd1603b",
+  "related_apps": [
+    "libreoffice_calc"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "MaturityDate.xlsx - LibreOffice Calc",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ],
+    "func": "compare_table",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://drive.google.com/uc?id=1UilBUlOjzD97t7kYyslbNhJidIkKApKA&export=download",
+      "dest": "1_MaturityDate_gt1.xlsx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/MaturityDate.xlsx",
+      "dest": "MaturityDate.xlsx"
+    },
+    "options": {
+      "rules": [
+        {
+          "type": "sheet_data",
+          "sheet_idx0": 0,
+          "sheet_idx1": "EI0"
+        }
+      ]
+    }
+  }
 }

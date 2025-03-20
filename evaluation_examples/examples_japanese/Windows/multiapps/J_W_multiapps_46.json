@@ -1,17 +1,17 @@
 {
-    "id": "J_6d72aad6-187a-4392-a4c4-ed87269c51cf",
-    "snapshot": "libreoffice_calc",
-    "instruction": "MS Office PowerPointのプレゼンテーションを動画に変換して、VLCで再生していただけますか？",
-    "source": "https://superuser.com/questions/923171/converting-openoffice-impress-presentation-to-video-without-screen-recording",
-    "config": [],
-    "trajectory": "trajectories/6d72aad6-187a-4392-a4c4-ed87269c51cf",
-    "related_apps": [
-        "excel",
-        "powerpoint",
-        "word",
-        "vlc"
-    ],
-    "evaluator": {
-        "func": "infeasible"
-    }
+  "id": "J_W_multiapps_46",
+  "snapshot": "libreoffice_calc",
+  "instruction": "MS Office PowerPointのプレゼンテーションを動画に変換して、VLCで再生していただけますか？",
+  "source": "https://superuser.com/questions/923171/converting-openoffice-impress-presentation-to-video-without-screen-recording",
+  "config": [],
+  "trajectory": "trajectories/6d72aad6-187a-4392-a4c4-ed87269c51cf",
+  "related_apps": [
+    "excel",
+    "powerpoint",
+    "word",
+    "vlc"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  }
 }

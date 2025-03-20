@@ -1,82 +1,82 @@
 {
-    "id": "J_42e0a640-4f19-4b28-973d-729602b5a4a7",
-    "snapshot": "libreoffice_calc",
-    "instruction": "「総収益」と「総費用」を計算し、その結果を新しいシートの「総収益」と「総費用」という2つの列の下に記入してください。",
-    "source": "SheetCopilot@122",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://docs.google.com/spreadsheets/d/1wHn2aAdyzfwF2vqwC1ipcdWz-id0z2KH/export?format=xlsx",
-                        "path": "/home/user/NetIncome.xlsx"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "open",
-            "parameters": {
-                "path": "/home/user/NetIncome.xlsx"
-            }
-        }
-    ],
-    "trajectory": "trajectories/42e0a640-4f19-4b28-973d-729602b5a4a7",
-    "related_apps": [
-        "libreoffice_calc"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "activate_window",
-                "parameters": {
-                    "window_name": "NetIncome.xlsx - LibreOffice Calc",
-                    "strict": true
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            },
-            {
-                "type": "execute",
-                "parameters": {
-                    "command": [
-                        "python",
-                        "-c",
-                        "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
-                    ]
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            }
-        ],
-        "func": "compare_table",
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://docs.google.com/spreadsheets/d/1eBpFnpu9j565o-vECXZkRchcg1AN-GBc/export?format=xlsx",
-            "dest": "2_NetIncome_gt1.xlsx"
-        },
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/NetIncome.xlsx",
-            "dest": "NetIncome.xlsx"
-        },
-        "options": {
-            "rules": [
-                {
-                    "type": "sheet_data",
-                    "sheet_idx0": "RNSheet2",
-                    "sheet_idx1": "ENSheet2"
-                }
-            ]
-        }
+  "id": "J_excel_32",
+  "snapshot": "libreoffice_calc",
+  "instruction": "「総収益」と「総費用」を計算し、その結果を新しいシートの「総収益」と「総費用」という2つの列の下に記入してください。",
+  "source": "SheetCopilot@122",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://docs.google.com/spreadsheets/d/1wHn2aAdyzfwF2vqwC1ipcdWz-id0z2KH/export?format=xlsx",
+            "path": "/home/user/NetIncome.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/NetIncome.xlsx"
+      }
     }
+  ],
+  "trajectory": "trajectories/42e0a640-4f19-4b28-973d-729602b5a4a7",
+  "related_apps": [
+    "libreoffice_calc"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "NetIncome.xlsx - LibreOffice Calc",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ],
+    "func": "compare_table",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://docs.google.com/spreadsheets/d/1eBpFnpu9j565o-vECXZkRchcg1AN-GBc/export?format=xlsx",
+      "dest": "2_NetIncome_gt1.xlsx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/NetIncome.xlsx",
+      "dest": "NetIncome.xlsx"
+    },
+    "options": {
+      "rules": [
+        {
+          "type": "sheet_data",
+          "sheet_idx0": "RNSheet2",
+          "sheet_idx1": "ENSheet2"
+        }
+      ]
+    }
+  }
 }

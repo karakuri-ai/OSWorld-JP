@@ -1,142 +1,142 @@
 {
-    "id": "J_d1acdb87-bb67-4f30-84aa-990e56a09c92",
-    "snapshot": "libreoffice_calc",
-    "instruction": "こんにちは！私は東京への料理の冒険を心待ちにしており、ぜひ訪れたいレストランのリストを作成しました。しかし、これらの店舗に関するいくつかの必要な詳細をまとめるために、少し助けていただけると助かります。これらのレストランをGoogleマップで検索していただけますでしょうか。特に、住所や利用可能なウェブサイト、連絡先電話番号を取得したいと思っています。この情報を集めて私のフォームファイルに入力していただければ、非常に感謝いたします。どうぞよろしくお願いします！",
-    "source": "authors",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "path": "/home/user/デスクトップ/restaurants.txt",
-                        "url": "https://drive.google.com/uc?export=download&id=1aTIcnr94TsBv9AY3teng-jok8nvQuA7S"
-                    },
-                    {
-                        "path": "/home/user/デスクトップ/MUST_VISIT.xlsx",
-                        "url": "https://docs.google.com/spreadsheets/d/1XxsRC6XPI7dQO56t2dfT-XXDXUdy0VlS/export?format=xlsx"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "open",
-            "parameters": {
-                "path": "/home/user/デスクトップ/MUST_VISIT.xlsx"
-            }
-        },
-        {
-            "type": "open",
-            "parameters": {
-                "path": "/home/user/デスクトップ/restaurants.txt"
-            }
-        },
-        {
-            "type": "sleep",
-            "parameters": {
-                "seconds": 5
-            }
-        },
-        {
-            "type": "activate_window",
-            "parameters": {
-                "window_name": "restaurants.txt (~/Desktop) - gedit",
-                "strict": true
-            }
-        }
-    ],
-    "trajectory": "trajectories/d1acdb87-bb67-4f30-84aa-990e56a09c92",
-    "related_apps": [
-        "os",
-        "chrome",
-        "libreoffice_calc"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "activate_window",
-                "parameters": {
-                    "window_name": "MUST_VISIT.xlsx - LibreOffice Calc",
-                    "strict": true
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            },
-            {
-                "type": "execute",
-                "parameters": {
-                    "command": [
-                        "python",
-                        "-c",
-                        "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
-                    ]
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 1.0
-                }
-            }
-        ],
-        "func": "compare_table",
-        "result": {
-            "type": "vm_file",
+  "id": "J_multiapps_86",
+  "snapshot": "libreoffice_calc",
+  "instruction": "こんにちは！私は東京への料理の冒険を心待ちにしており、ぜひ訪れたいレストランのリストを作成しました。しかし、これらの店舗に関するいくつかの必要な詳細をまとめるために、少し助けていただけると助かります。これらのレストランをGoogleマップで検索していただけますでしょうか。特に、住所や利用可能なウェブサイト、連絡先電話番号を取得したいと思っています。この情報を集めて私のフォームファイルに入力していただければ、非常に感謝いたします。どうぞよろしくお願いします！",
+  "source": "authors",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "path": "/home/user/デスクトップ/restaurants.txt",
+            "url": "https://drive.google.com/uc?export=download&id=1aTIcnr94TsBv9AY3teng-jok8nvQuA7S"
+          },
+          {
             "path": "/home/user/デスクトップ/MUST_VISIT.xlsx",
-            "dest": "MUST_VISIT.xlsx"
-        },
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://docs.google.com/spreadsheets/d/10dhHnHnCTAB0KFRDBfF1tOUZEKrsq2Sl/export?format=xlsx",
-            "dest": "MUST_VISIT-gt.xlsx"
-        },
-        "options": {
-            "rules": [
-                {
-                    "type": "sheet_fuzzy",
-                    "sheet_idx0": "RNSheet1",
-                    "sheet_idx1": "ENSheet1",
-                    "rules": [
-                        {
-                            "range": [
-                                "A1:A6",
-                                "D1:D6"
-                            ],
-                            "type": "exact_match"
-                        },
-                        {
-                            "range": [
-                                "B1:B6"
-                            ],
-                            "type": "fuzzy_match",
-                            "threshold": 85,
-                            "normalization": [
-                                [
-                                    "Rd",
-                                    "Road"
-                                ],
-                                [
-                                    "St",
-                                    "Street"
-                                ]
-                            ],
-                            "ignore_case": true
-                        },
-                        {
-                            "range": [
-                                "C1:C6"
-                            ],
-                            "type": "includes",
-                            "trim_leadings": "+ ",
-                            "ignore_chars": " ()-"
-                        }
-                    ]
-                }
-            ]
-        }
+            "url": "https://docs.google.com/spreadsheets/d/1XxsRC6XPI7dQO56t2dfT-XXDXUdy0VlS/export?format=xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/MUST_VISIT.xlsx"
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/restaurants.txt"
+      }
+    },
+    {
+      "type": "sleep",
+      "parameters": {
+        "seconds": 5
+      }
+    },
+    {
+      "type": "activate_window",
+      "parameters": {
+        "window_name": "restaurants.txt (~/Desktop) - gedit",
+        "strict": true
+      }
     }
+  ],
+  "trajectory": "trajectories/d1acdb87-bb67-4f30-84aa-990e56a09c92",
+  "related_apps": [
+    "os",
+    "chrome",
+    "libreoffice_calc"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "MUST_VISIT.xlsx - LibreOffice Calc",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 1.0
+        }
+      }
+    ],
+    "func": "compare_table",
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/MUST_VISIT.xlsx",
+      "dest": "MUST_VISIT.xlsx"
+    },
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://docs.google.com/spreadsheets/d/10dhHnHnCTAB0KFRDBfF1tOUZEKrsq2Sl/export?format=xlsx",
+      "dest": "MUST_VISIT-gt.xlsx"
+    },
+    "options": {
+      "rules": [
+        {
+          "type": "sheet_fuzzy",
+          "sheet_idx0": "RNSheet1",
+          "sheet_idx1": "ENSheet1",
+          "rules": [
+            {
+              "range": [
+                "A1:A6",
+                "D1:D6"
+              ],
+              "type": "exact_match"
+            },
+            {
+              "range": [
+                "B1:B6"
+              ],
+              "type": "fuzzy_match",
+              "threshold": 85,
+              "normalization": [
+                [
+                  "Rd",
+                  "Road"
+                ],
+                [
+                  "St",
+                  "Street"
+                ]
+              ],
+              "ignore_case": true
+            },
+            {
+              "range": [
+                "C1:C6"
+              ],
+              "type": "includes",
+              "trim_leadings": "+ ",
+              "ignore_chars": " ()-"
+            }
+          ]
+        }
+      ]
+    }
+  }
 }

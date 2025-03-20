@@ -1,35 +1,35 @@
 {
-    "id": "J_dbbf4b99-2253-4b10-9274-45f246af2466",
-    "snapshot": "gimp",
-    "instruction": "新しい生画像をjpegに変換してください。",
-    "source": "https://www.makeuseof.com/tag/can-photoshop-gimp-cant/",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://drive.google.com/uc?export=download&id=1zcxzbQ5dp-mgpu0mom-LB8BKJH-V01Kr",
-                        "path": "/home/user/デスクトップ/yicun.raw"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "gimp",
-                    "/home/user/デスクトップ/yicun.raw"
-                ]
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "gimp"
-    ],
-    "evaluator": {
-        "func": "infeasible"
+  "id": "J_gimp_21",
+  "snapshot": "gimp",
+  "instruction": "新しい生画像をjpegに変換してください。",
+  "source": "https://www.makeuseof.com/tag/can-photoshop-gimp-cant/",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://drive.google.com/uc?export=download&id=1zcxzbQ5dp-mgpu0mom-LB8BKJH-V01Kr",
+            "path": "/home/user/デスクトップ/yicun.raw"
+          }
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "gimp",
+          "/home/user/デスクトップ/yicun.raw"
+        ]
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "gimp"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  }
 }

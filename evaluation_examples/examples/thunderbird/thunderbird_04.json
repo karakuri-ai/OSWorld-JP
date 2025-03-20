@@ -1,5 +1,5 @@
 {
-  "id": "2ad9387a-65d8-4e33-ad5b-7580065a27ca",
+  "id": "thunderbird_04",
   "snapshot": "thunderbird",
   "instruction": "Create two local folders in Thunderbird for me: COMPANY and UNIVERSITY.",
   "source": "https://support.mozilla.org/bm/questions/1027435",
@@ -47,7 +47,11 @@
       {
         "type": "execute",
         "parameters": {
-          "command": ["ls", "-R", "/home/user/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders"],
+          "command": [
+            "ls",
+            "-R",
+            "/home/user/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders"
+          ],
           "stdout": "thunder-local-folder.ls"
         }
       }

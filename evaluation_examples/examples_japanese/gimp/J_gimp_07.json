@@ -1,35 +1,35 @@
 {
-    "id": "J_58d3eeeb-e9d0-499f-962e-fd0db2a744d8",
-    "snapshot": "gimp",
-    "instruction": "画像に何が起こっているかを説明してください。",
-    "source": "",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://drive.google.com/uc?export=download&id=1w9R8RYkbFl88n8_Vgk_zZeD5J4t4yrzC",
-                        "path": "/home/user/デスクトップ/heron.jpeg"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "gimp",
-                    "/home/user/デスクトップ/heron.jpeg"
-                ]
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "gimp"
-    ],
-    "evaluator": {
-        "func": "infeasible"
+  "id": "J_gimp_07",
+  "snapshot": "gimp",
+  "instruction": "画像に何が起こっているかを説明してください。",
+  "source": "",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://drive.google.com/uc?export=download&id=1w9R8RYkbFl88n8_Vgk_zZeD5J4t4yrzC",
+            "path": "/home/user/デスクトップ/heron.jpeg"
+          }
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "gimp",
+          "/home/user/デスクトップ/heron.jpeg"
+        ]
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "gimp"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  }
 }

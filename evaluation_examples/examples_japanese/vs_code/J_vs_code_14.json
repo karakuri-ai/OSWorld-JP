@@ -1,44 +1,44 @@
 {
-    "id": "J_930fdb3b-11a8-46fe-9bac-577332e2640e",
-    "snapshot": "vscode",
-    "instruction": "VS Codeでターミナルからエディターにカーソルフォーカスを移すショートカット「ctrl+j」を作成してください。",
-    "source": "https://superuser.com/questions/1270103/how-to-switch-the-cursor-between-terminal-and-code-in-vscode",
-    "config": [
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "code"
-                ]
-            }
-        },
-        {
-            "type": "activate_window",
-            "parameters": {
-                "window_name": "Visual Studio Code"
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "vscode"
-    ],
-    "evaluator": {
-        "func": "check_json_keybindings",
-        "expected": {
-            "type": "rule",
-            "rules": {
-                "expected": {
-                    "key": "ctrl+j",
-                    "command": "workbench.action.focusActiveEditorGroup",
-                    "when": "terminalFocus"
-                }
-            }
-        },
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/.config/Code/User/keybindings.json",
-            "dest": "keybindings.json"
-        }
+  "id": "J_vs_code_14",
+  "snapshot": "vscode",
+  "instruction": "VS Codeでターミナルからエディターにカーソルフォーカスを移すショートカット「ctrl+j」を作成してください。",
+  "source": "https://superuser.com/questions/1270103/how-to-switch-the-cursor-between-terminal-and-code-in-vscode",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "code"
+        ]
+      }
+    },
+    {
+      "type": "activate_window",
+      "parameters": {
+        "window_name": "Visual Studio Code"
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "vscode"
+  ],
+  "evaluator": {
+    "func": "check_json_keybindings",
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "expected": {
+          "key": "ctrl+j",
+          "command": "workbench.action.focusActiveEditorGroup",
+          "when": "terminalFocus"
+        }
+      }
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/.config/Code/User/keybindings.json",
+      "dest": "keybindings.json"
+    }
+  }
 }

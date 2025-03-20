@@ -1,92 +1,92 @@
 {
-    "id": "J_4e9f0faf-2ecc-4ae8-a804-28c9a75d1ddc",
-    "snapshot": "chrome",
-    "instruction": "新しくアップロードした請求書からGoogle Driveの表のデータを抽出して、デスクトップにLibreOffice Calcの.xlsxファイルとしてエクスポートしてもらえますか？",
-    "source": "https://marketplace.uipath.com/listings/extract-data-from-a-new-invoice-file-in-google-drive-and-store-it-in-google-sheets4473",
-    "config": [
-        {
-            "type": "googledrive",
-            "parameters": {
-                "settings_file": "evaluation_examples/settings/googledrive/settings.yml",
-                "operation": [
-                    "delete",
-                    "upload"
-                ],
-                "args": [
-                    {
-                        "query": "title = 'invoice.pdf'",
-                        "trash": false
-                    },
-                    {
-                        "url": "https://drive.google.com/uc?export=download&id=1DERw8XyqZLy_ZK05FNqgIwr0jgHlzGp_",
-                        "path": [
-                            "invoice.pdf"
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "google-chrome",
-                    "--remote-debugging-port=1337"
-                ]
-            }
-        },
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "socat",
-                    "tcp-listen:9222,fork",
-                    "tcp:localhost:1337"
-                ]
-            }
-        },
-        {
-            "type": "chrome_open_tabs",
-            "parameters": {
-                "urls_to_open": [
-                    "https://news.google.com",
-                    "https://x.com"
-                ]
-            }
-        },
-        {
-            "type": "login",
-            "parameters": {
-                "settings_file": "evaluation_examples/settings/google/settings.json",
-                "platform": "googledrive"
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "libreoffice_calc",
-        "chrome"
-    ],
-    "evaluator": {
-        "func": "compare_table",
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/デスクトップ/invoice.xlsx",
-            "dest": "invoice.xlsx"
-        },
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://docs.google.com/spreadsheets/d/1Eo6VANhcnkRxEgrwQBviLn_6rtuMmcF4/export?format=xlsx",
-            "dest": "invoice_gold.xlsx"
-        },
-        "options": {
-            "rules": [
-                {
-                    "type": "sheet_data",
-                    "sheet_idx0": "RI0",
-                    "sheet_idx1": "EI0"
-                }
+  "id": "J_multiapps_35",
+  "snapshot": "chrome",
+  "instruction": "新しくアップロードした請求書からGoogle Driveの表のデータを抽出して、デスクトップにLibreOffice Calcの.xlsxファイルとしてエクスポートしてもらえますか？",
+  "source": "https://marketplace.uipath.com/listings/extract-data-from-a-new-invoice-file-in-google-drive-and-store-it-in-google-sheets4473",
+  "config": [
+    {
+      "type": "googledrive",
+      "parameters": {
+        "settings_file": "evaluation_examples/settings/googledrive/settings.yml",
+        "operation": [
+          "delete",
+          "upload"
+        ],
+        "args": [
+          {
+            "query": "title = 'invoice.pdf'",
+            "trash": false
+          },
+          {
+            "url": "https://drive.google.com/uc?export=download&id=1DERw8XyqZLy_ZK05FNqgIwr0jgHlzGp_",
+            "path": [
+              "invoice.pdf"
             ]
-        }
+          }
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://news.google.com",
+          "https://x.com"
+        ]
+      }
+    },
+    {
+      "type": "login",
+      "parameters": {
+        "settings_file": "evaluation_examples/settings/google/settings.json",
+        "platform": "googledrive"
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "libreoffice_calc",
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "compare_table",
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/invoice.xlsx",
+      "dest": "invoice.xlsx"
+    },
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://docs.google.com/spreadsheets/d/1Eo6VANhcnkRxEgrwQBviLn_6rtuMmcF4/export?format=xlsx",
+      "dest": "invoice_gold.xlsx"
+    },
+    "options": {
+      "rules": [
+        {
+          "type": "sheet_data",
+          "sheet_idx0": "RI0",
+          "sheet_idx1": "EI0"
+        }
+      ]
+    }
+  }
 }

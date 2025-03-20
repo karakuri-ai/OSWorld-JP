@@ -1,82 +1,82 @@
 {
-    "id": "J_1d17d234-e39d-4ed7-b46f-4417922a4e7c",
-    "snapshot": "libreoffice_calc",
-    "instruction": "「シート2」という名前の新しいシートを作成し、セルA1:C1を結合して「投資サマリー」と書いてください。その下に、セルA2:B2を結合して「高金利」と書き、セルC2:D2を結合して「低金利」を形成してください。",
-    "source": "SheetCopilot@73",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://drive.google.com/uc?id=1qILGOZpTwo2armXyGZM96ao-ydHRpZ_g&export=download",
-                        "path": "/home/user/FutureValue.xlsx"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "open",
-            "parameters": {
-                "path": "/home/user/FutureValue.xlsx"
-            }
-        }
-    ],
-    "trajectory": "trajectories/1d17d234-e39d-4ed7-b46f-4417922a4e7c",
-    "related_apps": [
-        "libreoffice_calc"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "activate_window",
-                "parameters": {
-                    "window_name": "FutureValue.xlsx - LibreOffice Calc",
-                    "strict": true
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            },
-            {
-                "type": "execute",
-                "parameters": {
-                    "command": [
-                        "python",
-                        "-c",
-                        "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
-                    ]
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            }
-        ],
-        "func": "compare_table",
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://drive.google.com/uc?id=1KCTx2yEwTlSLa8doQ74ucE-opbCxQCeh&export=download",
-            "dest": "5_FutureValue_gt1.xlsx"
-        },
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/FutureValue.xlsx",
-            "dest": "FutureValue.xlsx"
-        },
-        "options": {
-            "rules": [
-                {
-                    "type": "sheet_data",
-                    "sheet_idx0": "RNSheet2",
-                    "sheet_idx1": "ENSheet2"
-                }
-            ]
-        }
+  "id": "J_excel_15",
+  "snapshot": "libreoffice_calc",
+  "instruction": "「シート2」という名前の新しいシートを作成し、セルA1:C1を結合して「投資サマリー」と書いてください。その下に、セルA2:B2を結合して「高金利」と書き、セルC2:D2を結合して「低金利」を形成してください。",
+  "source": "SheetCopilot@73",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://drive.google.com/uc?id=1qILGOZpTwo2armXyGZM96ao-ydHRpZ_g&export=download",
+            "path": "/home/user/FutureValue.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/FutureValue.xlsx"
+      }
     }
+  ],
+  "trajectory": "trajectories/1d17d234-e39d-4ed7-b46f-4417922a4e7c",
+  "related_apps": [
+    "libreoffice_calc"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "FutureValue.xlsx - LibreOffice Calc",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ],
+    "func": "compare_table",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://drive.google.com/uc?id=1KCTx2yEwTlSLa8doQ74ucE-opbCxQCeh&export=download",
+      "dest": "5_FutureValue_gt1.xlsx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/FutureValue.xlsx",
+      "dest": "FutureValue.xlsx"
+    },
+    "options": {
+      "rules": [
+        {
+          "type": "sheet_data",
+          "sheet_idx0": "RNSheet2",
+          "sheet_idx1": "ENSheet2"
+        }
+      ]
+    }
+  }
 }

@@ -1,9 +1,9 @@
 {
-  "id": "8d9fd4e2-6fdb-46b0-b9b9-02f06495c62f",
+  "id": "vlc_08",
   "snapshot": "base_setup",
   "instruction": "Can you make the video fill up the whole screen? It's a bit too small to see right now, and I'd like to see it better.",
   "source": "https://www.youtube.com/watch?v=XHprwDJ0-fU&t=436s",
-  "config":  [
+  "config": [
     {
       "type": "download",
       "parameters": {

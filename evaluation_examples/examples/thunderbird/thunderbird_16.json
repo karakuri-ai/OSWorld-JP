@@ -1,5 +1,5 @@
 {
-  "id": "e1e75309-3ddb-4d09-92ec-de869c928143",
+  "id": "thunderbird_16",
   "snapshot": "thunderbird",
   "instruction": "Create a local folder called \"Promotions\" and create a filter to auto move the inbox emails whose subject contains “discount” to the new folder",
   "source": "https://support.mozilla.org/en-US/kb/organize-your-messages-using-filters",
@@ -72,7 +72,9 @@
             "enabled": "yes",
             "action": "Move to folder",
             "actionValue": "mailbox://nobody@Local%20Folders/Promotions",
-            "condition": ["AND (subject,contains,discount)"]
+            "condition": [
+              "AND (subject,contains,discount)"
+            ]
           }
         ]
       }

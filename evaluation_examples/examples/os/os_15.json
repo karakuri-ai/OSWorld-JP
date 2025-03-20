@@ -1,5 +1,5 @@
 {
-  "id": "5ced85fc-fa1a-4217-95fd-0fb530545ce2",
+  "id": "os_15",
   "snapshot": "os",
   "instruction": "Append \"<br/>\" to the end of each line in \"1\\n2\\n3\" and save in output.txt",
   "source": "NL2Bash",
@@ -58,8 +58,7 @@
         "include": [
           "Success: The task has been completed correctly."
         ],
-        "exclude": [
-        ]
+        "exclude": []
       }
     }
   }

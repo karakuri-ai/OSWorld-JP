@@ -1,82 +1,82 @@
 {
-    "id": "J_abed40dc-063f-4598-8ba5-9fe749c0615d",
-    "snapshot": "excel",
-    "instruction": "「重複のある名前」の列をチェックして、「一意な名前」の列にユニークなものを入れてください。元の順序を保ってください。",
-    "source": "https://201nimaruichi.web.fc2.com/tech/duplicate01.html",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://docs.google.com/spreadsheets/d/1ZBSQdE2pCpG7uWEvE2ghGSB1ITuai8sx/export?format=xlsx",
-                        "path": "C:\\Users\\User\\Names_Duplicate_Unique.xlsx"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "open",
-            "parameters": {
-                "path": "C:\\Users\\User\\Names_Duplicate_Unique.xlsx"
-            }
-        }
-    ],
-    "trajectory": "trajectories/abed40dc-063f-4598-8ba5-9fe749c0615d",
-    "related_apps": [
-        "excel"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "activate_window",
-                "parameters": {
-                    "window_name": "Names_Duplicate_Unique - Excel",
-                    "strict": true
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            },
-            {
-                "type": "execute",
-                "parameters": {
-                    "command": [
-                        "python",
-                        "-c",
-                        "import pyautogui; import time; pyautogui.hotkey(\"ctrl\", \"s\"); time.sleep(0.5);"
-                    ]
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            }
-        ],
-        "func": "compare_table",
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://docs.google.com/spreadsheets/d/1Eq6a1EFwT99WwW2kFJQD0P-RbfRaXGbN/export?format=xlsx",
-            "dest": "Names_Duplicate_Unique_gold.xlsx"
-        },
-        "result": {
-            "type": "vm_file",
-            "path": "C:\\Users\\User\\Names_Duplicate_Unique.xlsx",
-            "dest": "Names_Duplicate_Unique.xlsx"
-        },
-        "options": {
-            "rules": [
-                {
-                    "type": "sheet_data",
-                    "sheet_idx0": 0,
-                    "sheet_idx1": "EI0"
-                }
-            ]
-        }
+  "id": "J_W_excel_67",
+  "snapshot": "excel",
+  "instruction": "「重複のある名前」の列をチェックして、「一意な名前」の列にユニークなものを入れてください。元の順序を保ってください。",
+  "source": "https://201nimaruichi.web.fc2.com/tech/duplicate01.html",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://docs.google.com/spreadsheets/d/1ZBSQdE2pCpG7uWEvE2ghGSB1ITuai8sx/export?format=xlsx",
+            "path": "C:\\Users\\User\\Names_Duplicate_Unique.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Names_Duplicate_Unique.xlsx"
+      }
     }
+  ],
+  "trajectory": "trajectories/abed40dc-063f-4598-8ba5-9fe749c0615d",
+  "related_apps": [
+    "excel"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Names_Duplicate_Unique - Excel",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey(\"ctrl\", \"s\"); time.sleep(0.5);"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ],
+    "func": "compare_table",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://docs.google.com/spreadsheets/d/1Eq6a1EFwT99WwW2kFJQD0P-RbfRaXGbN/export?format=xlsx",
+      "dest": "Names_Duplicate_Unique_gold.xlsx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Names_Duplicate_Unique.xlsx",
+      "dest": "Names_Duplicate_Unique.xlsx"
+    },
+    "options": {
+      "rules": [
+        {
+          "type": "sheet_data",
+          "sheet_idx0": 0,
+          "sheet_idx1": "EI0"
+        }
+      ]
+    }
+  }
 }

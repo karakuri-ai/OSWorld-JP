@@ -1,5 +1,5 @@
 {
-  "id": "4d117223-a354-47fb-8b45-62ab1390a95f",
+  "id": "os_10",
   "snapshot": "os",
   "instruction": "Change the permission of all regular files under current directory tree to 644",
   "source": "NL2Bash",
@@ -93,8 +93,7 @@
         "include": [
           "All files have the correct permissions."
         ],
-        "exclude": [
-        ]
+        "exclude": []
       }
     }
   }

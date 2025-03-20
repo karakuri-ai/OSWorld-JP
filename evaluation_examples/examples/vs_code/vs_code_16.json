@@ -1,5 +1,5 @@
 {
-  "id": "971cbb5b-3cbf-4ff7-9e24-b5c84fcebfa6",
+  "id": "vs_code_16",
   "snapshot": "vscode",
   "instruction": "Please help me change the settings of VS Code so that every time I open it, it automatically creates a python file called \"test.py\".",
   "source": "",

@@ -1,5 +1,5 @@
 {
-  "id": "36037439-2044-4b50-b9d1-875b5a332143",
+  "id": "multiapps_20",
   "snapshot": "libreoffice_calc",
   "instruction": "Could you please pull up the Google Scholar page of the corresponding author for me in Chrome?",
   "source": "authors",
@@ -55,9 +55,9 @@
         "type": "url",
         "url": "?hl=en&",
         "expected": [
-            "https://scholar.google.com/citations",
-            "user=qRAQ5BsAAAAJ"
-          ]
+          "https://scholar.google.com/citations",
+          "user=qRAQ5BsAAAAJ"
+        ]
       }
     }
   }

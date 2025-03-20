@@ -1,5 +1,5 @@
 {
-  "id": "04578141-1d42-4146-b9cf-6fab4ce5fd74",
+  "id": "ppt_01",
   "snapshot": "libreoffice_impress",
   "instruction": "Make the first three textboxes on slide 1 of color yellow, red, green, respectively.",
   "source": "https://arxiv.org/pdf/2311.01767.pdf",

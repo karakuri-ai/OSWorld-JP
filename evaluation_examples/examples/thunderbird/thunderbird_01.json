@@ -1,5 +1,5 @@
 {
-  "id": "030eeff7-b492-4218-b312-701ec99ee0cc",
+  "id": "thunderbird_01",
   "snapshot": "thunderbird",
   "instruction": "When I reply to an email, it quotes the original message but offsets it with an indentation and \">\" character. I would like to quote the original message with no indentation, and no special character. Could you help me remove the indentation and \">\" for me?",
   "source": "https://superuser.com/questions/1781004/how-do-i-remove-the-indentation-and-character-in-quoted-text-of-a-reply-mess",

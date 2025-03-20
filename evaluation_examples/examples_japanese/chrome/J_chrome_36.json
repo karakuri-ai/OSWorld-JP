@@ -1,65 +1,65 @@
 {
-    "id": "J_af630914-714e-4a24-a7bb-f9af687d3b91",
-    "snapshot": "chrome",
-    "instruction": "私の祖母は最近Chromeを使っていて、彼女の悪い視力にはフォントサイズがあまりにも小さいと言っていました。彼女のために、デフォルトのフォントサイズを最大に設定していただけますか？",
-    "source": "https://www.howtogeek.com/680260/how-to-change-chromes-default-text-size/",
-    "config": [
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "google-chrome",
-                    "--remote-debugging-port=1337"
-                ]
-            }
-        },
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "socat",
-                    "tcp-listen:9222,fork",
-                    "tcp:localhost:1337"
-                ]
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "chrome"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "launch",
-                "parameters": {
-                    "command": [
-                        "pkill",
-                        "chrome"
-                    ]
-                }
-            },
-            {
-                "type": "launch",
-                "parameters": {
-                    "command": [
-                        "google-chrome",
-                        "--remote-debugging-port=1337"
-                    ]
-                }
-            }
-        ],
-        "func": "check_font_size",
-        "result": {
-            "type": "chrome_font_size"
-        },
-        "expected": {
-            "type": "rule",
-            "rules": {
-                "type": "range",
-                "min": 16,
-                "max": 99999
-            }
-        }
+  "id": "J_chrome_36",
+  "snapshot": "chrome",
+  "instruction": "私の祖母は最近Chromeを使っていて、彼女の悪い視力にはフォントサイズがあまりにも小さいと言っていました。彼女のために、デフォルトのフォントサイズを最大に設定していただけますか？",
+  "source": "https://www.howtogeek.com/680260/how-to-change-chromes-default-text-size/",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "launch",
+        "parameters": {
+          "command": [
+            "pkill",
+            "chrome"
+          ]
+        }
+      },
+      {
+        "type": "launch",
+        "parameters": {
+          "command": [
+            "google-chrome",
+            "--remote-debugging-port=1337"
+          ]
+        }
+      }
+    ],
+    "func": "check_font_size",
+    "result": {
+      "type": "chrome_font_size"
+    },
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "type": "range",
+        "min": 16,
+        "max": 99999
+      }
+    }
+  }
 }

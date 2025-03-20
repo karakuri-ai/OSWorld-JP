@@ -1,42 +1,42 @@
 {
-    "id": "J_276cc624-87ea-4f08-ab93-f770e3790175",
-    "snapshot": "vscode",
-    "instruction": "VScodeで現在のユーザーの行の長さを50文字に設定してください。",
-    "source": "https://www.quora.com/unanswered/How-do-you-set-the-line-length-in-Visual-Studio-Code",
-    "config": [
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "code"
-                ]
-            }
-        },
-        {
-            "type": "activate_window",
-            "parameters": {
-                "window_name": "Visual Studio Code"
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "vscode"
-    ],
-    "evaluator": {
-        "func": "check_json_settings",
-        "expected": {
-            "type": "rule",
-            "rules": {
-                "expected": {
-                    "editor.wordWrapColumn": 50
-                }
-            }
-        },
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/.config/Code/User/settings.json",
-            "dest": "settings.json"
-        }
+  "id": "J_vs_code_03",
+  "snapshot": "vscode",
+  "instruction": "VScodeで現在のユーザーの行の長さを50文字に設定してください。",
+  "source": "https://www.quora.com/unanswered/How-do-you-set-the-line-length-in-Visual-Studio-Code",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "code"
+        ]
+      }
+    },
+    {
+      "type": "activate_window",
+      "parameters": {
+        "window_name": "Visual Studio Code"
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "vscode"
+  ],
+  "evaluator": {
+    "func": "check_json_settings",
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "expected": {
+          "editor.wordWrapColumn": 50
+        }
+      }
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/.config/Code/User/settings.json",
+      "dest": "settings.json"
+    }
+  }
 }

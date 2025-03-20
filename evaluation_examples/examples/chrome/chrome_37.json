@@ -1,5 +1,5 @@
 {
-  "id": "b070486d-e161-459b-aa2b-ef442d973b92",
+  "id": "chrome_37",
   "snapshot": "chrome",
   "instruction": "Show side effects of Tamiflu.",
   "source": "online_tasks",
@@ -43,24 +43,28 @@
     "chrome"
   ],
   "evaluator": {
-      "func": ["exact_match", "exact_match"],
-      "conj": "or",
-      "result": [
-        {
+    "func": [
+      "exact_match",
+      "exact_match"
+    ],
+    "conj": "or",
+    "result": [
+      {
         "type": "url_dashPart",
         "goto_prefix": "https://www.",
         "partIndex": -1,
         "needDeleteId": false,
         "returnType": "string"
-        },
-        {
-          "type": "url_dashPart",
-          "goto_prefix": "https://www.",
-          "partIndex": -1,
-          "needDeleteId": false,
-          "returnType": "string"
-        }],
-      "expected": [
+      },
+      {
+        "type": "url_dashPart",
+        "goto_prefix": "https://www.",
+        "partIndex": -1,
+        "needDeleteId": false,
+        "returnType": "string"
+      }
+    ],
+    "expected": [
       {
         "type": "rule",
         "rules": {
@@ -72,6 +76,7 @@
         "rules": {
           "expected": "tamiflu-side-effects.html"
         }
-      }]
-    }
+      }
+    ]
+  }
 }

@@ -1,77 +1,77 @@
 {
-    "id": "J_5df7b33a-9f77-4101-823e-02f863e1c1ae",
-    "snapshot": "libreoffice_writer",
-    "instruction": "空いている時間に読書を楽しむのですが、この本はあまりにも大きすぎます。開くたびにどこまで読んだかを見つけるのが手間です。本をいくつかのPDFに分け、それぞれ異なる章を含めて、第一章の例に従って名前を付けたいと思っています。",
-    "source": "authors",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://drive.usercontent.google.com/download?id=1iaPADtkbDGbupuwNQiG-L9Topt_VJl8g&export=download&authuser=0&confirm=t",
-                        "path": "/home/user/デスクトップ/book.zip"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "execute",
-            "parameters": {
-                "command": [
-                    "/bin/bash",
-                    "-c",
-                    "unzip -q /home/user/デスクトップ/book.zip -d /home/user/デスクトップ && rm /home/user/デスクトップ/book.zip"
-                ]
-            }
-        },
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "nautilus",
-                    "/home/user/デスクトップ/book"
-                ]
-            }
-        },
-        {
-            "type": "open",
-            "parameters": {
-                "path": "/home/user/デスクトップ/book/Spectral Graph Theory.pdf"
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "os",
-        "libreoffice_writer"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "execute",
-                "parameters": {
-                    "command": [
-                        "/bin/bash",
-                        "-c",
-                        "cd /home/user/デスクトップ/book && zip -qr book.zip *.pdf"
-                    ]
-                }
-            }
-        ],
-        "func": "compare_archive",
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/デスクトップ/book/book.zip",
-            "dest": "book.zip"
-        },
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://drive.usercontent.google.com/download?id=1oH9UAbJe4EmPxwDX4kQPVyKqGF2y2pQh&export=download&authuser=0&confirm=t",
-            "dest": "gold_book.zip"
-        },
-        "options": {
-            "file_type": "pdf"
-        }
+  "id": "J_multiapps_41",
+  "snapshot": "libreoffice_writer",
+  "instruction": "空いている時間に読書を楽しむのですが、この本はあまりにも大きすぎます。開くたびにどこまで読んだかを見つけるのが手間です。本をいくつかのPDFに分け、それぞれ異なる章を含めて、第一章の例に従って名前を付けたいと思っています。",
+  "source": "authors",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://drive.usercontent.google.com/download?id=1iaPADtkbDGbupuwNQiG-L9Topt_VJl8g&export=download&authuser=0&confirm=t",
+            "path": "/home/user/デスクトップ/book.zip"
+          }
+        ]
+      }
+    },
+    {
+      "type": "execute",
+      "parameters": {
+        "command": [
+          "/bin/bash",
+          "-c",
+          "unzip -q /home/user/デスクトップ/book.zip -d /home/user/デスクトップ && rm /home/user/デスクトップ/book.zip"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "nautilus",
+          "/home/user/デスクトップ/book"
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/book/Spectral Graph Theory.pdf"
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "os",
+    "libreoffice_writer"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "/bin/bash",
+            "-c",
+            "cd /home/user/デスクトップ/book && zip -qr book.zip *.pdf"
+          ]
+        }
+      }
+    ],
+    "func": "compare_archive",
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/book/book.zip",
+      "dest": "book.zip"
+    },
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://drive.usercontent.google.com/download?id=1oH9UAbJe4EmPxwDX4kQPVyKqGF2y2pQh&export=download&authuser=0&confirm=t",
+      "dest": "gold_book.zip"
+    },
+    "options": {
+      "file_type": "pdf"
+    }
+  }
 }

@@ -1,16 +1,16 @@
 {
-    "id": "J_1c114e4f-5f2f-4862-9e92-bac2fdd285b9",
-    "snapshot": "chrome",
-    "instruction": "IMDBで最も人気のあるSF映画のリストを表示していただけますか？見逃したものがないか確認したいです。",
-    "source": "https://help.imdb.com/article/imdb/general-information/you-have-so-much-information-where-should-i-start/G47FFV4PZE6GTZ75?ref_=helpart_nav_29#",
-    "config": [],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "chrome"
-    ],
-    "evaluator": {
-        "func": "",
-        "result": {},
-        "expected": {}
-    }
+  "id": "J_chrome_07",
+  "snapshot": "chrome",
+  "instruction": "IMDBで最も人気のあるSF映画のリストを表示していただけますか？見逃したものがないか確認したいです。",
+  "source": "https://help.imdb.com/article/imdb/general-information/you-have-so-much-information-where-should-i-start/G47FFV4PZE6GTZ75?ref_=helpart_nav_29#",
+  "config": [],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "",
+    "result": {},
+    "expected": {}
+  }
 }

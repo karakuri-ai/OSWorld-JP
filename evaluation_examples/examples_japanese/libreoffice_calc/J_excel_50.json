@@ -1,14 +1,14 @@
 {
-    "id": "J_7b802dad-6e0f-4204-9815-d4e3f57627d8",
-    "snapshot": "libreoffice_calc",
-    "instruction": "この表をセルの色に基づいて並べ替えたいのですが、ピンクでマークされた行を最初に置き、その中の順序は変えずに保ってください。",
-    "source": "https://www.youtube.com/shorts/Of-lzeP1usE",
-    "config": [],
-    "trajectory": "trajectories/7b802dad-6e0f-4204-9815-d4e3f57627d8",
-    "related_apps": [
-        "libreoffice_calc"
-    ],
-    "evaluator": {
-        "func": "infeasible"
-    }
+  "id": "J_excel_50",
+  "snapshot": "libreoffice_calc",
+  "instruction": "この表をセルの色に基づいて並べ替えたいのですが、ピンクでマークされた行を最初に置き、その中の順序は変えずに保ってください。",
+  "source": "https://www.youtube.com/shorts/Of-lzeP1usE",
+  "config": [],
+  "trajectory": "trajectories/7b802dad-6e0f-4204-9815-d4e3f57627d8",
+  "related_apps": [
+    "libreoffice_calc"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  }
 }

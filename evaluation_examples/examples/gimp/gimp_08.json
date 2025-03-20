@@ -1,10 +1,9 @@
 {
-  "id": "5ca86c6f-f317-49d8-b6a7-b527541caae8",
+  "id": "gimp_08",
   "snapshot": "gimp",
   "instruction": "Could you help me download the logo of the University of Hong Kong in \".png\" format within GIMP?",
   "source": "",
-  "config": [
-  ],
+  "config": [],
   "trajectory": "trajectories/",
   "related_apps": [
     "gimp"

@@ -1,5 +1,5 @@
 {
-  "id": "5812b315-e7bd-4265-b51f-863c02174c28",
+  "id": "os_12",
   "snapshot": "os",
   "instruction": "Please create an SSH user named \"charles\" with password \"Ex@mpleP@55w0rd!\" on Ubuntu who is only allowed to access the folder \"/home/test1\".",
   "source": "https://superuser.com/questions/149404/create-an-ssh-user-who-only-has-permission-to-access-specific-folders",
@@ -56,8 +56,7 @@
         "include": [
           "Password, home directory, and write permission check passed"
         ],
-        "exclude": [
-        ]
+        "exclude": []
       }
     }
   }

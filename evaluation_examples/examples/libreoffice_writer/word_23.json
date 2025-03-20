@@ -1,5 +1,5 @@
 {
-  "id": "e246f6d8-78d7-44ac-b668-fcf47946cb50",
+  "id": "word_23",
   "snapshot": "libreoffice_writer",
   "instruction": "I found Italic font very hard to discern from the normal text for me, as it is also dark black with the same size. Current font size is 12 and I want to change the font size of italicized words to 14 to make it more discernible. Can you help me on this?",
   "source": "https://ask.libreoffice.org/t/how-to-change-text-size-color-of-italic-font/77712",

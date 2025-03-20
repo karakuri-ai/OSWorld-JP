@@ -1,5 +1,5 @@
 {
-  "id": "4783cc41-c03c-4e1b-89b4-50658f642bd5",
+  "id": "os_09",
   "snapshot": "os",
   "instruction": "Copy directory hierarchy from \"$sourceDir\" to \"$targetDir\"",
   "source": "NL2Bash",

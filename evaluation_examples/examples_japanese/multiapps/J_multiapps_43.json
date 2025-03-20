@@ -1,110 +1,110 @@
 {
-    "id": "J_67890eb6-6ce5-4c00-9e3d-fb4972699b06",
-    "snapshot": "libreoffice_calc",
-    "instruction": "私はNLP研究者です。2019年から2022年までのACLの最優秀長期論文賞を確認し、'タイトル'、'年'、'著者リスト'、'PDFリンク'をデスクトップのbest_awards_acl.xlsxに記録してください。著者はカンマでのみ区切り、arXivではなく公式のaclanthologyのURLを使用し、行は年の降順で並べ替えてください。",
-    "source": "authors",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://drive.google.com/uc?export=download&id=1v5DgViUgAL771kBWy-qBddVGyjGmgFhK",
-                        "path": "/home/user/デスクトップ/best_awards_acl.xlsx"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "open",
-            "parameters": {
-                "path": "/home/user/デスクトップ/best_awards_acl.xlsx"
-            }
-        },
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "google-chrome",
-                    "--remote-debugging-port=1337"
-                ]
-            }
-        },
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "socat",
-                    "tcp-listen:9222,fork",
-                    "tcp:localhost:1337"
-                ]
-            }
-        },
-        {
-            "type": "chrome_open_tabs",
-            "parameters": {
-                "urls_to_open": [
-                    "https://aclanthology.org/"
-                ]
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "libreoffice_calc",
-        "chrome"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "activate_window",
-                "parameters": {
-                    "window_name": "best_awards_acl.xlsx - LibreOffice Calc",
-                    "strict": true
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            },
-            {
-                "type": "execute",
-                "parameters": {
-                    "command": [
-                        "python",
-                        "-c",
-                        "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5);"
-                    ]
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            }
-        ],
-        "func": "compare_table",
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/デスクトップ/best_awards_acl.xlsx",
-            "dest": "best_awards_acl.xlsx"
-        },
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://drive.usercontent.google.com/download?id=17ORdOPl3sZGk3s4Wm0vESgImKZjdZBqX&export=download&authuser=0&confirm=t",
-            "dest": "gold_best_awards_acl.xlsx"
-        },
-        "options": {
-            "rules": [
-                {
-                    "type": "sheet_data",
-                    "sheet_idx0": 0,
-                    "sheet_idx1": "EI0"
-                }
-            ]
-        }
+  "id": "J_multiapps_43",
+  "snapshot": "libreoffice_calc",
+  "instruction": "私はNLP研究者です。2019年から2022年までのACLの最優秀長期論文賞を確認し、'タイトル'、'年'、'著者リスト'、'PDFリンク'をデスクトップのbest_awards_acl.xlsxに記録してください。著者はカンマでのみ区切り、arXivではなく公式のaclanthologyのURLを使用し、行は年の降順で並べ替えてください。",
+  "source": "authors",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://drive.google.com/uc?export=download&id=1v5DgViUgAL771kBWy-qBddVGyjGmgFhK",
+            "path": "/home/user/デスクトップ/best_awards_acl.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/best_awards_acl.xlsx"
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://aclanthology.org/"
+        ]
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "libreoffice_calc",
+    "chrome"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "best_awards_acl.xlsx - LibreOffice Calc",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5);"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ],
+    "func": "compare_table",
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/best_awards_acl.xlsx",
+      "dest": "best_awards_acl.xlsx"
+    },
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://drive.usercontent.google.com/download?id=17ORdOPl3sZGk3s4Wm0vESgImKZjdZBqX&export=download&authuser=0&confirm=t",
+      "dest": "gold_best_awards_acl.xlsx"
+    },
+    "options": {
+      "rules": [
+        {
+          "type": "sheet_data",
+          "sheet_idx0": 0,
+          "sheet_idx1": "EI0"
+        }
+      ]
+    }
+  }
 }

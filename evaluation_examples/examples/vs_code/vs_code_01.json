@@ -1,5 +1,5 @@
 {
-  "id": "0512bb38-d531-4acf-9e7e-0add90816068",
+  "id": "vs_code_01",
   "snapshot": "vscode",
   "instruction": "Please help me install an extension in VS Code from a local VSIX file \"/home/user/test.vsix\".",
   "source": "https://download.microsoft.com/download/8/A/4/8A48E46A-C355-4E5C-8417-E6ACD8A207D4/VisualStudioCode-TipsAndTricks-Vol.1.pdf",

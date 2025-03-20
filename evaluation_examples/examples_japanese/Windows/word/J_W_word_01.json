@@ -1,67 +1,67 @@
 {
-    "id": "J_0810415c-bde4-4443-9047-d5f70165a697",
-    "snapshot": "word",
-    "instruction": "最初の2つの段落の行間を2行分にしてください。",
-    "source": "https://www.youtube.com/watch?v=Q_AaL6ljudU",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://docs.google.com/document/d/1ub8qIVt8ApE-gfTvTXg7Tv2xrDboxaT4/export?format=docx",
-                        "path": "C:\\Users\\User\\Novels_Intro_Packet.docx"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "open",
-            "parameters": {
-                "path": "C:\\Users\\User\\Novels_Intro_Packet.docx"
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "word"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "activate_window",
-                "parameters": {
-                    "window_name": "Novels_Intro_Packet - Word",
-                    "strict": true
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            },
-            {
-                "type": "execute",
-                "parameters": {
-                    "command": [
-                        "python",
-                        "-c",
-                        "import pyautogui; import time; pyautogui.hotkey(\"ctrl\", \"s\"); time.sleep(0.5);"
-                    ]
-                }
-            }
-        ],
-        "func": "compare_line_spacing",
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://docs.google.com/document/d/19cv1QRmlLOWWfkMppleNoulQ7a-lEOiz/export?format=docx",
-            "dest": "Novels_Intro_Packet_Gold.docx"
-        },
-        "result": {
-            "type": "vm_file",
-            "path": "C:\\Users\\User\\Novels_Intro_Packet.docx",
-            "dest": "Novels_Intro_Packet.docx"
-        }
+  "id": "J_W_word_01",
+  "snapshot": "word",
+  "instruction": "最初の2つの段落の行間を2行分にしてください。",
+  "source": "https://www.youtube.com/watch?v=Q_AaL6ljudU",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://docs.google.com/document/d/1ub8qIVt8ApE-gfTvTXg7Tv2xrDboxaT4/export?format=docx",
+            "path": "C:\\Users\\User\\Novels_Intro_Packet.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Novels_Intro_Packet.docx"
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "word"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Novels_Intro_Packet - Word",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey(\"ctrl\", \"s\"); time.sleep(0.5);"
+          ]
+        }
+      }
+    ],
+    "func": "compare_line_spacing",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://docs.google.com/document/d/19cv1QRmlLOWWfkMppleNoulQ7a-lEOiz/export?format=docx",
+      "dest": "Novels_Intro_Packet_Gold.docx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Novels_Intro_Packet.docx",
+      "dest": "Novels_Intro_Packet.docx"
+    }
+  }
 }

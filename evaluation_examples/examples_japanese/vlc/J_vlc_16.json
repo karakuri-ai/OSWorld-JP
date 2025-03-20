@@ -1,58 +1,58 @@
 {
-    "id": "J_d06f0d4d-2cd5-4ede-8de9-598629438c6e",
-    "snapshot": "chrome",
-    "instruction": "ボリュームスライダーの色を黒っぽい色に変更してもらえますか？私は低照度環境でプレーヤーを頻繁に使用するので、暗いカラースキームの方が目に優しく、特に夜間の使用時に助かります。",
-    "source": "https://superuser.com/questions/1039392/changing-colour-of-vlc-volume-slider",
-    "config": [
-        {
-            "type": "launch",
-            "parameters": {
-                "command": "vlc"
-            }
-        },
-        {
-            "type": "execute",
-            "parameters": {
-                "command": [
-                    "python",
-                    "-c",
-                    "import pyautogui; import time; pyautogui.click(960, 540); time.sleep(0.5);"
-                ]
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "vlc"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "launch",
-                "parameters": {
-                    "command": [
-                        "pkill",
-                        "vlc"
-                    ]
-                }
-            },
-            {
-                "type": "launch",
-                "parameters": {
-                    "command": "vlc"
-                }
-            }
-        ],
-        "func": "check_qt_slider_colours",
-        "expected": {
-            "type": "rule",
-            "rules": {
-                "type": "blackish"
-            }
-        },
-        "result": {
-            "type": "vlc_config",
-            "dest": "vlcrc"
-        }
+  "id": "J_vlc_16",
+  "snapshot": "chrome",
+  "instruction": "ボリュームスライダーの色を黒っぽい色に変更してもらえますか？私は低照度環境でプレーヤーを頻繁に使用するので、暗いカラースキームの方が目に優しく、特に夜間の使用時に助かります。",
+  "source": "https://superuser.com/questions/1039392/changing-colour-of-vlc-volume-slider",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": "vlc"
+      }
+    },
+    {
+      "type": "execute",
+      "parameters": {
+        "command": [
+          "python",
+          "-c",
+          "import pyautogui; import time; pyautogui.click(960, 540); time.sleep(0.5);"
+        ]
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "vlc"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "launch",
+        "parameters": {
+          "command": [
+            "pkill",
+            "vlc"
+          ]
+        }
+      },
+      {
+        "type": "launch",
+        "parameters": {
+          "command": "vlc"
+        }
+      }
+    ],
+    "func": "check_qt_slider_colours",
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "type": "blackish"
+      }
+    },
+    "result": {
+      "type": "vlc_config",
+      "dest": "vlcrc"
+    }
+  }
 }

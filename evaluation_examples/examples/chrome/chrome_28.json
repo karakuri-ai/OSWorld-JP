@@ -1,5 +1,5 @@
 {
-  "id": "94760984-3ff5-41ee-8347-cf1af709fea0",
+  "id": "chrome_28",
   "snapshot": "chrome",
   "instruction": "Can you enable the reading mode in Chrome so I can read articles without distractions?",
   "source": "https://support.google.com/chrome/answer/14218344?hl=en",
@@ -10,9 +10,7 @@
   ],
   "evaluator": {
     "func": "",
-    "result": {
-    },
-    "expected": {
-    }
+    "result": {},
+    "expected": {}
   }
 }

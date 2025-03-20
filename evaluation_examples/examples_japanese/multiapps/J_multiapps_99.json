@@ -1,82 +1,82 @@
 {
-    "id": "J_eb303e01-261e-4972-8c07-c9b4e7a4922a",
-    "snapshot": "libreoffice_impress",
-    "instruction": "明日、私は講演をする予定で、PowerPointのスライドと発表メモがデスクトップに保存されています。私の予定している発言を各スライドの「ノート」部分にリマインダーとして挿入するのを手伝ってください。いくつかのスライドについてはこの作業を完了していますので、残りの部分を完成させるのを助けてください。",
-    "source": "authors",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://docs.google.com/presentation/d/1IJpePG80TA3b8v2RE0uEJ9gUsnMEcuGF/export?format=pptx",
-                        "path": "/home/user/デスクトップ/lecture1-2021-with-ink.pptx"
-                    },
-                    {
-                        "url": "https://docs.google.com/document/d/1h9GfcpcwgKF87v6-xU8e_ckxFBmaEHH7/export?format=docx",
-                        "path": "/home/user/デスクトップ/notes.docx"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "open",
-            "parameters": {
-                "path": "/home/user/デスクトップ/lecture1-2021-with-ink.pptx"
-            }
-        }
-    ],
-    "trajectory": "trajectories/eb303e01-261e-4972-8c07-c9b4e7a4922a",
-    "related_apps": [
-        "libreoffice_impress",
-        "libreoffice_writer"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "activate_window",
-                "parameters": {
-                    "window_name": "lecture1-2021-with-ink.pptx - LibreOffice Impress",
-                    "strict": true
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 5
-                }
-            },
-            {
-                "type": "execute",
-                "parameters": {
-                    "command": [
-                        "python",
-                        "-c",
-                        "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5);"
-                    ]
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            }
-        ],
-        "func": "compare_pptx_files",
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://docs.google.com/presentation/d/1700pZoLMgv-6_IFtBenUvuUOCrjcSUt0/export?format=pptx",
-            "dest": "lecture1-2021-with-ink_Gold.pptx"
-        },
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/デスクトップ/lecture1-2021-with-ink.pptx",
-            "dest": "lecture1-2021-with-ink.pptx"
-        },
-        "options": {
-            "examine_shape": false,
-            "examine_bullets": false
-        }
+  "id": "J_multiapps_99",
+  "snapshot": "libreoffice_impress",
+  "instruction": "明日、私は講演をする予定で、PowerPointのスライドと発表メモがデスクトップに保存されています。私の予定している発言を各スライドの「ノート」部分にリマインダーとして挿入するのを手伝ってください。いくつかのスライドについてはこの作業を完了していますので、残りの部分を完成させるのを助けてください。",
+  "source": "authors",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://docs.google.com/presentation/d/1IJpePG80TA3b8v2RE0uEJ9gUsnMEcuGF/export?format=pptx",
+            "path": "/home/user/デスクトップ/lecture1-2021-with-ink.pptx"
+          },
+          {
+            "url": "https://docs.google.com/document/d/1h9GfcpcwgKF87v6-xU8e_ckxFBmaEHH7/export?format=docx",
+            "path": "/home/user/デスクトップ/notes.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/lecture1-2021-with-ink.pptx"
+      }
     }
+  ],
+  "trajectory": "trajectories/eb303e01-261e-4972-8c07-c9b4e7a4922a",
+  "related_apps": [
+    "libreoffice_impress",
+    "libreoffice_writer"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "lecture1-2021-with-ink.pptx - LibreOffice Impress",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5);"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ],
+    "func": "compare_pptx_files",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://docs.google.com/presentation/d/1700pZoLMgv-6_IFtBenUvuUOCrjcSUt0/export?format=pptx",
+      "dest": "lecture1-2021-with-ink_Gold.pptx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/lecture1-2021-with-ink.pptx",
+      "dest": "lecture1-2021-with-ink.pptx"
+    },
+    "options": {
+      "examine_shape": false,
+      "examine_bullets": false
+    }
+  }
 }

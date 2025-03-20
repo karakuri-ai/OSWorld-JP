@@ -1,5 +1,5 @@
 {
-  "id": "41c621f7-3544-49e1-af8d-dafd0f834f75",
+  "id": "word_07",
   "snapshot": "libreoffice_writer",
   "instruction": "I added annotations starting with a \"#\" next to the sentences that my students wrote. I want my annotations to stand out more, so I highlighted them in yellow. Can you help me with this favor? I'm having a hard time coloring the annotations one by one. By the way, remember to remove the # sign after highlighting the text part. Thanks!",
   "source": "https://superuser.com/questions/1668018/how-to-auto-format-lines-in-libre-office-writer",

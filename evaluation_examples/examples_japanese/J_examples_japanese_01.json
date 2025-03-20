@@ -1,27 +1,27 @@
 {
-    "id": "",
-    "snapshot": "libreoffice_calc",
-    "instruction": "JSONファイルに「instruction」フィールドが見つかりません。",
-    "source": "",
-    "config": [
-        {
-            "type": "",
-            "parameters": {}
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "app1",
-        "app2"
-    ],
-    "evaluator": {
-        "postconfig": [],
-        "func": "func",
-        "result": {
-            "type": ""
-        },
-        "expected": {
-            "type": ""
-        }
+  "id": "J_examples_japanese_01",
+  "snapshot": "libreoffice_calc",
+  "instruction": "JSONファイルに「instruction」フィールドが見つかりません。",
+  "source": "",
+  "config": [
+    {
+      "type": "",
+      "parameters": {}
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "app1",
+    "app2"
+  ],
+  "evaluator": {
+    "postconfig": [],
+    "func": "func",
+    "result": {
+      "type": ""
+    },
+    "expected": {
+      "type": ""
+    }
+  }
 }

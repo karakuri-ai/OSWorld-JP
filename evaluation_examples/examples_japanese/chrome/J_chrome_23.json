@@ -1,56 +1,56 @@
 {
-    "id": "J_7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3",
-    "snapshot": "chrome",
-    "instruction": "私のコンピュータを掃除して、Amazonが保存している可能性のあるトラッキング関連のものをすべて取り除いてくれませんか？ブラウジングのプライバシーを確保したいので、そのサイトに覚えられたくないです。",
-    "source": "https://support.google.com/chrome/answer/95647?hl=en&ref_topic=7438325&sjid=16867045591165135686-AP#zippy=%2Cdelete-cookies-from-a-site",
-    "config": [
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "google-chrome",
-                    "--remote-debugging-port=1337"
-                ]
-            }
-        },
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "socat",
-                    "tcp-listen:9222,fork",
-                    "tcp:localhost:1337"
-                ]
-            }
-        },
-        {
-            "type": "chrome_open_tabs",
-            "parameters": {
-                "urls_to_open": [
-                    "https://www.amazon.co.jp",
-                    "https://www.amazon.co.jp/s?k=huggingface+transformers+book"
-                ]
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "chrome"
-    ],
-    "evaluator": {
-        "func": "is_cookie_deleted",
-        "result": {
-            "type": "cookie_data",
-            "dest": "Cookies"
-        },
-        "expected": {
-            "type": "rule",
-            "rules": {
-                "type": "domains",
-                "domains": [
-                    ".amazon.co.jp"
-                ]
-            }
-        }
+  "id": "J_chrome_23",
+  "snapshot": "chrome",
+  "instruction": "私のコンピュータを掃除して、Amazonが保存している可能性のあるトラッキング関連のものをすべて取り除いてくれませんか？ブラウジングのプライバシーを確保したいので、そのサイトに覚えられたくないです。",
+  "source": "https://support.google.com/chrome/answer/95647?hl=en&ref_topic=7438325&sjid=16867045591165135686-AP#zippy=%2Cdelete-cookies-from-a-site",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.amazon.co.jp",
+          "https://www.amazon.co.jp/s?k=huggingface+transformers+book"
+        ]
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "is_cookie_deleted",
+    "result": {
+      "type": "cookie_data",
+      "dest": "Cookies"
+    },
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "type": "domains",
+        "domains": [
+          ".amazon.co.jp"
+        ]
+      }
+    }
+  }
 }

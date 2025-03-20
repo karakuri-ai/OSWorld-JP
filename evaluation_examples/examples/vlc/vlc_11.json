@@ -1,5 +1,5 @@
 {
-  "id": "a1c3ab35-02de-4999-a7ed-2fd12c972c6e",
+  "id": "vlc_11",
   "snapshot": "base_setup",
   "instruction": "Could you help me compress the video to MPEG-4 format and save with name with prefix _?",
   "source": "https://www.quora.com/How-do-I-compress-a-video-with-VLC",

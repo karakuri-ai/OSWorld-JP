@@ -1,5 +1,5 @@
 {
-  "id": "ddc75b62-7311-4af8-bfb3-859558542b36",
+  "id": "os_31",
   "snapshot": "os",
   "instruction": "I want to uninstall the Mahjongg on my system. Can you help me?",
   "source": "https://help.ubuntu.com/lts/ubuntu-help/addremove-remove.html.en",
@@ -37,8 +37,7 @@
     "expected": {
       "type": "rule",
       "rules": {
-        "include": [
-        ],
+        "include": [],
         "exclude": [
           "mahjongg"
         ]

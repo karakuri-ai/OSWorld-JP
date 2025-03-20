@@ -1,71 +1,71 @@
 {
-    "id": "J_0a0faba3-5580-44df-965d-f562a99b291c",
-    "snapshot": "libreoffice_writer",
-    "instruction": "文章の最初の三語を左揃えにし、残りを右揃えにしてほしいです。中央には写真を追加するための空白を確保したいと考えています。すべての文章には少なくとも三語含まれているものとします。タブストップを使って、配置の手助けをしていただけますか？",
-    "source": "https://stackoverflow.com/questions/64528055/how-to-make-part-of-my-sentence-left-aligned-and-rest-as-right-aligned",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://docs.google.com/document/d/1Wrjxsf184Go70TcRGM4Tohczh29Q9B_U/export?format=docx",
-                        "path": "/home/user/デスクトップ/04 CHIN9505 EBook Purchasing info 2021 Jan.docx"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "open",
-            "parameters": {
-                "path": "/home/user/デスクトップ/04 CHIN9505 EBook Purchasing info 2021 Jan.docx"
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "libreoffice_writer"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "activate_window",
-                "parameters": {
-                    "window_name": "04 CHIN9505 EBook Purchasing info 2021 Jan.docx - LibreOffice Writer",
-                    "strict": true
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            },
-            {
-                "type": "execute",
-                "parameters": {
-                    "command": [
-                        "python",
-                        "-c",
-                        "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5); "
-                    ]
-                }
-            }
-        ],
-        "func": "check_tabstops",
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://docs.google.com/document/d/1yyHGj8KUHDMsZmc1QeJ1KkvSEGy83jMR/export?format=docx",
-            "dest": "04 CHIN9505 EBook Purchasing info 2021 Jan_Gold.docx"
-        },
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/デスクトップ/04 CHIN9505 EBook Purchasing info 2021 Jan.docx",
-            "dest": "04 CHIN9505 EBook Purchasing info 2021 Jan.docx"
-        },
-        "options": {
-            "word_number_split_by_tabstop": 3,
-            "index": 0
-        }
+  "id": "J_word_02",
+  "snapshot": "libreoffice_writer",
+  "instruction": "文章の最初の三語を左揃えにし、残りを右揃えにしてほしいです。中央には写真を追加するための空白を確保したいと考えています。すべての文章には少なくとも三語含まれているものとします。タブストップを使って、配置の手助けをしていただけますか？",
+  "source": "https://stackoverflow.com/questions/64528055/how-to-make-part-of-my-sentence-left-aligned-and-rest-as-right-aligned",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://docs.google.com/document/d/1Wrjxsf184Go70TcRGM4Tohczh29Q9B_U/export?format=docx",
+            "path": "/home/user/デスクトップ/04 CHIN9505 EBook Purchasing info 2021 Jan.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/04 CHIN9505 EBook Purchasing info 2021 Jan.docx"
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "libreoffice_writer"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "04 CHIN9505 EBook Purchasing info 2021 Jan.docx - LibreOffice Writer",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5); "
+          ]
+        }
+      }
+    ],
+    "func": "check_tabstops",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://docs.google.com/document/d/1yyHGj8KUHDMsZmc1QeJ1KkvSEGy83jMR/export?format=docx",
+      "dest": "04 CHIN9505 EBook Purchasing info 2021 Jan_Gold.docx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/04 CHIN9505 EBook Purchasing info 2021 Jan.docx",
+      "dest": "04 CHIN9505 EBook Purchasing info 2021 Jan.docx"
+    },
+    "options": {
+      "word_number_split_by_tabstop": 3,
+      "index": 0
+    }
+  }
 }

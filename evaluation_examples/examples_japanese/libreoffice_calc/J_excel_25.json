@@ -1,83 +1,83 @@
 {
-    "id": "J_357ef137-7eeb-4c80-a3bb-0951f26a8aff",
-    "snapshot": "libreoffice_calc",
-    "instruction": "一日ごとの作業時間から総作業時間を計算しました。そして、時給もわかっています。総作業時間に時給を掛けて合計金額を得たいのですが、直接2つのセルを掛けても正しい答えが出ません。「総作業時間」は時間であり、「時間給」はただの数字です。どうすれば正しい積を得られるのでしょうか？",
-    "source": "https://www.reddit.com/r/excel/comments/17zny8u/calculating_total_amount_earned_from_total_hours/",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://docs.google.com/spreadsheets/d/1d8TWfDBRPdkvaXNnLc9RmS0ZizFRzba6/export?format=xlsx",
-                        "path": "/home/user/Multiply_Time_Number.xlsx"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "open",
-            "parameters": {
-                "path": "/home/user/Multiply_Time_Number.xlsx"
-            }
-        }
-    ],
-    "trajectory": "trajectories/357ef137-7eeb-4c80-a3bb-0951f26a8aff",
-    "related_apps": [
-        "libreoffice calc"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "activate_window",
-                "parameters": {
-                    "window_name": "Multiply_Time_Number.xlsx - LibreOffice Calc",
-                    "strict": true
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            },
-            {
-                "type": "execute",
-                "parameters": {
-                    "command": [
-                        "python",
-                        "-c",
-                        "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
-                    ]
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            }
-        ],
-        "func": "compare_table",
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/Multiply_Time_Number.xlsx",
-            "dest": "Multiply_Time_Number.xlsx"
-        },
-        "options": {
-            "rules": [
-                {
-                    "type": "check_cell",
-                    "sheet_idx": 0,
-                    "coordinate": "E3",
-                    "props": {
-                        "value": {
-                            "method": "approx:0.001",
-                            "ref": 191.6667
-                        }
-                    }
-                }
-            ]
-        }
+  "id": "J_excel_25",
+  "snapshot": "libreoffice_calc",
+  "instruction": "一日ごとの作業時間から総作業時間を計算しました。そして、時給もわかっています。総作業時間に時給を掛けて合計金額を得たいのですが、直接2つのセルを掛けても正しい答えが出ません。「総作業時間」は時間であり、「時間給」はただの数字です。どうすれば正しい積を得られるのでしょうか？",
+  "source": "https://www.reddit.com/r/excel/comments/17zny8u/calculating_total_amount_earned_from_total_hours/",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://docs.google.com/spreadsheets/d/1d8TWfDBRPdkvaXNnLc9RmS0ZizFRzba6/export?format=xlsx",
+            "path": "/home/user/Multiply_Time_Number.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/Multiply_Time_Number.xlsx"
+      }
     }
+  ],
+  "trajectory": "trajectories/357ef137-7eeb-4c80-a3bb-0951f26a8aff",
+  "related_apps": [
+    "libreoffice calc"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Multiply_Time_Number.xlsx - LibreOffice Calc",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ],
+    "func": "compare_table",
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/Multiply_Time_Number.xlsx",
+      "dest": "Multiply_Time_Number.xlsx"
+    },
+    "options": {
+      "rules": [
+        {
+          "type": "check_cell",
+          "sheet_idx": 0,
+          "coordinate": "E3",
+          "props": {
+            "value": {
+              "method": "approx:0.001",
+              "ref": 191.6667
+            }
+          }
+        }
+      ]
+    }
+  }
 }

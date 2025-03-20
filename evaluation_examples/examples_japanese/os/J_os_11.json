@@ -1,16 +1,16 @@
 {
-    "id": "J_4d2b519e-e872-4100-8ea3-fe71ab0f9133",
-    "snapshot": "os",
-    "instruction": "ZSHターミナルのPATH変数に新しいエントリ「/home/david/pear/bin」を追加していただけますか？",
-    "source": "https://stackoverflow.com/questions/11530090/adding-a-new-entry-to-the-path-variable-in-zsh",
-    "trajectory": "trajectories/",
-    "config": [],
-    "related_apps": [
-        "os"
-    ],
-    "evaluator": {
-        "func": "",
-        "result": {},
-        "expected": {}
-    }
+  "id": "J_os_11",
+  "snapshot": "os",
+  "instruction": "ZSHターミナルのPATH変数に新しいエントリ「/home/david/pear/bin」を追加していただけますか？",
+  "source": "https://stackoverflow.com/questions/11530090/adding-a-new-entry-to-the-path-variable-in-zsh",
+  "trajectory": "trajectories/",
+  "config": [],
+  "related_apps": [
+    "os"
+  ],
+  "evaluator": {
+    "func": "",
+    "result": {},
+    "expected": {}
+  }
 }

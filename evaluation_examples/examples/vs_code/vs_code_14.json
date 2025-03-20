@@ -1,5 +1,5 @@
 {
-  "id": "930fdb3b-11a8-46fe-9bac-577332e2640e",
+  "id": "vs_code_14",
   "snapshot": "vscode",
   "instruction": "Please help me create a shortcut \"ctrl+j\" to move cursor focus from terminal to editor in VS Code.",
   "source": "https://superuser.com/questions/1270103/how-to-switch-the-cursor-between-terminal-and-code-in-vscode",
@@ -28,12 +28,11 @@
     "expected": {
       "type": "rule",
       "rules": {
-        "expected":
-            {
-              "key": "ctrl+j",
-              "command": "workbench.action.focusActiveEditorGroup",
-              "when": "terminalFocus"
-            }
+        "expected": {
+          "key": "ctrl+j",
+          "command": "workbench.action.focusActiveEditorGroup",
+          "when": "terminalFocus"
+        }
       }
     },
     "result": {

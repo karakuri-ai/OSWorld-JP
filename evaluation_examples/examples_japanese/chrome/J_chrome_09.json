@@ -1,46 +1,46 @@
 {
-    "id": "J_2ad9387a-65d8-4e33-ad5b-7580065a27ca",
-    "snapshot": "chrome",
-    "instruction": "インターネットブラウザのブックマークバーに新しいフォルダーを作っていただけますか？「お気に入り」と名付けましょう。",
-    "source": "https://www.youtube.com/watch?v=IN-Eq_UripQ",
-    "config": [
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "google-chrome",
-                    "--remote-debugging-port=1337"
-                ]
-            }
-        },
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "socat",
-                    "tcp-listen:9222,fork",
-                    "tcp:localhost:1337"
-                ]
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "chrome"
-    ],
-    "evaluator": {
-        "func": "is_expected_bookmarks",
-        "result": {
-            "type": "bookmarks"
-        },
-        "expected": {
-            "type": "rule",
-            "rules": {
-                "type": "bookmark_bar_folders_names",
-                "names": [
-                    "Favorites"
-                ]
-            }
-        }
+  "id": "J_chrome_09",
+  "snapshot": "chrome",
+  "instruction": "インターネットブラウザのブックマークバーに新しいフォルダーを作っていただけますか？「お気に入り」と名付けましょう。",
+  "source": "https://www.youtube.com/watch?v=IN-Eq_UripQ",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "is_expected_bookmarks",
+    "result": {
+      "type": "bookmarks"
+    },
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "type": "bookmark_bar_folders_names",
+        "names": [
+          "Favorites"
+        ]
+      }
+    }
+  }
 }

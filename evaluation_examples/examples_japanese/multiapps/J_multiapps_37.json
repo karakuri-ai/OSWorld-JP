@@ -1,46 +1,46 @@
 {
-    "id": "J_51f5801c-18b3-4f25-b0c3-02f85507a078",
-    "snapshot": "libreoffice_impress",
-    "instruction": "このプレゼンテーションをLibreOffice Impressで作成しており、今後のトークのためにたくさんのスピーカーノートを追加しました。リハーサルの際にそれらのノートを別のドキュメントに手元に置いておきたいです。Impressファイルからすべての発表者ノートを抽出して、Wordドキュメントとして保存するのを手伝ってもらえますか？ノートのテキストだけを保持し、書式やページ番号の情報は追加しないでください。ファイル名は「notes.docx」とし、アクセスしやすいようにデスクトップに置いてください。",
-    "source": "https://github.com/danielrcollins1/ImpressExtractNotes",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://drive.usercontent.google.com/download?id=1epTcblcYh8j_wFtA-aiXPIF2Oo1IVw8A&export=download",
-                        "path": "/home/user/デスクトップ/Dickinson_Slides.pptx"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "open",
-            "parameters": {
-                "path": "/home/user/デスクトップ/Dickinson_Slides.pptx"
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "libreoffice_impress",
-        "libreoffice_writer"
-    ],
-    "evaluator": {
-        "func": "compare_docx_files",
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/デスクトップ/notes.docx",
-            "dest": "notes.docx"
-        },
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://drive.usercontent.google.com/download?id=1vUvaQLJUtFgbZi7lSzl0y0TS_WecFczm&export=download",
-            "dest": "notes_gold.docx"
-        },
-        "options": {
-            "ignore_blanks": true
-        }
+  "id": "J_multiapps_37",
+  "snapshot": "libreoffice_impress",
+  "instruction": "このプレゼンテーションをLibreOffice Impressで作成しており、今後のトークのためにたくさんのスピーカーノートを追加しました。リハーサルの際にそれらのノートを別のドキュメントに手元に置いておきたいです。Impressファイルからすべての発表者ノートを抽出して、Wordドキュメントとして保存するのを手伝ってもらえますか？ノートのテキストだけを保持し、書式やページ番号の情報は追加しないでください。ファイル名は「notes.docx」とし、アクセスしやすいようにデスクトップに置いてください。",
+  "source": "https://github.com/danielrcollins1/ImpressExtractNotes",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://drive.usercontent.google.com/download?id=1epTcblcYh8j_wFtA-aiXPIF2Oo1IVw8A&export=download",
+            "path": "/home/user/デスクトップ/Dickinson_Slides.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/Dickinson_Slides.pptx"
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "libreoffice_impress",
+    "libreoffice_writer"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/notes.docx",
+      "dest": "notes.docx"
+    },
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://drive.usercontent.google.com/download?id=1vUvaQLJUtFgbZi7lSzl0y0TS_WecFczm&export=download",
+      "dest": "notes_gold.docx"
+    },
+    "options": {
+      "ignore_blanks": true
+    }
+  }
 }

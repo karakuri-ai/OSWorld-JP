@@ -1,10 +1,9 @@
 {
-  "id": "fbb548ca-c2a6-4601-9204-e39a2efc507b",
+  "id": "gimp_26",
   "snapshot": "gimp",
   "instruction": "Blue is my favorite color, so could you help me change the color theme of GIMP to \"Blue\"?",
   "source": "",
-  "config": [
-  ],
+  "config": [],
   "trajectory": "trajectories/",
   "related_apps": [
     "gimp"

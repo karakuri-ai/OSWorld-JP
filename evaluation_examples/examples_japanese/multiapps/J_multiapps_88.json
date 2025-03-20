@@ -1,47 +1,47 @@
 {
-    "id": "J_d68204bf-11c1-4b13-b48b-d303c73d4bf6",
-    "snapshot": "gimp",
-    "instruction": "コマンドラインを使って、私の画像を縦に三等分してください。それから、それらを左から右に向かって徐々に暖色系にグラデーションをかけて並べ替え、新しい画像「rearranged.png」として保存してください。",
-    "source": "",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://drive.google.com/uc?export=download&id=1GdtkwADABIVBaDsQEsHGee3V5idByMeF",
-                        "path": "/home/user/デスクトップ/tilearray.png"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "execute",
-            "parameters": {
-                "command": [
-                    "python",
-                    "-c",
-                    "import pyautogui; import time; pyautogui.hotkey(\"ctrl\", \"alt\", \"t\"); time.sleep(0.5);"
-                ]
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "gimp",
-        "os"
-    ],
-    "evaluator": {
-        "func": "check_structure_sim",
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/デスクトップ/rearranged.png",
-            "dest": "rearranged.png"
-        },
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://drive.google.com/uc?export=download&id=1hADwgTFkXwD5U8966aj5V8qw6Y1j1d9S",
-            "dest": "rearranged_gold.png"
-        }
+  "id": "J_multiapps_88",
+  "snapshot": "gimp",
+  "instruction": "コマンドラインを使って、私の画像を縦に三等分してください。それから、それらを左から右に向かって徐々に暖色系にグラデーションをかけて並べ替え、新しい画像「rearranged.png」として保存してください。",
+  "source": "",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://drive.google.com/uc?export=download&id=1GdtkwADABIVBaDsQEsHGee3V5idByMeF",
+            "path": "/home/user/デスクトップ/tilearray.png"
+          }
+        ]
+      }
+    },
+    {
+      "type": "execute",
+      "parameters": {
+        "command": [
+          "python",
+          "-c",
+          "import pyautogui; import time; pyautogui.hotkey(\"ctrl\", \"alt\", \"t\"); time.sleep(0.5);"
+        ]
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "gimp",
+    "os"
+  ],
+  "evaluator": {
+    "func": "check_structure_sim",
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/rearranged.png",
+      "dest": "rearranged.png"
+    },
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://drive.google.com/uc?export=download&id=1hADwgTFkXwD5U8966aj5V8qw6Y1j1d9S",
+      "dest": "rearranged_gold.png"
+    }
+  }
 }

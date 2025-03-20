@@ -1,5 +1,5 @@
 {
-  "id": "99146c54-4f37-4ab8-9327-5f3291665e1e",
+  "id": "thunderbird_12",
   "snapshot": "thunderbird",
   "instruction": "Due to certain security considerations and the nature of my work, I prefer not to configure an incoming email service in Thunderbird. However, I still need to send emails. Can you help me set up Thunderbird to send emails from anonym-x2024@outlook.com without configuring its incoming email service?",
   "source": "https://superuser.com/questions/1764409/how-to-send-email-with-thunderbird-without-configuring-an-incoming-email-service",

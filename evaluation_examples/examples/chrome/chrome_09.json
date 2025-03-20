@@ -1,5 +1,5 @@
 {
-  "id": "2ad9387a-65d8-4e33-ad5b-7580065a27ca",
+  "id": "chrome_09",
   "snapshot": "chrome",
   "instruction": "Can you make a new folder for me on the bookmarks bar in my internet browser? Let's call it 'Favorites.'",
   "source": "https://www.youtube.com/watch?v=IN-Eq_UripQ",
@@ -37,7 +37,9 @@
       "type": "rule",
       "rules": {
         "type": "bookmark_bar_folders_names",
-        "names": ["Favorites"]
+        "names": [
+          "Favorites"
+        ]
       }
     }
   }

@@ -1,10 +1,10 @@
 {
-	"id": "9219480b-3aed-47fc-8bac-d2cffc5849f7",
-	"snapshot": "vs_code",
-	"instruction": "Hi, I recently playing with developing a small python-based tetris game. While I have finished most of the part, something is wrong under some cases when I press up to rotate, the whole program will crash, please run the code for me and fix the bugs of code.",
-	"source": "authors",
-	"config": [
-		{
+  "id": "multiapps_65",
+  "snapshot": "vs_code",
+  "instruction": "Hi, I recently playing with developing a small python-based tetris game. While I have finished most of the part, something is wrong under some cases when I press up to rotate, the whole program will crash, please run the code for me and fix the bugs of code.",
+  "source": "authors",
+  "config": [
+    {
       "type": "command",
       "parameters": {
         "command": [
@@ -46,13 +46,13 @@
         ]
       }
     }
-    ],
-	"trajectory": "trajectories/9219480b-3aed-47fc-8bac-d2cffc5849f7",
-	"related_apps": [
-      "vs_code",
-      "os"
-    ],
-	"evaluator": {
+  ],
+  "trajectory": "trajectories/9219480b-3aed-47fc-8bac-d2cffc5849f7",
+  "related_apps": [
+    "vs_code",
+    "os"
+  ],
+  "evaluator": {
     "postconfig": [],
     "func": "check_python_file_by_test_suite",
     "result": {

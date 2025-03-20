@@ -1,5 +1,5 @@
 {
-  "id": "7efeb4b1-3d19-4762-b163-63328d66303b",
+  "id": "excel_52",
   "snapshot": "libreoffice_calc",
   "instruction": "Fill the Sequence Numbers as \"No. #\" in the \"Seq No.\" column",
   "source": "https://www.youtube.com/shorts/4jzXfZNhfmk",
@@ -58,17 +58,17 @@
         }
       }
     ],
-		"func": "compare_table",
-		"expected": {
-			"type": "cloud_file",
-			"path": "https://drive.usercontent.google.com/download?id=1K37qrxab2cib1SkKPthYkb83fzaj9ETa&export=download&authuser=0&confirm=t&uuid=66b763e6-2fb1-46fc-9753-7f8533366b82&at=APZUnTU1nCKKXBwCbyI8aKpdhE5W:1705560437314",
-			"dest": "Order_Sales_Serial#_gold.xlsx"
-		},
-		"result": {
-			"type": "vm_file",
-			"path": "/home/user/Order_Sales_Serial#.xlsx",
-			"dest": "Order_Sales_Serial#.xlsx"
-		},
+    "func": "compare_table",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://drive.usercontent.google.com/download?id=1K37qrxab2cib1SkKPthYkb83fzaj9ETa&export=download&authuser=0&confirm=t&uuid=66b763e6-2fb1-46fc-9753-7f8533366b82&at=APZUnTU1nCKKXBwCbyI8aKpdhE5W:1705560437314",
+      "dest": "Order_Sales_Serial#_gold.xlsx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/Order_Sales_Serial#.xlsx",
+      "dest": "Order_Sales_Serial#.xlsx"
+    },
     "options": {
       "rules": [
         {
@@ -78,5 +78,5 @@
         }
       ]
     }
-	}
+  }
 }

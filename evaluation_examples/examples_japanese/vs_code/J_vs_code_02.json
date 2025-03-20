@@ -1,80 +1,80 @@
 {
-    "id": "J_0ed39f63-6049-43d4-ba4d-5fa2fe04a951",
-    "snapshot": "vscode",
-    "instruction": "この文書内の「テキスト」と書かれている場所をすべて「テスト」に変えていただけますか。",
-    "source": "https://www.quora.com/How-do-you-find-and-replace-text-in-Visual-Studio-Code",
-    "config": [
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "url": "https://drive.google.com/uc?export=download&id=1qsJlmLfDJse1_O8nAEdkk2VS2P6A24hX",
-                        "path": "/home/user/デスクトップ/vscode_replace_text.txt"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "code",
-                    "/home/user/デスクトップ/vscode_replace_text.txt"
-                ]
-            }
-        },
-        {
-            "type": "activate_window",
-            "parameters": {
-                "window_name": "Visual Studio Code"
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "vscode"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "activate_window",
-                "parameters": {
-                    "window_name": "Visual Studio Code"
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            },
-            {
-                "type": "execute",
-                "parameters": {
-                    "command": [
-                        "python",
-                        "-c",
-                        "import pyautogui; pyautogui.hotkey('ctrl', 's');"
-                    ]
-                }
-            },
-            {
-                "type": "sleep",
-                "parameters": {
-                    "seconds": 0.5
-                }
-            }
-        ],
-        "func": "compare_text_file",
-        "expected": {
-            "type": "cloud_file",
-            "path": "https://drive.google.com/uc?export=download&id=1fhAPL77LDjpWj1mZKNOzwrUgSJRHx0q1"
-        },
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/デスクトップ/vscode_replace_text.txt",
-            "dest": "vscode_replace_text.txt"
-        }
+  "id": "J_vs_code_02",
+  "snapshot": "vscode",
+  "instruction": "この文書内の「テキスト」と書かれている場所をすべて「テスト」に変えていただけますか。",
+  "source": "https://www.quora.com/How-do-you-find-and-replace-text-in-Visual-Studio-Code",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://drive.google.com/uc?export=download&id=1qsJlmLfDJse1_O8nAEdkk2VS2P6A24hX",
+            "path": "/home/user/デスクトップ/vscode_replace_text.txt"
+          }
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "code",
+          "/home/user/デスクトップ/vscode_replace_text.txt"
+        ]
+      }
+    },
+    {
+      "type": "activate_window",
+      "parameters": {
+        "window_name": "Visual Studio Code"
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "vscode"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Visual Studio Code"
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; pyautogui.hotkey('ctrl', 's');"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ],
+    "func": "compare_text_file",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://drive.google.com/uc?export=download&id=1fhAPL77LDjpWj1mZKNOzwrUgSJRHx0q1"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/vscode_replace_text.txt",
+      "dest": "vscode_replace_text.txt"
+    }
+  }
 }

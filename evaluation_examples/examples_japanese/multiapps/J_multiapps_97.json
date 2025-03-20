@@ -1,127 +1,127 @@
 {
-    "id": "J_e2392362-125e-4f76-a2ee-524b183a3412",
-    "snapshot": "chrome",
-    "instruction": "最近、academicpages.github.ioの有名な個人学術ホームページテンプレートを使って、自分の個人ホームページを作り始めました。これを私のローカルの~/Code/Websiteフォルダにクローンしました。オンラインチュートリアルによれば、_config.yamlファイルで自分の名前と連絡先情報を設定できるそうです。しかし、私はYAMLファイル形式に詳しくありません。このファイルの名前と連絡先情報に関連するセクションを見つけて、「Test Account」と「Test@gmail.com」に変更する手助けをお願いできますか。",
-    "source": "authors",
-    "config": [
-        {
-            "type": "command",
-            "parameters": {
-                "command": [
-                    "mkdir",
-                    "-p",
-                    "/home/user/Code/Website"
-                ]
-            }
-        },
-        {
-            "type": "download",
-            "parameters": {
-                "files": [
-                    {
-                        "path": "/home/user/.tmp.tar.xz",
-                        "url": "https://drive.google.com/uc?id=1ordb5kRSPDKgRi7nYQchn8hGt-INELML&export=download"
-                    }
-                ]
-            }
-        },
-        {
-            "type": "execute",
-            "parameters": {
-                "command": [
-                    "tar",
-                    "-xJvf",
-                    "/home/user/.tmp.tar.xz",
-                    "-C",
-                    "/home/user/Code/Website/"
-                ]
-            }
-        },
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "google-chrome",
-                    "--remote-debugging-port=1337"
-                ]
-            }
-        },
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "socat",
-                    "tcp-listen:9222,fork",
-                    "tcp:localhost:1337"
-                ]
-            }
-        },
-        {
-            "type": "chrome_open_tabs",
-            "parameters": {
-                "urls_to_open": [
-                    "https://academicpages.github.io/"
-                ]
-            }
-        }
-    ],
-    "trajectory": "trajectories/e2392362-125e-4f76-a2ee-524b183a3412",
-    "related_apps": [
-        "chrome",
-        "os",
-        "vscode"
-    ],
-    "evaluator": {
-        "postconfig": [
-            {
-                "type": "execute",
-                "parameters": {
-                    "command": [
-                        "python",
-                        "-c",
-                        "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5);"
-                    ]
-                }
-            }
-        ],
-        "func": "check_json",
-        "options": {
-            "is_yaml": true
-        },
-        "expected": {
-            "type": "rule",
-            "rules": {
-                "expect": [
-                    {
-                        "key": [
-                            "name"
-                        ],
-                        "method": "eq",
-                        "ref": "Test Account"
-                    },
-                    {
-                        "key": [
-                            "author",
-                            "name"
-                        ],
-                        "method": "eq",
-                        "ref": "Test Account"
-                    },
-                    {
-                        "key": [
-                            "author",
-                            "email"
-                        ],
-                        "method": "eq",
-                        "ref": "Test@gmail.com"
-                    }
-                ]
-            }
-        },
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/Code/Website/academicpages.github.io/_config.yml",
-            "dest": "_config.yaml"
-        }
+  "id": "J_multiapps_97",
+  "snapshot": "chrome",
+  "instruction": "最近、academicpages.github.ioの有名な個人学術ホームページテンプレートを使って、自分の個人ホームページを作り始めました。これを私のローカルの~/Code/Websiteフォルダにクローンしました。オンラインチュートリアルによれば、_config.yamlファイルで自分の名前と連絡先情報を設定できるそうです。しかし、私はYAMLファイル形式に詳しくありません。このファイルの名前と連絡先情報に関連するセクションを見つけて、「Test Account」と「Test@gmail.com」に変更する手助けをお願いできますか。",
+  "source": "authors",
+  "config": [
+    {
+      "type": "command",
+      "parameters": {
+        "command": [
+          "mkdir",
+          "-p",
+          "/home/user/Code/Website"
+        ]
+      }
+    },
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "path": "/home/user/.tmp.tar.xz",
+            "url": "https://drive.google.com/uc?id=1ordb5kRSPDKgRi7nYQchn8hGt-INELML&export=download"
+          }
+        ]
+      }
+    },
+    {
+      "type": "execute",
+      "parameters": {
+        "command": [
+          "tar",
+          "-xJvf",
+          "/home/user/.tmp.tar.xz",
+          "-C",
+          "/home/user/Code/Website/"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://academicpages.github.io/"
+        ]
+      }
     }
+  ],
+  "trajectory": "trajectories/e2392362-125e-4f76-a2ee-524b183a3412",
+  "related_apps": [
+    "chrome",
+    "os",
+    "vscode"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5);"
+          ]
+        }
+      }
+    ],
+    "func": "check_json",
+    "options": {
+      "is_yaml": true
+    },
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "expect": [
+          {
+            "key": [
+              "name"
+            ],
+            "method": "eq",
+            "ref": "Test Account"
+          },
+          {
+            "key": [
+              "author",
+              "name"
+            ],
+            "method": "eq",
+            "ref": "Test Account"
+          },
+          {
+            "key": [
+              "author",
+              "email"
+            ],
+            "method": "eq",
+            "ref": "Test@gmail.com"
+          }
+        ]
+      }
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/Code/Website/academicpages.github.io/_config.yml",
+      "dest": "_config.yaml"
+    }
+  }
 }

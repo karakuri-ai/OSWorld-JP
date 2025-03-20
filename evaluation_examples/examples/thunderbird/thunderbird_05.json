@@ -1,5 +1,5 @@
 {
-  "id": "35253b65-1c19-4304-8aa4-6884b8218fc0",
+  "id": "thunderbird_05",
   "snapshot": "thunderbird",
   "instruction": "Set up to forward every email received by anonym-x2024@outlook.com in the future to anonym-x2024@gmail.com. Please don't touch the online account. Just locally in the Thunderbird!",
   "source": "https://support.mozilla.org/en-US/questions/1259354",
@@ -72,7 +72,9 @@
             "enabled": "yes",
             "action": "Forward",
             "actionValue": "anonym-x2024@gmail.com",
-            "condition": ["ALL"]
+            "condition": [
+              "ALL"
+            ]
           }
         ]
       }

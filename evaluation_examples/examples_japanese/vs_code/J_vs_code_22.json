@@ -1,54 +1,54 @@
 {
-    "id": "J_e2b5e914-ffe1-44d2-8e92-58f8c5d92bb2",
-    "snapshot": "vscode",
-    "instruction": "VS Codeの設定を変更して、Pythonのインポート不足に関するエラーレポートを無効にしてください。",
-    "source": "https://superuser.com/questions/1386061/how-to-suppress-some-python-errors-warnings-in-vs-code",
-    "config": [
-        {
-            "type": "command",
-            "parameters": {
-                "command": [
-                    "code",
-                    "--install-extension",
-                    "ms-python.python"
-                ]
-            }
-        },
-        {
-            "type": "launch",
-            "parameters": {
-                "command": [
-                    "code"
-                ]
-            }
-        },
-        {
-            "type": "activate_window",
-            "parameters": {
-                "window_name": "Visual Studio Code"
-            }
-        }
-    ],
-    "trajectory": "trajectories/",
-    "related_apps": [
-        "vscode"
-    ],
-    "evaluator": {
-        "func": "check_json_settings",
-        "expected": {
-            "type": "rule",
-            "rules": {
-                "expected": {
-                    "python.analysis.diagnosticSeverityOverrides": {
-                        "reportMissingImports": "none"
-                    }
-                }
-            }
-        },
-        "result": {
-            "type": "vm_file",
-            "path": "/home/user/.config/Code/User/settings.json",
-            "dest": "settings.json"
-        }
+  "id": "J_vs_code_22",
+  "snapshot": "vscode",
+  "instruction": "VS Codeの設定を変更して、Pythonのインポート不足に関するエラーレポートを無効にしてください。",
+  "source": "https://superuser.com/questions/1386061/how-to-suppress-some-python-errors-warnings-in-vs-code",
+  "config": [
+    {
+      "type": "command",
+      "parameters": {
+        "command": [
+          "code",
+          "--install-extension",
+          "ms-python.python"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "code"
+        ]
+      }
+    },
+    {
+      "type": "activate_window",
+      "parameters": {
+        "window_name": "Visual Studio Code"
+      }
     }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "vscode"
+  ],
+  "evaluator": {
+    "func": "check_json_settings",
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "expected": {
+          "python.analysis.diagnosticSeverityOverrides": {
+            "reportMissingImports": "none"
+          }
+        }
+      }
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/.config/Code/User/settings.json",
+      "dest": "settings.json"
+    }
+  }
 }

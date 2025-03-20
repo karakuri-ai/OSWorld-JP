@@ -1,5 +1,5 @@
 {
-  "id": "9439a27b-18ae-42d8-9778-5f68f891805e",
+  "id": "vs_code_15",
   "snapshot": "vscode",
   "instruction": "Please help me modify the setting of VS Code to keep my cursor focused on the debug console when debugging in VS Code, instead of automatically focusing back on the Editor.",
   "source": "https://stackoverflow.com/questions/75832474/how-to-keep-cursor-in-debug-console-when-debugging-in-visual-studio-code",
@@ -28,7 +28,9 @@
     "expected": {
       "type": "rule",
       "rules": {
-        "expected": {"debug.focusEditorOnBreak": false}
+        "expected": {
+          "debug.focusEditorOnBreak": false
+        }
       }
     },
     "result": {

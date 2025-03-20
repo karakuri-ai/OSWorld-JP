@@ -1,5 +1,5 @@
 {
-  "id": "26150609-0da3-4a7d-8868-0faf9c5f01bb",
+  "id": "W_multiapps_13",
   "snapshot": "vs_code",
   "instruction": "So, I've been dabbling with coding a Snake game in Python, and I finally got it up and running. It's pretty cool, but it's not without its quirks. The biggest issue I'm facing right now is that the snake can't seem to eat the food, no matter what. Could you help me tweak the code so the snake can actually eat the food? Thanks a bunch!",
   "source": "authors",
@@ -7,8 +7,7 @@
     {
       "type": "command",
       "parameters": {
-        "command":
-          "mkdir -p C:\\Users\\User\\Desktop\\snake",
+        "command": "mkdir -p C:\\Users\\User\\Desktop\\snake",
         "shell": true
       }
     },
@@ -48,7 +47,10 @@
     {
       "type": "launch",
       "parameters": {
-        "command":["C:\\Users\\User\\AppData\\Local\\Programs\\Microsoft VS Code\\code.exe", "C:\\Users\\User\\Desktop\\snake"]
+        "command": [
+          "C:\\Users\\User\\AppData\\Local\\Programs\\Microsoft VS Code\\code.exe",
+          "C:\\Users\\User\\Desktop\\snake"
+        ]
       }
     }
   ],
