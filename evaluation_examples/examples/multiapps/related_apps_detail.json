@@ -1,0 +1,471 @@
+{
+  "total_files": 105,
+  "app_counts": {
+    "os": 62,
+    "chrome": 43,
+    "pdf": 5,
+    "gimp": 11,
+    "terminal": 7,
+    "libreoffice_writer": 25,
+    "vs_code": 7,
+    "vlc": 6,
+    "ubuntu_media_player": 1,
+    "libreoffice_calc": 29,
+    "thunderbird": 12,
+    "calc": 2,
+    "vscode": 5,
+    "libreoffice_impress": 8,
+    "Writer": 1,
+    "image": 3,
+    "writer": 2,
+    "browser": 1,
+    "libreoffice": 1,
+    "OS": 1,
+    "Chrome": 1,
+    "picard": 1
+  },
+  "file_app_mapping": {
+    "multiapps_25.json": [
+      "os",
+      "chrome"
+    ],
+    "multiapps_72.json": [
+      "chrome",
+      "pdf"
+    ],
+    "multiapps_64.json": [
+      "gimp",
+      "os"
+    ],
+    "multiapps_33.json": [
+      "os",
+      "chrome"
+    ],
+    "multiapps_48.json": [
+      "os",
+      "terminal"
+    ],
+    "multiapps_09.json": [
+      "libreoffice_writer",
+      "gimp",
+      "os"
+    ],
+    "multiapps_29.json": [
+      "gimp",
+      "vs_code"
+    ],
+    "multiapps_91.json": [
+      "chrome",
+      "os"
+    ],
+    "multiapps_87.json": [],
+    "multiapps_68.json": [
+      "os",
+      "vlc",
+      "ubuntu_media_player"
+    ],
+    "multiapps_44.json": [
+      "libreoffice_calc",
+      "chrome"
+    ],
+    "multiapps_13.json": [
+      "vs_code",
+      "os"
+    ],
+    "multiapps_05.json": [
+      "os",
+      "chrome"
+    ],
+    "multiapps_52.json": [
+      "thunderbird",
+      "chrome"
+    ],
+    "multiapps_53.json": [
+      "libreoffice_calc",
+      "os"
+    ],
+    "multiapps_04.json": [
+      "libreoffice_calc",
+      "chrome",
+      "os"
+    ],
+    "multiapps_12.json": [
+      "os",
+      "calc"
+    ],
+    "multiapps_45.json": [
+      "os",
+      "chrome",
+      "vscode"
+    ],
+    "multiapps_86.json": [
+      "os",
+      "chrome",
+      "libreoffice_calc"
+    ],
+    "multiapps_69.json": [
+      "thunderbird",
+      "chrome"
+    ],
+    "multiapps_90.json": [
+      "libreoffice_calc",
+      "chrome",
+      "libreoffice_writer"
+    ],
+    "multiapps_28.json": [
+      "chrome",
+      "os"
+    ],
+    "multiapps_08.json": [
+      "vscode",
+      "libreoffice_writer",
+      "os"
+    ],
+    "multiapps_49.json": [
+      "chrome",
+      "os"
+    ],
+    "multiapps_32.json": [
+      "chrome",
+      "os"
+    ],
+    "multiapps_65.json": [
+      "vs_code",
+      "os"
+    ],
+    "multiapps_73.json": [
+      "os",
+      "chrome"
+    ],
+    "multiapps_24.json": [
+      "libreoffice_calc",
+      "chrome"
+    ],
+    "multiapps_97.json": [
+      "chrome",
+      "os",
+      "vscode"
+    ],
+    "multiapps_78.json": [
+      "thunderbird",
+      "chrome"
+    ],
+    "multiapps_81.json": [
+      "libreoffice_calc",
+      "libreoffice_writer"
+    ],
+    "multiapps_39.json": [
+      "chrome",
+      "libreoffice_calc"
+    ],
+    "multiapps_42.json": [
+      "libreoffice_writer"
+    ],
+    "multiapps_15.json": [
+      "libreoffice_writer",
+      "terminal"
+    ],
+    "multiapps_03.json": [
+      "libreoffice_writer",
+      "gimp",
+      "os"
+    ],
+    "multiapps_54.json": [
+      "libreoffice_calc",
+      "vs_code"
+    ],
+    "multiapps_23.json": [
+      "gimp",
+      "os"
+    ],
+    "multiapps_100.json": [
+      "libreoffice_calc",
+      "terminal"
+    ],
+    "multiapps_74.json": [
+      "os",
+      "chrome"
+    ],
+    "multiapps_62.json": [
+      "libreoffice_writer",
+      "os"
+    ],
+    "multiapps_35.json": [
+      "libreoffice_calc",
+      "chrome"
+    ],
+    "multiapps_19.json": [
+      "os",
+      "pdf"
+    ],
+    "multiapps_58.json": [
+      "libreoffice_writer",
+      "libreoffice_calc",
+      "os",
+      "libreoffice_impress"
+    ],
+    "multiapps_59.json": [
+      "os",
+      "chrome",
+      "Writer"
+    ],
+    "multiapps_18.json": [
+      "vlc",
+      "gimp"
+    ],
+    "multiapps_34.json": [
+      "gimp",
+      "libreoffice_impress",
+      "os"
+    ],
+    "multiapps_63.json": [
+      "libreoffice_calc",
+      "os",
+      "image",
+      "pdf"
+    ],
+    "multiapps_75.json": [
+      "thunderbird",
+      "os"
+    ],
+    "multiapps_101.json": [
+      "thunderbird",
+      "os",
+      "libreoffice_calc"
+    ],
+    "multiapps_22.json": [
+      "os",
+      "libreoffice_calc"
+    ],
+    "multiapps_55.json": [
+      "chrome",
+      "os",
+      "writer"
+    ],
+    "multiapps_02.json": [
+      "libreoffice_writer",
+      "os"
+    ],
+    "multiapps_14.json": [
+      "os",
+      "browser"
+    ],
+    "multiapps_43.json": [
+      "libreoffice_calc",
+      "chrome"
+    ],
+    "multiapps_38.json": [
+      "thunderbird",
+      "chrome"
+    ],
+    "multiapps_80.json": [
+      "libreoffice_writer",
+      "libreoffice_impress",
+      "os"
+    ],
+    "multiapps_96.json": [
+      "chrome",
+      "libreoffice",
+      "os"
+    ],
+    "multiapps_79.json": [
+      "gimp",
+      "vs_code"
+    ],
+    "multiapps_56.json": [
+      "libreoffice_writer",
+      "libreoffice_calc",
+      "os"
+    ],
+    "multiapps_01.json": [
+      "libreoffice_writer",
+      "libreoffice_calc",
+      "os"
+    ],
+    "multiapps_17.json": [
+      "os",
+      "terminal"
+    ],
+    "multiapps_40.json": [
+      "libreoffice_writer"
+    ],
+    "multiapps_83.json": [
+      "libreoffice_calc",
+      "chrome"
+    ],
+    "multiapps_95.json": [
+      "thunderbird",
+      "chrome"
+    ],
+    "multiapps_37.json": [
+      "libreoffice_impress",
+      "libreoffice_writer"
+    ],
+    "multiapps_60.json": [
+      "libreoffice_calc",
+      "os"
+    ],
+    "multiapps_76.json": [
+      "os",
+      "chrome"
+    ],
+    "multiapps_99.json": [
+      "libreoffice_impress",
+      "libreoffice_writer"
+    ],
+    "multiapps_102.json": [
+      "libreoffice_writer",
+      "terminal"
+    ],
+    "multiapps_21.json": [
+      "libreoffice_calc",
+      "terminal"
+    ],
+    "multiapps_20.json": [
+      "OS",
+      "Chrome"
+    ],
+    "multiapps_103.json": [
+      "chrome",
+      "os"
+    ],
+    "multiapps_77.json": [
+      "libreoffice_calc",
+      "os"
+    ],
+    "multiapps_98.json": [
+      "gimp",
+      "vs_code"
+    ],
+    "multiapps_61.json": [
+      "libreoffice_writer",
+      "chrome"
+    ],
+    "multiapps_36.json": [
+      "vscode",
+      "terminal"
+    ],
+    "multiapps_94.json": [
+      "chrome",
+      "libreoffice_writer"
+    ],
+    "multiapps_82.json": [
+      "thunderbird",
+      "os"
+    ],
+    "multiapps_41.json": [
+      "os",
+      "libreoffice_writer"
+    ],
+    "multiapps_16.json": [],
+    "multiapps_57.json": [
+      "os",
+      "image"
+    ],
+    "multiapps_31.json": [
+      "libreoffice_impress",
+      "vlc"
+    ],
+    "multiapps_66.json": [
+      "vlc",
+      "os"
+    ],
+    "multiapps_89.json": [
+      "thunderbird",
+      "libreoffice_calc"
+    ],
+    "multiapps_70.json": [
+      "os",
+      "gimp",
+      "pdf"
+    ],
+    "multiapps_104.json": [
+      "libreoffice_calc",
+      "chrome"
+    ],
+    "multiapps_27.json": [
+      "thunderbird",
+      "libreoffice_calc",
+      "os"
+    ],
+    "multiapps_50.json": [
+      "libreoffice_impress",
+      "vlc"
+    ],
+    "multiapps_07.json": [
+      "os",
+      "libreoffice_writer"
+    ],
+    "multiapps_11.json": [
+      "chrome",
+      "libreoffice_writer"
+    ],
+    "multiapps_46.json": [
+      "libreoffice_calc",
+      "libreoffice_impress",
+      "libreoffice_writer",
+      "vlc"
+    ],
+    "multiapps_85.json": [
+      "chrome",
+      "os",
+      "image"
+    ],
+    "multiapps_93.json": [
+      "libreoffice_calc",
+      "chrome",
+      "os"
+    ],
+    "multiapps_92.json": [
+      "chrome",
+      "os",
+      "writer"
+    ],
+    "multiapps_84.json": [
+      "thunderbird",
+      "libreoffice_calc"
+    ],
+    "multiapps_47.json": [
+      "calc",
+      "chrome",
+      "os"
+    ],
+    "multiapps_10.json": [
+      "libreoffice_writer",
+      "chrome"
+    ],
+    "multiapps_06.json": [
+      "libreoffice_calc",
+      "os",
+      "pdf"
+    ],
+    "multiapps_51.json": [
+      "chrome",
+      "os"
+    ],
+    "multiapps_26.json": [
+      "os",
+      "picard"
+    ],
+    "multiapps_105.json": [
+      "vscode",
+      "os"
+    ],
+    "multiapps_71.json": [
+      "chrome",
+      "os"
+    ],
+    "multiapps_67.json": [
+      "vs_code",
+      "libreoffice_writer"
+    ],
+    "multiapps_88.json": [
+      "gimp",
+      "os"
+    ],
+    "multiapps_30.json": [
+      "thunderbird",
+      "chrome"
+    ]
+  }
+}
