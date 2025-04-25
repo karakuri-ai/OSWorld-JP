@@ -1,7 +1,7 @@
 {
   "id": "J_gimp_10",
   "snapshot": "gimp",
-  "instruction": "私のフィギュアを水平にミラーリングしてください。",
+  "instruction": "この画像を水平方向に反転してください。",
   "source": "https://www.youtube.com/watch?v=V3slJcft6Tw",
   "config": [
     {
