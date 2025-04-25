@@ -8,21 +8,21 @@
     {
       "type": "execute",
       "parameters": {
-        "command": "mkdir -p ~/Desktop/photos && mkdir -p ~/Desktop/cpjpg",
+        "command": "mkdir -p ~/デスクトップ/photos && mkdir -p ~/デスクトップ/cpjpg",
         "shell": true
       }
     },
     {
       "type": "execute",
       "parameters": {
-        "command": "mkdir -p ~/Desktop/photos/vacation && mkdir -p ~/Desktop/photos/family && mkdir -p ~/Desktop/photos/events",
+        "command": "mkdir -p ~/デスクトップ/photos/vacation && mkdir -p ~/デスクトップ/photos/family && mkdir -p ~/デスクトップ/photos/events",
         "shell": true
       }
     },
     {
       "type": "execute",
       "parameters": {
-        "command": "mkdir -p ~/Desktop/photos/vacation/thailand && mkdir -p ~/Desktop/photos/vacation/hk",
+        "command": "mkdir -p ~/デスクトップ/photos/vacation/thailand && mkdir -p ~/デスクトップ/photos/vacation/hk",
         "shell": true
       }
     },

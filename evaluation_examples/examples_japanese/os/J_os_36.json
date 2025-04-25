@@ -1,7 +1,7 @@
 {
   "id": "J_os_36",
   "snapshot": "os",
-  "instruction": "バッテリーのパーセンテージを見たいのですが、画面に表示するのを手伝っていただけますか？",
+  "instruction": "バッテリーのパーセンテージを見たいのですが、画面に表示するようにしてもらえますか？",
   "source": "https://help.ubuntu.com/lts/ubuntu-help/power-percentage.html.en",
   "trajectory": "trajectories/",
   "config": [],

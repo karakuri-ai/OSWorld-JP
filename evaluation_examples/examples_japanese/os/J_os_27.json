@@ -1,7 +1,7 @@
 {
   "id": "J_os_27",
   "snapshot": "os",
-  "instruction": "設定で「非アクティブ時に画面を暗くする」をオフにしていただけますか？",
+  "instruction": "設定で「操作していないときに画面を暗くする」をオフにしていただけますか？",
   "source": "https://www.youtube.com/watch?v=D4WyNjt_hbQ&t=2s",
   "trajectory": "trajectories/",
   "config": [
