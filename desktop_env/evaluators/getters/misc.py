@@ -16,6 +16,16 @@ day_of_week_mapping = {
     6: 'Sun'
 }
 
+day_of_week_ja_mapping = {
+    0: '月',
+    1: '火',
+    2: '水',
+    3: '木',
+    4: '金',
+    5: '土',
+    6: '日'
+}
+
 month_mapping = {
     1: 'Jan',
     2: 'Feb',
@@ -186,6 +196,8 @@ def apply_rules_to_timeFormat(timeFormat: str, absoluteDay: datetime):
     timeFormat = timeFormat.replace("{month}", month_mapping_full[absoluteDay.month], 1)
     timeFormat = timeFormat.replace("{MonthFull}", Month_Mapping_Full[absoluteDay.month], 1)
     timeFormat = timeFormat.replace("{Day0D}", "0"+str(absoluteDay.day) if absoluteDay.day < 10 else str(absoluteDay.day), 1)
+    timeFormat = timeFormat.replace("{MonthD}", str(absoluteDay.month), 1)
+    timeFormat = timeFormat.replace("{DoWJ}", day_of_week_ja_mapping[absoluteDay.weekday()], 1)
     # you can add other replace rules here
 
     return timeFormat
