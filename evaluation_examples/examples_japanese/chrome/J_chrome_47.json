@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_47",
   "snapshot": "chrome",
-  "instruction": "チャーリーカードストアで交通アクセスパスを申請するための予約を、4か月後の最初の月曜日の午前10時15分にしてください。私の詳細（ジェームス・スミス、james.smith@gmail.com）を入力してください。そして、直接「予約」をクリックしないでください。私に確認させてください。",
+  "instruction": "通勤定期券の購入のウェブ事前予約をしたいです。次の月曜日から、期間は3ヶ月、メトロの志茂駅から駒込駅まででお願いします。ここまで入力したところで、私に確認させてください。",
   "source": "test_task_2",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://www.mbta.com/"
+          "https://www.tokyometro.jp/"
         ]
       }
     },
@@ -46,6 +46,7 @@
     "func": [
       "is_expected_url_pattern_match",
       "check_direct_json_object",
+      "check_direct_json_object",
       "check_direct_json_object"
     ],
     "conj": "and",
@@ -55,21 +56,26 @@
       },
       {
         "type": "active_tab_html_parse",
-        "category": "class",
-        "class_singleObject": {},
-        "class_multiObject": {
-          "breakword": {
-            "1": "content",
-            "2": "time"
-          }
+        "category": "input",
+        "inputObject": {
+          "//*[@id=\"periodStart\"]": "time"
         }
       },
       {
         "type": "active_tab_html_parse",
         "category": "input",
         "inputObject": {
-          "/html/body/div/div/form/div[7]/div/div/div[1]/input[1]": "name",
-          "/html/body/div/div/form/div[7]/div/div/div[1]/input[2]": "mail"
+          "//*[@id=\"period\"]": "period",
+          "//*[@id=\"stationName_from\"]": "stationName_from",
+          "//*[@id=\"stationName_to\"]": "stationName_to"
+        }
+      },
+      {
+        "type": "active_tab_html_parse",
+        "category": "xpath",
+        "inputObject": {
+          "//*[@id=\"selectedStationName_from\"]": "selectedStationName_from",
+          "//*[@id=\"selectedStationName_to\"]": "selectedStationName_to"
         }
       }
     ],
@@ -78,7 +84,7 @@
         "type": "rule",
         "rules": {
           "expected": [
-            "CharlieCardStoreAppointments@mbta.com/bookings/"
+            "webyoyaku/\\?urlstick=41105"
           ]
         }
       },
@@ -86,11 +92,10 @@
         "type": "rule_relativeTime",
         "rules": {
           "relativeTime": {
-            "from": "first monday four months later"
+            "from": "next Monday"
           },
           "expected": {
-            "content": "Apply for Transportation Access Pass (TAP) CharlieCard non-auto approval",
-            "time": "{MonthFull} {Day0D}, 10:15 am"
+            "time": "{Year}-{Month0D}-{Day0D}"
           }
         }
       },
@@ -98,8 +103,18 @@
         "type": "rule",
         "rules": {
           "expected": {
-            "name": "James Smith",
-            "mail": "james.smith@gmail.com"
+            "period": "3か月",
+            "stationName_from": "志茂",
+            "stationName_to": "駒込"
+          }
+        }
+      },
+      {
+        "type": "rule",
+        "rules": {
+          "expected": {
+            "selectedStationName_from": "(東京メトロ 南北線)",
+            "selectedStationName_to": "(東京メトロ 南北線)"
           }
         }
       }

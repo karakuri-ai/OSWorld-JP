@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_19",
   "snapshot": "chrome",
-  "instruction": "カールに似た名前は何ですか？",
+  "instruction": "「なつみ」という名前の漢字にはどんなものがありますか？",
   "source": "Mind2Web",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://www.babycenter.com/child"
+          "https://b-name.jp/"
         ]
       }
     },
@@ -53,16 +53,17 @@
     "chrome"
   ],
   "evaluator": {
-    "func": "is_expected_active_tab",
+    "func": "is_expected_url_pattern_match",
     "result": {
-      "type": "active_url_from_accessTree",
+      "type": "active_tab_info",
       "goto_prefix": "https://www."
     },
     "expected": {
       "type": "rule",
       "rules": {
-        "type": "url",
-        "url": "https://www.babycenter.com/baby-names/details/carl-853"
+        "expected": [
+          "/(all|f)/%E3%81%AA%E3%81%A4%E3%81%BF/"
+        ]
       }
     }
   }

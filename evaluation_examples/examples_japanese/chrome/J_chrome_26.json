@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_26",
   "snapshot": "chrome",
-  "instruction": "来週の月曜日に、ムンバイからストックホルムへのフライトを調べてください。",
+  "instruction": "来週の月曜日のムンバイからストックホルムへのフライトを調べてください。",
   "source": "test_task_1",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://www.qatarairways.com/en-hk/homepage.html"
+          "https://www.qatarairways.com/ja-jp/homepage.html"
         ]
       }
     },

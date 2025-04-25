@@ -28,7 +28,7 @@
       "parameters": {
         "urls_to_open": [
           "https://blog.eleuther.ai/rotary-embeddings/",
-          "https://jalammar.github.io/illustrated-transformer/"
+          "https://zenn.dev/zenkigen_tech/articles/2023-01-shimizu"
         ]
       }
     }
@@ -47,7 +47,7 @@
       "rules": {
         "type": "bookmark_bar_websites_urls",
         "urls": [
-          "https://jalammar.github.io/illustrated-transformer/"
+          "https://zenn.dev/zenkigen_tech/articles/2023-01-shimizu"
         ]
       }
     }

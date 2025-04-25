@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_08",
   "snapshot": "chrome",
-  "instruction": "ストライプ柄の大きいサイズのメンズTシャツを、セール＆ディスカウントの中から見つけてください。",
+  "instruction": "Sサイズのレディースのエアリズムで、2000円以内のものを探してください。",
   "source": "test_task_1",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://www.macys.com/"
+          "https://www.uniqlo.com/jp/ja/"
         ]
       }
     },
@@ -43,18 +43,17 @@
     "chrome"
   ],
   "evaluator": {
-    "func": "exact_match",
+    "func": "is_expected_url_pattern_match",
     "result": {
-      "type": "url_dashPart",
-      "goto_prefix": "https://www.",
-      "partIndex": -1,
-      "needDeleteId": true,
-      "returnType": "string"
+      "type": "active_tab_info",
+      "goto_prefix": "https://www."
     },
     "expected": {
       "type": "rule",
       "rules": {
-        "expected": "Stripe,Men,L,Short%20Sleeve,Sales%20%26%20Discounts"
+        "expected": [
+          "^(?=.*women)(?=.*airism)(?=.*SMA003)(?=.*0-2000).*"
+        ]
       }
     }
   }

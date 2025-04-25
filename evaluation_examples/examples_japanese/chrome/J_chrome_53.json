@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://www.delta.com/"
+          "https://ja.delta.com/jp/ja"
         ]
       }
     },
@@ -43,33 +43,60 @@
     "chrome"
   ],
   "evaluator": {
-    "func": "check_direct_json_object",
-    "result": {
-      "type": "active_tab_html_parse",
-      "goto_prefix": "https://www.",
-      "category": "class",
-      "class_singleObject": {
-        "search-date": "time"
+    "func": [
+      "check_direct_json_object",
+      "check_direct_json_object"
+    ],
+    "conj": "or",
+    "result": [
+      {
+        "type": "active_tab_html_parse",
+        "goto_prefix": "https://www.",
+        "category": "class",
+        "class_singleObject": {
+          "mach-flight-context-info": "time"
+        }
       },
-      "class_multiObject": {
-        "search-segment-cities__city": {
-          "0": "start",
-          "1": "end"
-        }
-      }
-    },
-    "expected": {
-      "type": "rule_relativeTime",
-      "rules": {
-        "relativeTime": {
-          "from": "tomorrow"
+      {
+        "type": "active_tab_html_parse",
+        "goto_prefix": "https://www.",
+        "category": "class",
+        "class_singleObject": {
+          "search-date": "time"
         },
-        "expected": {
-          "start": "NYC",
-          "end": "CMH",
-          "time": "{DoW}, {Month} {DayD}, {Year}"
+        "class_multiObject": {
+          "search-segment-cities__city": {
+            "0": "start",
+            "1": "end"
+          }
         }
       }
-    }
+    ],
+    "expected": [
+      {
+        "type": "rule_relativeTime",
+        "rules": {
+          "relativeTime": {
+            "from": "tomorrow"
+          },
+          "expected": {
+            "time": "片道\nNYC\nCMH\n{Year}年{MonthD}月{DayD}日({DoWJ})"
+          }
+        }
+      },
+      {
+        "type": "rule_relativeTime",
+        "rules": {
+          "relativeTime": {
+            "from": "tomorrow"
+          },
+          "expected": {
+            "start": "NYC",
+            "end": "CMH",
+            "time": "{Year}年{MonthD}月{DayD}日({DoWJ})"
+          }
+        }
+      }
+    ]
   }
 }

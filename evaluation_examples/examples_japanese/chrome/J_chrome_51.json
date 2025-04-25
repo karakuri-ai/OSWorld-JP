@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://www.apple.com/"
+          "https://www.apple.com/jp/"
         ]
       }
     },
@@ -62,7 +62,7 @@
       "type": "rule",
       "rules": {
         "type": "url",
-        "url": "https://www.apple.com/iphone/compare/?modelList=iphone-15-pro-max,iphone-15-pro,iphone-13-pro-max"
+        "url": "https://www.apple.com/jp/iphone/compare/?modelList=iphone-15-pro-max,iphone-13-pro-max"
       }
     }
   }

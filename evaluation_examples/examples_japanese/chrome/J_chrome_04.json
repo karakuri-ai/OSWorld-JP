@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_04",
   "snapshot": "chrome",
-  "instruction": "コンピュータ、ブラウザ設定のパスワードが保存されているエリアに移動してください。まだ明かさずにEtsyのログイン情報を確認したいです。",
+  "instruction": "コンピュータ、ブラウザ設定のパスワードが保存されているエリアに移動してください。Etsyのログイン情報を、表示まではせずに確認したいです。",
   "source": "https://www.quora.com/What-are-the-cool-tricks-to-use-Google-Chrome",
   "config": [
     {
