@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=1VoEpRbXGxxrxIp-a2iGPqgVPQNdswQB-&export=download",
+            "url": "https://docs.google.com/spreadsheets/d/1bLIhitHBvBIfu8D9puV2eD16Z1yxszqN/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
             "path": "/home/user/NetIncome.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=1NGZNpzoB3YDdDiWZy4eZtZMwM9Fw1vw2&export=download",
+      "path": "https://docs.google.com/spreadsheets/d/1Ygtwkq3Kzau0i46sL0rYgMkV1wlmYYTL/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
       "dest": "1_NetIncome_gt1.xlsx"
     },
     "result": {

@@ -1,7 +1,7 @@
 {
   "id": "J_excel_28",
   "snapshot": "libreoffice_calc",
-  "instruction": "データを列Aの昇順に並べ替え、その後、X軸に「日時」列、Y軸に数量を使って折れ線グラフを作成してください。",
+  "instruction": "データを列Aの昇順に並べ替え、その後、X軸を「日時」列、Y軸を数量とした折れ線グラフを作成してください。",
   "source": "SheetCopilot@5",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=1P_8BeCgFJXQwUizF3eFYAeMS4YIw6dmA&export=download",
+            "url": "https://docs.google.com/spreadsheets/d/1oG682eLcZqUsV44xOVkujfr_JWmbneII/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
             "path": "/home/user/BoomerangSales.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=11Knuw3YKaW5Oh1L5cjgpRYcOSqIENr_Y&export=download",
+      "path": "https://docs.google.com/spreadsheets/d/1n3eXGwFQjyXyXUypnIEha-HNO7mzrvcW/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
       "dest": "6_BoomerangSales_gt1.xlsx"
     },
     "result": {

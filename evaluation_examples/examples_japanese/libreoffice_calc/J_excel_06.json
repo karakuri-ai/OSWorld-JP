@@ -1,7 +1,7 @@
 {
   "id": "J_excel_06",
   "snapshot": "libreoffice_calc",
-  "instruction": "新しい行「合計」として月間総売上を計算し、その結果を示すために折れ線グラフを作成してください（x軸は月とします）。",
+  "instruction": "毎月の総売上高を「合計」という新しい行に算出し、その結果を示す折れ線グラフを作成してください（x軸は月とします）。",
   "source": "SheetCopilot@154",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=1Non152JxCxXJI2jL-nVf58YlxoTQXOhw&export=download",
+            "url": "https://docs.google.com/spreadsheets/d/10r1oUV9CdUyU6xHRAdDb22yEaIhkvkIW/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
             "path": "/home/user/SalesRep.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=1baJa_qF1UPcqe4tG2xG5pX4JOP4sW0Oz&export=download",
+      "path": "https://docs.google.com/spreadsheets/d/1YuUbkdD3D2R46nTr2S0SEXM0pgHHWoqj/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
       "dest": "5_SalesRep_gt1.xlsx"
     },
     "result": {
