@@ -1,7 +1,7 @@
 {
   "id": "J_ppt_33",
   "snapshot": "libreoffice_impress",
-  "instruction": "現在のLibreOffice Impressファイルの3ページで、\"サブトピックの続き\"を\"メインアイデア\"や\"サブトピック\"と同じようにインデントし、前に箇条書きを付けずにしてほしいのですが、手伝っていただけますか？",
+  "instruction": "現在のLibreOffice Impressファイルの3ページで、\"continuation of the sub topics\"を\"main idea\"や\"sub topics\"と同じようにインデントし、ただし行頭の中点はつけないでほしいのですが、やってもらえますか？",
   "source": "https://superuser.com/questions/1628656/in-libreoffice-impress-how-can-i-have-a-bullet-indentation-no-bullet-item",
   "config": [
     {

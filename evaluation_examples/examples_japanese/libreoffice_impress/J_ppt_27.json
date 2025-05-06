@@ -1,7 +1,7 @@
 {
   "id": "J_ppt_27",
   "snapshot": "libreoffice_impress",
-  "instruction": "このスライドの内容をアンダーラインを引いて、フォントの色をダークレッド2にしてください（テーブルも含む）。",
+  "instruction": "このスライド（テーブルも含む）の内容にアンダーラインを引いて、フォントの色をダークレッド2にしてください。",
   "source": "https://arxiv.org/pdf/2311.01767.pdf",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.usercontent.google.com/download?id=1WgEV25hWlzvOXIImI1ZaDZO1yKC72Qay&export=download&authuser=0&confirm=t&uuid=be9bc8b6-87c1-4fc9-8a2e-1996506f3064&at=APZUnTXethF6dUj-KMNc4aCa3GNT:1708424245157",
+            "url": "https://docs.google.com/presentation/d/1EO2a8WB_ylWGC2BDHPjQb60X7IaC_qjk/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
             "path": "/home/user/デスクトップ/154_3.pptx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_pptx_files",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.usercontent.google.com/download?id=1trYqwEuj2ruF830UGUHF1M3I1at4nW11&export=download&authuser=0&confirm=t&uuid=87f6f46d-ffa0-4ef2-ae6c-9287112fba46&at=APZUnTVUpQNUwIYuq6WSETe6C3zP:1708424390551",
+      "path": "https://docs.google.com/presentation/d/1HKaQyfmVJdPpLyA2GgqNbmzEJwCjBF5b/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
       "dest": "154_3_Gold.pptx"
     },
     "result": {

@@ -1,7 +1,7 @@
 {
   "id": "J_ppt_09",
   "snapshot": "libreoffice_impress",
-  "instruction": "3分ごとに自動保存を有効にしてください。そうすれば「Ctrl+S」をそれほど頻繁に押さなくても済みます。",
+  "instruction": "3分ごとに自動保存する設定を有効にしてください。「Ctrl+S」を頻繁に押したくありません。",
   "source": "https://www.libreofficehelp.com/enable-autosave-libreoffice/",
   "config": [
     {

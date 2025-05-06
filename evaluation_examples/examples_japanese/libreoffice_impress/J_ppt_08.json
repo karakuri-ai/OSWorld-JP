@@ -61,7 +61,7 @@
     "func": "compare_pptx_files",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.usercontent.google.com/download?id=1rvXngBluhnu5dy9ym6Y0q9P4cCsDTTDb&export=download&authuser=0&confirm=t&uuid=c6e0254c-3f12-4760-a718-d79d11b7861c&at=APZUnTVnN-I2ooklrboNm8EPg2zh:1708514712333",
+      "path": "https://docs.google.com/presentation/d/16jWQjd7rX4HiUmur_re24taPdW7GXmyS/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
       "dest": "201_6_Original.pptx"
     },
     "result": {
