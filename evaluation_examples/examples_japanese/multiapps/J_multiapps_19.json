@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_19",
   "snapshot": "libreoffice_calc",
-  "instruction": "請求書を銀行明細書と照合し、不一致を特定してください。それから、明細書と合わない請求書を取り出し、「problematic」フォルダに入れてください。",
+  "instruction": "請求書を銀行取引明細書と照合し、不一致を特定してください。それから、銀行取引明細書と合わない請求書を取り出し、「problematic」フォルダに入れてください。",
   "source": "authors",
   "config": [
     {
@@ -9,20 +9,20 @@
       "parameters": {
         "files": [
           {
-            "path": "/home/user/デスクトップ/invoice TII-20220301-90.pdf",
-            "url": "https://drive.google.com/uc?id=13y1Dkh9dJUaWeMSk6pg_UY-R7K4bhAJM&export=download"
+            "path": "/home/user/デスクトップ/請求書 TII-20220301-90.pdf",
+            "url": "https://drive.google.com/file/d/1sSD9hMaCMMFsLYe58P4O0KBoWpNCTdDl/view?usp=drive_link"
           },
           {
-            "path": "/home/user/デスクトップ/Invoice # GES-20220215-82.pdf",
-            "url": "https://drive.google.com/uc?id=1zZYJQVpbGmqT_eH0x9Z5O7WoIFrQo3sN&export=download"
+            "path": "/home/user/デスクトップ/請求書 # GES-20220215-82.pdf",
+            "url": "https://drive.google.com/file/d/1X6VymyEpGoNtS1bh-9qOk12ht3xA4RC7/view?usp=drive_link"
           },
           {
-            "path": "/home/user/デスクトップ/Invoice # 243729.pdf",
-            "url": "https://drive.google.com/uc?id=1a7fnWpsAdFQkFWl2BqAA_gTwlZ6nvGAx&export=download"
+            "path": "/home/user/デスクトップ/請求書 # 243729.pdf",
+            "url": "https://drive.google.com/file/d/1fDFrhMcYrIr3TOAj3BjQ--dOUJn34GVE/view?usp=drive_link"
           },
           {
-            "path": "/home/user/デスクトップ/Bank-Statement.pdf",
-            "url": "https://drive.google.com/uc?id=1-KS6p0aip56iPmH4okhXZhLgqVwrcjfw&export=download"
+            "path": "/home/user/デスクトップ/銀行取引明細書.pdf",
+            "url": "https://drive.google.com/file/d/1GcXz5mA7Rog4JDWvhbThDlur8T1C4Qc0/view?usp=drive_link"
           }
         ]
       }

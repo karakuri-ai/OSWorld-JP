@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=1gRFurvUFCy-MpU7PQS_rMo9HUk5ZiDRj&export=download",
+            "url": "https://docs.google.com/spreadsheets/d/13y2umbIIBhMcB6VMF6i85qE0KYA3DTVI/edit?usp=drive_link&ouid=116946418984741442524&rtpof=true&sd=true",
             "path": "/home/user/WeeklySales.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=102dnHffL3zWlNL1MdwOyqJpImRBZTSdq&export=download",
+      "path": "https://docs.google.com/spreadsheets/d/1S48KpxAmALzJBisLtYqgsCkrX2CwoEFz/edit?usp=drive_link&ouid=116946418984741442524&rtpof=true&sd=true",
       "dest": "6_WeeklySales_gt1.xlsx"
     },
     "result": {

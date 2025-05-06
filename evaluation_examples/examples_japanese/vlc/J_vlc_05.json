@@ -1,7 +1,7 @@
 {
   "id": "J_vlc_05",
   "snapshot": "base_setup",
-  "instruction": "私のVLCメディアプレーヤーは動画が終了すると自動的に閉じてしまいます。とても迷惑です。動画が終了した際にVLCメディアプレーヤーが自動的に閉じないようにする方法を教えていただけませんか？",
+  "instruction": "ビデオが終了すると、VLC Media Player が自動的に閉じます。 とても迷惑です。 ビデオの終了後に VLC Media Player が自動的に閉じないようにしていただけますか？",
   "source": "https://superuser.com/questions/1412810/how-to-prevent-vlc-media-player-from-auto-closing-after-video-end#:%7E:text=Click%20on%20%22Media%22on%20the,VLC%20player%20after%20video%20ending",
   "config": [
     {
@@ -12,9 +12,7 @@
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": [
-    "vlc"
-  ],
+  "related_apps": ["vlc"],
   "evaluator": {
     "func": "infeasible"
   }

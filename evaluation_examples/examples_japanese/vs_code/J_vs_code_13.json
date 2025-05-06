@@ -1,27 +1,19 @@
 {
   "id": "J_vs_code_13",
   "snapshot": "vscode",
-  "instruction": "同じウィンドウで「/home/user/workspace1.code-workspace」と「/home/user/workspace2.code-workspace」の2つのワークスペースを同時に開いていただけますか？",
+  "instruction": "同じWindowで「/home/user/workspace1.code-workspace」と「/home/user/workspace2.code-workspace」の2つのワークスペースを同時に開いていただけますか？",
   "source": "",
   "config": [
     {
       "type": "command",
       "parameters": {
-        "command": [
-          "mkdir",
-          "-p",
-          "/home/user/project1"
-        ]
+        "command": ["mkdir", "-p", "/home/user/project1"]
       }
     },
     {
       "type": "command",
       "parameters": {
-        "command": [
-          "mkdir",
-          "-p",
-          "/home/user/project2"
-        ]
+        "command": ["mkdir", "-p", "/home/user/project2"]
       }
     },
     {
@@ -42,9 +34,7 @@
     {
       "type": "launch",
       "parameters": {
-        "command": [
-          "code"
-        ]
+        "command": ["code"]
       }
     },
     {
@@ -55,9 +45,7 @@
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": [
-    "vscode"
-  ],
+  "related_apps": ["vscode"],
   "evaluator": {
     "func": "infeasible"
   }

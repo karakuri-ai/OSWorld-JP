@@ -1,15 +1,13 @@
 {
   "id": "J_vs_code_15",
   "snapshot": "vscode",
-  "instruction": "VS Codeでデバッグ中にカーソルがエディタに自動的に戻らず、デバッグコンソールにフォーカスしたままにする設定を変更するのを手伝ってください。",
+  "instruction": "VS Codeの設定を修正して、VS Codeでデバッグする際に、自動的にエディタに焦点を合わせるのではなく、デバッグコンソールにカーソルを合わせるようにするのを手伝ってください。",
   "source": "https://stackoverflow.com/questions/75832474/how-to-keep-cursor-in-debug-console-when-debugging-in-visual-studio-code",
   "config": [
     {
       "type": "launch",
       "parameters": {
-        "command": [
-          "code"
-        ]
+        "command": ["code"]
       }
     },
     {
@@ -20,9 +18,7 @@
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": [
-    "vscode"
-  ],
+  "related_apps": ["vscode"],
   "evaluator": {
     "func": "check_json_settings",
     "expected": {

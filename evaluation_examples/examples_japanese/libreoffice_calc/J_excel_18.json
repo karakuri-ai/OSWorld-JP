@@ -1,7 +1,7 @@
 {
   "id": "J_excel_18",
   "snapshot": "libreoffice_calc",
-  "instruction": "新しい列に「期間率 (%)」という見出しで私のデータの期間率を計算してください。結果を数値型に変換し、最高の結果を緑色（#00ff00）のフォントでハイライトしてください。",
+  "instruction": "新しい列に「期間率 (%)」という見出しで私のデータの期間率を計算してください。結果を数値型に変換し、最高の結果を緑色（#00ff00）でハイライトしてください。",
   "source": "SheetCopilot@124",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=1zejyjqheZOyLaYXS2X8ds6QrZCj3P096&export=download",
+            "url": "https://docs.google.com/spreadsheets/d/1zkf5aFj6o-T9qu4iweu_we0db_vITuz1/edit?usp=drive_link&ouid=101903524737923251296&rtpof=true&sd=true",
             "path": "/home/user/PeriodRate.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=1aK3pWJ4LZx7aPFu16-MxzL0HzXGcQ2U1&export=download",
+      "path": "https://docs.google.com/spreadsheets/d/1AZbxI6AixPT7XFWVacYkT8ph1HoEAzmi/edit?usp=drive_link&ouid=101903524737923251296&rtpof=true&sd=true",
       "dest": "1_PeriodRate_gt1.xlsx"
     },
     "result": {

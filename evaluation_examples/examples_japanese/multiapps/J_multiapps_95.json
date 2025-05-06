@@ -2,7 +2,7 @@
   "id": "J_multiapps_95",
   "snapshot": "libreoffice_calc",
   "instruction": "LibreOffice Calcで開いた.xlsxファイルを.htmlファイルに変換し、Chromeで表示してください。",
-  "source": "https://www.ilovefreesoftware.com/23/featured/free-csv-to-html-converter-software-windows.html",
+  "source": "https://progkeiyou.com/excell2html/",
   "config": [
     {
       "type": "launch",

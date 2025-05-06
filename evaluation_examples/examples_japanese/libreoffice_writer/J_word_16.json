@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=1QHk3fVFSlvYu2k013_7ahEkVQl_o1GTU&export=download",
+            "url": https://drive.google.com/drive/folders/1GPuhMiZj-Ne0qPss_9FFo8Tqk14wNpEt",
             "path": "/home/user/デスクトップ/Dolch_Sight_Words_Primer.docx"
           }
         ]
@@ -55,7 +55,7 @@
     "func": "evaluate_colored_words_in_tables",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.usercontent.google.com/download?id=1XmF-6ttL23xMK-j4P50qVGO4vgb6EgZR&export=download&authuser=0&confirm=t&uuid=fe5c16a5-3131-4a19-a6bf-c5e7faf341dd&at=APZUnTWDtqYGJvChovcgUVHDnvzy:1706807220392",
+      "path": "https://drive.google.com/drive/folders/1GPuhMiZj-Ne0qPss_9FFo8Tqk14wNpEt",
       "dest": "Dolch_Sight_Words_Primer_Gold.docx"
     },
     "result": {

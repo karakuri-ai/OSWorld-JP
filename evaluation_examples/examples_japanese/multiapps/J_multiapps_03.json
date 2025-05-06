@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_03",
   "snapshot": "libreoffice_writer",
-  "instruction": "友人から画像編集の手伝いをお願いされました。要件が書かれた文書と調整する画像はデスクトップにあります。指示に従って画像を必要な修正を加え、編集した画像を「pic.jpg」としてデスクトップに保存してください。ありがとうございます！",
+  "instruction": "友人から画像編集の手伝いをお願いされました。要件が書かれた文書と調整する画像はデスクトップにあります。指示に従って画像を必要な修正を加え、編集した画像を「pic.jpg」としてデスクトップに保存してください。よろしくお願いします！",
   "source": "authors",
   "config": [
     {
@@ -13,7 +13,7 @@
             "path": "/home/user/デスクトップ/requirment.docx"
           },
           {
-            "url": "https://drive.usercontent.google.com/download?id=1eQHixX0TTExye0lbmHQny5CYhaREB5fQ&export=download&authuser=0&confirm=t&uuid=8546ef19-ea50-4e1a-9296-2db0302afd62&at=APZUnTVEmYOeAIdok_anTWOVHBCp:1709727527585",
+            "url": "https://docs.google.com/document/d/1JIcvQV9d87IVwFSdFZtsOv4jf9p7iIiQ/edit?usp=drive_link&ouid=116946418984741442524&rtpof=true&sd=true",
             "path": "/home/user/デスクトップ/ChMkKV8wsR6IBfEtABYfc0Tgu9cAAA1lQHO_78AFh-L733.jpg"
           }
         ]

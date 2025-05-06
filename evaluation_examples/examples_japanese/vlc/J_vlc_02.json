@@ -1,7 +1,7 @@
 {
   "id": "J_vlc_02",
   "snapshot": "chrome",
-  "instruction": "スプラッシュスクリーンのコーンアイコンを無効にしていただけますか？あのスキューモーフィックなデザインにはうんざりしています。",
+  "instruction": "スプラッシュ画面のコーンアイコンを無効にできますか？ 私はその立体的なデザインに飽きました。",
   "source": "https://superuser.com/questions/1224784/how-to-change-vlcs-splash-screen",
   "config": [
     {
@@ -22,18 +22,13 @@
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": [
-    "vlc"
-  ],
+  "related_apps": ["vlc"],
   "evaluator": {
     "postconfig": [
       {
         "type": "launch",
         "parameters": {
-          "command": [
-            "pkill",
-            "vlc"
-          ]
+          "command": ["pkill", "vlc"]
         }
       },
       {

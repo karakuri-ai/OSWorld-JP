@@ -1,7 +1,7 @@
 {
   "id": "J_excel_16",
   "snapshot": "libreoffice_calc",
-  "instruction": "各プロモーションタイプの総収益を新しいシート（シート2）にまとめ、プロモーション名を列見出しとして使用してください。",
+  "instruction": "各「プロモーション」タイプごとの「収益」の合計を新しいシート（Sheet2）にピボットテーブルでまとめてください。その際、「プロモーション」の値を列見出しとして使用してください。",
   "source": "SheetCopilot@55",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=1I29YyV7zFdNqbsQw0SWD9pDuLz3oHlge&export=download",
+            "url": "https://docs.google.com/spreadsheets/d/1jQT2Gyivt-m7LKm5u8hYAHv4DG4rlvmx/edit?usp=drive_link&ouid=116946418984741442524&rtpof=true&sd=true",
             "path": "/home/user/EntireSummerSales.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=1khzLf5AIlvdtKJQTPJksY8MFohpATeHG&export=download",
+      "path": "https://docs.google.com/spreadsheets/d/1i4BhiXEwzLJnMqCtFrXj6fGNO8_vYdXF/edit?usp=drive_link&ouid=116946418984741442524&rtpof=true&sd=true",
       "dest": "6_EntireSummerSales_gt1.xlsx"
     },
     "result": {

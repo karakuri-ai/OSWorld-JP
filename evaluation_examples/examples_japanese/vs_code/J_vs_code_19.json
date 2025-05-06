@@ -1,15 +1,13 @@
 {
   "id": "J_vs_code_19",
   "snapshot": "vscode",
-  "instruction": "VS Codeのターミナルの全履歴を「/home/user/デスクトップ/history.txt」に保存してください。",
+  "instruction": "VS Codeのターミナルの全履歴を「/home/user/desktop/history.txt」に保存してください。",
   "source": "",
   "config": [
     {
       "type": "launch",
       "parameters": {
-        "command": [
-          "code"
-        ]
+        "command": ["code"]
       }
     },
     {
@@ -20,9 +18,7 @@
     }
   ],
   "trajectory": "trajectories/ae506c68-352c-4094-9caa-ee9d42052317",
-  "related_apps": [
-    "vscode"
-  ],
+  "related_apps": ["vscode"],
   "evaluator": {
     "func": "compare_text_file",
     "expected": {
@@ -32,7 +28,7 @@
     },
     "result": {
       "type": "vm_file",
-      "path": "/home/user/デスクトップ/history.txt",
+      "path": "/home/user/desktop/history.txt",
       "dest": "history.txt"
     }
   }

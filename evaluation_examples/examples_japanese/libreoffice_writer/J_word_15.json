@@ -1,7 +1,7 @@
 {
   "id": "J_word_15",
   "snapshot": "libreoffice_writer",
-  "instruction": "友達のコースアウトラインを査読していますが、最後の段落が冗長だと思いますので、最後の段落の単語に取り消し線を追加してもらえますか？",
+  "instruction": "友達のコースアウトラインを査読していますが、最後の段落が冗長だと思いますので、最後の段落に取り消し線を追加してもらえますか？",
   "source": "https://superuser.com/questions/657792/libreoffice-writer-how-to-apply-strikethrough-text-formatting?rq=1",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=1Uqgr9Y_kjoMoDoUwt80hv1EtFaisyztU&export=download",
+            "url": "https://drive.google.com/drive/folders/1GlvMxgJouvNe60i2sS5oPTyYLLCPBJY5",
             "path": "/home/user/デスクトップ/GEOG2169_Course_Outline_2022-23.docx"
           }
         ]
@@ -55,7 +55,7 @@
     "func": "evaluate_strike_through_last_paragraph",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=1IpAnQRYo1whrnzIGyo8UldZf4Tli-yVT&export=download",
+      "path": "https://drive.google.com/drive/folders/1GlvMxgJouvNe60i2sS5oPTyYLLCPBJY5",
       "dest": "GEOG2169_Course_Outline_2022-23_Gold.docx"
     },
     "result": {

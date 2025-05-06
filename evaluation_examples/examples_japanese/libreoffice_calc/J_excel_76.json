@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.usercontent.google.com/download?id=1Zl6ZUkbiV9sISjJRfracd8-xKrW2G3yv&export=download&authuser=0&confirm=t&uuid=6799cca6-62d2-4cfa-b28a-b8da486b5d01&at=APZUnTVy7-CQMjvuFyu7ZMxztfT6:1705563660974",
+            "url": "https://docs.google.com/spreadsheets/d/1l8Nuxn8vbG3qSWkOjbLzzX9DzI9dgHpp/edit?usp=drive_link&ouid=117757189865419481276&rtpof=true&sd=true",
             "path": "/home/user/Students_Class_Subject_Marks.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.usercontent.google.com/download?id=1GwqF52n6cvmQ-ivhmfNCep9mZboQ706-&export=download&authuser=0&confirm=t&uuid=4c750a20-73b8-4072-a4bf-3a4aa77b314a&at=APZUnTXYm-3NVdfneACqfDLYCWko:1705563733494",
+      "path": "https://docs.google.com/spreadsheets/d/1Csrtrm7XeylBSw4EffEY2xQNs3xEdZJs/edit?usp=drive_link&ouid=117757189865419481276&rtpof=true&sd=true",
       "dest": "Students_Class_Subject_Marks_gold.xlsx"
     },
     "result": {

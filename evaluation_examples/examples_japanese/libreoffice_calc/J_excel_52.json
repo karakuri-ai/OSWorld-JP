@@ -1,7 +1,7 @@
 {
   "id": "J_excel_52",
   "snapshot": "libreoffice_calc",
-  "instruction": "「Seq No.」列には「No. #」の形式で連番を記入してください。",
+  "instruction": "「通し番号」列には「No. #」の形式で連番を記入してください。",
   "source": "https://www.youtube.com/shorts/4jzXfZNhfmk",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.usercontent.google.com/download?id=1muvWVg44C6EtBpBQkZ6_ylg3M8r3jjOC&export=download&authuser=0&confirm=t&uuid=41354a7c-d199-4044-960e-0d146fe6f12a&at=APZUnTW3nj5RV3SBJt5tdeVxM4mM:1705553238027",
+            "url": "https://docs.google.com/spreadsheets/d/1srT7mUVmwYHkTK9HmMw6ANCBRBC7w8JA/edit?usp=drive_link&ouid=105138391296064638218&rtpof=true&sd=true",
             "path": "/home/user/Order_Sales_Serial#.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.usercontent.google.com/download?id=1K37qrxab2cib1SkKPthYkb83fzaj9ETa&export=download&authuser=0&confirm=t&uuid=66b763e6-2fb1-46fc-9753-7f8533366b82&at=APZUnTU1nCKKXBwCbyI8aKpdhE5W:1705560437314",
+      "path": "https://docs.google.com/spreadsheets/d/1hJ5CLNgSlRmqM5rBJCM6QRrQdt1CHp_F/edit?usp=drive_link&ouid=105138391296064638218&rtpof=true&sd=true",
       "dest": "Order_Sales_Serial#_gold.xlsx"
     },
     "result": {

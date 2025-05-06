@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_17",
   "snapshot": "os",
-  "instruction": "現在のプロジェクトからコマンドラインを使って、コミットメッセージ「日次更新」で変更をorigin mainにプッシュしてもらえますか。",
+  "instruction": "現在のプロジェクトでコマンドラインを使って、コミットメッセージ「日次更新」で変更をorigin mainにプッシュしてもらえますか。",
   "source": "https://nikki-ricks.medium.com/how-to-use-git-add-commit-and-push-in-vs-code-and-command-line-35c0e8c47b62",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.usercontent.google.com/download?id=1aANBCEHT6K8GmHDMEYtL1LQXdApqVoGv&export=download",
+            "url": "https://drive.usercontent.google.com/download?id=1eZu2-2zsXdYwR0AJSIe9oKvUTGsK4CWj&export=download",
             "path": "/home/user/ダウンロード/binder.zip"
           }
         ]

@@ -107,7 +107,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=1kiCDbTn7uYfgqbymddC5IKMsvpkihW-s&export=download",
+      "path": "https://drive.google.com/file/d/1Y17yxOwL7L1syP96BRPqg4BXvI43a4QA/view?usp=drive_link",
       "dest": "real.tex"
     }
   }

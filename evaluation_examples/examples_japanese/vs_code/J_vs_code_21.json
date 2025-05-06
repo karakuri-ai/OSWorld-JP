@@ -1,15 +1,13 @@
 {
   "id": "J_vs_code_21",
   "snapshot": "vscode",
-  "instruction": "ダウンロードの写真にVS Codeの背景を変えてください。",
+  "instruction": "ダウンロードの写真をVS Codeの背景に変えてください。",
   "source": "",
   "config": [
     {
       "type": "launch",
       "parameters": {
-        "command": [
-          "code"
-        ]
+        "command": ["code"]
       }
     },
     {
@@ -20,9 +18,7 @@
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": [
-    "vscode"
-  ],
+  "related_apps": ["vscode"],
   "evaluator": {
     "func": "infeasible"
   }

@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_67",
   "snapshot": "vs_code",
-  "instruction": "vscodeプロジェクト内のすべての.txtファイルの内容を、デスクトップにある「concat.docx」という単一の文書にまとめてください。マージの区切りは必要ありません。文書全体のフォントサイズを10に設定してください。",
+  "instruction": "vscodeプロジェクト内のすべての.txtファイルの内容を、LibreOffice Writer を使ってデスクトップにある「concat.docx」という単一の文書に統合してください。ファイルを結合する際、区切り文字などは必要ありません。文書全体のフォントサイズを10に設定してください。",
   "source": "",
   "config": [
     {
@@ -47,7 +47,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?export=download&id=1nNoQoQUOfX-do0ZiFQcdJ0_rt2oGcr9Y",
+      "path": "https://docs.google.com/document/d/1AWtwfe89wtpPVKeL-xz5vI81Z08YB2H3/edit",
       "dest": "concat_gold.docx"
     }
   }

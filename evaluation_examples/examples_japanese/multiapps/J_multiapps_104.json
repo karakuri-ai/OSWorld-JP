@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.usercontent.google.com/download?id=1MHk40tzMiyOwNbRj1W-_A-nIisk1TbuM&export=download&authuser=0&confirm=t&uuid=a8674a99-fb5f-4aeb-98ca-338197d73890&at=APZUnTW2thoQGMqgEyD0lNcRISJ_:1706006672423",
+            "url": "https://docs.google.com/spreadsheets/d/1_kSum0hVCOFJqQmuUC_gTojGaDlsTVlF/edit?usp=drive_link&ouid=109319106248284396850&rtpof=true&sd=true",
             "path": "/home/user/cell_search.xlsx"
           }
         ]
@@ -65,7 +65,7 @@
       "type": "rule",
       "rules": {
         "expect": {
-          "pattern": "www\\.google\\.com.*?/search\\?q=Nereida&"
+          "pattern": "www\\.google\\.com.*?/search\\?q=%E5%88%9D%E9%9F%B3&"
         }
       }
     }

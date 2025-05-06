@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_47",
   "snapshot": "multiapps",
-  "instruction": "私は今、2013年から2019年までの過去10年間に開催された3つの機械学習学会の開催都市を数えたいと思っています（2013年と2019年を含む）。私はエクセルに会議の名前と開催年をリストアップしました。空欄の場所を埋めてください。",
+  "instruction": "私はこれから、2013年から2019年までの過去10年間（2013年と2019年を含む）に開催された3つの機械学習学会の開催都市を数えたいと思っています。会議の名前と開催年をExcelに記載していますので。空欄になっている開催都市を埋めてください。",
   "source": "author",
   "config": [
     {
@@ -35,7 +35,7 @@
         "parameters": {
           "files": [
             {
-              "url": "https://drive.google.com/uc?export=download&id=1ZcITkIOs2Z86S5L6MShSohFs3_xVfeCP",
+              "url": "https://docs.google.com/spreadsheets/d/1jVYiYztuUW3sFXawTXVuoFRhb7XK35Q-/edit?usp=drive_link&ouid=106405224854864187261&rtpof=true&sd=true",
               "path": "/home/user/デスクトップ/ConferenceCity_Gold.xlsx"
             }
           ]

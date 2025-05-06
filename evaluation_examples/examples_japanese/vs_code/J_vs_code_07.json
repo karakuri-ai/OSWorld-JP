@@ -1,15 +1,13 @@
 {
   "id": "J_vs_code_07",
   "snapshot": "vscode",
-  "instruction": "VS Codeを使って「test.py」という名前の新しいPythonファイルを作成し、「/home/user/デスクトップ」に保存してください。",
+  "instruction": "VS Codeを使って「test.py」という名前の新しいPythonファイルを作成し、「/home/user/desktop」に保存してください。",
   "source": "https://download.microsoft.com/download/8/A/4/8A48E46A-C355-4E5C-8417-E6ACD8A207D4/VisualStudioCode-TipsAndTricks-Vol.1.pdf",
   "config": [
     {
       "type": "launch",
       "parameters": {
-        "command": [
-          "code"
-        ]
+        "command": ["code"]
       }
     },
     {
@@ -20,20 +18,12 @@
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": [
-    "vscode"
-  ],
+  "related_apps": ["vscode"],
   "evaluator": {
     "func": "is_extension_installed",
     "result": {
       "type": "vm_command_line",
-      "command": [
-        "ls",
-        "/home/user/デスクトップ",
-        "|",
-        "grep",
-        "test.py"
-      ]
+      "command": ["ls", "/home/user/desktop", "|", "grep", "test.py"]
     },
     "expected": {
       "type": "rule",

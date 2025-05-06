@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_60",
   "snapshot": "libreoffice_calc",
-  "instruction": "香港で教員の職を探しているので、どの学校の「初期キャリアプログラム」に申し込むべきかについて興味があります。手元のECSのPDFファイルにあるすべての書類を整理し、各学校の合格率を年ごとに表にまとめてください。",
+  "instruction": "香港のコンピューター科学での教員の職を探しているので、どの学校の「若手研究者支援制度」に申し込むべきかについて興味があります。手元のECSのPDFファイルにあるすべての書類を整理し、各学校の合格率を年ごとに表にまとめてください。",
   "source": "authors",
   "config": [
     {
@@ -21,39 +21,39 @@
         "files": [
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs15.pdf",
-            "url": "https://drive.google.com/uc?id=1dzy9JPSnXyyjj0EcQVSWfoDqxfhxhajA&export=download"
+            "url": "https://drive.google.com/file/d/1C5f4xN4nhxkIiTvAkeVeuHlvebIQK1SR/view?usp=drive_link"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs16.pdf",
-            "url": "https://drive.google.com/uc?id=1_G8bPtVmYSuIhzeHH2Rb9ZEIQFCWmUxK&export=download"
+            "url": "https://drive.google.com/file/d/1A6gpHYN2av7vtWPUq15RTo3TpGGEVosP/view?usp=drive_link"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs17.pdf",
-            "url": "https://drive.google.com/uc?id=13Zgb3O0taE8i8KjVlnPpUxtDR2WEUXD4&export=download"
+            "url": "https://drive.google.com/file/d/1DfkX8zjmwzq5HbowbvTdbIHgCnEbv395/view?usp=drive_link"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs23.pdf",
-            "url": "https://drive.google.com/uc?id=1-ho5Exn43emwSCCqIOpceFjCOPY8E67J&export=download"
+            "url": "https://drive.google.com/file/d/1Qy8r1VlvHv6YwPqz6FGZFi_cFxUpIeg-/view?usp=drive_link"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs22.pdf",
-            "url": "https://drive.google.com/uc?id=1xygVNlMboSJ-SvmtOPfxpaP0lEKGifRO&export=download"
+            "url": "https://drive.google.com/file/d/16D9Q7H1f_wHCgW6yBLTH7cQUof6UWN-R/view?usp=drive_link"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs21.pdf",
-            "url": "https://drive.google.com/uc?id=1pcfUJEAu5vTYwrCScaqnsjdFV78VpH3H&export=download"
+            "url": "https://drive.google.com/file/d/10wJnxPUpeGf33ZYkD4pwKxSvgHse-g55/view?usp=drive_link"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs20.pdf",
-            "url": "https://drive.google.com/uc?id=1zCmY31VeLdYWGQWKEm7FsJWJjcQBMRRI&export=download"
+            "url": "https://drive.google.com/file/d/1buA05NrNAXpP_DUjT4_pfFo5bdLHvBtG/view?usp=drive_link"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs19.pdf",
-            "url": "https://drive.google.com/uc?id=1Qfqhk8DXlT9N35lzxRDw_ik5sp3ESZis&export=download"
+            "url": "https://drive.google.com/file/d/1_SOi5MK9V5KJTJZhq7DWTQVYldVSGpJH/view?usp=drive_link"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs18.pdf",
-            "url": "https://drive.google.com/uc?id=1f8zIeKXBC5JxH4ByWPMEdRu_oONINU0Q&export=download"
+            "url": "https://drive.google.com/file/d/1oDTeIufXRhIw060gu7BvZH-6Ppq-kC_q/view?usp=drive_link"
           },
           {
             "path": "/home/user/Documents/Fundings/grf/customer-information-sheet-for-inward-payments-to-hong-kong.pdf",
@@ -164,8 +164,8 @@
     "expected": {
       "type": "cloud_file",
       "path": [
-        "https://drive.google.com/uc?id=1N_hXcvZsu6-8MkYrLlPYaOQ7SH4pLIYH&export=download",
-        "https://drive.google.com/uc?id=1Wu9rt2qEx5rNzsl8o7f_EZJ-HKdtt8JQ&export=download"
+        "https://docs.google.com/spreadsheets/d/1eQvLHXNAHl3ZUAKKxFpFH2vc-O5ZE1BP/edit?usp=drive_link&ouid=116350698932675380969&rtpof=true&sd=true",
+        "https://drive.google.com/file/d/1f3rF5sNUeh0h5s3vODiO964KMLujYH-v/view?usp=drive_link"
       ],
       "dest": [
         "supported_rate-gt.xlsx",

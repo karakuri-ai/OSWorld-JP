@@ -1,7 +1,7 @@
 {
   "id": "J_excel_74",
   "snapshot": "libreoffice_calc",
-  "instruction": "上のスケール表に従い、下の表に各学生の成績を計算して示してください。",
+  "instruction": "上の評価基準表に従って、下の表の各学生の成績を計算し、記入してください。",
   "source": "https://www.youtube.com/shorts/d7U1S_IsTVM",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.usercontent.google.com/download?id=1wodZjx1KjThUsrtF6ZJaCTy1fQX4E9vA&export=download&authuser=0&confirm=t&uuid=d07ca312-1abc-40f2-81cd-d06e27119854&at=APZUnTWwjnxsHQYapSvpLR8NmlfV:1701785087048",
+            "url": "https://docs.google.com/spreadsheets/d/1zx7dST2QBApWB0ac3VuDXW7BiHfKoior/edit?usp=drive_link&ouid=117757189865419481276&rtpof=true&sd=true",
             "path": "/home/user/Student_Grades_and_Remarks.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.usercontent.google.com/download?id=1kfEHJH1n0yCsQp443IIFvdD9uWv0DWMr&export=download&authuser=0&confirm=t&uuid=d9907f65-8d39-4ecc-8747-b4ed7e6011f5&at=APZUnTXpPAnlh5sD6q-R8oQtqL6g:1702362952170",
+      "path": "https://docs.google.com/spreadsheets/d/1AuHeh7DeHb5OB04l4gjjMyHoMrXtYlyS/edit?usp=drive_link&ouid=117757189865419481276&rtpof=true&sd=true",
       "dest": "Student_Grades_and_Remarks_gold.xlsx"
     },
     "result": {

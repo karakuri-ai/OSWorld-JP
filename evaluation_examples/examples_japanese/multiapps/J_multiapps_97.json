@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_97",
   "snapshot": "chrome",
-  "instruction": "最近、academicpages.github.ioの有名な個人学術ホームページテンプレートを使って、自分の個人ホームページを作り始めました。これを私のローカルの~/Code/Websiteフォルダにクローンしました。オンラインチュートリアルによれば、_config.yamlファイルで自分の名前と連絡先情報を設定できるそうです。しかし、私はYAMLファイル形式に詳しくありません。このファイルの名前と連絡先情報に関連するセクションを見つけて、「Test Account」と「Test@gmail.com」に変更する手助けをお願いできますか。",
+  "instruction": "最近、academicpages.github.ioの有名な個人学術ホームページテンプレートを使って、自分の個人ホームページを作り始めました。これを私のローカルの `~/Code/Website` フォルダにクローンしました。オンラインチュートリアルによれば、_config.yamlファイルで自分の名前と連絡先情報を設定できるそうです。しかし、私はYAMLファイル形式に詳しくありません。このファイルのサイト管理者の名前と連絡先（メールアドレス）情報に関連するセクションを見つけて、「Test Account」と「Test@gmail.com」に変更する手助けをお願いできますか。",
   "source": "authors",
   "config": [
     {

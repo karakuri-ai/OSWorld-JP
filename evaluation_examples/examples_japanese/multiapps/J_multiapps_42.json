@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_42",
   "snapshot": "multiapps",
-  "instruction": "最近、大規模言語モデルに非常に興味を持つようになりました。いくつかの大規模言語モデルに質問を入力して、その回答を「answers.json」というファイルにデスクトップに保存しました。今は、GPT-4からの回答だけに注目したいと思っています。GPT-4のすべての回答をデスクトップの「results.docx」という名前のWord文書に、一つの回答ごとに段落を分けてコピーする手助けをしてください。",
+  "instruction": "最近、大規模言語モデルに強い関心を持つようになりました。いくつかの大規模言語モデルに質問を入力し、その回答をデスクトップ上の「answers.json」というファイルに保存しました。現在は、GPT-4 の回答のみに注目したいと考えています。GPT-4 のすべての回答を、デスクトップ上の「results.docx」という Word 文書に、1つの回答につき1つの段落としてコピーする手助けをお願いします。",
   "source": "",
   "config": [
     {
@@ -23,9 +23,7 @@
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": [
-    "libreoffice_writer"
-  ],
+  "related_apps": ["libreoffice_writer"],
   "evaluator": {
     "postconfig": [
       {
@@ -44,11 +42,7 @@
       {
         "type": "execute",
         "parameters": {
-          "command": [
-            "python",
-            "-c",
-            "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5); "
-          ]
+          "command": ["python", "-c", "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5); "]
         }
       }
     ],

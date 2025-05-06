@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=1Non152JxCxXJI2jL-nVf58YlxoTQXOhw&export=download",
+            "url": "https://docs.google.com/spreadsheets/d/1zBFfmJHgXSacygAFgX9Rjp4D8eQu4tbR/edit?usp=drive_link&ouid=101903524737923251296&rtpof=true&sd=true",
             "path": "/home/user/SalesRep.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=1mJBCmHR7SjYZFoOK1Re6TTixj3McvipW&export=download",
+      "path": "https://docs.google.com/spreadsheets/d/1vEqtyoOrtO0ZQ1QSm5qL5ZEprubPw3xu/edit?usp=drive_link&ouid=101903524737923251296&rtpof=true&sd=true",
       "dest": "3_SalesRep_gt1.xlsx"
     },
     "result": {

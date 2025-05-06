@@ -1,7 +1,7 @@
 {
   "id": "J_vs_code_01",
   "snapshot": "vscode",
-  "instruction": "ローカルのVSIXファイル「/home/user/test.vsix」でVS Codeに拡張機能をインストールするのを手伝ってください。",
+  "instruction": "ローカル VSIX ファイル「/home/user/test.vsix」から VS コードに拡張子をインストールするのを手伝ってください。",
   "source": "https://download.microsoft.com/download/8/A/4/8A48E46A-C355-4E5C-8417-E6ACD8A207D4/VisualStudioCode-TipsAndTricks-Vol.1.pdf",
   "config": [
     {
@@ -18,9 +18,7 @@
     {
       "type": "launch",
       "parameters": {
-        "command": [
-          "code"
-        ]
+        "command": ["code"]
       }
     },
     {
@@ -31,9 +29,7 @@
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": [
-    "vscode"
-  ],
+  "related_apps": ["vscode"],
   "evaluator": {
     "func": "is_extension_installed",
     "result": {
