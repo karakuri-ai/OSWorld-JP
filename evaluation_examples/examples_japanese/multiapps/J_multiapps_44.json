@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/spreadsheets/d/1imIsHc70P5GZKm4qI63VXXqr_jr7fSIC/edit?usp=drive_link&ouid=116946418984741442524&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1imIsHc70P5GZKm4qI63VXXqr_jr7fSIC",
             "path": "/home/user/デスクトップ/rsc-ebook-collection-2023.xlsx"
           }
         ]
@@ -65,7 +65,7 @@
       },
       {
         "type": "cloud_file",
-        "path": "https://docs.google.com/document/d/1W09SJwtGeHT9-SBI8sxpg-woTIWEYEM5/edit?usp=drive_link&ouid=116946418984741442524&rtpof=true&sd=true",
+        "path": "https://drive.google.com/uc?export=download&id=1W09SJwtGeHT9-SBI8sxpg-woTIWEYEM5",
         "dest": "ans_Gold.docx"
       }
     ],

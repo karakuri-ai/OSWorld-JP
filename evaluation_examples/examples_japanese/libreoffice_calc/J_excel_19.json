@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/spreadsheets/d/1SbOsfPvnlb5P9NB10npoWoC4xL_bzirI/edit?usp=drive_link&ouid=101903524737923251296&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1SbOsfPvnlb5P9NB10npoWoC4xL_bzirI",
             "path": "/home/user/Represent_in_millions_billions.xlsx"
           }
         ]
@@ -93,8 +93,8 @@
     "expected": {
       "type": "cloud_file",
       "path": [
-        "https://docs.google.com/spreadsheets/d/1l7kAVJPSLWFDcENyr947zrc-Hb0ti5LJ/edit?usp=drive_link&ouid=101903524737923251296&rtpof=true&sd=true",
-        "https://drive.google.com/file/d/189JeiIoRuXvgXuD4RRRvYmok4QDWngMq/view?usp=drive_link"
+        "https://drive.google.com/uc?export=download&id=1l7kAVJPSLWFDcENyr947zrc-Hb0ti5LJ",
+        "https://drive.google.com/uc?export=download&id=189JeiIoRuXvgXuD4RRRvYmok4QDWngMq"
       ],
       "dest": [
         "Represent_in_millions_billions_gold.xlsx",

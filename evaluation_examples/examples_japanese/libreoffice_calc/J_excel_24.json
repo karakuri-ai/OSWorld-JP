@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/spreadsheets/d/10LuK1ubncAh4JiWQrnVMwOxkHXQRey0Y/edit?usp=drive_link&ouid=101903524737923251296&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=10LuK1ubncAh4JiWQrnVMwOxkHXQRey0Y",
             "path": "/home/user/Create_column_charts_using_statistics.xlsx"
           }
         ]
@@ -66,7 +66,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/spreadsheets/d/1rmkprU-Eo6wg5D-RyS1DUvKg1bdejYJk/edit?usp=drive_link&ouid=101903524737923251296&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=1rmkprU-Eo6wg5D-RyS1DUvKg1bdejYJk",
       "dest": "Create_column_charts_using_statistics_gold.xlsx"
     },
     "options": {

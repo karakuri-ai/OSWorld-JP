@@ -47,7 +47,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/file/d/1DcArCEgii3u94-dmW1LSyeAcHGUpiVTB/view?usp=drive_link",
+      "path": "https://drive.google.com/uc?export=download&id=1DcArCEgii3u94-dmW1LSyeAcHGUpiVTB",
       "dest": "colab_Gold.py"
     }
   }

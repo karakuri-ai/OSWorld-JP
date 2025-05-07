@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/spreadsheets/d/1BSdky6TtwlkephaYEqvpt4FcTQntKny-/edit?usp=drive_link&ouid=116946418984741442524&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1BSdky6TtwlkephaYEqvpt4FcTQntKny-",
             "path": "/home/user/Freeze_row_column.xlsx"
           }
         ]
@@ -66,7 +66,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/spreadsheets/d/1gizfvgylndig-_aeqG_DZThHrUqPvIi1/edit?usp=drive_link&ouid=116946418984741442524&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=1gizfvgylndig-_aeqG_DZThHrUqPvIi1",
       "dest": "Freeze_row_column_gold.xlsx"
     },
     "options": {

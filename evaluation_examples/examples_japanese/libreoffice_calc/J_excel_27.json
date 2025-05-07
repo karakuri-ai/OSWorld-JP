@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/spreadsheets/d/1X2rLbJgSmLdxW-9y1tZd1PDwUlBxeGoT/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1X2rLbJgSmLdxW-9y1tZd1PDwUlBxeGoT",
             "path": "/home/user/LARS_Science_Assessment_Resource_List_7-30-21.xlsx"
           }
         ]
@@ -60,7 +60,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/spreadsheets/d/1AW9Pe_7iL72nFNq0sb6gWGXPML1ifRIc/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=1AW9Pe_7iL72nFNq0sb6gWGXPML1ifRIc",
       "dest": "LARS_Science_Assessment_Resource_List_7-30-21_gold.xlsx"
     },
     "options": {

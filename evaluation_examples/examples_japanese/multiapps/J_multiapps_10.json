@@ -66,7 +66,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/document/d/1AdXZ-skErTCge5FG3qAaDjvVg4d9ehSC/edit?usp=drive_link&ouid=116946418984741442524&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1AdXZ-skErTCge5FG3qAaDjvVg4d9ehSC",
             "path": "/home/user/デスクトップ/Meeting-Agenda.docx"
           }
         ]
@@ -101,7 +101,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/file/d/1N-ieBcNC9EadRsr3hRytwspOCyVAdnum/view?usp=drive_link",
+      "path": "https://drive.google.com/uc?export=download&id=1N-ieBcNC9EadRsr3hRytwspOCyVAdnum",
       "dest": "gold-Meeting-Agenda.pdf"
     }
   }

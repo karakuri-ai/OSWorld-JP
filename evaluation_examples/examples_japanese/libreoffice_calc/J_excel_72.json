@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/spreadsheets/d/1We-bmZszg7d8TlEUZyQPbRNzyeuvHHKP/edit?usp=drive_link&ouid=117757189865419481276&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1We-bmZszg7d8TlEUZyQPbRNzyeuvHHKP",
             "path": "/home/user/SummerSales.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/spreadsheets/d/1FJzUjaz5gkjt1CgH-7rbd88Gf_BWWvoS/edit?usp=drive_link&ouid=117757189865419481276&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=1FJzUjaz5gkjt1CgH-7rbd88Gf_BWWvoS",
       "dest": "6_SummerSales_gt1.xlsx"
     },
     "result": {

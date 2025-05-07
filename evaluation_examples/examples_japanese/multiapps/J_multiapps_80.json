@@ -10,7 +10,7 @@
         "files": [
           {
             "path": "/home/user/デスクトップ/Unlocking-the-Power-of-ChatGPT.pptx",
-            "url": "https://docs.google.com/presentation/d/1EW6ZBOxsfYflAC7hLkmpm9_w9UsTrqYI/edit?usp=drive_link&rtpof=true&sd=true"
+            "url": "https://drive.google.com/uc?export=download&id=1EW6ZBOxsfYflAC7hLkmpm9_w9UsTrqYI"
           }
         ]
       }
@@ -62,7 +62,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/document/d/1RuellnUmW59SkEf6AA8_QbC8VDqVnLmv/edit?usp=drive_link&ouid=101246867501366193448&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=1RuellnUmW59SkEf6AA8_QbC8VDqVnLmv",
       "dest": "script_Gold.docx"
     }
   }

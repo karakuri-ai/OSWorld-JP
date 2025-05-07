@@ -36,7 +36,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/spreadsheets/d/1H7s5qWe0EmGIq3zMRHbYP9iDSDzUorHk/edit?usp=drive_link&ouid=111481900558742861129&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1H7s5qWe0EmGIq3zMRHbYP9iDSDzUorHk",
             "path": "/home/user/デスクトップ/movies.xlsx"
           }
         ]
@@ -67,7 +67,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/spreadsheets/d/1B_yobZr2lQoec-56TWxyTypd8r1yk4Ih/edit?usp=drive_link&ouid=111481900558742861129&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=1B_yobZr2lQoec-56TWxyTypd8r1yk4Ih",
       "dest": "gold_movies.xlsx"
     },
     "options": {

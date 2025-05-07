@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/spreadsheets/d/1HVthJrdjq-OBUd8pOQD_n2vDdRO3XbRE/edit?usp=drive_link&ouid=101903524737923251296&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1HVthJrdjq-OBUd8pOQD_n2vDdRO3XbRE",
             "path": "/home/user/Invoices.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/spreadsheets/d/14AHhr0BTcaImsnos8Goy-3mUNghf-PQD/edit?usp=drive_link&ouid=101903524737923251296&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=14AHhr0BTcaImsnos8Goy-3mUNghf-PQD",
       "dest": "12_Invoices_gt1.xlsx"
     },
     "result": {

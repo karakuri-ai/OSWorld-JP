@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/document/d/1Mxww1ROCdXa-ffm17U_ZSMaF7jNGLhMw/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1Mxww1ROCdXa-ffm17U_ZSMaF7jNGLhMw",
             "path": "/home/user/デスクトップ/How_to_read_a_scientific_article.docx"
           }
         ]
@@ -55,7 +55,7 @@
     "func": "compare_highlighted_text",
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/document/d/1FWabtfU87F7F3gdU9SQemNONO1LscMLC/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=1FWabtfU87F7F3gdU9SQemNONO1LscMLC",
       "dest": "How_to_read_a_scientific_article_Gold.docx"
     },
     "result": {

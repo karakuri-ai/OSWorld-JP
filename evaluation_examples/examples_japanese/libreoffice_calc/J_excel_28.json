@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/spreadsheets/d/1oG682eLcZqUsV44xOVkujfr_JWmbneII/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1oG682eLcZqUsV44xOVkujfr_JWmbneII",
             "path": "/home/user/BoomerangSales.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/spreadsheets/d/1n3eXGwFQjyXyXUypnIEha-HNO7mzrvcW/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=1n3eXGwFQjyXyXUypnIEha-HNO7mzrvcW",
       "dest": "6_BoomerangSales_gt1.xlsx"
     },
     "result": {

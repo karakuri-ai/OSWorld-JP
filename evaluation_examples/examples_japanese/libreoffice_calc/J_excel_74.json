@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/spreadsheets/d/1zx7dST2QBApWB0ac3VuDXW7BiHfKoior/edit?usp=drive_link&ouid=117757189865419481276&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1zx7dST2QBApWB0ac3VuDXW7BiHfKoior",
             "path": "/home/user/Student_Grades_and_Remarks.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/spreadsheets/d/1AuHeh7DeHb5OB04l4gjjMyHoMrXtYlyS/edit?usp=drive_link&ouid=117757189865419481276&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=1AuHeh7DeHb5OB04l4gjjMyHoMrXtYlyS",
       "dest": "Student_Grades_and_Remarks_gold.xlsx"
     },
     "result": {

@@ -77,23 +77,23 @@
           },
           {
             "path": "/home/user/Documents/Fundings/grf/grf19.pdf",
-            "url": "https://drive.google.com/file/d/1r6JAdRaE-ssM7tr7H_xKTqv9_Wpcephl/view?usp=drive_link"
+            "url": "https://drive.google.com/uc?export=download&id=1r6JAdRaE-ssM7tr7H_xKTqv9_Wpcephl"
           },
           {
             "path": "/home/user/Documents/Fundings/grf/grf20.pdf",
-            "url": "https://drive.google.com/file/d/17LXrVIsdXKFNsqrrLvdeqx7eWgVVCnlJ/view?usp=drive_link"
+            "url": "https://drive.google.com/uc?export=download&id=17LXrVIsdXKFNsqrrLvdeqx7eWgVVCnlJ"
           },
           {
             "path": "/home/user/Documents/Fundings/grf/grf21.pdf",
-            "url": "https://drive.google.com/file/d/17EZFH7zgPaGcrlM3V1q8fL6HJVnGxEHw/view?usp=drive_link"
+            "url": "https://drive.google.com/uc?export=download&id=17EZFH7zgPaGcrlM3V1q8fL6HJVnGxEHw"
           },
           {
             "path": "/home/user/Documents/Fundings/grf/grf22.pdf",
-            "url": "https://drive.google.com/file/d/1gR3m9n4gxu3Z09xcO9o69lKwU6qibYJN/view?usp=drive_link"
+            "url": "https://drive.google.com/uc?export=download&id=1gR3m9n4gxu3Z09xcO9o69lKwU6qibYJN"
           },
           {
             "path": "/home/user/Documents/Fundings/grf/grf23.pdf",
-            "url": "https://drive.google.com/file/d/1FElUmtu2qk3uBZ9zSJrK1dhtINfb_Kdq/view?usp=drive_link"
+            "url": "https://drive.google.com/uc?export=download&id=1FElUmtu2qk3uBZ9zSJrK1dhtINfb_Kdq"
           }
         ]
       }
@@ -136,8 +136,8 @@
     "expected": {
       "type": "cloud_file",
       "path": [
-        "https://docs.google.com/spreadsheets/d/1AMn4b0INu-u2Tp147EaCoy73SVLk1k0_/edit?usp=drive_link&ouid=116350698932675380969&rtpof=true&sd=true",
-        "https://drive.google.com/file/d/1cBLLtvw3BDoIE1FDyrpL7JsO5e1jY0KL/view?usp=drive_link"
+        "https://drive.google.com/uc?export=download&id=1AMn4b0INu-u2Tp147EaCoy73SVLk1k0_",
+        "https://drive.google.com/uc?export=download&id=1cBLLtvw3BDoIE1FDyrpL7JsO5e1jY0KL"
       ],
       "dest": [
         "GRF-p5y-gt.xlsx",

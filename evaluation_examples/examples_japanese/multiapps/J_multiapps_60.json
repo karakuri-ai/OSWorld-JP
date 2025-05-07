@@ -21,39 +21,39 @@
         "files": [
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs15.pdf",
-            "url": "https://drive.google.com/file/d/1C5f4xN4nhxkIiTvAkeVeuHlvebIQK1SR/view?usp=drive_link"
+            "url": "https://drive.google.com/uc?export=download&id=1C5f4xN4nhxkIiTvAkeVeuHlvebIQK1SR"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs16.pdf",
-            "url": "https://drive.google.com/file/d/1A6gpHYN2av7vtWPUq15RTo3TpGGEVosP/view?usp=drive_link"
+            "url": "https://drive.google.com/uc?export=download&id=1A6gpHYN2av7vtWPUq15RTo3TpGGEVosP"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs17.pdf",
-            "url": "https://drive.google.com/file/d/1DfkX8zjmwzq5HbowbvTdbIHgCnEbv395/view?usp=drive_link"
+            "url": "https://drive.google.com/uc?export=download&id=1DfkX8zjmwzq5HbowbvTdbIHgCnEbv395"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs23.pdf",
-            "url": "https://drive.google.com/file/d/1Qy8r1VlvHv6YwPqz6FGZFi_cFxUpIeg-/view?usp=drive_link"
+            "url": "https://drive.google.com/uc?export=download&id=1Qy8r1VlvHv6YwPqz6FGZFi_cFxUpIeg-"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs22.pdf",
-            "url": "https://drive.google.com/file/d/16D9Q7H1f_wHCgW6yBLTH7cQUof6UWN-R/view?usp=drive_link"
+            "url": "https://drive.google.com/uc?export=download&id=16D9Q7H1f_wHCgW6yBLTH7cQUof6UWN-R"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs21.pdf",
-            "url": "https://drive.google.com/file/d/10wJnxPUpeGf33ZYkD4pwKxSvgHse-g55/view?usp=drive_link"
+            "url": "https://drive.google.com/uc?export=download&id=10wJnxPUpeGf33ZYkD4pwKxSvgHse-g55"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs20.pdf",
-            "url": "https://drive.google.com/file/d/1buA05NrNAXpP_DUjT4_pfFo5bdLHvBtG/view?usp=drive_link"
+            "url": "https://drive.google.com/uc?export=download&id=1buA05NrNAXpP_DUjT4_pfFo5bdLHvBtG"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs19.pdf",
-            "url": "https://drive.google.com/file/d/1_SOi5MK9V5KJTJZhq7DWTQVYldVSGpJH/view?usp=drive_link"
+            "url": "https://drive.google.com/uc?export=download&id=1_SOi5MK9V5KJTJZhq7DWTQVYldVSGpJH"
           },
           {
             "path": "/home/user/Documents/Fundings/ecs/ecs18.pdf",
-            "url": "https://drive.google.com/file/d/1oDTeIufXRhIw060gu7BvZH-6Ppq-kC_q/view?usp=drive_link"
+            "url": "https://drive.google.com/uc?export=download&id=1oDTeIufXRhIw060gu7BvZH-6Ppq-kC_q"
           },
           {
             "path": "/home/user/Documents/Fundings/grf/customer-information-sheet-for-inward-payments-to-hong-kong.pdf",
@@ -164,8 +164,8 @@
     "expected": {
       "type": "cloud_file",
       "path": [
-        "https://docs.google.com/spreadsheets/d/1eQvLHXNAHl3ZUAKKxFpFH2vc-O5ZE1BP/edit?usp=drive_link&ouid=116350698932675380969&rtpof=true&sd=true",
-        "https://drive.google.com/file/d/1f3rF5sNUeh0h5s3vODiO964KMLujYH-v/view?usp=drive_link"
+        "https://drive.google.com/uc?export=download&id=1eQvLHXNAHl3ZUAKKxFpFH2vc-O5ZE1BP",
+        "https://drive.google.com/uc?export=download&id=1f3rF5sNUeh0h5s3vODiO964KMLujYH-v"
       ],
       "dest": [
         "supported_rate-gt.xlsx",

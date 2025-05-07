@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/presentation/d/12qTW5DhjoFuPuViPeN-cOWKSXkbJpMBr/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=12qTW5DhjoFuPuViPeN-cOWKSXkbJpMBr",
             "path": "/home/user/デスクトップ/41_3.pptx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_pptx_files",
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/presentation/d/1P2yEpW1Uou-iRCa4_Ssq_u-Qun-Z-Eiu/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=1P2yEpW1Uou-iRCa4_Ssq_u-Qun-Z-Eiu",
       "dest": "41_3_Gold.pptx"
     },
     "result": {

@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/spreadsheets/d/1lTq5mGXyvzCDzBL7_E8cDWhsY1qml0pD/edit?usp=drive_link&ouid=108701662243050138278&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1lTq5mGXyvzCDzBL7_E8cDWhsY1qml0pD",
             "path": "/home/user/デスクトップ/2023_validation_Book_Reading_Rate.xlsx"
           },
           {
@@ -61,7 +61,7 @@
     ],
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/document/d/1O6LR4dJ1WnrTUGjDCJok6nctXjYLV63r/edit?usp=drive_link&ouid=108701662243050138278&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=1O6LR4dJ1WnrTUGjDCJok6nctXjYLV63r",
       "dest": "book_list_result_Gold.docx"
     },
     "result": {

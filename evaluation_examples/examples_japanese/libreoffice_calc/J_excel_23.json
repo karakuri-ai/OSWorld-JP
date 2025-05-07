@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/spreadsheets/d/1mR7HHU18q0uc4uENf1VuPh5T95cl5R4W/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1mR7HHU18q0uc4uENf1VuPh5T95cl5R4W",
             "path": "/home/user/DemographicProfile.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/spreadsheets/d/1XeEQ7HnSPWAPwkLgDHiiiA51o15PJ2l9/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=1XeEQ7HnSPWAPwkLgDHiiiA51o15PJ2l9",
       "dest": "1_DemographicProfile_gt1.xlsx"
     },
     "result": {

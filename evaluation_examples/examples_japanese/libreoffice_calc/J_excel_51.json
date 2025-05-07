@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/spreadsheets/d/1JDCYM7Bn1eAAjhSEOXmzy4wUxJmPgWL8/edit?usp=drive_link&ouid=105138391296064638218&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1JDCYM7Bn1eAAjhSEOXmzy4wUxJmPgWL8",
             "path": "/home/user/VLOOKUP_Fill_the_form.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/spreadsheets/d/1lBphIxc6JdIqjbj2MuYgSAL2dAZgXGs0/edit?usp=drive_link&ouid=105138391296064638218&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=1lBphIxc6JdIqjbj2MuYgSAL2dAZgXGs0",
       "dest": "VLOOKUP_Fill_the_form_gold.xlsx"
     },
     "result": {

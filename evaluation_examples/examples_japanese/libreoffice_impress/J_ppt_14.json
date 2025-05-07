@@ -61,7 +61,7 @@
     "func": "compare_images",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/file/d/1l75tvobquE6GoD7q3sY0yn6NHLsHlWzX/view?usp=drive_link",
+      "path": "https://drive.google.com/uc?export=download&id=1l75tvobquE6GoD7q3sY0yn6NHLsHlWzX",
       "dest": "res_gold.png"
     },
     "result": {

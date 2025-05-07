@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/spreadsheets/d/1tn8OjreVf-ioJptYUEZ5SXcSFsgK2gSc/edit?usp=drive_link&ouid=105138391296064638218&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1tn8OjreVf-ioJptYUEZ5SXcSFsgK2gSc",
             "path": "/home/user/PricingTable.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/spreadsheets/d/1GWnAbKbCf1rHjIOkHzeyFLNvCf1HIhDf/edit?usp=drive_link&ouid=105138391296064638218&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=1GWnAbKbCf1rHjIOkHzeyFLNvCf1HIhDf",
       "dest": "9_PricingTable_gt1.xlsx"
     },
     "result": {

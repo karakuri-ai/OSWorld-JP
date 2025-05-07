@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/spreadsheets/d/1srT7mUVmwYHkTK9HmMw6ANCBRBC7w8JA/edit?usp=drive_link&ouid=105138391296064638218&rtpof=true&sd=true",
+            "url": "https://drive.google.com/uc?export=download&id=1srT7mUVmwYHkTK9HmMw6ANCBRBC7w8JA",
             "path": "/home/user/Order_Sales_Serial#.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/spreadsheets/d/1hJ5CLNgSlRmqM5rBJCM6QRrQdt1CHp_F/edit?usp=drive_link&ouid=105138391296064638218&rtpof=true&sd=true",
+      "path": "https://drive.google.com/uc?export=download&id=1hJ5CLNgSlRmqM5rBJCM6QRrQdt1CHp_F",
       "dest": "Order_Sales_Serial#_gold.xlsx"
     },
     "result": {
