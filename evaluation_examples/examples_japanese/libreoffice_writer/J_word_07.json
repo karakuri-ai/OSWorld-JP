@@ -1,7 +1,7 @@
 {
   "id": "J_word_07",
   "snapshot": "libreoffice_writer",
-  "instruction": "私は生徒が書いた文の横に「#」で始まる注釈を追加しました。注釈をもっと目立たせたいので、それらを黄色でハイライトしました。このお願いを手伝ってもらえますか？注釈を一つずつ色付けするのが大変です。ところで、テキスト部分をハイライトした後は「#」の記号を削除するのを忘れないでください。ありがとう！",
+  "instruction": "学生が書いた文章に、私は「#」で始まる注釈文をいくつか追加しました。注釈をもっと目立たせたいので、黄色でハイライトしたいですが、お願いできますか？注釈を一つずつ色付けするのが大変です。ところで、テキスト部分をハイライトした後は「#」の記号を削除するのを忘れないでください。ありがとう！",
   "source": "https://superuser.com/questions/1668018/how-to-auto-format-lines-in-libre-office-writer",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.usercontent.google.com/download?id=https://drive.google.com/drive/folders/1WN5xW00vZInsmZESakX5yzYZX5jjNwvN?usp=drive_link",
+            "url": "https://docs.google.com/document/d/1Mxww1ROCdXa-ffm17U_ZSMaF7jNGLhMw/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
             "path": "/home/user/デスクトップ/How_to_read_a_scientific_article.docx"
           }
         ]
@@ -55,7 +55,7 @@
     "func": "compare_highlighted_text",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.usercontent.google.com/download?id=https://drive.google.com/drive/folders/1WN5xW00vZInsmZESakX5yzYZX5jjNwvN?usp=drive_link",
+      "path": "https://docs.google.com/document/d/1FWabtfU87F7F3gdU9SQemNONO1LscMLC/edit?usp=drive_link&ouid=102262750786092826732&rtpof=true&sd=true",
       "dest": "How_to_read_a_scientific_article_Gold.docx"
     },
     "result": {
