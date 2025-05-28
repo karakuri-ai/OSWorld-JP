@@ -237,12 +237,13 @@ python show_result.py
 ## 📄 引用
 
 ```
-@misc{OSWorld-JP,
-      title={OSWorld-JP: }, 
-      author={Tianbao Xie and Danyang Zhang and Jixuan Chen and Xiaochuan Li and Siheng Zhao and Ruisheng Cao and Toh Jing Hua and Zhoujun Cheng and Dongchan Shin and Fangyu Lei and Yitao Liu and Yiheng Xu and Shuyan Zhou and Silvio Savarese and Caiming Xiong and Victor Zhong and Tao Yu},
-      year={2024},
-      eprint={2404.07972},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI}
+@inproceedings{OSWorld-JP,
+    jtitle = {OSWorld-JP：言語を考慮した評価のための日本語版コンピュータユースベンチマーク},
+    title = {OSWorld-JP: A Japanese Computer Use Benchmark for Language-aware Evaluation},
+    jauthor = {庄司, 文武 and 吉田, 雄紀},
+    author = {Shoji, Bumbu and Yoshida, Yuki},
+    jbooktitle = {人工知能学会全国大会},
+    booktitle = {The Annual Conference of JSAI},
+    year = {2025},
 }
 ```
