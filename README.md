@@ -115,23 +115,6 @@ GUI が利用できる環境では、以下の手順を参照してください�
 
 GUI がない場合は、[Docker Engine のインストール](https://docs.docker.com/engine/install/) を参照してください。
 
-#### 日本語環境の設定
-
-実験を実施する際に仮想環境を日本語に変更する必要があります。変更が必要な点を以下に示します。仮想環境を起動後、手動で変更が必要な点について設定言語の日本語化を行なってください。具体的な変更方法については今後追記します。
-
-* OS
-* アプリ
-    * chromium
-    * gimp
-    * libreoffice calc
-    * libreoffice impress
-    * libreoffice writer
-    * vlc
-    * vscode
-
-日本語化が終了したらスナップショットを作成し、desktop_env.pyのsnapshotnameを変更したsnapshotに置き換えてください。
-[snapshotname](https://gitkraken.dev/link/dnNjb2RlOi8vZWFtb2Rpby5naXRsZW5zL2xpbmsvci8xNGE0ZjVjMDA4ZTdiMWQzZmU2ZTM5ZDRjMTZlZTYwYzZiYjJmNWNiL2YvZGVza3RvcF9lbnYvZGVza3RvcF9lbnYucHk%2FdXJsPWh0dHBzJTNBJTJGJTJGZ2l0aHViLmNvbSUyRmthcmFrdXJpLWFpJTJGT1NXb3JsZC1KUC5naXQmbGluZXM9MzI%3D?origin=gitlens)
-
 #### 実験の実行
 
 `DesktopEnv` を初期化する際に以下の引数を指定してください：
@@ -146,6 +129,23 @@ GUI がない場合は、[Docker Engine のインストール](https://docs.dock
 
 さらなる環境のサポートを進行中です👷。続報をお待ちください！
 -->
+
+## 日本語環境の設定
+
+実験を実施する前に仮想環境を日本語に変更する必要があります。変更が必要な点を以下に示します。仮想環境を起動後、手動で変更が必要な点について設定言語の日本語化を行なってください。具体的な変更方法については今後追記します。
+
+* OS
+* アプリ
+    * chromium
+    * gimp
+    * libreoffice calc
+    * libreoffice impress
+    * libreoffice writer
+    * vlc
+    * vscode
+
+日本語化が終了したらスナップショットを作成し、desktop_env.pyのsnapshotnameを変更したsnapshotに置き換えてください。
+[snapshot nameを変更する箇所](https://github.com/karakuri-ai/OSWorld-JP/blob/a7b4eeea7e49403e6752e49d20f819b62f82ab53/desktop_env/desktop_env.py#L32)
 
 ## 🚀 クイックスタート
 
