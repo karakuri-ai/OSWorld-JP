@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_24",
   "snapshot": "chrome",
-  "instruction": "私は映画の大ファンで、これまで見た映画の記録をつけています。2024年以前に公開されたIMDBトップ30リストの中で、まだ観ていない映画があるかどうか気になります。開いているExcelに「unseen_movies」という別のシートを作成するのを手伝ってください。このシートは同じヘッダーを共有し、IMDBのランキングに従って結果を高い順から低い順に並べ替えてください。",
+  "instruction": "私は映画の大ファンで、これまで見た映画すべての記録をつけています。IMDB(Internet Movie Database)トップ30リストに入っている2024年以前に公開された映画で、まだ観ていない映画があるか知りたいと思っています。開いているExcelに「unseen_movies」(未鑑賞映画)という新しいシートを作成するのを手伝ってください。このシートは元のシートと同じヘッダーをを持ち、IMDBのランキングに従って結果を高い順から低い順に並べるようにしてください。",
   "source": "authors",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://www.imdb.com"
+          "https://eiga.com/"
         ]
       }
     },
@@ -36,7 +36,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.usercontent.google.com/download?id=1KVNVf5qZhprV_7rgEl33Qrkagv603reM&export=download&authuser=0&confirm=t",
+            "url": "https://drive.google.com/uc?export=download&id=1H7s5qWe0EmGIq3zMRHbYP9iDSDzUorHk",
             "path": "/home/user/デスクトップ/movies.xlsx"
           }
         ]
@@ -67,7 +67,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.usercontent.google.com/download?id=149QKswQ8AIYk21Aaatic6QSCcBU40uyd&export=download&authuser=0&confirm=t",
+      "path": "https://drive.google.com/uc?export=download&id=1B_yobZr2lQoec-56TWxyTypd8r1yk4Ih",
       "dest": "gold_movies.xlsx"
     },
     "options": {

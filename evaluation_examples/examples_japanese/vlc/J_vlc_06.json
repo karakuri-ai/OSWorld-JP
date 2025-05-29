@@ -1,7 +1,7 @@
 {
   "id": "J_vlc_06",
   "snapshot": "base_setup",
-  "instruction": "Google Playムービー＆TVストアで購入した最新シーズンの「ストレンジャー・シングス」を直接VLCで再生してください。",
+  "instruction": "Google Play Movies & TVストアから購入した「Stranger Things」の最新シーズンをVLCで直接プレイできます。",
   "source": "https://wiki.videolan.org/Digital_Restrictions_Management/",
   "config": [
     {
@@ -12,9 +12,7 @@
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": [
-    "vlc"
-  ],
+  "related_apps": ["vlc"],
   "evaluator": {
     "func": "infeasible"
   }

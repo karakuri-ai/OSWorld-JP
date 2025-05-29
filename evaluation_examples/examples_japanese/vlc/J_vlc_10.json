@@ -1,7 +1,7 @@
 {
   "id": "J_vlc_10",
   "snapshot": "chrome",
-  "instruction": "私はノートパソコンでVLCを使って映画を見るのが好きですが、時々音量が私の好みに対して低すぎることがあります。VLCの音量設定は最大の125%にしているのにです。ビデオの最大音量を元の音量の200%に上げていただけませんか？",
+  "instruction": "私はノートパソコンで映画を見るのが好きで、VLCの音量を最大125%に設定しても、音量が小さすぎて自分の好みに合わないことがあります。 ビデオの最大ボリュームを元のボリュームの200%まで増やすことはできますか？",
   "source": "https://superuser.com/questions/1513285/how-can-i-increase-the-maximum-volume-output-by-vlc?rq=1",
   "config": [
     {
@@ -22,18 +22,13 @@
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": [
-    "vlc"
-  ],
+  "related_apps": ["vlc"],
   "evaluator": {
     "postconfig": [
       {
         "type": "launch",
         "parameters": {
-          "command": [
-            "pkill",
-            "vlc"
-          ]
+          "command": ["pkill", "vlc"]
         }
       },
       {

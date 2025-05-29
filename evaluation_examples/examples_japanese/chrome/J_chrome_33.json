@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_33",
   "snapshot": "chrome",
-  "instruction": "運転免許の資格要件を探してください。",
+  "instruction": "運転免許の受験資格要件を調べてください。",
   "source": "Mind2Web",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://www.dmv.virginia.gov/"
+          "https://www.police.pref.hyogo.lg.jp/index.htm"
         ]
       }
     },
@@ -62,7 +62,7 @@
       "type": "rule",
       "rules": {
         "type": "url",
-        "url": "https://www.dmv.virginia.gov/licenses-ids/license/applying/eligibility"
+        "url": "https://www.police.pref.hyogo.lg.jp/traffic/license/acq/shikaku/index.htm"
       }
     }
   }

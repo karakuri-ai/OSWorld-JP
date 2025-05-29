@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_92",
   "snapshot": "multiapps",
-  "instruction": "現在開いているGoogle Colabで簡単なコードデモをいくつか実行しましたが、その結果はかなり良いと思います。すべてのコードボックスからコードを抽出し、それを「task.py」というファイルにまとめてローカルのホームディレクトリに保存してください。",
+  "instruction": "現在開いているGoogle Colabで簡単なコードデモをいくつか実行しましたが、その結果はかなり良いと思います。そこで、すべてのコードボックスからコードを抜き出し（コードボックス以外のテキストは無視する）、それを「colab.py」というファイルにまとめてローカルのホームディレクトリに保存してください。",
   "source": "authors",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://colab.research.google.com/github/stanfordnlp/dspy/blob/main/intro.ipynb#scrollTo=L1BHAoL_LRd7"
+          "https://colab.research.google.com/drive/1ryh3-2XM3MAse8BPxvuHNRAYO1vfXl5v?usp=sharing"
         ]
       }
     }
@@ -47,7 +47,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.usercontent.google.com/download?id=1r0VyQZf5Hi8n8R9w9iGKMsqQaxAjYN7O&export=download&authuser=0&confirm=t&uuid=56efd2ff-4494-4026-9e96-82783b5ed600&at=APZUnTUL7BOMtV3FIoc0kXe18LWz:1709972550788",
+      "path": "https://drive.google.com/uc?export=download&id=1DcArCEgii3u94-dmW1LSyeAcHGUpiVTB",
       "dest": "colab_Gold.py"
     }
   }

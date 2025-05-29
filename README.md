@@ -1,3 +1,4 @@
+<!--
 <p align="center">
   <img src="https://huggingface.co/datasets/xlangai/assets/resolve/main/github_banner_v2.png" alt="Banner">
 </p>
@@ -29,81 +30,135 @@
     </a>
     <br/>
 </p>
+-->
+# OSWorld-JP
+
+言語を考慮した評価のための、日本語版コンピュータユースベンチマーク
+
+## 📢 アップデート
+- 2025-05-28: 本ベンチマークに関して、2025年度 人工知能学会全国大会 (JSAI2025) にて発表予定です。日時等は[こちら](https://confit.atlas.jp/guide/event/jsai2025/subject/3Win5-56/tables) をご参照ください。
+- 2025-05-28: 本 GitHub にて、本ベンチマークを v0.1 として公開しました。以下の内容を反映済みです。
+    - [x] システム環境のローカライズ
+    - [x] システムプロンプトの日本語化
+    - [x] 全てのタスクのプロンプトの日本語化
+    - [x] 344/437 (=79%) のタスクに関して、タスク内容にまで踏み込んだ日本語化（タスク関連ファイルの修正・タスクの読み替え等）
 
 
-## 📢 Updates
-- 2024-10-22: We supported Docker🐳 for hosting virtual machines on virtualized platforms. Check below for detailed instructions!
-- 2024-06-15: We refactor the code of environment part to decompose VMware Integration, and start to support other platforms such as VitualBox, AWS, Azure, etc. Hold tight!
-- 2024-04-11: We released our [paper](https://arxiv.org/abs/2404.07972), [environment and benchmark](https://github.com/xlang-ai/OSWorld), and [project page](https://os-world.github.io/). Check it out!
+## ✨ OSWorld-JP とは？
 
-## 💾 Installation
-### VMware/VirtualBox (Desktop, Laptop, Bare Metal Machine)
-Suppose you are operating on a system that has not been virtualized (e.g. your desktop, laptop, bare metal machine), meaning you are not utilizing a virtualized environment like AWS, Azure, or k8s.
-If this is the case, proceed with the instructions below. However, if you are on a virtualized platform, please refer to the [Docker](https://github.com/xlang-ai/OSWorld?tab=readme-ov-file#docker-server-with-kvm-support-for-the-better) section.
+近年、大規模言語モデル(LLM)を搭載したエージェントは、GUI や CLI インターフェースを介したコンピュータ操作の自動化に広く応用されています。しかし、[OSWorld](https://os-world.github.io/) など既存のエージェント評価ベンチマークは英語環境向けに最適化されており、日本語環境でのエージェント評価には適していません。そこで本研究では、プロンプトの翻訳、システム環境のローカライズ、タスク関連ファイルの修正を行い、OSWorld の日本語版である OSWorld-JP を開発しました。
 
-1. First, clone this repository and `cd` into it. Then, install the dependencies listed in `requirements.txt`. It is recommended that you use the latest version of Conda to manage the environment, but you can also choose to manually install the dependencies. Please ensure that the version of Python is >= 3.9.
+> **注意：** 本ベンチマークは今後も改善活動によりバージョンアップがなされていく予定です。また、インターネット上のウェブサイトの挙動に依存するタスクが一部含まれており、永続性が保証されません。そのため、評価結果を公表する際には、ベンチマークのバージョンおよび評価を実施した日付を明記することを推奨します。
+
+
+## 💾 インストール方法
+
+### VMware/VirtualBox（デスクトップ、ノートパソコン、ベアメタルマシン）
+
+仮想化されていないシステム（例：デスクトップ、ノートパソコン、ベアメタルマシン）を使用している場合は、以下の手順に従ってください。もし仮想化されたプラットフォーム（例：AWS、Azure、k8s）を使用している場合は、下記 Docker のセクションをご覧ください。
+
+1. まず、このリポジトリをクローンして `cd` で移動し、`requirements.txt` に記載された依存関係をインストールします。環境管理には Conda の最新版を使うことが推奨されていますが、手動でのインストールも可能です。Python のバージョンは **3.9 以上** を使用してください。
+
 ```bash
-# Clone the OSWorld repository
-git clone https://github.com/xlang-ai/OSWorld
+# OSWorld-JP リポジトリをクローン
+git clone https://github.com/karakuri-ai/OSWorld-JP
 
-# Change directory into the cloned repository
-cd OSWorld
+# クローンしたディレクトリに移動
+cd OSWorld-JP
 
-# Optional: Create a Conda environment for OSWorld
-# conda create -n osworld python=3.9
-# conda activate osworld
+# オプション：OSWorld-JP 用の Conda 環境を作成
+# conda create -n osworldjp python=3.9
+# conda activate osworldjp
 
-# Install required dependencies
+# 必要な依存パッケージをインストール
 pip install -r requirements.txt
 ```
 
-Alternatively, you can install the environment without any benchmark tasks:
+代替手段として、ベンチマークタスクを含まない環境のみをインストールすることもできます：
+
 ```bash
 pip install desktop-env
 ```
 
-2. Install [VMware Workstation Pro](https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html) (for systems with Apple Chips, you should install [VMware Fusion](https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware+Fusion)) and configure the `vmrun` command.  The installation process can refer to [How to install VMware Worksation Pro](desktop_env/providers/vmware/INSTALL_VMWARE.md). Verify the successful installation by running the following:
+2. [VMware Workstation Pro](https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html) をインストールします（Apple チップ搭載マシンでは [VMware Fusion](https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware+Fusion) を使用してください）。その後、`vmrun` コマンドを設定します。インストール手順については、[VMware Workstation Pro のインストール手順](desktop_env/providers/vmware/INSTALL_VMWARE.md)を参照してください。以下のコマンドで正常にインストールされていることを確認できます：
+
 ```bash
 vmrun -T ws list
 ```
-If the installation along with the environment variable set is successful, you will see the message showing the current running virtual machines.
-> **Note:** We also support using [VirtualBox](https://www.virtualbox.org/) if you have issues with VMware Pro. However, features such as parallelism and macOS on Apple chips might not be well-supported.
 
-All set! Our setup script will automatically download the necessary virtual machines and configure the environment for you.
+環境変数の設定が正常に完了していれば、現在起動中の仮想マシン一覧が表示されます。
 
-### Docker (Server (with KVM Support for the better))
-If you are running on a non-bare metal server, or prefer not to use VMware and VirtualBox platforms, we recommend using our Docker support.
+> **注意：** [VirtualBox](https://www.virtualbox.org/) も利用可能ですが、VMware Pro に比べて並列実行や Apple チップ上での macOS のサポートが制限されます。
 
-#### Prerequisite: Check if your machine supports KVM
-We recommend running the VM with KVM support. To check if your hosting platform supports KVM, run
+準備完了！セットアップスクリプトが必要な仮想マシンを自動でダウンロードして環境を構成します。
+
+### Docker（サーバー環境向け：KVM サポートがあるとより良い）
+
+ベアメタルサーバー以外での実行や、VMware/VirtualBox を使いたくない場合には、Docker を使った実行を推奨します。
+
+#### 前提条件：KVM サポートの確認
+
+KVM サポートを確認するには、Linux 上で以下のコマンドを実行してください：
+
 ```
 egrep -c '(vmx|svm)' /proc/cpuinfo
 ```
-on Linux. If the return value is greater than zero, the processor should be able to support KVM.
-> **Note**: macOS hosts generally do not support KVM. You are advised to use VMware if you would like to run OSWorld on macOS.
 
-#### Install Docker
-If your hosting platform supports a graphical user interface (GUI), you may refer to [Install Docker Desktop on Linux](https://docs.docker.com/desktop/install/linux/) or [Install Docker Desktop on Windows](https://docs.docker.com/desktop/install/windows-install/) based on your OS. Otherwise, you may [Install Docker Engine](https://docs.docker.com/engine/install/).
+結果が 0 より大きければ、プロセッサは KVM をサポートしています。
 
-#### Running Experiments
-Add the following arguments when initializing `DesktopEnv`: 
-- `provider_name`: `docker`
-- `os_type`: `Ubuntu` or `Windows`, depending on the OS of the VM
-> **Note**: If the experiment is interrupted abnormally (e.g., by interrupting signals), there may be residual docker containers which could affect system performance over time. Please run `docker stop $(docker ps -q) && docker rm $(docker ps -a -q)` to clean up.
+> **注記**：macOS は通常 KVM をサポートしていません。macOS で OSWorld-JP を実行したい場合は VMware を推奨します。
 
-### Others
-We are working on supporting more 👷. Please hold tight!
+#### Docker のインストール
 
+GUI が利用できる環境では、以下の手順を参照してください：
 
-## 🚀 Quick Start
-Run the following minimal example to interact with the environment:
+* [Linux で Docker Desktop をインストール](https://docs.docker.com/desktop/install/linux/)
+* [Windows で Docker Desktop をインストール](https://docs.docker.com/desktop/install/windows-install/)
+
+GUI がない場合は、[Docker Engine のインストール](https://docs.docker.com/engine/install/) を参照してください。
+
+#### 実験の実行
+
+`DesktopEnv` を初期化する際に以下の引数を指定してください：
+
+* `provider_name`: `docker`
+* `os_type`: `Ubuntu` または `Windows`（VM の OS による）
+
+> **注記**：実験が途中で中断された場合、Docker コンテナが残り続けることがあります。コマンド `docker stop $(docker ps -q) && docker rm $(docker ps -a -q)` でクリーンアップしてください。
+
+<!--
+### その他
+
+さらなる環境のサポートを進行中です👷。続報をお待ちください！
+-->
+
+## 🇯🇵 日本語環境の設定
+
+実験を実施する前に仮想環境を日本語に変更する必要があります。変更が必要な点を以下に示します。仮想環境を起動後、手動で変更が必要な点について設定言語の日本語化を行なってください。具体的な変更方法については今後追記します。
+
+* OS
+* アプリ
+    * chromium
+    * gimp
+    * libreoffice calc
+    * libreoffice impress
+    * libreoffice writer
+    * vlc
+    * vscode
+
+日本語化が終了したらスナップショットを作成し、desktop_env.pyのsnapshotnameを変更したsnapshotに置き換えてください。
+[snapshot nameを変更する箇所](https://github.com/karakuri-ai/OSWorld-JP/blob/a7b4eeea7e49403e6752e49d20f819b62f82ab53/desktop_env/desktop_env.py#L32)
+
+## 🚀 クイックスタート
+
+以下の最小限の例で環境と対話できます：
 
 ```python
 from desktop_env.desktop_env import DesktopEnv
 
 example = {
     "id": "94d95f96-9699-4208-98ba-3c3119edf9c2",
-    "instruction": "I want to install Spotify on my current system. Could you please help me?",
+    "instruction": "Spotify をこのシステムにインストールしたいです。手伝ってくれますか？",
     "config": [
         {
             "type": "execute",
@@ -137,13 +192,18 @@ env = DesktopEnv(action_space="pyautogui")
 obs = env.reset(task_config=example)
 obs, reward, done, info = env.step("pyautogui.rightClick()")
 ```
-You will see all the logs of the system running normally, including the successful creation of the environment, completion of setup, and successful execution of actions. In the end, you will observe a successful right-click on the screen, which means you are ready to go.
 
-## 🧪 Experiments
-### Agent Baselines
-If you wish to run the baseline agent used in our paper, you can execute the following command as an example under the GPT-4V pure-screenshot setting:
+システムのログが正常に表示され、環境作成、セットアップ、アクションの実行が成功するのを確認できます。最終的に右クリックに成功している様子が表示されていれば、準備完了です。
 
-Set **OPENAI_API_KEY** environment variable with your API key
+
+## 🧪 実験
+
+### エージェントのベースライン
+
+論文（訳註: オリジナルの OSWorld の論文です）で使用されたベースラインエージェントを実行したい場合、以下のコマンドで GPT-4V のスクリーンショット設定に基づいて実行可能です：
+
+API キーを環境変数に設定：
+
 ```bash
 export OPENAI_API_KEY='changeme'
 ```
@@ -151,57 +211,63 @@ export OPENAI_API_KEY='changeme'
 ```bash
 python run.py --path_to_vm Ubuntu/Ubuntu.vmx --headless --observation_type screenshot --model gpt-4-vision-preview --result_dir ./results
 ```
-The results, which include screenshots, actions, and video recordings of the agent's task completion, will be saved in the `./results` directory in this case. You can then run the following command to obtain the result:
+
+結果（スクリーンショット、アクション、ビデオ記録）は `./results` ディレクトリに保存されます。その後、以下のコマンドで結果を確認できます：
+
 ```bash
 python show_result.py
 ```
 
-### Evaluation
-Please start by reading through the [agent interface](https://github.com/xlang-ai/OSWorld/blob/main/mm_agents/README.md) and the [environment interface](https://github.com/xlang-ai/OSWorld/blob/main/desktop_env/README.md).
-Correctly implement the agent interface and import your customized version in the `run.py` file.
-Afterward, you can execute a command similar to the one in the previous section to run the benchmark on your agent.
 
-## ❓ FAQ
-### What is the username and password for the virtual machines?
-The username and password for the virtual machines are as follows:
-- **Ubuntu:** `user` / `password`
+### 評価
 
-### How to setup the account and credentials for Google and Google Drive?
-
-See [Account Guideline](ACCOUNT_GUIDELINE.md).
-
-### How can I configure a proxy for the VM if I'm behind a GFW?
-
-See [Proxy Guideline](PROXY_GUIDELINE.md).
-
-### What are the running times and costs under different settings?
-| Setting                        | Expected Time* | Budget Cost (Full Test Set/Small Test Set) |
-| ------------------------------ | -------------- | ------------------------------------------ |
-| GPT-4V (screenshot)            | 10h            | $100 ($10)                                 |
-| Gemini-ProV (screenshot)       | 15h            | $0 ($0)                                    |
-| Claude-3 Opus (screenshot)     | 15h            | $150 ($15)                                 |
-| GPT-4V (a11y tree, SoM, etc.)  | 30h            | $500 ($50)                                 |
-
-\*No environment parallelism. Calculated in April 2024.
-
-### Open Source Contributors
-
-Thanks to all the contributors!
-
-<a href="https://github.com/xlang-ai/OSWorld/graphs/contributors">
-  <img src="https://stg.contrib.rocks/image?repo=xlang-ai/OSWorld" />
-</a>
+まず、[エージェントインターフェース](https://github.com/karakuri-ai/OSWorld-JP/blob/main/mm_agents/README.md)と[環境インターフェース](https://github.com/karakuri-ai/OSWorld-JP/blob/main/desktop_env/README.md)を読んでください。インターフェースを実装し、`run.py` にカスタムエージェントを読み込んだ後、先ほどのようなコマンドでベンチマークを実行できます。
 
 
-## 📄 Citation
-If you find this environment useful, please consider citing our work:
+## ❓ よくある質問（FAQ）
+
+### 仮想マシンのユーザー名とパスワードは何ですか？
+
+* **Ubuntu:** `user` / `password`
+
+### Google や Google Drive のアカウント認証はどう設定すればいいですか？
+
+[アカウントガイド](ACCOUNT_GUIDELINE.md)を参照してください。
+
+<!--
+### GFW（グレートファイアウォール）下でのプロキシ設定は？
+
+[プロキシ設定ガイド](PROXY_GUIDELINE.md)を参照してください。
+
+### 各種設定における実行時間とコストは？
+
+| 設定                       | 想定時間 | コスト（全テスト / 小テスト） |
+| ------------------------ | ---- | ---------------- |
+| GPT-4V（スクリーンショット）        | 10時間 | \$100（\$10）      |
+| Gemini-ProV（スクリーンショット）   | 15時間 | \$0（\$0）         |
+| Claude-3 Opus（スクリーンショット） | 15時間 | \$150（\$15）      |
+| GPT-4V（アクセシビリティツリーなど）    | 30時間 | \$500（\$50）      |
+
+\*並列実行なし、2024年4月時点の計算。
+
+-->
+
+
+## 📄 引用
+
 ```
-@misc{OSWorld,
-      title={OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments}, 
-      author={Tianbao Xie and Danyang Zhang and Jixuan Chen and Xiaochuan Li and Siheng Zhao and Ruisheng Cao and Toh Jing Hua and Zhoujun Cheng and Dongchan Shin and Fangyu Lei and Yitao Liu and Yiheng Xu and Shuyan Zhou and Silvio Savarese and Caiming Xiong and Victor Zhong and Tao Yu},
-      year={2024},
-      eprint={2404.07972},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI}
+@inproceedings{OSWorld-JP,
+    jtitle = {OSWorld-JP：言語を考慮した評価のための日本語版コンピュータユースベンチマーク},
+    title = {OSWorld-JP: A Japanese Computer Use Benchmark for Language-aware Evaluation},
+    jauthor = {庄司, 文武 and 吉田, 雄紀},
+    author = {Shoji, Bumbu and Yoshida, Yuki},
+    jbooktitle = {人工知能学会全国大会},
+    booktitle = {The Annual Conference of JSAI},
+    year = {2025},
 }
 ```
+
+----
+
+This repository is a fork of [OSWorld](https://github.com/xlang-ai/OSWorld) by XLANG NLP Lab.
+The original project is licensed under the Apache License 2.0, which is preserved in this repository.

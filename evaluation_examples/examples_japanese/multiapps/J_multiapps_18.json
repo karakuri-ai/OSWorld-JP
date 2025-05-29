@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_18",
   "snapshot": "vlc",
-  "instruction": "デスクトップにある「src.mp4」という動画ファイルから、00:03から始まる5秒間のクリップを使って、VLCとGIMPを使用してAnimated GIF「src_clip.gif」を作成するのを手伝っていただけますか？",
+  "instruction": "デスクトップにある「src.mp4」という動画ファイルの00:03から始まる5秒間の切り抜きを使って、VLCとGIMPを使用してアニメーションGIFファイルの「src_clip.gif」を作成するのを手伝っていただけますか？",
   "source": "https://www.maketecheasier.com/create-gif-from-video-gimp/",
   "config": [
     {

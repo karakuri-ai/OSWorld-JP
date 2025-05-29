@@ -1,7 +1,7 @@
 {
   "id": "J_vlc_03",
   "snapshot": "chrome",
-  "instruction": "私はPDFで講義ノートを読みながら、VLCメディアプレイヤーで音楽ビデオを再生しています。しかし、再生を一時停止したり始めたりするたびにプレイヤーに切り替える必要があることに気付きました。PDFリーダーを最小化せずにキーボードショートカットでビデオを一時停止できるように設定を変更する手助けをしていただけませんか？講義ノートに集中したいので、アプリの切り替えに邪魔されたくないのです。",
+  "instruction": "VLCメディアプレーヤーでミュージックビデオを再生している間、PDFの講義ノートを読んでいます。 しかし、私はポーズ/スタートが必要なたびにプレーヤーに切り替える必要があります。PDFリーダーを最小化せずにキーボードショートカットで動画を一時停止できるように設定を変更することはできますか？ 講義ノートに集中して、アプリの切り替えに邪魔されないようにしたいです。",
   "source": "https://superuser.com/questions/1708415/pause-and-play-vlc-in-background?rq=1",
   "config": [
     {
@@ -10,7 +10,7 @@
         "files": [
           {
             "url": "https://drive.usercontent.google.com/download?id=1JqKzFk-4ru1BQdaInui37ORPC1btl7PK&export=download&authuser=0&confirm=t&uuid=449004d6-6f52-4ae3-9008-c2a0a6e0d17f&at=APZUnTXYRTL_FkB5l1TgseCgdSPK:1706155700724",
-            "path": "/home/user/デスクトップ/lecture.pdf"
+            "path": "/home/user/desktop/lecture.pdf"
           }
         ]
       }
@@ -21,7 +21,7 @@
         "files": [
           {
             "url": "https://drive.usercontent.google.com/download?id=1jS74kYGOcEMOWyHZxlqmQVPmIC6A-UBm&export=download&authuser=0&confirm=t&uuid=0521f46a-9aa5-4dfc-9761-ae6256a31488&at=APZUnTWwRv10ztlVQq2oVsiMX2_r:1706155684550",
-            "path": "/home/user/デスクトップ/Colorful-Flowers.mp3"
+            "path": "/home/user/desktop/Colorful-Flowers.mp3"
           }
         ]
       }
@@ -32,14 +32,14 @@
         "command": [
           "vlc",
           "--start-time=10",
-          "/home/user/デスクトップ/Colorful-Flowers.mp3"
+          "/home/user/desktop/Colorful-Flowers.mp3"
         ]
       }
     },
     {
       "type": "open",
       "parameters": {
-        "path": "/home/user/デスクトップ/lecture.pdf"
+        "path": "/home/user/desktop/lecture.pdf"
       }
     },
     {
@@ -58,11 +58,7 @@
     {
       "type": "execute",
       "parameters": {
-        "command": [
-          "python",
-          "-c",
-          "import pyautogui; pyautogui.press('f11');"
-        ]
+        "command": ["python", "-c", "import pyautogui; pyautogui.press('f11');"]
       }
     },
     {
@@ -77,18 +73,13 @@
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": [
-    "vlc"
-  ],
+  "related_apps": ["vlc"],
   "evaluator": {
     "postconfig": [
       {
         "type": "launch",
         "parameters": {
-          "command": [
-            "pkill",
-            "vlc"
-          ]
+          "command": ["pkill", "vlc"]
         }
       },
       {

@@ -12,6 +12,7 @@ import concurrent.futures
 import Xlib
 import lxml.etree
 import pyautogui
+import pyperclip
 import requests
 import re
 from PIL import Image, ImageGrab

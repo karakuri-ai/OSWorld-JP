@@ -56,7 +56,7 @@
           },
           {
             "path": "/home/user/デスクトップ/Course Timetable.xlsx",
-            "url": "https://drive.google.com/uc?id=1DSjRYgofPK2jldKwIsAygz2x8XWlXCK6&export=download"
+            "url": "https://drive.google.com/uc?export=download&id=1-ayqIWry9b7eklFUNrrevol9XFUf76lx"
           }
         ]
       }
@@ -118,17 +118,17 @@
     "expected": [
       {
         "type": "cloud_file",
-        "path": "https://drive.google.com/uc?id=1VMOon8byWuoCW2Uk5etGMJLMzAfwFVyB&export=download",
+        "path": "https://drive.google.com/uc?export=download&id=1DOc5mliFHKQgwMjlRlHTeCXvA3Kzz48A",
         "dest": "Course Timetable gold.xlsx"
       },
       {
         "type": "cloud_file",
-        "path": "https://drive.google.com/uc?id=1jAThiIqILZ5t-RFPHVniSvAL8ZJO1H3P&export=download",
+        "path": "https://drive.google.com/uc?export=download&id=19Vj23zidGgugfZGhzFLHd8YXqo0XhRje",
         "dest": "Course Timetable gold 2.xlsx"
       },
       {
         "type": "cloud_file",
-        "path": "https://drive.google.com/uc?id=1U0THDtPCgsw-Rb0N9fjF8DeOepPeUajP&export=download",
+        "path": "https://drive.google.com/uc?export=download&id=1eDN2G1LZvcLiZIPohCgbnbLSaGMgpMKx",
         "dest": "Course Timetable gold 3.xlsx"
       }
     ],

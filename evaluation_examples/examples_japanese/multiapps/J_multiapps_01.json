@@ -20,11 +20,11 @@
         "files": [
           {
             "path": "/home/user/Documents/awesome-desktop/awe_desk_env.docx",
-            "url": "https://drive.google.com/uc?id=1oXro9_S7nZs_h_AZq5TJWEBofbrZM3oG&export=download"
+            "url": "https://drive.google.com/uc?export=download&id=14-VZzei-INlo2ixxjV17w1euhzUVOVie"
           },
           {
             "path": "/home/user/Documents/awesome-desktop/expe-results.xlsx",
-            "url": "https://drive.google.com/uc?id=1DwOikfnAumkZfvVcjIncgKZMITY3ruku&export=download"
+            "url": "https://drive.google.com/uc?export=download&id=1wRoOTVZmhIkqZGjKKJeqqY8jSX9uswXl"
           }
         ]
       }
@@ -82,7 +82,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=1hMZKSF74qBUvBDAu_zF8vHm6MKu96VBN&export=download",
+      "path": "https://drive.google.com/uc?export=download&id=1GCXIBBTSj3KwXNjHRl51RyKOrCnTxWpG",
       "dest": "awe_desk_env_gt.docx"
     }
   }

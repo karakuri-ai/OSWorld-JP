@@ -7,14 +7,14 @@
     {
       "type": "execute",
       "parameters": {
-        "command": "echo 'password' | sudo -S touch ~/Desktop/todo.txt && sudo mkdir ~/Desktop/done",
+        "command": "echo 'password' | sudo -S touch ~/デスクトップ/todo.txt && sudo mkdir ~/デスクトップ/done",
         "shell": true
       }
     },
     {
       "type": "execute",
       "parameters": {
-        "command": "echo 'password' | sudo -S chmod 777 ~/Desktop/todo.txt && sudo chmod 777 ~/Desktop/done",
+        "command": "echo 'password' | sudo -S chmod 777 ~/デスクトップ/todo.txt && sudo chmod 777 ~/デスクトップ/done",
         "shell": true
       }
     },
@@ -37,7 +37,7 @@
     "func": "exact_match",
     "result": {
       "type": "vm_command_line",
-      "command": "if [ -f ~/Desktop/done/todo.txt ]; then echo 'File exists.'; else echo 'File does not exist.'; fi",
+      "command": "if [ -f ~/デスクトップ/done/todo.txt ]; then echo 'File exists.'; else echo 'File does not exist.'; fi",
       "shell": true
     },
     "expected": {

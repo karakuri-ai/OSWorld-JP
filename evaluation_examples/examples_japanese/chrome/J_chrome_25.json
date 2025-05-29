@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_25",
   "snapshot": "chrome",
-  "instruction": "10001の50マイル以内で、最大価格が50,000ドルの電気自動車を見つけてください。",
+  "instruction": "沖縄で、600万円以内の電気自動車を見つけてください。",
   "source": "test_task_1",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://www.cars.com/"
+          "https://www.goo-net.com/"
         ]
       }
     },
@@ -45,23 +45,18 @@
   "evaluator": {
     "func": "check_direct_json_object",
     "result": {
-      "type": "active_tab_url_parse",
+      "type": "active_tab_html_parse",
       "goto_prefix": "https://www.",
-      "parse_keys": [
-        "list_price_max",
-        "maximum_distance",
-        "zip",
-        "fuel_slugs[]"
-      ]
+      "category": "xpath",
+      "xpathObject": {
+        "//*[contains(@class, \"searchConditionsList\")]": "condition"
+      }
     },
     "expected": {
       "type": "rule",
       "rules": {
         "expected": {
-          "list_price_max": "50000",
-          "maximum_distance": "50",
-          "zip": "10001",
-          "fuel_slugs[]": "electric"
+          "condition": "沖縄県 | 下限なし～600万円 | 電気自動車（EV）"
         }
       }
     }

@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_21",
   "snapshot": "libreoffice_calc",
-  "instruction": "デスクトップにfile1.xlsxとfile2.odsがあります。それぞれ1列ずつあります。コマンドラインだけを使って、これら2つの列を1つのLibreOffice Calcファイルoutput.csvに結合し、ターミナルからそれを開くのを手伝ってください。",
+  "instruction": "デスクトップにfile1.xlsxとfile2.odsがありあり、それぞれ1列ずつあります。コマンドラインだけを使ってこれら2つの列を1列に統合しLibreOffice Calcファイル output.csvを作成したあと、ターミナルから開いてもらえますか？",
   "source": "https://unix.stackexchange.com/questions/510850/how-to-open-calc-from-terminal-and-insert-files",
   "config": [
     {

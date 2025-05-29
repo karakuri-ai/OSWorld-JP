@@ -1,7 +1,7 @@
 {
   "id": "J_ppt_06",
   "snapshot": "libreoffice_impress",
-  "instruction": "スライドの2ページ目のタイトルをスライドの下に移動してください。",
+  "instruction": "ページ2のタイトルをスライドの下部に移動してください。",
   "source": "https://arxiv.org/pdf/2311.01767.pdf",
   "config": [
     {
@@ -61,7 +61,7 @@
     "func": "compare_pptx_files",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.usercontent.google.com/download?id=1X2x0KzBllrCtupnllxoZ-HkHmd7Dd4Dp&export=download&authuser=0&confirm=t&uuid=58797979-1d78-4cbe-9c21-747400262a7c&at=APZUnTWJVEFgc0DKLpwNaqLfzBrQ:1708188011672",
+      "path": "https://drive.google.com/uc?export=download&id=1yiOURdVgYldGT-SWkM-7PvlXZaP6zxhR",
       "dest": "134_2_Original.pptx"
     },
     "result": {

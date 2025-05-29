@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_62",
   "snapshot": "libreoffice_writer",
-  "instruction": "エッセイの提出に関するガイドラインは、デスクトップにある「reminder.docx」に記載されています。私のエッセイは/home/userにあるdocxファイルとして保存されています。指定された要件に従って、提出のためにファイルを整理してください。",
+  "instruction": "エッセイの提出に関するガイドラインは、デスクトップにある「reminder.docx」に記載されています。私のエッセイは/home/userにあるdocxファイルとして保存されています。指定された要件に従って、提出用のファイルを整理するのを手伝ってください。",
   "source": "authors",
   "config": [
     {

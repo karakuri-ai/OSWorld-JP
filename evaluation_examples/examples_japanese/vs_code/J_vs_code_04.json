@@ -10,7 +10,7 @@
         "files": [
           {
             "url": "https://codeload.github.com/onlyphantom/llm-python/zip/refs/heads/main",
-            "path": "/home/user/ダウンロード/llm-python-main.zip"
+            "path": "/home/user/download/llm-python-main.zip"
           }
         ]
       }
@@ -28,10 +28,7 @@
     {
       "type": "launch",
       "parameters": {
-        "command": [
-          "code",
-          "/home/user/ダウンロード/llm-python-main/"
-        ]
+        "command": ["code", "/home/user/download/llm-python-main/"]
       }
     },
     {
@@ -42,9 +39,7 @@
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": [
-    "vscode"
-  ],
+  "related_apps": ["vscode"],
   "evaluator": {
     "func": "check_json_settings",
     "expected": {

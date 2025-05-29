@@ -1,7 +1,7 @@
 {
   "id": "J_gimp_21",
   "snapshot": "gimp",
-  "instruction": "新しい生画像をjpegに変換してください。",
+  "instruction": "新しいRAW画像をjpegに変換してください。",
   "source": "https://www.makeuseof.com/tag/can-photoshop-gimp-cant/",
   "config": [
     {

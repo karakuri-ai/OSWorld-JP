@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_24",
   "snapshot": "chrome",
-  "instruction": "セール中で、価格が25ドルから60ドルの間で、黒い仕上げのドリップコーヒーメーカーのリストを作成してください。",
+  "instruction": "価格が4000円から10000円の間のドリップコーヒーメーカーのリストを作成してください。",
   "source": "test_task_1",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://shopping.google.com/"
+          "https://shopping.google.co.jp/"
         ]
       }
     },
@@ -43,22 +43,17 @@
     "chrome"
   ],
   "evaluator": {
-    "func": "check_direct_json_object",
+    "func": "is_expected_url_pattern_match",
     "result": {
-      "type": "active_tab_url_parse",
-      "goto_prefix": "https://www.",
-      "parse_keys": [
-        "q",
-        "tbs"
-      ]
+      "type": "active_tab_info",
+      "goto_prefix": "https://www."
     },
     "expected": {
       "type": "rule",
       "rules": {
-        "expected": {
-          "q": "drip coffee maker",
-          "tbs": "mr:1,price:1,ppr_min:25,ppr_max:60,sales:1,pdtr0:1825161|1825162"
-        }
+        "expected": [
+          "q=(?=.*%E3%83%89%E3%83%AA%E3%83%83%E3%83%97%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%E3%83%A1%E3%83%BC%E3%82%AB%E3%83%BC)(?=.*4,?000)(?=.*10,?000)"
+        ]
       }
     }
   }

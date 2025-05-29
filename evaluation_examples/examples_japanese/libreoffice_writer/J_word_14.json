@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=1cK1AMt_qKVAPp6EndSFG8y8r7KOPsqC1&export=download",
+            "url": "https://drive.google.com/drive/folders/1sXQvdeESt02lvsPO6v5zcqYw_nr8g4am",
             "path": "/home/user/デスクトップ/HK_train_record.docx"
           }
         ]
@@ -60,7 +60,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=1wZ5CKxCD3biB4mFFlrBInZO-bzo36vVG&export=download",
+      "path": "https://drive.google.com/drive/folders/1sXQvdeESt02lvsPO6v5zcqYw_nr8g4am",
       "dest": "HK_train_record_Gold.docx"
     }
   }

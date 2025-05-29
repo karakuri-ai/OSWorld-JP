@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_06",
   "snapshot": "libreoffice_calc",
-  "instruction": "「従業員パフォーマンス評価サマリー」Excelシートから当社の標準化されたPDF評価フォームにデータを転送してください。各従業員の評価データは、PDFフォームの指定されたフィールドに正確に記入する必要があります。最終的なPDF文書は、統一感があり、プロフェッショナルな見た目を保持し、スタッフへの配布やファイル保管のために準備できていることが重要です。さらに、各PDFファイルはExcel文書に記載されている従業員の名前に基づいて命名してください。これにより、評価プロセスが大幅に効率化され、従業員パフォーマンス記録の管理が向上します。なお、文字には「√」をマークとして使用してください。",
+  "instruction": "「Employee Performance Evaluation Summary」Excelシートから当社の標準化されたPDF評価フォームにデータを転送してください。各従業員の評価データは、PDFフォームの指定されたフィールドに正確に記入する必要があります。最終的なPDF文書は、統一感があり、プロフェッショナルな見た目を保持し、スタッフへの配布やファイル保管のために準備できていることが重要です。さらに、各PDFファイルはExcel文書に記載されている従業員の名前に基づいて命名してください。これにより、評価プロセスが大幅に効率化され、従業員パフォーマンス記録の管理が向上します。なお、文字には「√」をマークとして使用してください。",
   "source": "authors",
   "config": [
     {
@@ -10,11 +10,11 @@
         "files": [
           {
             "path": "/home/user/デスクトップ/Employee Performance Evaluation Summary.xlsx",
-            "url": "https://drive.google.com/uc?id=1uOzi66bzO_WUnoS4Oqsodrd7_YPLatEk&export=download"
+            "url": "https://drive.google.com/uc?export=download&id=1H0EYqvoBHSJcFyBe2dKxtK585_zP8WJK"
           },
           {
             "path": "/home/user/デスクトップ/review_template.pdf",
-            "url": "https://drive.google.com/uc?id=1YJ4RPGFUuS48tBh31gBerA16JSMw498w&export=download"
+            "url": "https://drive.google.com/uc?export=download&id=1v0fTzswcvOoCggR1ajCBtASIPUky0MLk"
           }
         ]
       }
@@ -49,13 +49,13 @@
     "result": {
       "type": "cloud_file",
       "path": [
-        "https://drive.google.com/uc?id=1kZM90nA1krRmV9ug5_BBe8VlrZRVLiLK&export=download",
-        "https://drive.google.com/uc?id=1zyLzYYThwyit9ciXpfNfPFlBomolOauY&export=download",
-        "https://drive.google.com/uc?id=1gMT7JBftuymajMAO5rwksORpeVq3uGmH&export=download",
-        "https://drive.google.com/uc?id=1x0DdtUSZyBifl1tGIWlWKn255WusJeR4&export=download",
-        "https://drive.google.com/uc?id=1UAcG32WO8XCXElcanjGwbSpJwFuyOkts&export=download",
-        "https://drive.google.com/uc?id=1PRgryg7Y5evKnDG2LPtAttVp9qAf5VyZ&export=download",
-        "https://drive.google.com/uc?id=1JxEDriCS2W7BQLdkIgxu_WFCRa9ib4D7&export=download"
+        "https://drive.google.com/file/d/1ZBCqskqFXVJqkFP2ayY__iURfcRsQKDK/view?usp=drive_link",
+        "https://drive.google.com/file/d/11kTTCkavWW1HNTftzz_psUaq30KCPJci/view?usp=drive_link",
+        "https://drive.google.com/file/d/1wzzXt7TLttR8liRQursfB8OOgdP4wWdM/view?usp=drive_link",
+        "https://drive.google.com/file/d/1uHV90NgvvttUVOq1W2jK4PLcV34hoshb/view?usp=drive_link",
+        "https://drive.google.com/file/d/1cMpcor6ExbKgOeZ9uaFlADv6iaVwg2Uw/view?usp=drive_link",
+        "https://drive.google.com/file/d/1Ci7KCOaFbeI4XfME6b3G8f1GaUtx6st2/view?usp=drive_link",
+        "https://drive.google.com/file/d/1vxuaycyttTHItbrvqIQSoTZL5aT-YE95/view?usp=drive_link"
       ],
       "dest": [
         "Alex Lee_Gold.pdf",

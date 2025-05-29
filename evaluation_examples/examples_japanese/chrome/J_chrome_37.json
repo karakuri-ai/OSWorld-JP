@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_37",
   "snapshot": "chrome",
-  "instruction": "タミフルの副作用を示してください。",
+  "instruction": "タミフルのHTML版添付文書を出してください。",
   "source": "online_tasks",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://www.drugs.com/"
+          "https://www.pmda.go.jp/"
         ]
       }
     },
@@ -43,40 +43,18 @@
     "chrome"
   ],
   "evaluator": {
-    "func": [
-      "exact_match",
-      "exact_match"
-    ],
-    "conj": "or",
-    "result": [
-      {
-        "type": "url_dashPart",
-        "goto_prefix": "https://www.",
-        "partIndex": -1,
-        "needDeleteId": false,
-        "returnType": "string"
-      },
-      {
-        "type": "url_dashPart",
-        "goto_prefix": "https://www.",
-        "partIndex": -1,
-        "needDeleteId": false,
-        "returnType": "string"
+    "func": "is_expected_url_pattern_match",
+    "result": {
+      "type": "active_url_from_accessTree",
+      "goto_prefix": "https://www."
+    },
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "expected": [
+          "/iyakuDetail/.+_6250021"
+        ]
       }
-    ],
-    "expected": [
-      {
-        "type": "rule",
-        "rules": {
-          "expected": "tamiflu.html#side-effects"
-        }
-      },
-      {
-        "type": "rule",
-        "rules": {
-          "expected": "tamiflu-side-effects.html"
-        }
-      }
-    ]
+    }
   }
 }

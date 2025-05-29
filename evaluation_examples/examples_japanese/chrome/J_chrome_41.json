@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_41",
   "snapshot": "chrome",
-  "instruction": "今週末、大人2名のためにニューヨーク市で可能な限り安いホテルを見つけてください。",
+  "instruction": "今週末土曜日、大人2名で、ニューヨーク市で最安値のホテルを見つけてください。",
   "source": "test_task_0",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://www.tripadvisor.com/"
+          "https://www.tripadvisor.jp/"
         ]
       }
     },
@@ -49,11 +49,11 @@
       "goto_prefix": "https://www.",
       "category": "xpath",
       "xpathObject": {
-        "/html/body/div[1]/main/div[3]/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/div[1]/div/button/div[3]": "from",
-        "/html/body/div[1]/main/div[3]/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/div[2]/button/div[3]": "to",
-        "/html/body/div[1]/main/div[3]/div/div[1]/div[2]/div[1]/div[1]/div/h1": "city",
-        "/html/body/div[1]/main/div[3]/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/div[3]/button/div[3]/span/span[2]": "adult",
-        "/html/body/div[1]/main/div[3]/div/div[2]/div/div[1]/div/div[2]/div[1]/div/div[1]/div/div[1]/div[2]/div/div[2]/div/button/div/div": "rank"
+        "//*[@data-automation=\"checkin\"]/div[2]": "from",
+        "//*[@data-automation=\"checkout\"]/div[2]": "to",
+        "//*[@data-automation=\"header_geo_title\"]": "city",
+        "//*[@data-automation=\"roomsandguests\"]/div[3]": "adult",
+        "//*[@data-automation=\"sort\"]": "rank"
       }
     },
     "expected": {
@@ -64,11 +64,11 @@
           "to": "this Sunday"
         },
         "expected": {
-          "from": "{DoW}, {Month} {Day0D}",
-          "to": "{DoW}, {Month} {Day0D}",
-          "city": "New York City Hotels",
-          "adult": "2 adults",
-          "rank": "Price (low to high)"
+          "from": "{MonthD}月{Day0D}日({DoWJ})",
+          "to": "{MonthD}月{Day0D}日({DoWJ})",
+          "city": "ニューヨーク シティ ホテル",
+          "adult": "1室、2名",
+          "rank": "料金 (安い順)"
         }
       }
     }

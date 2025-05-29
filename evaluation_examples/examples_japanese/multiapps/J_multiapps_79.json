@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_79",
   "snapshot": "gimp",
-  "instruction": "私は 'anmi.png' という名前の背景画像を持っています。その画像の鮮明さを向上させ、'anmi_sharper.png' として保存してください。次に、それを私の 'index.html' ページの背景画像として使用してください。",
+  "instruction": "私は 'anmi.png' という名前の背景画像を持っています。その画像をよりシャープにして、'anmi_sharper.png' として保存してください。次に、それを私の 'index.html' ページの背景画像として設定してください。",
   "source": "",
   "config": [
     {

@@ -1,7 +1,7 @@
 {
   "id": "J_ppt_31",
   "snapshot": "libreoffice_impress",
-  "instruction": "内容のフォントサイズを12に変更し、フォントカラーをオレンジに変更してください。スライドの背景を赤に変更してください。",
+  "instruction": "本文のフォントサイズを12に変更し、フォントカラーをオレンジに変更してください。スライドの背景を赤に変更してください。",
   "source": "https://arxiv.org/pdf/2311.01767.pdf",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.usercontent.google.com/download?id=1wgqcqlJVpRjZJNetmM5k3J3J-we8o29N&export=download&authuser=0&confirm=t&uuid=805143ab-1ea8-452b-a258-d9bd12b66af4&at=APZUnTUkVNjNUb64VDOzPORZ7B0C:1708064662541",
+            "url": "https://drive.google.com/uc?export=download&id=16LKkQz_jLpt7J319U4Uk4oXw8iNSeYY4",
             "path": "/home/user/デスクトップ/16_2.pptx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_pptx_files",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.usercontent.google.com/download?id=1PP6NzBOTGwOUqkCNi8OayzD0art1_YjO&export=download&authuser=0&confirm=t&uuid=7c6a65a0-9fcb-40d1-ab19-93465bbd0d40&at=APZUnTW-p6JUQuEVkqlrJEJk7paf:1708064850977",
+      "path": "https://drive.google.com/uc?export=download&id=1sY11wu0cY6_EI-fSY5SgtyA6GIcR0fSo",
       "dest": "16_2_Gold.pptx"
     },
     "result": {

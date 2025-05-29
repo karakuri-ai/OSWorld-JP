@@ -1,7 +1,7 @@
 {
   "id": "J_excel_55",
   "snapshot": "libreoffice_calc",
-  "instruction": "「Sales Channel」が「E-mail Coupon」である行の「Date」と「Revenue ($)」の値を新しいシートにコピーしてください。",
+  "instruction": "「販売チャネル」が「メールクーポン販売」である行の「日付」と「売上（ドル）」の値を新しいシートにコピーしてください。",
   "source": "SheetCopilot@177",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=1bNHlYdEXNBBHab1kiYaD35Xc3hNIyR8J&export=download",
+            "url": "https://drive.google.com/uc?export=download&id=1i8xSLr06fYe5hEqlLG6Vej-yUD39fxrS",
             "path": "/home/user/SummerSales.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=1_KlsYyVzWbp9r6ZAHxNPeHozk04Ksryv&export=download",
+      "path": "https://drive.google.com/uc?export=download&id=1ZkWEiwqL1JmeyfdKVZ7hZAzKyDtWBK6Z",
       "dest": "2_SummerSales_gt1.xlsx"
     },
     "result": {

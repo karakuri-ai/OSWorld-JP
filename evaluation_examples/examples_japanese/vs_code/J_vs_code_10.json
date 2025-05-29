@@ -10,7 +10,7 @@
         "files": [
           {
             "url": "https://drive.usercontent.google.com/download?id=1k1d2UbXvp05gDdV669gNDnbdEv9SsAtN&export=download&authuser=0&confirm=t&uuid=c3d51b38-e061-4198-80cd-3cd251de8dae&at=APZUnTXaiHViMYwtweYPykye7N5u:1710938272734",
-            "path": "/home/user/ダウンロード/HW-8-main-20240207T164539Z-001.zip"
+            "path": "/home/user/download/HW-8-main-20240207T164539Z-001.zip"
           }
         ]
       }
@@ -28,10 +28,7 @@
     {
       "type": "launch",
       "parameters": {
-        "command": [
-          "code",
-          "/home/user/ダウンロード/HW-8-main/"
-        ]
+        "command": ["code", "/home/user/download/HW-8-main/"]
       }
     },
     {
@@ -42,9 +39,7 @@
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": [
-    "vscode"
-  ],
+  "related_apps": ["vscode"],
   "evaluator": {
     "func": "check_json_settings",
     "expected": {

@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_05",
   "snapshot": "chrome",
-  "instruction": "私はPythonプログラミングを学びたいです、そして友達がこのコースのウェブサイトを勧めてくれました。私は第0週の講義スライドを入手しました。他の週のPDFを開いたフォルダーにダウンロードしてください。そして、ファイル名はそのままにしておいてください。",
+  "instruction": "私はコンピュータシステムを学びたいです、そして友達がこのコースのウェブサイトを勧めてくれました。私は第1週の講義スライドを入手しました。他の週のPDFを開いたフォルダーにダウンロードしてください（講義資料と書いてあるPDFのみが対象です）。また、ファイル名はそのままにしておいてください。",
   "source": "authors",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://cs50.harvard.edu/python/2022/weeks/0/"
+          "https://ocw.u-tokyo.ac.jp/course_11482/"
         ]
       }
     },
@@ -47,7 +47,7 @@
         "files": [
           {
             "url": "https://drive.usercontent.google.com/download?id=1OdvHgcHXSn62xXe_VrPTN0HLWHmrcfdY&export=download&authuser=0&confirm=t",
-            "path": "/home/user/lecture_slides/lecture0.pdf"
+            "path": "/home/user/lecture_slides/講義資料1.pdf"
           }
         ]
       }

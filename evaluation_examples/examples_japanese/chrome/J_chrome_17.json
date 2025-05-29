@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_17",
   "snapshot": "chrome",
-  "instruction": "ボストン・ローガン国際空港で、来月の10日から11日までの間に、最も多くの座席がある車を見つけて選んでください。",
+  "instruction": "新千歳空港で、来月の10日の朝8時から11日の同じ時間まで利用できる、なるべく大きな車を探してください。",
   "source": "test_task_1",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://www.budget.com/"
+          "https://www.budgetrentacar.co.jp/"
         ]
       }
     },
@@ -57,17 +57,9 @@
       {
         "type": "active_tab_html_parse",
         "goto_prefix": "https://www.",
-        "category": "class",
-        "class_singleObject": {},
-        "class_multiObject": {
-          "location-info": {
-            "0": "start_location",
-            "1": "end_location"
-          },
-          "day-time-info": {
-            "0": "from",
-            "1": "to"
-          }
+        "category": "input",
+        "inputObject": {
+          "//*[@id=\"sortDiv\"]": "sort"
         }
       },
       {
@@ -75,7 +67,8 @@
         "goto_prefix": "https://www.",
         "category": "xpath",
         "xpathObject": {
-          "/html/body/div[6]/div[2]/div[1]/div/div/div[2]/div[1]/section[1]/div/form/div[1]/div[2]/div/a": "rank"
+          "//div[contains(@class, \"c-border-box--condition__left\")]/dl[1]/dd": "from",
+          "//div[contains(@class, \"c-border-box--condition__left\")]/dl[2]/dd": "to"
         }
       }
     ],
@@ -84,8 +77,16 @@
         "type": "rule",
         "rules": {
           "expected": [
-            "reservation#/vehicles"
+            "reserve/select_car/"
           ]
+        }
+      },
+      {
+        "type": "rule",
+        "rules": {
+          "expected": {
+            "sort": "normal_desc"
+          }
         }
       },
       {
@@ -96,18 +97,8 @@
             "to": "11th next month"
           },
           "expected": {
-            "start_location": "Boston Logan Intl Airport,\n\t\t\t\t\t\t\t\tBOS \n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t      \n\t\t\t\t\t\t\t        \n\t\t\t\t\t\t\t        \n\t\t\t\t\t\t\t          \n\t\t\t\t\t\t\t            \n\t\t\t\t\t\t\t            Pick-Up",
-            "end_location": "Boston Logan Intl Airport,\n\t\t\t\t\t\t\t\tBOS",
-            "from": "{DoW}, {Month} {Day0D}, 12:00 PM",
-            "to": "{DoW}, {Month} {Day0D}, 12:00 PM"
-          }
-        }
-      },
-      {
-        "type": "rule",
-        "rules": {
-          "expected": {
-            "rank": "Number of Seats (High to Low)"
+            "from": "新千歳空港店　{Year}年{Month0D}月{Day0D}日　08時00分",
+            "to": "新千歳空港店　{Year}年{Month0D}月{Day0D}日　08時00分"
           }
         }
       }

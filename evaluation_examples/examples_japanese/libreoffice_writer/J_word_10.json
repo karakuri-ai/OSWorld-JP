@@ -1,7 +1,7 @@
 {
   "id": "J_word_10",
   "snapshot": "libreoffice_writer",
-  "instruction": "カーソルの位置に式「(a + b)² = a² + 2ab + b²」を挿入してください。",
+  "instruction": "カーソルの位置に式「(a + b)^2 = a^2 + 2 a b + b^2」を挿入してください。",
   "source": "https://askubuntu.com/questions/319593/how-to-type-science-equations-in-libre-office",
   "config": [
     {

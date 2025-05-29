@@ -1,7 +1,7 @@
 {
   "id": "J_excel_23",
   "snapshot": "libreoffice_calc",
-  "instruction": "新しいシートを作成してください。新しいシートでA1:C1のセルを結合し、「デモグラフィックプロファイル」と青色（#0000ff）の塗りつぶしと太字の白文字で記入してください。それから、性別、婚姻状況、最終学歴の割合を示す3つのピボットテーブルを作成したいです。それらは新しいシートに1つずつ重ねて表示し、各テーブルの間には空白の行を挿入してください。",
+  "instruction": "新しいシートを作成してください。新しいシートでA1:C1のセルを結合し、「人口統計プロフィール」と青色（#0000ff）の塗りつぶしと太字の白文字で記入してください。それから、性別、婚姻状況、最終学歴の割合(%)を示す3つのピボットテーブルを作成したいです。それらは新しいシートに1つずつ重ねて表示し、各テーブルの間には空白の行を1つ挿入してください。",
   "source": "SheetCopilot@9",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=1c9egJM5T3_-FTJd9yFfQfQ2sCEgerzSl&export=download",
+            "url": "https://drive.google.com/uc?export=download&id=1mR7HHU18q0uc4uENf1VuPh5T95cl5R4W",
             "path": "/home/user/DemographicProfile.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=1fiqcYR0w4XXpgPInSR5CGIh2_3-sjQv5&export=download",
+      "path": "https://drive.google.com/uc?export=download&id=1XeEQ7HnSPWAPwkLgDHiiiA51o15PJ2l9",
       "dest": "1_DemographicProfile_gt1.xlsx"
     },
     "result": {
@@ -101,7 +101,7 @@
             },
             "value": {
               "method": "eq",
-              "ref": "Demographic Profile"
+              "ref": "人口統計プロフィール"
             }
           }
         }

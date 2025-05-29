@@ -1,7 +1,7 @@
 {
   "id": "J_gimp_07",
   "snapshot": "gimp",
-  "instruction": "画像に何が起こっているかを説明してください。",
+  "instruction": "画像のなかで何が起こっているかを説明してください。",
   "source": "",
   "config": [
     {

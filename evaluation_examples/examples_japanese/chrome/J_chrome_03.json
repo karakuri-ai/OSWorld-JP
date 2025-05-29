@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_03",
   "snapshot": "chrome",
-  "instruction": "自然製品のデータベースを閲覧してください。",
+  "instruction": "一般用医薬品のデータベースを閲覧してください。",
   "source": "Mind2Web",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://drugs.com"
+          "https://www.pmda.go.jp/"
         ]
       }
     },
@@ -73,14 +73,14 @@
         "type": "rule",
         "rules": {
           "type": "url",
-          "url": "https://www.drugs.com/npc/"
+          "url": "https://www.pmda.go.jp/PmdaSearch/otcSearch/"
         }
       },
       {
         "type": "rule",
         "rules": {
           "type": "url",
-          "url": "https://www.drugs.com/npp/"
+          "url": "https://www.pmda.go.jp/PmdaSearch/otcSearch/"
         }
       }
     ]

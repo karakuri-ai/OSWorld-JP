@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_40",
   "snapshot": "multiapps",
-  "instruction": "現在、特定のデータセットに対するいくつかの大規模言語モデルの応答を保存したJSON形式のデータファイルを開いています。今、Geminiのすべての応答をフィルタリングし、「Iliad」を含む応答の文を特に見たいと思っています。JSONファイルからGeminiのすべての応答（値）をコピーし、それをデスクトップの「gemini_results.docx」という名前のWord文書に貼り付けてください。各応答は新しい段落として、新しい行で区切ってください。「Iliad」という単語をすべてハイライトしてください。",
+  "instruction": "現在、特定のデータセットに対するいくつかの大規模言語モデルの応答を保存したJSON形式のデータファイルを開いています。今、Geminiのすべての応答をフィルタリングし、「イリアス」を含む応答の文を特に見たいと思っています。JSONファイルからGeminiのすべての応答（値）をコピーし、それをデスクトップの「gemini_results.docx」という名前のWord文書に貼り付けてください。各応答は新しい段落として、新しい行で区切ってください。「イリアス」という単語をすべてハイライトしてください。",
   "source": "",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=1OtN8poSktw5s9w7y28wr5JmXszMOpn2q",
+            "url": "https://drive.google.com/uc?export=download&id=1NqC2tG_EVMe1PoOLRSPb9wz06UbqOVs3",
             "path": "/home/user/デスクトップ/llm_answers.json"
           }
         ]
@@ -55,7 +55,7 @@
     "func": "compare_docx_files_and_ignore_new_lines",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?export=download&id=1gmg5mC7qfmPvspC-ICOIJJ3aRjuSvP8u",
+      "path": "https://drive.google.com/uc?export=download&id=14SmXwumi-PoEuSK3vdPRd1YtMDD2ajCj",
       "dest": "gemini_results_Gold.docx"
     },
     "result": {

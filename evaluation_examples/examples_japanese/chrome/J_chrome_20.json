@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_20",
   "snapshot": "chrome",
-  "instruction": "Chromeで/home/user/デスクトップ/に解凍した拡張機能をインストールするのを手伝っていただけますか？",
+  "instruction": "/home/user/デスクトップ/ にある、パッケージ化されていない拡張機能をChromeにインストールするのを手伝っていただけますか？",
   "source": "https://support.google.com/chrome/thread/205881926/it-s-possible-to-load-unpacked-extension-automatically-in-chrome?hl=en",
   "config": [
     {

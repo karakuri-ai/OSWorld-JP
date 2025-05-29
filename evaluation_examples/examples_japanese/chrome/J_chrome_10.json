@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_10",
   "snapshot": "chrome",
-  "instruction": "最近、英語の名前をトーマスに変えました。ユーザー名を更新したいです。Chromeのプロフィールでユーザー名をトーマスに変更するのを手伝っていただけますか？",
+  "instruction": "最近、苗字が竹本に変わりました。ユーザー名を更新したいです。Chromeのプロフィールでユーザー名を竹本に変更するのを手伝っていただけますか？",
   "source": "https://superuser.com/questions/1393683/how-to-change-the-username-in-google-chrome-profiles?rq=1",
   "config": [
     {
@@ -56,7 +56,7 @@
     "expected": {
       "type": "rule",
       "rules": {
-        "expected": "Thomas"
+        "expected": "竹本"
       }
     }
   }

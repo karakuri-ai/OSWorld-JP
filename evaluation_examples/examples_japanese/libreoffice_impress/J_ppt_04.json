@@ -1,7 +1,7 @@
 {
   "id": "J_ppt_04",
   "snapshot": "libreoffice_impress",
-  "instruction": "人物の写真があるスライドの背景色を黄色に設定し、スライド2のタイトルを「Let's start」に設定してください。",
+  "instruction": "人物の写真を含むスライドたちの背景色を黄色に設定し、スライド2のタイトルを「Let's start」に設定してください。",
   "source": "https://arxiv.org/pdf/2311.01767.pdf",
   "config": [
     {

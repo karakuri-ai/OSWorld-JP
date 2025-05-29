@@ -1,7 +1,7 @@
 {
   "id": "J_excel_24",
   "snapshot": "libreoffice_calc",
-  "instruction": "こちらは、2019年と2020年の月ごとの費用を記録した2つの表です。これらのデータから、各年の月ごとの費用の変動を反映した2つの棒グラフを作成したいです。助けてください、アシスタントさん！",
+  "instruction": "こちらは、2019年と2020年の月ごとの費用を記録した2つの表です。これらのデータから、各年の月ごとの費用の変動を反映した2つの棒グラフを作成したいです。",
   "source": "https://www.youtube.com/watch?v=bgO40-CjYNY",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.usercontent.google.com/download?id=1GOEacGTLP4EfGS8YwO9aGmmPgud5EavT&export=download&authuser=0&confirm=t&uuid=3971675c-3a76-4f89-863f-7f8afa59c3c5&at=APZUnTWaQ4_l1IiXsAR8VbjKf4uZ:1703595929357",
+            "url": "https://drive.google.com/uc?export=download&id=10LuK1ubncAh4JiWQrnVMwOxkHXQRey0Y",
             "path": "/home/user/Create_column_charts_using_statistics.xlsx"
           }
         ]
@@ -66,7 +66,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.usercontent.google.com/download?id=1yiTCGZvGccWET9u8K7looD3ybH7PO9gb&export=download&authuser=0&confirm=t&uuid=65f54a6f-bb2e-40c3-8a76-091d785a5aca&at=APZUnTVbeO6maMvzItLvSwdBEZoM:1703595892144",
+      "path": "https://drive.google.com/uc?export=download&id=1rmkprU-Eo6wg5D-RyS1DUvKg1bdejYJk",
       "dest": "Create_column_charts_using_statistics_gold.xlsx"
     },
     "options": {

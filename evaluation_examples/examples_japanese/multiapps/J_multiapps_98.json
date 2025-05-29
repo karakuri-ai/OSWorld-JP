@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_98",
   "snapshot": "gimp",
-  "instruction": "GIMPで「character.png」を開き、ピクセルアートのキャラクターを切り抜いてください。選択したキャラクターを「character_gimp.png」として保存します。さらに、この選択プロセスを自動化するPythonスクリプトを書き、GIMPでの手動抽出を正確に模倣してください。スクリプトの結果を「character_code.png」として出力します。",
+  "instruction": "GIMP で『character.png』を開き、ピクセルアートのキャラクターを抽出してください。選択したキャラクターは『character_gimp.png』という名前で保存します。さらに、このキャラクターの抽出手順を自動化する Python スクリプトを作成し、GIMP で手動に行った作業と同じ精度で実行できるようにしてください。スクリプトの出力結果は『character_code.png』として保存します。",
   "source": "",
   "config": [
     {

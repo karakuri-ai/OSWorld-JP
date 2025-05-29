@@ -1,7 +1,7 @@
 {
   "id": "J_multiapps_29",
   "snapshot": "gimp",
-  "instruction": "GIMPのスクリプトフーを効果的に編集するために、VS Codeをlisp拡張機能をインストールして設定してください。「character.png」の画像を128 * 128にリサイズして「resized.png」として保存するコードを書いてテストします。",
+  "instruction": "GIMPのスクリプト-フを効果的に編集するために、VS Codeをlisp拡張機能をインストールして設定してください。「character.png」の画像を128 * 128にリサイズして「resized.png」として保存するコードを書いてテストします。",
   "source": "",
   "config": [
     {

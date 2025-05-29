@@ -260,7 +260,9 @@ class PythonController:
             # text = parameters["text"].replace("\\", "\\\\").replace("'", "\\'")
             # self.execute_python_command(f"pyautogui.typewrite('{text}')")
             text = parameters["text"]
-            self.execute_python_command("pyautogui.typewrite({:})".format(repr(text)))
+            #self.execute_python_command("pyautogui.typewrite({:})".format(repr(text)))
+            self.execute_python_command("pyperclip.copy({:})".format(repr(text)))
+            self.execute_python_command("pyautogui.hotkey('ctrl', 'v')")
 
         elif action_type == "PRESS":
             if "key" not in parameters:

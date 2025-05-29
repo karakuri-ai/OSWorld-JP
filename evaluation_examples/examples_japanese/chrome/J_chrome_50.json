@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://seatgeek.com/"
+          "https://tiketore.com/"
         ]
       }
     },
@@ -52,7 +52,7 @@
       "type": "rule",
       "rules": {
         "expected": [
-          "Buying-Tickets"
+          "guide/buy"
         ]
       }
     }

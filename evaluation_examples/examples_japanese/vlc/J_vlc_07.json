@@ -1,7 +1,7 @@
 {
   "id": "J_vlc_07",
   "snapshot": "base_setup",
-  "instruction": "録音を保存するフォルダーをデスクトップに変更してください。",
+  "instruction": "録音を保存するフォルダーを「Desktop」に変更してください。",
   "source": "https://docs.videolan.me/vlc-user/desktop/3.0/en/basic/recording/playing.html#choose-your-recordings-folder",
   "config": [
     {
@@ -22,15 +22,13 @@
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": [
-    "vlc"
-  ],
+  "related_apps": ["vlc"],
   "evaluator": {
     "func": "is_vlc_recordings_folder",
     "expected": {
       "type": "rule",
       "rules": {
-        "recording_file_path": "/home/user/デスクトップ"
+        "recording_file_path": "/home/user/desktop"
       }
     },
     "result": {

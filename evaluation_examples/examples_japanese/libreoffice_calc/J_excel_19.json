@@ -1,7 +1,7 @@
 {
   "id": "J_excel_19",
   "snapshot": "libreoffice_calc",
-  "instruction": "「パラメーター」列の表記を変更し、100万（M）および10億（B）で表示してください。小数点以下1桁まで残し、数字と単位の間にスペースを入れてください。",
+  "instruction": "「パラメーター」列の数値の表記を変更し、100万（M）および10億（B）で表示してください。小数点以下1桁まで残し、数字と単位の間にスペースを入れてください。",
   "source": "https://www.youtube.com/watch?v=p5C4V_AO1UU",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.usercontent.google.com/download?id=16PowrQA4E71xUoJmpXPHy0dr9HBcTRmo&export=download&authuser=0&confirm=t&uuid=9a6265f7-585c-4cf8-b321-3b859aec1e68&at=APZUnTWzzOw85wws0ojXNPsIwnjE:1703858126178",
+            "url": "https://drive.google.com/uc?export=download&id=1SbOsfPvnlb5P9NB10npoWoC4xL_bzirI",
             "path": "/home/user/Represent_in_millions_billions.xlsx"
           }
         ]
@@ -93,8 +93,8 @@
     "expected": {
       "type": "cloud_file",
       "path": [
-        "https://drive.usercontent.google.com/download?id=1Jy6lZexhU5t0eW1GwXJ_csnwIe0Xiy9-&export=download&authuser=0&confirm=t&uuid=601701e7-9eb8-4ce8-83d5-35916094a15d&at=APZUnTW4WE-plIC5MmWTuFu24qLL:1703857882995",
-        "https://drive.usercontent.google.com/download?id=1CjzmJ4vqwPI7DMTR_6a8ytO-W-4xavBS&export=download&authuser=0&confirm=t&uuid=32c3430a-6d3d-47cc-bb5c-e683963b19f7&at=APZUnTWSBLNtkrZTix_BRl9gyaek:1705497493679"
+        "https://drive.google.com/uc?export=download&id=1l7kAVJPSLWFDcENyr947zrc-Hb0ti5LJ",
+        "https://drive.google.com/uc?export=download&id=189JeiIoRuXvgXuD4RRRvYmok4QDWngMq"
       ],
       "dest": [
         "Represent_in_millions_billions_gold.xlsx",

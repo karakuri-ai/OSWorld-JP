@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_32",
   "snapshot": "chrome",
-  "instruction": "民事部のフォームのリストを参照してください。",
+  "instruction": "司法試験についてのQ&Aを確認して",
   "source": "online_tasks",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://www.justice.gov/"
+          "https://www.moj.go.jp/"
         ]
       }
     },
@@ -52,7 +52,7 @@
       "type": "rule",
       "rules": {
         "expected": [
-          "forms\\?title=&field_component_target_id=431"
+          "shihoushiken/shiken_shinshihou_shikenqa"
         ]
       }
     }

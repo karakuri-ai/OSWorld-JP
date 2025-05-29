@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_38",
   "snapshot": "chrome",
-  "instruction": "アルビオンバジンの次の空いている日を見つけてください。",
+  "instruction": "尾瀬岩鞍キャンプ場の次の空いている日を見つけてください。",
   "source": "test_task_1",
   "config": [
     {
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://www.recreation.gov/"
+          "https://www.nap-camp.com/"
         ]
       }
     },
@@ -43,23 +43,45 @@
     "chrome"
   ],
   "evaluator": {
-    "func": "check_direct_json_object",
-    "result": {
-      "type": "active_tab_html_parse",
-      "goto_prefix": "https://www.",
-      "category": "class",
-      "class_singleObject": {},
-      "class_multiObject": {
-        "camp-sortable-column-header": {
-          "2": "camp-sortable-column-header"
+    "func": [
+      "is_expected_url_pattern_match",
+      "check_direct_json_object"
+    ],
+    "conj": "and",
+    "result": [
+      {
+        "type": "active_tab_info",
+        "goto_prefix": "https://www."
+      },
+      {
+        "type": "active_tab_html_parse",
+        "goto_prefix": "https://www.",
+        "category": "class",
+        "class_singleObject": {
+          "ReservationDateScreen_close__NbzMU": "dummy"
         }
       }
-    },
-    "expected": {
-      "type": "gotoRecreationPage_and_get_html_content",
-      "selector": "class",
-      "class": "camp-sortable-column-header",
-      "order": "2"
-    }
+    ],
+    "expected": [
+      {
+        "type": "rule",
+        "rules": {
+          "expected": [
+            "gunma/14353/plans/"
+          ]
+        }
+      },
+      {
+        "type": "rule_relativeTime",
+        "rules": {
+          "relativeTime": {
+            "from": "tomorrow"
+          },
+          "expected": {
+            "dummy": ""
+          }
+        }
+      }
+    ]
   }
 }

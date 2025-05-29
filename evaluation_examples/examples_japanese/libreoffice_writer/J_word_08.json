@@ -9,8 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.usercontent.google.com/download?id=16lQcSkw-JQ_v8Sg0HkCtnOzyK-4cok8N&export=download&authuser=0&confirm=t&uuid=a3f833ae-2572-4cf3-8a21-6d250e689415&at=APZUnTUfn24NGMtXEzz2Nf7cFLjt:1704975857398",
-            "path": "/home/user/デスクトップ/NOVEL_Submission_Guidelines.docx"
+            "url": "https://drive.google.com/drive/folders/1Dx0_79pcrDcgXyFqQMG4b9TCCNIHdBiX?usp=drive_link"
           }
         ]
       }
@@ -55,8 +54,7 @@
     "func": "compare_line_spacing",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.usercontent.google.com/download?id=1LaS5ObaOsbyKX1M17vi8ZseZwawgvNmf&export=download&authuser=0&confirm=t&uuid=db523e81-fa22-4002-97ff-e5dff92106a7&at=APZUnTVnT3ZYOGW7ZQdeW4SZP7mX:1704975993684",
-      "dest": "NOVEL_Submission_Guidelines_Gold.docx"
+      "path": "https://drive.google.com/drive/folders/1Dx0_79pcrDcgXyFqQMG4b9TCCNIHdBiX?usp=drive_link"
     },
     "result": {
       "type": "vm_file",

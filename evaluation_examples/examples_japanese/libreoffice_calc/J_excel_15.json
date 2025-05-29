@@ -1,7 +1,7 @@
 {
   "id": "J_excel_15",
   "snapshot": "libreoffice_calc",
-  "instruction": "「シート2」という名前の新しいシートを作成し、セルA1:C1を結合して「投資サマリー」と書いてください。その下に、セルA2:B2を結合して「高金利」と書き、セルC2:D2を結合して「低金利」を形成してください。",
+  "instruction": "「Sheet2」という名前の新しいシートを作成し、セルA1:C1を結合して「投資サマリー」と書いてください。その下に、セルA2:B2を結合して「高金利」と書き、セルC2:D2を結合して「低金利」を形成してください。",
   "source": "SheetCopilot@73",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=1qILGOZpTwo2armXyGZM96ao-ydHRpZ_g&export=download",
+            "url": "https://drive.google.com/uc?export=download&id=1sBalEjzNNTeh7-PxEBaX6iHY7N6ahfn5",
             "path": "/home/user/FutureValue.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=1KCTx2yEwTlSLa8doQ74ucE-opbCxQCeh&export=download",
+      "path": "https://drive.google.com/uc?export=download&id=1TQ0KkRfWUpbK8RHTQzt2M7_VoiJDe11U",
       "dest": "5_FutureValue_gt1.xlsx"
     },
     "result": {
