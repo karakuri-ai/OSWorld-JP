@@ -266,3 +266,8 @@ python show_result.py
     year = {2025},
 }
 ```
+
+----
+
+This repository is a fork of [OSWorld](https://github.com/xlang-ai/OSWorld) by XLANG NLP Lab.
+The original project is licensed under the Apache License 2.0, which is preserved in this repository.
