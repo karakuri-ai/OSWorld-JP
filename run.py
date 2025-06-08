@@ -102,6 +102,14 @@ def config() -> argparse.Namespace:
     parser.add_argument(
         "--test_all_meta_path", type=str, default="evaluation_examples/test_all.json"
     )
+    parser.add_argument(
+        "--restart_task", type=str, default=None,
+        help="Restart from a specific task in format 'domain:task_id' (e.g., 'chrome:J_chrome_1')"
+    )
+    parser.add_argument(
+        "--list_tasks", action="store_true",
+        help="List all available tasks and exit"
+    )
 
     # logging related
     parser.add_argument("--result_dir", type=str, default="./results")
@@ -155,8 +163,34 @@ def test(args: argparse.Namespace, test_all_meta: dict) -> None:
         in ["a11y_tree", "screenshot_a11y_tree", "som"],
     )
 
+    # Handle restart_task option
+    restart_domain = None
+    restart_task_id = None
+    skip_until_restart = False
+    
+    if args.restart_task:
+        if ':' not in args.restart_task:
+            logger.error("Invalid restart_task format. Use 'domain:task_id' (e.g., 'chrome:J_chrome_1')")
+            return
+        restart_domain, restart_task_id = args.restart_task.split(':', 1)
+        skip_until_restart = True
+        logger.info(f"Will restart from task: {restart_domain}:{restart_task_id}")
+
     for domain in tqdm(test_all_meta, desc="Domain"):
+        # Skip domains until we reach the restart domain
+        if skip_until_restart and domain != restart_domain:
+            logger.info(f"Skipping domain: {domain}")
+            continue
+            
         for example_id in tqdm(test_all_meta[domain], desc="Example", leave=False):
+            # Skip tasks until we reach the restart task
+            if skip_until_restart:
+                if domain == restart_domain and example_id == restart_task_id:
+                    logger.info(f"Restarting from task: {domain}:{example_id}")
+                    skip_until_restart = False
+                else:
+                    logger.info(f"Skipping task: {domain}:{example_id}")
+                    continue
             config_file = os.path.join(
                 args.test_config_base_dir, f"examples_japanese/{domain}/{example_id}.json"
             )
@@ -209,6 +243,11 @@ def test(args: argparse.Namespace, test_all_meta: dict) -> None:
                         )
                     )
                     f.write("\n")
+
+    # Check if restart_task was specified but never found
+    if skip_until_restart and args.restart_task:
+        logger.error(f"Restart task '{args.restart_task}' was not found in the test metadata.")
+        logger.error("Please check the domain and task_id are correct.")
 
     env.close()
     logger.info(f"Average score: {sum(scores) / len(scores)}")
@@ -296,6 +335,33 @@ if __name__ == "__main__":
 
     if args.domain != "all":
         test_all_meta = {args.domain: test_all_meta[args.domain]}
+
+    # Handle list_tasks option
+    if args.list_tasks:
+        print("Available tasks:")
+        print("================")
+        for domain in sorted(test_all_meta.keys()):
+            print(f"\nDomain: {domain}")
+            for task_id in sorted(test_all_meta[domain]):
+                print(f"  {domain}:{task_id}")
+        print(f"\nTotal tasks: {sum(len(tasks) for tasks in test_all_meta.values())}")
+        sys.exit(0)
+
+    # Validate restart_task if specified
+    if args.restart_task:
+        if ':' not in args.restart_task:
+            logger.error("Invalid restart_task format. Use 'domain:task_id' (e.g., 'chrome:J_chrome_1')")
+            sys.exit(1)
+        restart_domain, restart_task_id = args.restart_task.split(':', 1)
+        if restart_domain not in test_all_meta:
+            logger.error(f"Domain '{restart_domain}' not found in test metadata.")
+            logger.error(f"Available domains: {', '.join(test_all_meta.keys())}")
+            sys.exit(1)
+        if restart_task_id not in test_all_meta[restart_domain]:
+            logger.error(f"Task '{restart_task_id}' not found in domain '{restart_domain}'.")
+            logger.error(f"Available tasks in {restart_domain}: {', '.join(test_all_meta[restart_domain])}")
+            sys.exit(1)
+        logger.info(f"Validated restart task: {restart_domain}:{restart_task_id}")
 
     test_file_list = get_unfinished(
         args.action_space,
