@@ -599,6 +599,64 @@ class PromptAgent:
             else:
                 return response.json()['choices'][0]['message']['content']
 
+        elif self.model == "Qwen2.5-VL-32B-sft-step-1000-merge-instruct":
+            headers = {
+                "Content-Type": "application/json"
+            }
+            logger.info("Generating content with Qwen2.5-VL model: %s", self.model)
+            
+            # payloadのmodelフィールドを確実に設定
+            payload["model"] = self.model
+            
+            try:
+                response = requests.post(
+                    "http://13.49.184.235:8000/v1/chat/completions",
+                    headers=headers,
+                    json=payload,
+                    timeout=120
+                )
+
+                if response.status_code == 200:
+                    result = response.json()
+                    if "choices" in result and len(result["choices"]) > 0:
+                        return result["choices"][0]["message"]["content"]
+                    else:
+                        logger.error("Invalid response format from Qwen2.5-VL API")
+                        return ""
+                else:
+                    logger.error(f"Failed to call Qwen2.5-VL API. Status: {response.status_code}, Response: {response.text}")
+                    
+                    # Context length exceeded error handling
+                    try:
+                        error_response = response.json()
+                        if 'error' in error_response and 'code' in error_response['error']:
+                            if error_response['error']['code'] == "context_length_exceeded":
+                                logger.error("Context length exceeded. Retrying with a smaller context.")
+                                payload["messages"] = [payload["messages"][0]] + payload["messages"][-1:]
+                                retry_response = requests.post(
+                                    "http://13.49.184.235:8000/v1/chat/completions",
+                                    headers=headers,
+                                    json=payload,
+                                    timeout=120
+                                )
+                                if retry_response.status_code == 200:
+                                    retry_result = retry_response.json()
+                                    if "choices" in retry_result and len(retry_result["choices"]) > 0:
+                                        return retry_result["choices"][0]["message"]["content"]
+                                logger.error(f"Failed to call LLM even after shortening context: {retry_response.text}")
+                    except:
+                        pass
+                    
+                    time.sleep(5)
+                    return ""
+                    
+            except requests.exceptions.RequestException as e:
+                logger.error(f"Request exception when calling Qwen2.5-VL API: {e}")
+                return ""
+            except Exception as e:
+                logger.error(f"Unexpected error when calling Qwen2.5-VL API: {e}")
+                return ""
+
         elif self.model.startswith("claude"):
             messages = payload["messages"]
             max_tokens = payload["max_tokens"]
