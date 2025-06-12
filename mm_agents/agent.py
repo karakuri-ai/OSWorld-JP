@@ -1056,6 +1056,10 @@ class PromptAgent:
                 print("Failed to call LLM: " + str(e))
                 return ""
 
+        elif self.model == "dummy":
+            logger.info("Generating dummy response: 'Done'")
+            return "Done"
+
         else:
             raise ValueError("Invalid model: " + self.model)
 
