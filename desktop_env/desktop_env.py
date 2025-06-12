@@ -99,13 +99,27 @@ class DesktopEnv(gym.Env):
         self.provider.start_emulator(self.path_to_vm, self.headless, self.os_type)
 
         # Get the ip from the virtual machine, and setup the controller
-        vm_ip_ports = self.provider.get_ip_address(self.path_to_vm).split(':')
-        self.vm_ip = vm_ip_ports[0]
-        if len(vm_ip_ports) > 1:
-            self.server_port = int(vm_ip_ports[1])
-            self.chromium_port = int(vm_ip_ports[2])
-            self.vnc_port = int(vm_ip_ports[3])
-            self.vlc_port = int(vm_ip_ports[4])
+        try:
+            vm_ip_ports = self.provider.get_ip_address(self.path_to_vm).split(':')
+            self.vm_ip = vm_ip_ports[0]
+            
+            # Validate that we got a proper IP address
+            if not self.vm_ip or "Error" in self.vm_ip or "VMware Tools" in self.vm_ip:
+                raise ValueError(f"Invalid VM IP address received: {self.vm_ip}")
+            
+            if len(vm_ip_ports) > 1:
+                self.server_port = int(vm_ip_ports[1])
+                self.chromium_port = int(vm_ip_ports[2])
+                self.vnc_port = int(vm_ip_ports[3])
+                self.vlc_port = int(vm_ip_ports[4])
+        except ValueError as e:
+            if "invalid literal for int()" in str(e):
+                # This means we got an error message instead of port numbers
+                logger.error("Failed to parse VM ports. This usually means VMware Tools are not running.")
+                logger.error("Please ensure VMware Tools are installed and running in the virtual machine.")
+                logger.error("VM may need more time to boot up completely.")
+            raise e
+        
         self.controller = PythonController(vm_ip=self.vm_ip, server_port=self.server_port)
         self.setup_controller = SetupController(vm_ip=self.vm_ip, server_port=self.server_port, chromium_port=self.chromium_port, vlc_port=self.vlc_port, cache_dir=self.cache_dir_base)
 
