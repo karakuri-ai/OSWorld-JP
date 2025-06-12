@@ -36,13 +36,13 @@
 言語を考慮した評価のための、日本語版コンピュータユースベンチマーク
 
 ## 📢 アップデート
+
 - 2025-05-28: 本ベンチマークに関して、2025年度 人工知能学会全国大会 (JSAI2025) にて発表予定です。日時等は[こちら](https://confit.atlas.jp/guide/event/jsai2025/subject/3Win5-56/tables) をご参照ください。
 - 2025-05-28: 本 GitHub にて、本ベンチマークを v0.1 として公開しました。以下の内容を反映済みです。
-    - [x] システム環境のローカライズ
-    - [x] システムプロンプトの日本語化
-    - [x] 全てのタスクのプロンプトの日本語化
-    - [x] 344/437 (=79%) のタスクに関して、タスク内容にまで踏み込んだ日本語化（タスク関連ファイルの修正・タスクの読み替え等）
-
+        - [x] システム環境のローカライズ
+        - [x] システムプロンプトの日本語化
+        - [x] 全てのタスクのプロンプトの日本語化
+        - [x] 344/437 (=79%) のタスクに関して、タスク内容にまで踏み込んだ日本語化（タスク関連ファイルの修正・タスクの読み替え等）
 
 ## ✨ OSWorld-JP とは？
 
@@ -99,7 +99,7 @@ vmrun -T ws list
 
 KVM サポートを確認するには、Linux 上で以下のコマンドを実行してください：
 
-```
+``` bash
 egrep -c '(vmx|svm)' /proc/cpuinfo
 ```
 
@@ -111,8 +111,8 @@ egrep -c '(vmx|svm)' /proc/cpuinfo
 
 GUI が利用できる環境では、以下の手順を参照してください：
 
-* [Linux で Docker Desktop をインストール](https://docs.docker.com/desktop/install/linux/)
-* [Windows で Docker Desktop をインストール](https://docs.docker.com/desktop/install/windows-install/)
+- [Linux で Docker Desktop をインストール](https://docs.docker.com/desktop/install/linux/)
+- [Windows で Docker Desktop をインストール](https://docs.docker.com/desktop/install/windows-install/)
 
 GUI がない場合は、[Docker Engine のインストール](https://docs.docker.com/engine/install/) を参照してください。
 
@@ -120,8 +120,8 @@ GUI がない場合は、[Docker Engine のインストール](https://docs.dock
 
 `DesktopEnv` を初期化する際に以下の引数を指定してください：
 
-* `provider_name`: `docker`
-* `os_type`: `Ubuntu` または `Windows`（VM の OS による）
+- `provider_name`: `docker`
+- `os_type`: `Ubuntu` または `Windows`（VM の OS による）
 
 > **注記**：実験が途中で中断された場合、Docker コンテナが残り続けることがあります。コマンド `docker stop $(docker ps -q) && docker rm $(docker ps -a -q)` でクリーンアップしてください。
 
@@ -327,7 +327,6 @@ EOF
 5. インストールが完了したら、言語一覧から「日本語」を選択し、「Apply System-Wide」（システム全体に適用）をクリックします
 6. 再起動を促すメッセージが表示されるので「Restart Now」（今すぐ再起動）をクリックします
 
-
 ## 🚀 クイックスタート
 
 以下の最小限の例で環境と対話できます：
@@ -374,7 +373,6 @@ obs, reward, done, info = env.step("pyautogui.rightClick()")
 
 システムのログが正常に表示され、環境作成、セットアップ、アクションの実行が成功するのを確認できます。最終的に右クリックに成功している様子が表示されていれば、準備完了です。
 
-
 ## 🧪 実験
 
 ### エージェントのベースライン
@@ -397,17 +395,15 @@ python run.py --path_to_vm Ubuntu/Ubuntu.vmx --headless --observation_type scree
 python show_result.py
 ```
 
-
 ### 評価
 
 まず、[エージェントインターフェース](https://github.com/karakuri-ai/OSWorld-JP/blob/main/mm_agents/README.md)と[環境インターフェース](https://github.com/karakuri-ai/OSWorld-JP/blob/main/desktop_env/README.md)を読んでください。インターフェースを実装し、`run.py` にカスタムエージェントを読み込んだ後、先ほどのようなコマンドでベンチマークを実行できます。
-
 
 ## ❓ よくある質問（FAQ）
 
 ### 仮想マシンのユーザー名とパスワードは何ですか？
 
-* **Ubuntu:** `user` / `password`
+- **Ubuntu:** `user` / `password`
 
 ### Google や Google Drive のアカウント認証はどう設定すればいいですか？
 
@@ -430,7 +426,6 @@ python show_result.py
 \*並列実行なし、2024年4月時点の計算。
 
 -->
-
 
 ## 📄 引用
 
