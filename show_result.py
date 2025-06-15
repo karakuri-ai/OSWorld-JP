@@ -1,10 +1,11 @@
 import os
 import logging
+import json
 
 logger = logging.getLogger(__name__)
 
 def get_result(action_space, use_model, observation_type, result_dir):
-    target_dir = "results/main_0219/pyautogui/screenshot/gemini-1.5-pro-latest/"#os.path.join(result_dir, action_space, observation_type, use_model)
+    target_dir = "osworld-jp/results/dummy"#os.path.join(result_dir, action_space, observation_type, use_model)
     #target_dir = "results/main_0219/pyautogui/screenshot/gpt-4o-2024-11-20/"
     if not os.path.exists(target_dir):
         print("New experiment, no result yet.")
@@ -91,7 +92,7 @@ def get_result(action_space, use_model, observation_type, result_dir):
 
     # 分析用の全結果をjsonとして保存
     with open(os.path.join(target_dir, "all_result.json"), "w", encoding="utf-8") as f:
-        f.write(str(all_result_for_analysis))
+        json.dump(all_result_for_analysis, f, ensure_ascii=False, indent=4)
 
     if not all_result:
         print("New experiment, no result yet.")
