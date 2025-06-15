@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://docs.google.com/presentation/d/1Y-MapQ2WrJoz0xcpLe3VZeK9VdN6hQ_1/export/pptx",
+            "url": "https://drive.usercontent.google.com/download?id=16K6TpGIRZpqOJUu-mtJQ_78kIwLcn-4D&export=download&authuser=0&confirm=t&uuid=41509e5c-eb95-453a-baad-4e12a839a120&at=APZUnTVygE_LL27vx1l6OEg_FRj0:1705849959413",
             "path": "C:\\Users\\User\\CPD_Background_Investigation_Process.pptx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "check_image_stretch_and_center",
     "expected": {
       "type": "cloud_file",
-      "path": "https://docs.google.com/presentation/d/1Y-MapQ2WrJoz0xcpLe3VZeK9VdN6hQ_1/export/pptx",
+      "path": "https://drive.usercontent.google.com/download?id=16K6TpGIRZpqOJUu-mtJQ_78kIwLcn-4D&export=download&authuser=0&confirm=t&uuid=41509e5c-eb95-453a-baad-4e12a839a120&at=APZUnTVygE_LL27vx1l6OEg_FRj0:1705849959413",
       "dest": "CPD_Background_Investigation_Process_Original.pptx"
     },
     "result": {
