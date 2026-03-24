@@ -1,0 +1,67 @@
+{
+  "id": "J_word_07",
+  "snapshot": "libreoffice_writer",
+  "instruction": "学生が書いた文章に、私は「#」で始まる注釈文をいくつか追加しました。注釈をもっと目立たせたいので、黄色でハイライトしたいですが、お願いできますか？注釈を一つずつ色付けするのが大変です。ところで、テキスト部分をハイライトした後は「#」の記号を削除するのを忘れないでください。ありがとう！",
+  "source": "https://superuser.com/questions/1668018/how-to-auto-format-lines-in-libre-office-writer",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/word/J_word_07/J_How_to_read_a_scientific_article.docx?download=true",
+            "path": "/home/user/デスクトップ/How_to_read_a_scientific_article.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/How_to_read_a_scientific_article.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "libreoffice_writer"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "How_to_read_a_scientific_article.docx - LibreOffice Writer",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5); "
+          ]
+        }
+      }
+    ],
+    "func": "compare_highlighted_text",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/word/J_word_07/J_How_to_read_a_scientific_article_Gold.docx?download=true",
+      "dest": "How_to_read_a_scientific_article_Gold.docx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/How_to_read_a_scientific_article.docx",
+      "dest": "How_to_read_a_scientific_article.docx"
+    }
+  }
+}

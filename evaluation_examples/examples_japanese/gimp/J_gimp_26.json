@@ -1,0 +1,14 @@
+{
+  "id": "J_gimp_26",
+  "snapshot": "gimp",
+  "instruction": "青は私の好きな色なので、GIMPのカラーテーマを「青」に変更する手伝いをしていただけますか？",
+  "source": "",
+  "config": [],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "gimp"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  }
+}

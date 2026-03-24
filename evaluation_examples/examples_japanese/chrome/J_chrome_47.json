@@ -1,0 +1,127 @@
+{
+  "id": "J_chrome_47",
+  "snapshot": "chrome",
+  "instruction": "通勤定期券の購入のウェブ事前予約をしたいです。次の月曜日から、期間は3ヶ月、メトロの志茂駅から駒込駅まででお願いします。ここまで入力したところで、私に確認させてください。利用規約の同意はしてしまって大丈夫です。",
+  "source": "test_task_2",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.tokyometro.jp/"
+        ]
+      }
+    },
+    {
+      "type": "activate_window",
+      "parameters": {
+        "window_name": "Google Chrome"
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": [
+      "is_expected_url_pattern_match",
+      "check_direct_json_object",
+      "check_direct_json_object",
+      "check_direct_json_object"
+    ],
+    "conj": "and",
+    "result": [
+      {
+        "type": "active_url_from_accessTree",
+        "goto_prefix": "https://www."
+      },
+      {
+        "type": "active_tab_html_parse",
+        "goto_prefix": "https://www.",
+        "category": "input",
+        "inputObject": {
+          "//*[@id=\"periodStart\"]": "time"
+        }
+      },
+      {
+        "type": "active_tab_html_parse",
+        "goto_prefix": "https://www.",
+        "category": "input",
+        "inputObject": {
+          "//*[@id=\"period\"]": "period",
+          "//*[@id=\"stationName_from\"]": "stationName_from",
+          "//*[@id=\"stationName_to\"]": "stationName_to"
+        }
+      },
+      {
+        "type": "active_tab_html_parse",
+        "goto_prefix": "https://www.",
+        "category": "xpath",
+        "xpathObject": {
+          "//*[@id=\"selectedStationName_from\"]": "selectedStationName_from",
+          "//*[@id=\"selectedStationName_to\"]": "selectedStationName_to"
+        }
+      }
+    ],
+    "expected": [
+      {
+        "type": "rule",
+        "rules": {
+          "expected": [
+            "webyoyaku/"
+          ]
+        }
+      },
+      {
+        "type": "rule_relativeTime",
+        "rules": {
+          "relativeTime": {
+            "from": "next Monday"
+          },
+          "expected": {
+            "time": "{Year}-{Month0D}-{Day0D}"
+          }
+        }
+      },
+      {
+        "type": "rule",
+        "rules": {
+          "expected": {
+            "period": "3",
+            "stationName_from": "志茂",
+            "stationName_to": "駒込"
+          }
+        }
+      },
+      {
+        "type": "rule",
+        "rules": {
+          "expected": {
+            "selectedStationName_from": "(東京メトロ 南北線)",
+            "selectedStationName_to": "(東京メトロ 南北線)"
+          }
+        }
+      }
+    ]
+  }
+}

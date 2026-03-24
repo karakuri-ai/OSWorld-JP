@@ -1,0 +1,14 @@
+{
+  "id": "J_gimp_22",
+  "snapshot": "gimp",
+  "instruction": "デスクトップにある私の写真の明るさを少し下げてもらえますか？",
+  "source": "https://www.quora.com/How-do-I-edit-a-photo-in-GIMP",
+  "config": [],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "gimp"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  }
+}

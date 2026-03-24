@@ -1,0 +1,107 @@
+{
+  "id": "J_chrome_17",
+  "snapshot": "chrome",
+  "instruction": "新千歳空港で、来月の10日の朝8時から11日の同じ時間まで利用できる、なるべく大きな車を探してください。",
+  "source": "test_task_1",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.budgetrentacar.co.jp/"
+        ]
+      }
+    },
+    {
+      "type": "activate_window",
+      "parameters": {
+        "window_name": "Google Chrome"
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": [
+      "is_expected_url_pattern_match",
+      "check_direct_json_object",
+      "check_direct_json_object"
+    ],
+    "conj": "and",
+    "result": [
+      {
+        "type": "active_url_from_accessTree",
+        "goto_prefix": "https://www."
+      },
+      {
+        "type": "active_tab_html_parse",
+        "goto_prefix": "https://www.",
+        "category": "input",
+        "inputObject": {
+          "//*[@id=\"sortDiv\"]": "sort"
+        }
+      },
+      {
+        "type": "active_tab_html_parse",
+        "goto_prefix": "https://www.",
+        "category": "xpath",
+        "xpathObject": {
+          "//div[contains(@class, \"c-border-box--condition__left\")]/dl[1]/dd": "from",
+          "//div[contains(@class, \"c-border-box--condition__left\")]/dl[2]/dd": "to"
+        }
+      }
+    ],
+    "expected": [
+      {
+        "type": "rule",
+        "rules": {
+          "expected": [
+            "reserve/select_car/"
+          ]
+        }
+      },
+      {
+        "type": "rule",
+        "rules": {
+          "expected": {
+            "sort": "normal_desc"
+          }
+        }
+      },
+      {
+        "type": "rule_relativeTime",
+        "rules": {
+          "relativeTime": {
+            "from": "10th next month",
+            "to": "11th next month"
+          },
+          "expected": {
+            "from": "新千歳空港店　{Year}年{Month0D}月{Day0D}日　08時00分",
+            "to": "新千歳空港店　{Year}年{Month0D}月{Day0D}日　08時00分"
+          }
+        }
+      }
+    ]
+  }
+}

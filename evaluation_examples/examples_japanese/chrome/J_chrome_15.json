@@ -1,0 +1,16 @@
+{
+  "id": "J_chrome_15",
+  "snapshot": "chrome",
+  "instruction": "コンピュータさん、私の住所であるアメリカのアニータウンの123メインストリートを自動的に入力するようにChromeを設定していただけますか？",
+  "source": "https://in5stepstutorials.com/google-chrome/add-change-delete-autofill-address.php",
+  "config": [],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "",
+    "result": {},
+    "expected": {}
+  }
+}

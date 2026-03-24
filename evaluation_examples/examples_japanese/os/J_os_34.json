@@ -1,0 +1,15 @@
+{
+  "id": "J_os_34",
+  "snapshot": "os",
+  "instruction": "現在のUbuntuシステムに最新のGNOMEデスクトップをインストールしてください。",
+  "source": "https://www.wikihow.com/Install-Gnome-on-Ubuntu",
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "os"
+  ],
+  "evaluator": {
+    "func": "",
+    "result": {},
+    "expected": {}
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "J_multiapps_46",
+  "snapshot": "libreoffice_calc",
+  "instruction": "開いているプレゼンテーションを、Impressだけを使って動画に変換して、それをVLCで再生していただけますか？",
+  "source": "https://superuser.com/questions/923171/converting-openoffice-impress-presentation-to-video-without-screen-recording",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_46/1_2.pptx",
+            "path": "/home/user/デスクトップ/1_2.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/1_2.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/6d72aad6-187a-4392-a4c4-ed87269c51cf",
+  "related_apps": [
+    "libreoffice_calc",
+    "libreoffice_impress",
+    "libreoffice_writer",
+    "vlc"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  }
+}

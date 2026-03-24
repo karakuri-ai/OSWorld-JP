@@ -1,0 +1,69 @@
+{
+  "id": "J_multiapps_80",
+  "snapshot": "libreoffice_impress",
+  "instruction": "ImpressファイルをWriterで編集可能な文書に変換したいです。Impressからすべてのテキストをデスクトップの「script.docx」に置いていただければ、私が再フォーマットを行います。ありがとうございます！",
+  "source": "authors",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "path": "/home/user/デスクトップ/Unlocking-the-Power-of-ChatGPT.pptx",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_80/Unlocking-the-Power-of-ChatGPT.pptx?download=true"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/Unlocking-the-Power-of-ChatGPT.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/bb83cab4-e5c7-42c7-a67b-e46068032b86",
+  "related_apps": [
+    "libreoffice_writer",
+    "libreoffice_impress",
+    "os"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "script.docx - LibreOffice Writer",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey(\"ctrl\", \"s\"); time.sleep(0.5);"
+          ]
+        }
+      }
+    ],
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/script.docx",
+      "dest": "script.docx"
+    },
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_80/script.docx?download=true",
+      "dest": "script_Gold.docx"
+    }
+  }
+}

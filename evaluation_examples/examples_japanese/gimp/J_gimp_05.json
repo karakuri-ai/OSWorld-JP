@@ -1,0 +1,26 @@
+{
+  "id": "J_gimp_05",
+  "snapshot": "gimp",
+  "instruction": "\"/home/user/fullvideo.mp4\"にある動画をGIMPでトリミングする手伝いをしていただけますか？この動画の2秒目から4秒目の部分だけが必要です。",
+  "source": "",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/gimp/38f48d40-764e-4e77-a7cf-51dfce880291/fullvideo.mp4",
+            "path": "/home/user/fullvideo.mp4"
+          }
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "gimp"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  }
+}

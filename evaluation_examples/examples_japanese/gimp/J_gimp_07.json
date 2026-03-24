@@ -1,0 +1,35 @@
+{
+  "id": "J_gimp_07",
+  "snapshot": "gimp",
+  "instruction": "この画像に基づいて、隠された音声会話をフランス語に翻訳してください。",
+  "source": "",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/gimp/58d3eeeb-e9d0-499f-962e-fd0db2a744d8/heron.jpeg",
+            "path": "/home/user/デスクトップ/heron.jpeg"
+          }
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "gimp",
+          "/home/user/デスクトップ/heron.jpeg"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "gimp"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  }
+}

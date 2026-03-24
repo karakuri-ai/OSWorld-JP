@@ -1,0 +1,45 @@
+{
+  "id": "J_chrome_04",
+  "snapshot": "chrome",
+  "instruction": "コンピュータ、ブラウザ設定のパスワードが保存されているエリアに移動してください。Etsyのログイン情報を、表示まではせずに確認したいです。",
+  "source": "https://www.quora.com/What-are-the-cool-tricks-to-use-Google-Chrome",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "is_expected_active_tab",
+    "result": {
+      "type": "active_url_from_accessTree",
+      "goto_prefix": ""
+    },
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "type": "url",
+        "url": "chrome://password-manager/passwords"
+      }
+    }
+  }
+}

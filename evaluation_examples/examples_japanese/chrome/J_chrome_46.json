@@ -1,0 +1,16 @@
+{
+  "id": "J_chrome_46",
+  "snapshot": "chrome",
+  "instruction": "今、楽しいことがたくさん開いています。これらのタブをChromeの一番上にまとめて、「レジャー」と名付けていただけますか？リラックスしたいときにすぐに戻れるので助かります。",
+  "source": "https://medium.com/@inkverseuk2/useful-tips-and-tricks-for-the-google-chrome-browser-ac7d0d24b3cc",
+  "config": [],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "",
+    "result": {},
+    "expected": {}
+  }
+}

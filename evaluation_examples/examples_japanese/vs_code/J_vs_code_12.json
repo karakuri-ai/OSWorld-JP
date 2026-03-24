@@ -1,0 +1,29 @@
+{
+  "id": "J_vs_code_12",
+  "snapshot": "vscode",
+  "instruction": "VS Codeの表示言語を「アラビア語」に変更してください。ただし、いかなる拡張機能も使用してはいけません。",
+  "source": "",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "code"
+        ]
+      }
+    },
+    {
+      "type": "activate_window",
+      "parameters": {
+        "window_name": "Visual Studio Code"
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "vscode"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  }
+}

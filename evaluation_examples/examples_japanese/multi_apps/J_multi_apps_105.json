@@ -1,0 +1,47 @@
+{
+  "id": "J_multiapps_105",
+  "snapshot": "vscode",
+  "instruction": "デスクトップにあるPythonスクリプト「calculator.py」のコードを完成させ、その後、そのコードの出力を取得し、Pythonファイルと同じディレクトリに「log.txt」として保存してください。",
+  "source": "GAIA",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_105/calculator.zip?download=true",
+            "path": "/home/user/デスクトップ/calculator.zip"
+          }
+        ]
+      }
+    },
+    {
+      "type": "execute",
+      "parameters": {
+        "command": [
+          "/bin/bash",
+          "-c",
+          "unzip /home/user/デスクトップ/calculator.zip -d /home/user/デスクトップ/ && rm -rf /home/user/デスクトップ/calculator.zip"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/f918266a-b3e0-4914-865d-4faa564f1aef",
+  "related_apps": [
+    "vscode",
+    "os"
+  ],
+  "evaluator": {
+    "func": "compare_text_file",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/f918266a-b3e0-4914-865d-4faa564f1aef/log_Gold.txt",
+      "dest": "log_Gold.txt"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/log.txt",
+      "dest": "log.txt"
+    }
+  }
+}

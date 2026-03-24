@@ -1,0 +1,67 @@
+{
+  "id": "J_word_20",
+  "snapshot": "libreoffice_writer",
+  "instruction": "最近、プロレベルの文章作成を練習中です。導入部・本文・結論の各段落を1段落ずつ書きました。導入部は行間を1行とし、本文は2行、結論は1.5行の行間としたいです。フォントサイズは12ポイントです。お願いできますか？",
+  "source": "https://superuser.com/questions/1097199/how-can-i-double-space-a-document-in-libreoffice?rq=1",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/libreoffice_writer/b21acd93-60fd-4127-8a43-2f5178f4a830/CCHU9045_Course_Outline_2019-20.docx",
+            "path": "/home/user/デスクトップ/CCHU9045_Course_Outline_2019-20.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/CCHU9045_Course_Outline_2019-20.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "libreoffice_writer"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "CCHU9045_Course_Outline_2019-20.docx - LibreOffice Writer",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5); "
+          ]
+        }
+      }
+    ],
+    "func": "compare_line_spacing",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/libreoffice_writer/b21acd93-60fd-4127-8a43-2f5178f4a830/CCHU9045_Course_Outline_2019-20_Gold.docx",
+      "dest": "CCHU9045_Course_Outline_2019-20_Gold.docx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/CCHU9045_Course_Outline_2019-20.docx",
+      "dest": "CCHU9045_Course_Outline_2019-20.docx"
+    }
+  }
+}

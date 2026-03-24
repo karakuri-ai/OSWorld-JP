@@ -1,0 +1,53 @@
+{
+  "id": "J_vlc_08",
+  "snapshot": "base_setup",
+  "instruction": "動画を画面全体に広げてもらえますか？今はちょっと小さすぎて見えづらいので、もっとよく見たいです。",
+  "source": "https://www.youtube.com/watch?v=XHprwDJ0-fU&t=436s",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/vlc/8d9fd4e2-6fdb-46b0-b9b9-02f06495c62f/Optimus%20-%20Gen%202.mp4",
+            "path": "/home/user/デスクトップ/Gen 2.mp4"
+          }
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "vlc",
+          "--start-time=15",
+          "/home/user/デスクトップ/Gen 2.mp4"
+        ]
+      }
+    },
+    {
+      "type": "execute",
+      "parameters": {
+        "command": [
+          "python",
+          "-c",
+          "import pyautogui; import time; pyautogui.click(960, 540); time.sleep(0.5);"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "vlc"
+  ],
+  "evaluator": {
+    "func": "is_vlc_fullscreen",
+    "expected": {
+      "type": "vm_window_size",
+      "app_class_name": "vlc"
+    },
+    "result": {
+      "type": "vm_screen_size"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "J_ppt_01",
+  "snapshot": "libreoffice_impress",
+  "instruction": "スライド1のテキストボックスのテキストの色を、上から順にそれぞれ黄色、赤、緑に変更してください。これらの色のみを使用し、バリエーション（例：濃い赤、薄い緑など）は使用しないでください。",
+  "source": "https://arxiv.org/pdf/2311.01767.pdf",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/ppt/J_ppt_01/J_45_2.pptx?download=true",
+            "path": "/home/user/デスクトップ/45_2.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "sleep",
+      "parameters": {
+        "seconds": 5
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/45_2.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "libreoffice_impress"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "45_2.pptx - LibreOffice Impress",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5);"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 5
+        }
+      }
+    ],
+    "func": "compare_pptx_files",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/ppt/J_ppt_01/J_45_2_Gold.pptx?download=true",
+      "dest": "45_2_Gold.pptx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/45_2.pptx",
+      "dest": "45_2.pptx"
+    },
+    "options": {}
+  }
+}

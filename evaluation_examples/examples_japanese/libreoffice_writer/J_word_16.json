@@ -1,0 +1,70 @@
+{
+  "id": "J_word_16",
+  "snapshot": "libreoffice_writer",
+  "instruction": "私はディスレクシアの子供のために単語リストを書いています。彼のために楽にするために、母音で始まる単語には赤を、母音以外で始まる単語には青を使いたいです。これを手伝ってもらえますか？私は手動でやっていて、とても大変です。",
+  "source": "https://stackoverflow.com/questions/37259827/libreoffice-writer-how-to-set-different-colors-to-each-letter",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/word/J_word_16/J_Dolch_Sight_Words_Primer.docx?download=true",
+            "path": "/home/user/デスクトップ/Dolch_Sight_Words_Primer.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/Dolch_Sight_Words_Primer.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "libreoffice_writer"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "Dolch_Sight_Words_Primer.docx - LibreOffice Writer",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5); "
+          ]
+        }
+      }
+    ],
+    "func": "evaluate_colored_words_in_tables",
+    "options": {
+      "threshold": 21.093
+    },
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/word/J_word_16/J_Dolch_Sight_Words_Primer.docx?download=true",
+      "dest": "Dolch_Sight_Words_Primer_Gold.docx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/Dolch_Sight_Words_Primer.docx",
+      "dest": "Dolch_Sight_Words_Primer.docx"
+    }
+  }
+}

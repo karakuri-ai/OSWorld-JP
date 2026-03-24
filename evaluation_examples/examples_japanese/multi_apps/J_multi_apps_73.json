@@ -1,0 +1,73 @@
+{
+  "id": "J_multiapps_73",
+  "snapshot": "chrome",
+  "instruction": "https://developer.apple.com/jp/design/human-interface-guidelines/searchingの内容をローカルファイルとして取得し、自身の編集作業に活用したい。本ページの主要コンテンツ、具体的には冒頭の「検索」から「リソース」の直前の部分までを保存していただきたい。このブログをデスクトップに「notes.docx」として保存する作業を代行していただきたい。",
+  "source": "authors",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/aad10cd7-9337-4b62-b704-a857848cedf2",
+  "related_apps": [
+    "os",
+    "chrome"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "notes.docx - LibreOffice Writer",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5); "
+          ]
+        }
+      }
+    ],
+    "func": "compare_docx_files",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_73/J_notes_Gold.docx",
+      "dest": "notes_Gold.docx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/notes.docx",
+      "dest": "notes.docx"
+    }
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high"
+}

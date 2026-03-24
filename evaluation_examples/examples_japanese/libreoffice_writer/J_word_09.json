@@ -1,0 +1,42 @@
+{
+  "id": "J_word_09",
+  "snapshot": "libreoffice_writer",
+  "instruction": "現在の文書をPDF形式でエクスポートし、ファイル名を保持してください。",
+  "source": "https://www.libreofficehelp.com/save-export-writer-documents-in-pdf-epub-format/",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://drive.usercontent.google.com/download?id=https://drive.google.com/drive/folders/1woogmMsyrN3LQ85N07wPIyuq1Rqqdi-L?usp=drive_link",
+            "path": "/home/user/デスクトップ/View_Person_Organizational_Summary.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/View_Person_Organizational_Summary.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "libreoffice_writer"
+  ],
+  "evaluator": {
+    "func": "compare_pdfs",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://drive.usercontent.google.com/download?id=https://drive.google.com/drive/folders/1woogmMsyrN3LQ85N07wPIyuq1Rqqdi-L?usp=drive_link",
+      "dest": "Constitution_Template_With_Guidelines_Gold.pdf"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/View_Person_Organizational_Summary.pdf",
+      "dest": "Constitution_Template_With_Guidelines.pdf"
+    }
+  }
+}

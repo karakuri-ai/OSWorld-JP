@@ -1,0 +1,14 @@
+{
+  "id": "J_os_25",
+  "snapshot": "os",
+  "instruction": "Bluetoothを切りたいのですが、手伝ってもらえますか？",
+  "source": "https://help.ubuntu.com/lts/ubuntu-help/bluetooth-turn-on-off.html.en",
+  "trajectory": "trajectories/",
+  "config": [],
+  "related_apps": [
+    "os"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  }
+}

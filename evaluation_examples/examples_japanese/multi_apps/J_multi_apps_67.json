@@ -1,0 +1,54 @@
+{
+  "id": "J_multiapps_67",
+  "snapshot": "vs_code",
+  "instruction": "vscodeプロジェクト内のすべての.txtファイルの内容を、LibreOffice Writer を使ってデスクトップにある「concat.docx」という単一の文書に統合してください。ファイルを結合する際、区切り文字などは必要ありません。文書全体のフォントサイズを10に設定してください。",
+  "source": "",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/98e8e339-5f91-4ed2-b2b2-12647cb134f4/doc_proc.zip",
+            "path": "/home/user/デスクトップ/doc_proc.zip"
+          }
+        ]
+      }
+    },
+    {
+      "type": "command",
+      "parameters": {
+        "command": "mkdir -p /home/user/デスクトップ/doc_proc/; unzip /home/user/デスクトップ/doc_proc.zip -d /home/user/デスクトップ/doc_proc/",
+        "shell": true
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "code",
+          "-g",
+          "/home/user/デスクトップ/doc_proc/"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "vs_code",
+    "libreoffice_writer"
+  ],
+  "evaluator": {
+    "func": "compare_docx_files",
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/concat.docx",
+      "dest": "concat.docx"
+    },
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_67/concat.docx?download=true",
+      "dest": "concat_gold.docx"
+    }
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "id": "J_multiapps_86",
+  "snapshot": "libreoffice_calc",
+  "instruction": "こんにちは！香港でのグルメ旅行を楽しみに計画中で、ずっと訪れてみたいと思っていた絶対外せないレストランのリストを作成しました。ただ、これらの店舗に関する詳細をまとめるのを、少しお手伝いいただけないでしょうか？お手数ですが、Googleマップでこれらのレストランを検索していただけませんか？特に知りたいのは、各店舗の住所、公式ウェブサイト（あれば）、そして連絡先電話番号です。これらの情報を収集し、私のフォームファイルに入力していただければ、大変助かります。どうぞよろしくお願いいたします！",
+  "source": "authors",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "path": "/home/user/デスクトップ/restaurants.txt",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_86/J_restaurants.txt"
+          },
+          {
+            "path": "/home/user/デスクトップ/MUST_VISIT.xlsx",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_86/J_MUST_VISIT.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/MUST_VISIT.xlsx"
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/restaurants.txt"
+      }
+    },
+    {
+      "type": "sleep",
+      "parameters": {
+        "seconds": 5
+      }
+    },
+    {
+      "type": "activate_window",
+      "parameters": {
+        "window_name": "restaurants.txt (~/デスクトップ) - gedit",
+        "strict": true
+      }
+    }
+  ],
+  "trajectory": "trajectories/d1acdb87-bb67-4f30-84aa-990e56a09c92",
+  "related_apps": [
+    "os",
+    "chrome",
+    "libreoffice_calc"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "MUST_VISIT.xlsx - LibreOffice Calc",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; pyautogui.hotkey(\"ctrl\", \"s\");"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 1.0
+        }
+      }
+    ],
+    "func": "compare_table",
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/MUST_VISIT.xlsx",
+      "dest": "MUST_VISIT.xlsx"
+    },
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_86/J_MUST_VISIT-gt.xlsx",
+      "dest": "MUST_VISIT-gt.xlsx"
+    },
+    "options": {
+      "rules": [
+        {
+          "type": "sheet_fuzzy",
+          "sheet_idx0": "RNSheet1",
+          "sheet_idx1": "ENSheet1",
+          "rules": [
+            {
+              "range": [
+                "D1:D6"
+              ],
+              "type": "exact_match"
+            },
+            {
+              "range": [
+                "A1:A6"
+              ],
+              "type": "exact_match",
+              "normalization": [
+                [
+                  "茗悦 Ming Pavilion",
+                  "Ming Pavilion"
+                ],
+                [
+                  "NOBU Hong Kong - Japanese Restaurant",
+                  "Nobu"
+                ],
+                [
+                  "NOBU Hong Kong",
+                  "Nobu"
+                ]
+              ],
+              "ignore_case": true
+            },
+            {
+              "range": [
+                "B1:B6"
+              ],
+              "type": "fuzzy_match",
+              "threshold": 85,
+              "normalization": [
+                [
+                  "Rd",
+                  "Road"
+                ],
+                [
+                  "St",
+                  "Street"
+                ]
+              ],
+              "ignore_case": true
+            },
+            {
+              "range": [
+                "C1:C6"
+              ],
+              "type": "includes",
+              "trim_leadings": "+ ",
+              "ignore_chars": " ()-"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "proxy": true,
+  "fixed_ip": false,
+  "possibility_of_env_change": "very_high"
+}

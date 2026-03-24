@@ -1,0 +1,77 @@
+{
+  "id": "J_chrome_41",
+  "snapshot": "chrome",
+  "instruction": "今週末土曜日、大人2名で、ニューヨーク市で最安値のホテルを見つけてください。",
+  "source": "test_task_0",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://www.tripadvisor.jp/"
+        ]
+      }
+    },
+    {
+      "type": "activate_window",
+      "parameters": {
+        "window_name": "Google Chrome"
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": "check_direct_json_object",
+    "result": {
+      "type": "active_tab_html_parse",
+      "goto_prefix": "https://www.",
+      "category": "xpath",
+      "xpathObject": {
+        "//*[@data-automation=\"checkin\"]": "from",
+        "//*[@data-automation=\"checkout\"]": "to",
+        "//*[@data-automation=\"header_geo_title\"]": "city",
+        "//*[@data-automation=\"roomsandguests\"]": "adult",
+        "//*[@data-automation=\"sort\"]": "rank"
+      }
+    },
+    "expected": {
+      "type": "rule_relativeTime",
+      "rules": {
+        "relativeTime": {
+          "from": "this Saturday",
+          "to": "this Sunday"
+        },
+        "expect_in_result": true,
+        "expected": {
+          "from": "{MonthD}月{Day0D}日({DoWJ})",
+          "to": "{MonthD}月{Day0D}日({DoWJ})",
+          "city": "ニューヨーク シティ ホテル",
+          "adult": "2 Guests",
+          "rank": "料金 (安い順)"
+        }
+      }
+    }
+  }
+}

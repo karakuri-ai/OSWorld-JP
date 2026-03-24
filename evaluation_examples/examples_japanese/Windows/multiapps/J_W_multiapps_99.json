@@ -1,0 +1,82 @@
+{
+  "id": "J_W_multiapps_99",
+  "snapshot": "libreoffice_impress",
+  "instruction": "明日、私は講演をする予定で、PowerPointのスライドと発表メモがデスクトップに保存されています。私の予定している発言を各スライドの「ノート」部分にリマインダーとして挿入するのを手伝ってください。いくつかのスライドについてはこの作業を完了していますので、残りの部分を完成させるのを助けてください。",
+  "source": "authors",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://docs.google.com/presentation/d/1IJpePG80TA3b8v2RE0uEJ9gUsnMEcuGF/export?format=pptx",
+            "path": "C:\\Users\\User\\Desktop\\lecture1-2021-with-ink.pptx"
+          },
+          {
+            "url": "https://docs.google.com/document/d/1h9GfcpcwgKF87v6-xU8e_ckxFBmaEHH7/export?format=docx",
+            "path": "C:\\Users\\User\\Desktop\\notes.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "C:\\Users\\User\\Desktop\\lecture1-2021-with-ink.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/eb303e01-261e-4972-8c07-c9b4e7a4922a",
+  "related_apps": [
+    "powerpoint",
+    "word"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "lecture1-2021-with-ink - PowerPoint",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey(\"ctrl\", \"s\"); time.sleep(0.5); pyautogui.press(\"enter\");"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      }
+    ],
+    "func": "compare_pptx_files",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://drive.usercontent.google.com/download?id=18orj_0q6N4w7ijADOJeU5ZkDDw-RdFUl&export=download&authuser=0&confirm=t&uuid=c05d2bce-bccb-4504-8fe4-7c409788d727&at=APZUnTVlCicnIm0cMdJ9FrZg4MSN:1709453015475",
+      "dest": "lecture1-2021-with-ink_Gold.pptx"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "C:\\Users\\User\\Desktop\\lecture1-2021-with-ink.pptx",
+      "dest": "lecture1-2021-with-ink.pptx"
+    },
+    "options": {
+      "examine_shape": false,
+      "examine_bullets": false
+    }
+  }
+}

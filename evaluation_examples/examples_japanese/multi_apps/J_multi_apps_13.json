@@ -1,0 +1,90 @@
+{
+  "id": "J_multiapps_13",
+  "snapshot": "vs_code",
+  "instruction": "Pythonでスネークゲームのコーディングをしようと色々試していたんですが、ようやく動くようになりました。なかなかいい感じですが、いくつか癖があって。今直面している一番大きな問題は、蛇がどんなに頑張っても食べ物を食べられないこと。蛇が実際に食べ物を食べられるように、コードを調整するのを手伝ってもらえませんか？よろしくお願いします！",
+  "source": "authors",
+  "config": [
+    {
+      "type": "command",
+      "parameters": {
+        "command": [
+          "mkdir",
+          "-p",
+          "/home/user/デスクトップ/snake"
+        ]
+      }
+    },
+    {
+      "type": "command",
+      "parameters": {
+        "command": [
+          "pip",
+          "install",
+          "pygame"
+        ]
+      }
+    },
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "path": "/home/user/デスクトップ/snake/food.py",
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/26150609-0da3-4a7d-8868-0faf9c5f01bb/food.py"
+          },
+          {
+            "path": "/home/user/デスクトップ/snake/main.py",
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/26150609-0da3-4a7d-8868-0faf9c5f01bb/main.py"
+          },
+          {
+            "path": "/home/user/デスクトップ/snake/settings.py",
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/26150609-0da3-4a7d-8868-0faf9c5f01bb/settings.py"
+          },
+          {
+            "path": "/home/user/デスクトップ/snake/snake.py",
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/26150609-0da3-4a7d-8868-0faf9c5f01bb/snake.py"
+          }
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "code",
+          "/home/user/デスクトップ/snake"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/26150609-0da3-4a7d-8868-0faf9c5f01bb",
+  "related_apps": [
+    "vs_code",
+    "os"
+  ],
+  "evaluator": {
+    "postconfig": [],
+    "func": "check_python_file_by_test_suite",
+    "result": {
+      "type": "vm_file",
+      "path": [
+        "/home/user/デスクトップ/snake/food.py",
+        "/home/user/デスクトップ/snake/main.py",
+        "/home/user/デスクトップ/snake/settings.py",
+        "/home/user/デスクトップ/snake/snake.py"
+      ],
+      "dest": [
+        "food.py",
+        "main.py",
+        "settings.py",
+        "snake.py"
+      ],
+      "multi": true
+    },
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/26150609-0da3-4a7d-8868-0faf9c5f01bb/test.py",
+      "dest": "test_suite.py"
+    }
+  }
+}

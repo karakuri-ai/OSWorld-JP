@@ -1,0 +1,106 @@
+{
+  "id": "J_chrome_21",
+  "snapshot": "chrome",
+  "instruction": "来月の5日のシアトルからニューヨークへのフライトを探し、マイルで購入できるものだけを表示してください。",
+  "source": "test_task_1",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://ja.delta.com/jp/ja"
+        ]
+      }
+    },
+    {
+      "type": "activate_window",
+      "parameters": {
+        "window_name": "Google Chrome"
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome"
+  ],
+  "evaluator": {
+    "func": [
+      "check_direct_json_object",
+      "check_direct_json_object"
+    ],
+    "conj": "or",
+    "result": [
+      {
+        "type": "active_tab_html_parse",
+        "goto_prefix": "https://",
+        "category": "class",
+        "class_singleObject": {
+          "mach-flight-context-info": "time",
+          "mach-global-tabs-small__wrapper__tab--active": "category"
+        }
+      },
+      {
+        "type": "active_tab_html_parse",
+        "goto_prefix": "https://www.",
+        "category": "class",
+        "class_singleObject": {
+          "search-date": "time",
+          "price-in-tabs__nav--selected": "category"
+        },
+        "class_multiObject": {
+          "search-segment-cities__city": {
+            "0": "start",
+            "1": "end"
+          }
+        }
+      }
+    ],
+    "expected": [
+      {
+        "type": "rule_relativeTime",
+        "rules": {
+          "relativeTime": {
+            "from": "5th next month"
+          },
+          "expected": {
+            "time": "片道 SEANYC {Year}年{MonthD}月{Day0D}日({DoWJ})",
+            "category": "マイル"
+          }
+        }
+      },
+      {
+        "type": "rule_relativeTime",
+        "rules": {
+          "relativeTime": {
+            "from": "5th next month"
+          },
+          "expected": {
+            "start": "SEA",
+            "end": "NYC",
+            "time": "{Year}年{MonthD}月{DayD}日({DoWJ})",
+            "category": "Miles"
+          }
+        }
+      }
+    ]
+  }
+}

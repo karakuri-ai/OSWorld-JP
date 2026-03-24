@@ -1,0 +1,70 @@
+{
+  "id": "J_vlc_21",
+  "snapshot": "base_setup",
+  "instruction": "現在の動画シーンの写真を撮って、「interstellar.png」として保存し、デスクトップに置いてください。",
+  "source": "https://www.youtube.com/watch?v=XHprwDJ0-fU&t=436s",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/vlc/fba2c100-79e8-42df-ae74-b592418d54f4/Interstellar%20Movie%20-%20Official%20Trailer.mp4",
+            "path": "/home/user/desktop/Interstellar Movie - Official Trailer.mp4"
+          }
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "vlc",
+          "--start-time=120.5",
+          "--stop-time=121",
+          "--play-and-pause",
+          "/home/user/desktop/Interstellar Movie - Official Trailer.mp4"
+        ]
+      }
+    },
+    {
+      "type": "sleep",
+      "parameters": {
+        "seconds": 1
+      }
+    },
+    {
+      "type": "activate_window",
+      "parameters": {
+        "window_name": "Interstellar Movie - Interstellar Movie - Official Trailer - VLC media player"
+      }
+    },
+    {
+      "type": "execute",
+      "parameters": {
+        "command": [
+          "python",
+          "-c",
+          "import pyautogui; import time; pyautogui.click(500, 500); time.sleep(0.5);"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "vlc"
+  ],
+  "evaluator": {
+    "func": "compare_images",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/vlc/fba2c100-79e8-42df-ae74-b592418d54f4/interstellar.png",
+      "dest": "interstellar_gold.png"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/desktop/interstellar.png",
+      "dest": "interstellar.png"
+    }
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "id": "J_multiapps_47",
+  "snapshot": "multiapps",
+  "instruction": "私はこれから、2013年から2019年までに開催された3つの機械学習学会の開催都市を集計したいと思っています。会議の名前と開催年をExcelに記載していますので。空欄になっている開催都市を埋めてください。",
+  "source": "author",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_47/J_Conference.xlsx",
+            "path": "/home/user/デスクトップ/ConferenceCity.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/ConferenceCity.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "calc",
+    "chrome",
+    "os"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "ConferenceCity.xlsx - LibreOffice Calc"
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey(\"ctrl\", \"s\"); time.sleep(0.5);"
+          ]
+        }
+      }
+    ],
+    "func": "compare_conference_city_in_order",
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "expected": [
+          [
+            "Scottsdale",
+            "スコッツデール",
+            "スコッツデイル"
+          ],
+          [
+            "Atlanta",
+            "アトランタ"
+          ],
+          [
+            "Lake Tahoe",
+            "Stateline",
+            "レイクタホ",
+            "レークタホ",
+            "タホ湖",
+            "ステートライン",
+            "州境"
+          ],
+          [
+            "Banff",
+            "Alberta's Rockies",
+            "Alberta’s Rockies",
+            "バンフ",
+            "アルバータ・ロッキー",
+            "アルバータロッキー"
+          ],
+          [
+            "Beijing",
+            "北京",
+            "ペキン"
+          ],
+          [
+            "Montreal",
+            "Montréal",
+            "モントリオール"
+          ],
+          [
+            "San Diego",
+            "サンディエゴ",
+            "サン・ディエゴ"
+          ],
+          [
+            "Lille",
+            "リール"
+          ],
+          [
+            "Montreal",
+            "Montréal",
+            "モントリオール"
+          ],
+          [
+            "San Juan",
+            "サンフアン",
+            "サン・フアン",
+            "サンフワン",
+            "サン・フワン"
+          ],
+          [
+            "New York",
+            "New York City",
+            "NYC",
+            "ニューヨーク",
+            "ニューヨーク市"
+          ],
+          [
+            "Barcelona",
+            "バルセロナ"
+          ],
+          [
+            "Toulon",
+            "トゥーロン"
+          ],
+          [
+            "Sydney",
+            "シドニー"
+          ],
+          [
+            "Los Angeles",
+            "Long Beach",
+            "LA",
+            "ロサンゼルス",
+            "ロサンジェルス",
+            "ロスアンゼルス",
+            "ロスアンジェルス",
+            "ロングビーチ",
+            "ロング・ビーチ"
+          ],
+          [
+            "Vancouver",
+            "バンクーバー",
+            "ヴァンクーヴァー"
+          ],
+          [
+            "Stockholm",
+            "ストックホルム"
+          ],
+          [
+            "Montreal",
+            "Montréal",
+            "モントリオール"
+          ],
+          [
+            "New Orleans",
+            "ニューオーリンズ"
+          ],
+          [
+            "Los Angeles",
+            "Long Beach",
+            "LA",
+            "ロサンゼルス",
+            "ロサンジェルス",
+            "ロスアンゼルス",
+            "ロスアンジェルス",
+            "ロングビーチ",
+            "ロング・ビーチ"
+          ],
+          [
+            "Vancouver",
+            "バンクーバー",
+            "ヴァンクーヴァー"
+          ]
+        ]
+      }
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/ConferenceCity.xlsx",
+      "dest": "ConferenceCity.xlsx"
+    }
+  }
+}

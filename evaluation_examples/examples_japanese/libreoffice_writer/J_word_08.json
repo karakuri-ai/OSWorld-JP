@@ -1,0 +1,65 @@
+{
+  "id": "J_word_08",
+  "snapshot": "libreoffice_writer",
+  "instruction": "LibreOffice Writerで全ての改行を段落区切りに置き換えてください。",
+  "source": "https://stackoverflow.com/questions/71685737/how-to-replace-all-newlines-with-paragraph-marks-in-libreoffice-write",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://drive.google.com/drive/folders/1Dx0_79pcrDcgXyFqQMG4b9TCCNIHdBiX?usp=drive_link"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/NOVEL_Submission_Guidelines.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "libreoffice_writer"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "NOVEL_Submission_Guidelines.docx - LibreOffice Writer",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5); "
+          ]
+        }
+      }
+    ],
+    "func": "compare_line_spacing",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://drive.google.com/drive/folders/1Dx0_79pcrDcgXyFqQMG4b9TCCNIHdBiX?usp=drive_link"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/NOVEL_Submission_Guidelines.docx",
+      "dest": "NOVEL_Submission_Guidelines.docx"
+    }
+  }
+}

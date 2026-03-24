@@ -1,0 +1,67 @@
+{
+  "id": "J_word_12",
+  "snapshot": "libreoffice_writer",
+  "instruction": "私は文書を編集しており、書き直す必要のあるいくつかの単語が黄色でハイライトされています。それらの単語を修正したので、全てのハイライトを削除してください。ハイライトされた単語がないことを確かめたいです。",
+  "source": "https://help.libreoffice.org/7.2/en-US/text/shared/02/02160000.html?&DbPAR=WRITER&System=WIN#:~:text=Select%20the%20highlighted%20text.%20On%20the%20Formatting%20bar%2C,by%20clicking%20the%20icon%20again%20or%20pressing%20Esc.",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://drive.google.com/drive/folders/1LrBGypeNLbbKPVjTpyOPT952Gu_wC8ql",
+            "path": "/home/user/デスクトップ/sample-recruitment-phone-script.odt"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/sample-recruitment-phone-script.odt"
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "libreoffice_writer"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "sample-recruitment-phone-script.odt - LibreOffice Writer",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey('ctrl', 's'); time.sleep(0.5);"
+          ]
+        }
+      }
+    ],
+    "func": "check_highlighted_words",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://drive.google.com/drive/folders/1LrBGypeNLbbKPVjTpyOPT952Gu_wC8ql",
+      "dest": "sample-recruitment-phone-script_Gold.odt"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/sample-recruitment-phone-script.odt",
+      "dest": "sample-recruitment-phone-script.odt"
+    }
+  }
+}

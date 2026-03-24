@@ -1,0 +1,32 @@
+{
+  "id": "J_os_22",
+  "snapshot": "os",
+  "instruction": "ユーザー 'Charles' にパスワード 'Ex@mpleP@55w0rd!' で切り替えていただけますか？ひとつ注意していただきたいのは、絶対にマシンからログアウトしたり、シャットダウンしたりはしないでください。",
+  "source": "https://ubuntu.com/tutorials/command-line-for-beginners#5-moving-and-manipulating-files",
+  "config": [
+    {
+      "type": "execute",
+      "parameters": {
+        "command": "echo password | sudo -S su - charles",
+        "shell": true
+      }
+    },
+    {
+      "type": "execute",
+      "parameters": {
+        "command": [
+          "python",
+          "-c",
+          "import pyautogui; import time; pyautogui.click(960, 540); time.sleep(0.5);"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "os"
+  ],
+  "evaluator": {
+    "func": "infeasible"
+  }
+}

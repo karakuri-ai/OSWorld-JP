@@ -1,0 +1,37 @@
+{
+  "id": "J_ppt_05",
+  "snapshot": "libreoffice_impress",
+  "instruction": "LibreOffice Impressを起動するたびに、一方の画面は現在のスライドと次のスライドが表示され、もう一方の画面は実際のプレゼンテーション用に使われてしまいます。私が望んでいるのは、プレゼンテーション表示用のモニター1つだけが使用されることです。現在のスライドと次のスライドの画面は不要なので、他の目的に利用できるようにしたいです。これをどうやって実現すればいいでしょうか？",
+  "source": "https://stackoverflow.com/questions/29036788/how-to-disable-libreoffice-impress-to-use-multiple-display",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/libreoffice_impress/0f84bef9-9790-432e-92b7-eece357603fb/multimedia_classroom_podium-2020.pptx",
+            "path": "/home/user/デスクトップ/multimedia_classroom_podium-2020.pptx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/multimedia_classroom_podium-2020.pptx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "libreoffice_impress"
+  ],
+  "evaluator": {
+    "func": "check_presenter_console_disable",
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/.config/libreoffice/4/user/registrymodifications.xcu",
+      "dest": "registrymodifications.xcu"
+    }
+  }
+}
