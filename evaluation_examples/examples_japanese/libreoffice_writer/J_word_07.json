@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=1Mxww1ROCdXa-ffm17U_ZSMaF7jNGLhMw",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/word/J_word_07/J_How_to_read_a_scientific_article.docx?download=true",
             "path": "/home/user/デスクトップ/How_to_read_a_scientific_article.docx"
           }
         ]
@@ -55,7 +55,7 @@
     "func": "compare_highlighted_text",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?export=download&id=1FWabtfU87F7F3gdU9SQemNONO1LscMLC",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/word/J_word_07/J_How_to_read_a_scientific_article_Gold.docx?download=true",
       "dest": "How_to_read_a_scientific_article_Gold.docx"
     },
     "result": {

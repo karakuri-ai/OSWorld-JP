@@ -35,7 +35,7 @@
         "parameters": {
           "files": [
             {
-              "url": "https://docs.google.com/spreadsheets/d/1jVYiYztuUW3sFXawTXVuoFRhb7XK35Q-/edit?usp=drive_link&ouid=106405224854864187261&rtpof=true&sd=true",
+              "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_47/ConferenceCity Gold.xlsx?download=true",
               "path": "C:\\Users\\User\\Desktop\\ConferenceCity_Gold.xlsx"
             }
           ]

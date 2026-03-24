@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import ast
 import logging
 import os
 import time
+import re
 from typing import Callable, Any, Optional, Tuple
 from typing import List, Dict, Union
 
@@ -18,25 +20,213 @@ logger = logging.getLogger("desktopenv.env")
 Metric = Callable[[Any, Any], float]
 Getter = Callable[[gym.Env, Dict[str, Any]], Any]
 
+MAX_RETRIES = 5 # Maximum retries for environment setup
+            
+
+
+def _fix_pyautogui_less_than_bug(command: str) -> str:
+    """
+    Fix PyAutoGUI '<' character bug by converting it to hotkey("shift", ',') calls.
+
+    This fixes the known PyAutoGUI issue where typing '<' produces '>' instead.
+    References:
+    - https://github.com/asweigart/pyautogui/issues/198
+    - https://github.com/xlang-ai/OSWorld/issues/257
+
+    Args:
+        command (str): The original pyautogui command
+
+    Returns:
+        str: The fixed command with '<' characters handled properly
+    """
+    # TODO: .write should also be handled, but currently .typewrite only is handled
+
+    # Pattern to match press('<') or press('\u003c') calls
+    press_pattern = r'pyautogui\.press\(["\'](?:<|\\u003c)["\']\)'
+
+    # Handle press('<') calls
+    def replace_press_less_than(match):
+        return 'pyautogui.hotkey("shift", ",")'
+
+    # First handle press('<') calls
+    command = re.sub(press_pattern, replace_press_less_than, command)
+
+    # Pattern to match typewrite calls with quoted strings
+    typewrite_pattern = r'pyautogui\.typewrite\((["\'])(.*?)\1\)'
+
+    # Then handle typewrite calls
+    def process_typewrite_match(match):
+        quote_char = match.group(1)
+        content = match.group(2)
+
+        # Preprocess: Try to decode Unicode escapes like \u003c to actual '<'
+        # This handles cases where '<' is represented as escaped Unicode
+        try:
+            # Attempt to decode unicode escapes
+            # OLD (causes mojibake for Japanese text):
+            # decoded_content = content.encode('utf-8').decode('unicode_escape')
+            # NEW: Use ast.literal_eval with the original quote character
+            decoded_content = ast.literal_eval(f'{quote_char}{content}{quote_char}')
+            content = decoded_content
+        except (UnicodeDecodeError, ValueError, SyntaxError):
+            # If decoding fails, proceed with original content to avoid breaking existing logic
+            pass  # English comment: Graceful degradation - fall back to original content if decoding fails
+
+        # Check if content contains '<'
+        if '<' not in content:
+            return match.group(0)
+
+        # Split by '<' and rebuild
+        parts = content.split('<')
+        result_parts = []
+
+        for i, part in enumerate(parts):
+            if i == 0:
+                # First part
+                if part:
+                    result_parts.append(f"pyautogui.typewrite({quote_char}{part}{quote_char})")
+            else:
+                # Add hotkey for '<' and then typewrite for the rest
+                result_parts.append('pyautogui.hotkey("shift", ",")')
+                if part:
+                    result_parts.append(f"pyautogui.typewrite({quote_char}{part}{quote_char})")
+
+        return '; '.join(result_parts)
+
+    command = re.sub(typewrite_pattern, process_typewrite_match, command)
+
+    return command
+
+
+def _fix_pyautogui_non_ascii(command: str) -> str:
+    """
+    Fix PyAutoGUI non-ASCII issue by converting write/typewrite calls to clipboard paste.
+
+    PyAutoGUI cannot handle non-ASCII characters properly in write() and typewrite().
+    This function detects non-ASCII text and converts to clipboard-based paste using pyperclip.
+
+    Examples:
+        pyautogui.write('最初のページ')
+        -> pyperclip.copy('最初のページ'); pyautogui.hotkey('ctrl', 'v')
+
+        pyautogui.typewrite('Hello')  # ASCII only
+        -> pyautogui.typewrite('Hello')  # No change
+
+        pyautogui.write('Hello世界', interval=0.1)
+        -> pyperclip.copy('Hello世界'); pyautogui.hotkey('ctrl', 'v')
+
+    Args:
+        command (str): The original pyautogui command
+
+    Returns:
+        str: The fixed command with non-ASCII text handled via clipboard
+    """
+    # Pattern to match pyautogui.write() or pyautogui.typewrite()
+    # First, handle triple-quoted strings (""" or ''')
+    # Then handle single/double-quoted strings
+
+    def replace_non_ascii_write(match):
+        method = match.group(1)      # 'write' or 'typewrite'
+        text = match.group(2)        # text content
+        extra_args = match.group(3)  # interval=0.1 など (unused for clipboard paste)
+
+        # For triple-quoted strings, text is already decoded
+        # For single/double-quoted strings, decode escape sequences
+        if match.group(0).find('"""') != -1 or match.group(0).find("'''") != -1:
+            # Triple-quoted: use as-is
+            decoded_text = text
+        else:
+            # Single/double-quoted: decode escape sequences (like \n, \t, Unicode escapes)
+            # Extract the original quote character to properly decode the string
+            original = match.group(0)
+            quote_match = re.search(r'pyautogui\.(write|typewrite)\((["\'])', original)
+            if quote_match:
+                quote_char = quote_match.group(2)  # ' or "
+                try:
+                    # OLD (causes mojibake for Japanese text):
+                    # decoded_text = text.encode().decode('unicode_escape')
+                    # NEW: Use ast.literal_eval with the original quote character
+                    # This properly handles escape sequences (\n, \t, \x, \u) AND non-ASCII characters
+                    decoded_text = ast.literal_eval(f'{quote_char}{text}{quote_char}')
+                except:
+                    decoded_text = text
+            else:
+                # Fallback if quote character not found
+                decoded_text = text
+
+        # Check if text contains non-ASCII characters
+        try:
+            decoded_text.encode('ascii')
+            # ASCII only - return original
+            return match.group(0)
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            # Contains non-ASCII - convert to clipboard paste
+            # Escape quotes for Python string
+            escaped_text = decoded_text.replace('\\', '\\\\').replace("'", "\\'")
+
+            # Use clipboard paste instead
+            # Note: pyperclip is imported in pkgs_prefix
+            return f"pyperclip.copy('{escaped_text}'); pyautogui.hotkey('ctrl', 'v')"
+
+    # Pattern for triple-quoted strings (""" or ''')
+    pattern_triple = r'pyautogui\.(write|typewrite)\((?:"""((?:[^"]|"(?!""))*?)"""|\'\'\'((?:[^\']|\'(?!\'\'))*?)\'\'\')(?:,\s*(.+?))?\)'
+    # Pattern for single/double-quoted strings
+    pattern_single = r'pyautogui\.(write|typewrite)\((["\'])((?:[^"\'\\]|\\.)*?)\2(?:,\s*(.+?))?\)'
+
+    # Helper function to normalize match groups for triple-quoted strings
+    def replace_triple(match):
+        method = match.group(1)
+        text = match.group(2) if match.group(2) is not None else match.group(3)  # """ or '''
+        extra_args = match.group(4)
+        # Create a normalized match object
+        class NormalizedMatch:
+            def __init__(self, original, method, text, extra_args):
+                self._original = original
+                self._groups = (original, method, text, extra_args)
+            def group(self, n):
+                return self._groups[n]
+        return replace_non_ascii_write(NormalizedMatch(match.group(0), method, text, extra_args))
+
+    # Helper function for single/double-quoted strings
+    def replace_single(match):
+        method = match.group(1)
+        quote_char = match.group(2)
+        text = match.group(3)
+        extra_args = match.group(4)
+        class NormalizedMatch:
+            def __init__(self, original, method, text, extra_args):
+                self._original = original
+                self._groups = (original, method, text, extra_args)
+            def group(self, n):
+                return self._groups[n]
+        return replace_non_ascii_write(NormalizedMatch(match.group(0), method, text, extra_args))
+
+    # First replace triple-quoted strings, then single/double-quoted strings
+    command = re.sub(pattern_triple, replace_triple, command, flags=re.DOTALL)
+    command = re.sub(pattern_single, replace_single, command)
+
+    return command
+
 
 class DesktopEnv(gym.Env):
     """
     DesktopEnv with OpenAI Gym interface. It provides a desktop environment for setting and evaluating desktop automation tasks.
     """
-
     def __init__(
             self,
             provider_name: str = "vmware",
             region: str = None,
             path_to_vm: str = None,
-            snapshot_name: str = "japanese_3", #"init_state",
-            action_space: str = "computer_13",
+            snapshot_name: str = "init_state",
+            action_space: str = "pyautogui",
             cache_dir: str = "cache",
-            screen_size: Tuple[int] = (1920, 1080),
+            screen_size: Tuple[int] = (int(os.environ.get("SCREEN_WIDTH", 1920)), int(os.environ.get("SCREEN_HEIGHT", 1080))),
             headless: bool = False,
             require_a11y_tree: bool = True,
             require_terminal: bool = False,
             os_type: str = "Ubuntu",
+            enable_proxy: bool = False,
+            client_password: str = "",
     ):
         """
         Args:
@@ -51,26 +241,53 @@ class DesktopEnv(gym.Env):
             headless (bool): whether to run the VM in headless mode
             require_a11y_tree (bool): whether to require accessibility tree
             require_terminal (bool): whether to require terminal output
+            os_type (str): operating system type, default to "Ubuntu"
+            enable_proxy (bool): whether to enable proxy support, default to False
         """
         # Initialize VM manager and vitualization provider
         self.region = region
+        self.provider_name = provider_name
+        self.enable_proxy = enable_proxy  # Store proxy enablement setting
+        if client_password == "":
+            if self.provider_name == "aws":
+                self.client_password = "osworld-public-evaluation"
+            else:
+                self.client_password = "password"
+        else:
+            self.client_password = client_password
 
-        # Default
+        self.screen_width = screen_size[0]
+        self.screen_height = screen_size[1]
+
+        # Default 
         self.server_port = 5000
         self.chromium_port = 9222
         self.vnc_port = 8006
         self.vlc_port = 8080
-        self.manager, self.provider = create_vm_manager_and_provider(provider_name, region)
+        
+        # Initialize with default (no proxy) provider
+        self.current_use_proxy = False
+        self.manager, self.provider = create_vm_manager_and_provider(provider_name, region, use_proxy=False)
 
         self.os_type = os_type
+
+        # Track whether environment has been used (step/setup) to optimize snapshot revert
+        # docker, aws, gcp, azure are always unused as the emulator starts from a clean state
+        # vmware, virtualbox are always used as the emulator starts from a dirty state
+        if self.provider_name in {"docker", "aws", "gcp", "azure", "aliyun", "volcengine"}:
+            self.is_environment_used = False
+        elif self.provider_name in {"vmware", "virtualbox"}:
+            self.is_environment_used = True
+        else:
+            raise ValueError(f"Invalid provider name: {self.provider_name}")
 
         # Initialize environment variables
         if path_to_vm:
             self.path_to_vm = os.path.abspath(os.path.expandvars(os.path.expanduser(path_to_vm))) \
                 if provider_name in {"vmware", "virtualbox"} else path_to_vm
         else:
-            self.path_to_vm = self.manager.get_vm_path(self.os_type, region)
-
+            self.path_to_vm = self.manager.get_vm_path(os_type=self.os_type, region=region, screen_size=(self.screen_width, self.screen_height))
+        
         self.snapshot_name = snapshot_name
         self.cache_dir_base: str = cache_dir
         # todo: add the logic to get the screen size from the VM
@@ -79,13 +296,12 @@ class DesktopEnv(gym.Env):
         self.require_terminal = require_terminal
 
         # Initialize emulator and controller
-        if provider_name != "docker": # Check if this is applicable to other VM providers
-            logger.info("Initializing...")
-            self._start_emulator()
+        logger.info("Initializing...")
+        self._start_emulator()
 
         # mode: human or machine
         self.instruction = None
-        assert action_space in ["computer_13", "pyautogui"]
+        assert action_space in ["computer_13", "pyautogui", "claude_computer_use", "autoglm_computer_use"]
         self.action_space = action_space  # todo: refactor it to the ActType
 
         # episodic stuffs, like counters, will be updated or reset
@@ -94,41 +310,38 @@ class DesktopEnv(gym.Env):
         self._step_no: int = 0
         self.action_history: List[Dict[str, any]] = []
 
-    def _start_emulator(self):
-        # Power on the virtual machine
-        self.provider.start_emulator(self.path_to_vm, self.headless, self.os_type)
 
-        # Get the ip from the virtual machine, and setup the controller
+    def _start_emulator(self):
         try:
+            # Power on the virtual machine
+            self.provider.start_emulator(self.path_to_vm, self.headless, self.os_type)
+
+            # Get the ip from the virtual machine, and setup the controller
             vm_ip_ports = self.provider.get_ip_address(self.path_to_vm).split(':')
             self.vm_ip = vm_ip_ports[0]
-            
-            # Validate that we got a proper IP address
-            if not self.vm_ip or "Error" in self.vm_ip or "VMware Tools" in self.vm_ip:
-                raise ValueError(f"Invalid VM IP address received: {self.vm_ip}")
-            
+            # Get the ports from the virtual machine (for Docker provider only)
             if len(vm_ip_ports) > 1:
                 self.server_port = int(vm_ip_ports[1])
                 self.chromium_port = int(vm_ip_ports[2])
                 self.vnc_port = int(vm_ip_ports[3])
                 self.vlc_port = int(vm_ip_ports[4])
-        except ValueError as e:
-            if "invalid literal for int()" in str(e):
-                # This means we got an error message instead of port numbers
-                logger.error("Failed to parse VM ports. This usually means VMware Tools are not running.")
-                logger.error("Please ensure VMware Tools are installed and running in the virtual machine.")
-                logger.error("VM may need more time to boot up completely.")
-            raise e
-        
-        self.controller = PythonController(vm_ip=self.vm_ip, server_port=self.server_port)
-        self.setup_controller = SetupController(vm_ip=self.vm_ip, server_port=self.server_port, chromium_port=self.chromium_port, vlc_port=self.vlc_port, cache_dir=self.cache_dir_base)
+            self.controller = PythonController(vm_ip=self.vm_ip, server_port=self.server_port)
+            self.setup_controller = SetupController(vm_ip=self.vm_ip, server_port=self.server_port, chromium_port=self.chromium_port, vlc_port=self.vlc_port, cache_dir=self.cache_dir_base, client_password=self.client_password, screen_width=self.screen_width, screen_height=self.screen_height)
+
+        except Exception as e:
+            try:
+                self.provider.stop_emulator(self.path_to_vm)
+            except Exception as stop_err:
+                logger.warning(f"Cleanup after interrupt failed: {stop_err}")
+            raise
 
     def _revert_to_snapshot(self):
         # Revert to certain snapshot of the virtual machine, and refresh the path to vm and ip of vm
         # due to the fact it could be changed when implemented by cloud services
         path_to_vm = self.provider.revert_to_snapshot(self.path_to_vm, self.snapshot_name)
         if path_to_vm and not path_to_vm == self.path_to_vm:
-            # path_to_vm has to be a new path
+            # path_to_vm has to be a new path 
+            
             self.manager.delete_vm(self.path_to_vm, self.region)
             self.manager.add_vm(path_to_vm, self.region)
             self.manager.occupy_vm(path_to_vm, os.getpid(), self.region)
@@ -143,6 +356,7 @@ class DesktopEnv(gym.Env):
         self.provider.stop_emulator(self.path_to_vm)
 
     def reset(self, task_config: Optional[Dict[str, Any]] = None, seed=None, options=None) -> Dict[str, Any]:
+        
         # Reset to certain task in OSWorld
         logger.info("Resetting environment...")
         logger.info("Switching task...")
@@ -151,18 +365,56 @@ class DesktopEnv(gym.Env):
         self._step_no = 0
         self.action_history.clear()
 
-        logger.info("Reverting to snapshot to {}...".format(self.snapshot_name))
-        self._revert_to_snapshot()
-        logger.info("Starting emulator...")
-        self._start_emulator()
-        logger.info("Emulator started.")
+        for attempt in range(MAX_RETRIES):
+            # Only revert to snapshot if environment has been used (step/setup)
+            # This optimization is especially important for cloud providers like AWS
+            # where unnecessary snapshot operations are costly and time-consuming
+            
+            if task_config is not None:
+                # Only consider task proxy requirement if proxy is enabled at system level
+                task_use_proxy = task_config.get("proxy", False) and self.enable_proxy
+                if not self.enable_proxy and task_config.get("proxy", False):
+                    logger.info("Task requires proxy but proxy is disabled at system level, ignoring proxy requirement.")
+                
+                if task_use_proxy != self.current_use_proxy:
+                    # keep because get_info_from_website depend on this
+                    self.current_use_proxy = task_use_proxy
+            
+            if self.is_environment_used:
+                logger.info("Environment has been used, reverting to snapshot {}...".format(self.snapshot_name))
+                self._revert_to_snapshot()
+                logger.info("Starting emulator...")
+                self._start_emulator()
+                logger.info("Emulator started.")
+                # Reset the usage flag after reverting
+                self.is_environment_used = False
+            else:
+                logger.info("Environment is clean, skipping snapshot revert (provider: {}).".format(self.provider_name))
 
-        if task_config is not None:
-            self._set_task_info(task_config)
-            self.setup_controller.reset_cache_dir(self.cache_dir)
-            logger.info("Setting up environment...")
-            self.setup_controller.setup(self.config)
-            logger.info("Environment setup complete.")
+            if task_config is not None:
+                if task_config.get("proxy", False) and self.enable_proxy:
+                    # If using proxy and proxy is enabled, set up the proxy configuration
+                    self.setup_controller._proxy_setup(self.client_password)
+                self._set_task_info(task_config)
+                self.setup_controller.reset_cache_dir(self.cache_dir)
+                logger.info("Setting up environment...")
+                success = self.setup_controller.setup(self.config, task_config.get("proxy", False) and self.enable_proxy)
+                if success:
+                    # Mark environment as used when setup is successfully executed
+                    if self.config:  # Only mark as used if there were actual setup operations
+                        self.is_environment_used = True
+                    break
+                else:
+                    logger.error(
+                        "Environment setup failed, retrying (%d/%d)...",
+                        attempt + 1,
+                        MAX_RETRIES,
+                    )
+                    time.sleep(5)
+            else:
+                break
+            
+        logger.info("Environment setup complete.")
 
         observation = self._get_obs()
         return observation
@@ -186,12 +438,17 @@ class DesktopEnv(gym.Env):
         return self.controller.get_vm_screen_size()
 
     def _set_task_info(self, task_config: Dict[str, Any]):
+        """Set task info (proxy logic is handled in reset method)"""
         self.task_id: str = task_config["id"]
         self.cache_dir: str = os.path.join(self.cache_dir_base, self.task_id)
         os.makedirs(self.cache_dir, exist_ok=True)
         self.instruction = task_config["instruction"]
         self.config = task_config["config"] if "config" in task_config else []
+        
+        self._set_evaluator_info(task_config)
 
+    def _set_evaluator_info(self, task_config: Dict[str, Any]):
+        """Set evaluator information from task config"""
         # evaluator dict
         # func -> metric function string, or list of metric function strings
         # conj -> conjunction of multiple metrics if func is a list with length > 1, "and"/"or"
@@ -240,11 +497,14 @@ class DesktopEnv(gym.Env):
     def step(self, action, pause=2):
         self._step_no += 1
         self.action_history.append(action)
+        
+        # Mark environment as used when step is called
+        self.is_environment_used = True
 
         reward = 0  # todo: Define reward calculation for each example
         done = False  # todo: Define episode termination condition for each example
         info = {}
-
+        logger.info(f"Step {self._step_no} in trajectory {self._traj_no} with action: {action}")
         # handle the special actions
         if action in ['WAIT', 'FAIL', 'DONE'] or (type(action) == dict and action['action_type'] in ['WAIT', 'FAIL', 'DONE']):
             if action == 'WAIT':
@@ -259,12 +519,23 @@ class DesktopEnv(gym.Env):
         if self.action_space == "computer_13":
             # the set of all possible actions defined in the action representation
             self.controller.execute_action(action)
-        elif self.action_space == "pyautogui":
+        elif self.action_space == "pyautogui" or self.action_space == "claude_computer_use":
             if action in ['WAIT', 'FAIL', 'DONE']:
                 self.controller.execute_action(action)
             else:
                 # the set of all possible python commands insides `pyautogui`
-                self.controller.execute_python_command(action)
+                if type(action) == str:
+                    # Fix PyAutoGUI '<' character bug before execution
+                    fixed_command = _fix_pyautogui_less_than_bug(action)
+                    # Fix PyAutoGUI non-ASCII typewrite issue before execution
+                    fixed_command = _fix_pyautogui_non_ascii(fixed_command)
+                    self.controller.execute_python_command(fixed_command)
+                elif type(action) == dict:
+                    # Fix PyAutoGUI '<' character bug before execution
+                    fixed_command = _fix_pyautogui_less_than_bug(action['command'])
+                    # Fix PyAutoGUI non-ASCII typewrite issue before execution
+                    fixed_command = _fix_pyautogui_non_ascii(fixed_command)
+                    self.controller.execute_python_command(fixed_command)
 
         time.sleep(pause)
         observation = self._get_obs()
@@ -276,7 +547,11 @@ class DesktopEnv(gym.Env):
         Evaluate whether the task is successfully completed.
         """
 
-        self.setup_controller.setup(self.evaluator.get("postconfig", []))
+        postconfig = self.evaluator.get("postconfig", [])
+        self.setup_controller.setup(postconfig, self.enable_proxy)
+        # Mark environment as used if there were postconfig setup operations
+        if postconfig:
+            self.is_environment_used = True
 
         if self.evaluator['func'] == "infeasible":
             if len(self.action_history) > 0 and self.action_history[-1] == "FAIL":
@@ -288,7 +563,11 @@ class DesktopEnv(gym.Env):
                 return 0
 
         if type(self.metric) == list:
+            # Multiple metrics to evaluate whether the task is successfully completed
             results = []
+            assert len(self.metric) == len(self.result_getter), "The number of metrics and result getters must be the same"
+            if "expected" in self.evaluator:
+                assert len(self.metric) == len(self.expected_getter), "The number of metrics and expected getters must be the same"
             for idx, metric in enumerate(self.metric):
                 try:
                     config = self.evaluator["result"][idx]
@@ -298,12 +577,11 @@ class DesktopEnv(gym.Env):
                     if self.metric_conj == 'and':
                         return 0
 
-                expected = self.evaluator["expected"][idx]
-                expected_state = self.expected_getter[idx](self, expected) if expected else None
-
-                metric: int = metric(result_state, expected_state,
-                                     **self.metric_options[idx]) if expected_state is not None \
-                    else metric(result_state, **self.metric_options[idx])
+                if "expected" in self.evaluator and self.expected_getter and self.evaluator["expected"]:
+                    expected_state = self.expected_getter[idx](self, self.evaluator["expected"][idx])
+                    metric: int = metric(result_state, expected_state, **self.metric_options[idx])
+                else:
+                    metric: int = metric(result_state, **self.metric_options[idx])
 
                 if self.metric_conj == 'and' and float(metric) == 0.0:
                     return 0
@@ -311,20 +589,21 @@ class DesktopEnv(gym.Env):
                     return 1
                 else:
                     results.append(metric)
+
             return sum(results) / len(results) if self.metric_conj == 'and' else max(results)
         else:
+            # Single metric to evaluate whether the task is successfully completed
             try:
                 result_state = self.result_getter(self, self.evaluator["result"])
             except FileNotFoundError:
                 logger.error("File not found!")
                 return 0
 
-            expected_state = self.expected_getter(self, self.evaluator["expected"]) if "expected" in self.evaluator \
-                else None
-
-            metric: float = self.metric(result_state, expected_state,
-                                        **self.metric_options) if expected_state is not None \
-                else self.metric(result_state, **self.metric_options)
+            if "expected" in self.evaluator and self.expected_getter and self.evaluator["expected"]:
+                expected_state = self.expected_getter(self, self.evaluator["expected"])
+                metric: float = self.metric(result_state, expected_state, **self.metric_options)
+            else:
+                metric: float = self.metric(result_state, **self.metric_options)
 
         return metric
 

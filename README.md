@@ -1,43 +1,21 @@
-<!--
-<p align="center">
-  <img src="https://huggingface.co/datasets/xlangai/assets/resolve/main/github_banner_v2.png" alt="Banner">
-</p>
-
-<p align="center">
-  <a href="https://os-world.github.io/">Website</a> •
-  <a href="https://arxiv.org/abs/2404.07972">Paper</a> •
-  <a href="https://timothyxxx.github.io/OSWorld/">Doc</a> •
-  <a href="https://github.com/xlang-ai/OSWorld/tree/main/evaluation_examples">Data</a> •
-  <a href="https://os-world.github.io/explorer.html">Data Viewer</a> •
-  <a href="https://discord.gg/4Gnw7eTEZR">Discord</a>
-</p>
-
-<p align="center">
-    <a href="https://img.shields.io/badge/PRs-Welcome-red">
-        <img src="https://img.shields.io/badge/PRs-Welcome-red">
-    </a>
-    <a href="https://img.shields.io/github/last-commit/xlang-ai/OSWorld?color=green">
-        <img src="https://img.shields.io/github/last-commit/xlang-ai/OSWorld?color=green">
-    </a>
-    <a href="https://opensource.org/licenses/Apache-2.0">
-        <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg">
-    </a>
-    <a href="https://badge.fury.io/py/desktop-env">
-        <img src="https://badge.fury.io/py/desktop-env.svg">
-    </a>
-    <a href="https://pepy.tech/project/desktop-env">
-        <img src="https://static.pepy.tech/badge/desktop-env">
-    </a>
-    <br/>
-</p>
--->
 # OSWorld-JP
 
 言語を考慮した評価のための、日本語版コンピュータユースベンチマーク
 
 ## 📢 アップデート
 
-- 2025-05-28: 本ベンチマークに関して、2025年度 人工知能学会全国大会 (JSAI2025) にて発表予定です。日時等は[こちら](https://confit.atlas.jp/guide/event/jsai2025/subject/3Win5-56/tables) をご参照ください。
+- 2026-03-27: 本ベンチマークの **v0.2** を公開しました。
+    - v0.1 は 437 のタスクからなるベンチマークでしたが、v0.2 ではタスク数を 100 に限定し、代わりに各タスクの妥当性検証（ベリフィケーション）を周到に行ったバージョンとなります
+    - 以下の内容を含みます
+        - [x] システム環境のローカライズ
+        - [x] システムプロンプトの日本語化
+        - [x] 原語版の 437 タスクから無作為に選出した 100 のタスクに関して、タスク内容にまで踏み込んだ日本語化（タスク関連ファイルの修正・タスクの読み替え等）
+        - [x] 前記 100 タスクについて、**各タスクが実際に正答可能であること**、**採点基準が妥当であること**を人間が検証し、妥当でない点の個別修正
+        - [x] OSWorld（原語版）側で開発された並列評価システム（評価時間を短縮可能）、およびその中で使用される AWS AMI イメージの日本語版
+    - 補足
+        - v0.1 は、オリジナルの OSWorld 437 問を日本語化したものでしたが、問題数が多く、ベンチマークとしての質を担保するのがいささか困難な分量でした。「量」を犠牲にして、有意義なベンチマークであるための最低限の「質」を担保するという趣旨のもと、v0.2 が開発されました。
+
+- 2025-11-04: **本リポジトリにて現在公開中の v0.1 に多くの不具合が含まれていることが判明しました。今後、不具合の修正作業を実施予定です。v0.1 の使用は推奨せず、今後公開予定の v0.2 以降の使用を強く推奨します。**
 
 - 2025-05-28: 本 GitHub にて、本ベンチマークを v0.1 として公開しました。以下の内容を反映済みです。
     - [x] システム環境のローカライズ
@@ -45,7 +23,8 @@
     - [x] 全てのタスクのプロンプトの日本語化
     - [x] 344/437 (=79%) のタスクに関して、タスク内容にまで踏み込んだ日本語化（タスク関連ファイルの修正・タスクの読み替え等）
 
-- 2025-11-04: **本リポジトリにて現在公開中の v0.1 に多くの不具合が含まれていることが判明しました。今後、不具合の修正作業を実施予定です。v0.1 の使用は推奨せず、今後公開予定の v0.2 以降の使用を強く推奨します。**
+- 2025-05-28: 本ベンチマークに関して、2025年度 人工知能学会全国大会 (JSAI2025) にて発表予定です。日時等は[こちら](https://confit.atlas.jp/guide/event/jsai2025/subject/3Win5-56/tables) をご参照ください。
+
 
 ## ✨ OSWorld-JP とは？
 
@@ -53,382 +32,163 @@
 
 > **注意：** 本ベンチマークは今後も改善活動によりバージョンアップがなされていく予定です。また、インターネット上のウェブサイトの挙動に依存するタスクが一部含まれており、永続性が保証されません。そのため、評価結果を公表する際には、ベンチマークのバージョンおよび評価を実施した日付を明記することを推奨します。
 
-## 💾 インストール方法
+## 💾 インストール
+### VMware/VirtualBox（デスクトップ、ラップトップ、ベアメタルマシン）
+仮想化されていないシステム（例：デスクトップ、ラップトップ、ベアメタルマシン）で操作していることを想定しています。つまり、AWS、Azure、k8sなどの仮想化環境を使用していない場合です。
+この場合は、以下の手順に従ってください。仮想化プラットフォーム上にいる場合は、[Docker](https://github.com/karakuri-ai/OSWorld-JP?tab=readme-ov-file#docker-server-with-kvm-support-for-the-better)セクションを参照してください。
 
-### VMware/VirtualBox（デスクトップ、ノートパソコン、ベアメタルマシン）
-
-仮想化されていないシステム（例：デスクトップ、ノートパソコン、ベアメタルマシン）を使用している場合は、以下の手順に従ってください。もし仮想化されたプラットフォーム（例：AWS、Azure、k8s）を使用している場合は、下記 Docker のセクションをご覧ください。
-
-1. まず、このリポジトリをクローンして `cd` で移動し、`requirements.txt` に記載された依存関係をインストールします。環境管理には Conda の最新版を使うことが推奨されていますが、手動でのインストールも可能です。Python のバージョンは **3.9 以上** を使用してください。
-
+1. まず、このリポジトリをクローンして`cd`で移動します。次に、`requirements.txt`に記載されている依存関係をインストールします。環境管理にはCondaの最新バージョンの使用を推奨しますが、手動で依存関係をインストールすることも可能です。Pythonのバージョンが3.10以上であることを確認してください。
 ```bash
-# OSWorld-JP リポジトリをクローン
+# OSWorldリポジトリをクローン
 git clone https://github.com/karakuri-ai/OSWorld-JP
 
-# クローンしたディレクトリに移動
-cd OSWorld-JP
+# クローンしたリポジトリのディレクトリに移動
+cd OSWorld
 
-# オプション：OSWorld-JP 用の Conda 環境を作成
-# conda create -n osworldjp python=3.9
-# conda activate osworldjp
+# オプション：OSWorld用のConda環境を作成
+# conda create -n osworld python=3.10
+# conda activate osworld
 
-# 必要な依存パッケージをインストール
+# 必要な依存関係をインストール
 pip install -r requirements.txt
 ```
 
-代替手段として、ベンチマークタスクを含まない環境のみをインストールすることもできます：
-
+あるいは、ベンチマークタスクなしで環境のみをインストールすることもできます：
 ```bash
 pip install desktop-env
 ```
 
-2. [VMware Workstation Pro](https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html) をインストールします（Apple チップ搭載マシンでは [VMware Fusion](https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware+Fusion) を使用してください）。その後、`vmrun` コマンドを設定します。インストール手順については、[VMware Workstation Pro のインストール手順](desktop_env/providers/vmware/INSTALL_VMWARE.md)を参照してください。以下のコマンドで正常にインストールされていることを確認できます：
-
+2. [VMware Workstation Pro](https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html)をインストールし（Apple Chipを搭載したシステムの場合は[VMware Fusion](https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware+Fusion)をインストールしてください）、`vmrun`コマンドを設定します。インストール手順は[VMware Workstation Proのインストール方法](desktop_env/providers/vmware/INSTALL_VMWARE.md)を参照してください。以下のコマンドを実行して、インストールが成功したことを確認してください：
 ```bash
 vmrun -T ws list
 ```
+インストールと環境変数の設定が成功していれば、現在実行中の仮想マシンを示すメッセージが表示されます。
+> **注意:** VMware Proで問題が発生した場合は、[VirtualBox](https://www.virtualbox.org/)の使用もサポートしています。ただし、並列処理やAppleチップ上のmacOSなどの機能は十分にサポートされていない可能性があります。
 
-環境変数の設定が正常に完了していれば、現在起動中の仮想マシン一覧が表示されます。
+以上で準備完了です！セットアップスクリプトが必要な仮想マシンを自動的にダウンロードし、環境を設定します。
 
-> **注意：** [VirtualBox](https://www.virtualbox.org/) も利用可能ですが、VMware Pro に比べて並列実行や Apple チップ上での macOS のサポートが制限されます。
+### Docker（KVMサポートのあるサーバーで高パフォーマンス）
+ベアメタルサーバー以外で実行している場合、またはVMwareやVirtualBoxプラットフォームを使用したくない場合は、Dockerサポートの使用を推奨します。
 
-準備完了！セットアップスクリプトが必要な仮想マシンを自動でダウンロードして環境を構成します。
-
-### Docker（サーバー環境向け：KVM サポートがあるとより良い）
-
-ベアメタルサーバー以外での実行や、VMware/VirtualBox を使いたくない場合には、Docker を使った実行を推奨します。
-
-#### 前提条件：KVM サポートの確認
-
-KVM サポートを確認するには、Linux 上で以下のコマンドを実行してください：
-
-``` bash
+#### 前提条件：マシンがKVMをサポートしているか確認
+KVMサポート付きでVMを実行することを推奨します。ホスティングプラットフォームがKVMをサポートしているか確認するには、Linuxで以下を実行します
+```
 egrep -c '(vmx|svm)' /proc/cpuinfo
 ```
+戻り値がゼロより大きければ、プロセッサはKVMをサポートできるはずです。
+> **注意**: macOSホストは一般的にKVMをサポートしていません。macOS上でOSWorldを実行したい場合は、VMwareの使用をお勧めします。
 
-結果が 0 より大きければ、プロセッサは KVM をサポートしています。
-
-> **注記**：macOS は通常 KVM をサポートしていません。macOS で OSWorld-JP を実行したい場合は VMware を推奨します。
-
-#### Docker のインストール
-
-GUI が利用できる環境では、以下の手順を参照してください：
-
-- [Linux で Docker Desktop をインストール](https://docs.docker.com/desktop/install/linux/)
-- [Windows で Docker Desktop をインストール](https://docs.docker.com/desktop/install/windows-install/)
-
-GUI がない場合は、[Docker Engine のインストール](https://docs.docker.com/engine/install/) を参照してください。
+#### Dockerのインストール
+ホスティングプラットフォームがグラフィカルユーザーインターフェース（GUI）をサポートしている場合は、OSに応じて[Linux用Docker Desktopのインストール](https://docs.docker.com/desktop/install/linux/)または[Windows用Docker Desktopのインストール](https://docs.docker.com/desktop/install/windows-install/)を参照してください。それ以外の場合は、[Docker Engineのインストール](https://docs.docker.com/engine/install/)を行ってください。
 
 #### 実験の実行
-
-`DesktopEnv` を初期化する際に以下の引数を指定してください：
-
+`DesktopEnv`を初期化する際に、以下の引数を追加してください：
 - `provider_name`: `docker`
-- `os_type`: `Ubuntu` または `Windows`（VM の OS による）
+- `os_type`: VMのOSに応じて`Ubuntu`または`Windows`
+> **注意**: 実験が異常中断された場合（例：中断シグナルによる）、残留Dockerコンテナがシステムパフォーマンスに影響を与える可能性があります。`docker stop $(docker ps -q) && docker rm $(docker ps -a -q)`を実行してクリーンアップしてください。
 
-> **注記**：実験が途中で中断された場合、Docker コンテナが残り続けることがあります。コマンド `docker stop $(docker ps -q) && docker rm $(docker ps -a -q)` でクリーンアップしてください。
+### AWS
+クラウドサービスを使用した並列評価により、評価効率を大幅に向上させることができます（並列化により評価時間を1時間以内に短縮可能！）。また、トレーニングのインフラストラクチャとしても使用できます。
+OSWorldタスクの大規模並列評価を可能にするHost-Clientアーキテクチャによる包括的なAWSサポートを提供しています。
+詳細なセットアップ手順については、[パブリック評価ガイドライン](https://github.com/karakuri-ai/OSWorld-JP/blob/main/PUBLIC_EVALUATION_GUIDELINE.md)および[AWS設定ガイド](https://github.com/karakuri-ai/OSWorld-JP/blob/main/desktop_env/providers/aws/AWS_GUIDELINE.md)を参照してください。
 
-<!--
-### その他
-
-さらなる環境のサポートを進行中です👷。続報をお待ちください！
--->
-
-## 🇯🇵 日本語環境の設定
-
-実験を実施する前に仮想環境を日本語に変更する必要があります。変更が必要な点を以下に示します。仮想環境を起動後、手動で変更が必要な点について設定言語の日本語化を行なってください。
-
-- OS
-- アプリ
-        - chromium
-        - gimp
-        - libreoffice calc
-        - libreoffice impress
-        - libreoffice writer
-        - vlc
-        - vscode
-
-日本語化が終了したらスナップショットを作成し、desktop_env.pyのsnapshotnameを変更したsnapshotに置き換えてください。
-[snapshot nameを変更する箇所](https://github.com/karakuri-ai/OSWorld-JP/blob/a7b4eeea7e49403e6752e49d20f819b62f82ab53/desktop_env/desktop_env.py#L32)
-
-### 変更手法
-
-変更手法は大きく分けてCLIでの操作とGUIでの操作があります。CLIでの操作がうまくいかない場合はGUIからの操作を推奨します。
-
-#### OS
-
-##### GUIでの変更方法
-
-1. 画面右上のシステム設定アイコン（歯車マーク）をクリックします
-2. 設定メニューから「Region & Language」（地域と言語）を選択します
-3. 「Language」（言語）の欄で「Manage Installed Languages」（インストール済み言語の管理）をクリックします
-4. 「Install / Remove Languages...」（言語のインストール/削除）をクリックし、リストから「Japanese」（日本語）にチェックを入れて「Apply」（適用）をクリックします
-5. インストールが完了したら、言語一覧から「日本語」を選択し、「Apply System-Wide」（システム全体に適用）をクリックします
-6. 再起動を促すメッセージが表示されるので「Restart Now」（今すぐ再起動）をクリックします
-
-##### CLIでの変更
-
-```bash
-#日本語ロケールのインストール
-sudo apt update
-sudo apt install -y language-pack-ja language-pack-ja-base
-#ロケールの生成
-sudo locale-gen ja_JP.UTF-8
-#デフォルトロケールの設定
-sudo update-locale LANG=ja_JP.UTF-8 LANGUAGE="ja_JP:ja"
-#再起動による設定の反映
-sudo reboot
-```
-
-#### アプリケーション
-
-##### Chromium
-
-###### Chromium - GUIでの設定
-
-1. Chromiumを起動し、右上のメニューアイコン（縦に並んだ3点）をクリックします
-2. 「Settings」（設定）を選択します
-3. 左側のメニューから「Advanced」（詳細設定）を展開し、「Languages」（言語）をクリックします
-4. 「Add languages」（言語を追加）をクリックし、リストから「日本語」を選択して「Add」（追加）をクリックします
-5. 追加された「日本語」の行の右側にある3点メニューをクリックし、「Display Chromium in this language」（Chromiumをこの言語で表示する）を選択します
-6. Chromiumを再起動して変更を適用します
-
-###### Chromium - CLIでの設定
-
-```bash
-# Chromiumの設定ファイルが保存されているディレクトリに移動
-cd ~/.config/chromium/Default/
-
-# 設定ファイルを編集（存在しない場合は作成されます）
-cat > Preferences << EOF
-{
-  "intl": {
-    "accept_languages": "ja,ja_JP,en-US,en",
-    "selected_languages": "ja,ja_JP,en-US,en"
-  },
-  "browser": {
-    "enabled_labs_experiments": ["enable-force-ui-direction@1"],
-    "app_locale": "ja"
-  }
-}
-EOF
-
-# Chromiumを再起動して変更を適用
-```
-
-##### GIMP
-
-###### GIMP - GUIでの設定
-
-1. GIMPを起動し、メニューバーから「Edit」（編集）→「Preferences」（設定）を選択します
-2. 左側のメニューから「Interface」（インターフェース）を選択します
-3. 「Language」（言語）のドロップダウンメニューから「Japanese (ja_JP.UTF-8)」を選択します
-4. 「OK」をクリックし、GIMPを再起動して変更を適用します
-
-###### GIMP - CLIでの設定
-
-```bash
-# GIMPの設定ファイルを編集
-mkdir -p ~/.config/GIMP/2.10
-cat > ~/.config/GIMP/2.10/gimprc << EOF
-(language "ja_JP.UTF-8")
-EOF
-
-# GIMPを再起動して変更を適用
-```
-
-##### LibreOffice（Calc, Impress, Writer共通）
-
-###### LibreOffice - GUIでの設定
-
-1. LibreOfficeのいずれかのアプリケーションを起動します
-2. メニューバーから「Tools」（ツール）→「Options」（オプション）を選択します
-3. 左側のメニューから「Language Settings」（言語設定）→「Languages」（言語）を選択します
-4. 「User Interface」（ユーザーインターフェース）、「Locale Setting」（ロケール設定）、「Default Languages for Documents」（文書のデフォルト言語）の各項目で「日本語」を選択します
-5. 「OK」をクリックし、LibreOfficeを再起動して変更を適用します
-
-###### LibreOffice - CLIでの設定
-
-```bash
-# LibreOfficeの設定ディレクトリを作成
-mkdir -p ~/.config/libreoffice/4/user/
-
-# 言語設定ファイルを作成
-cat > ~/.config/libreoffice/4/user/registrymodifications.xcu << EOF
-<?xml version="1.0" encoding="UTF-8"?>
-<oor:items xmlns:oor="http://openoffice.org/2001/registry">
- <item oor:path="/org.openoffice.Office.Linguistic/General"><prop oor:name="UILocale" oor:op="fuse"><value>ja-JP</value></prop></item>
- <item oor:path="/org.openoffice.Setup/L10N"><prop oor:name="ooLocale" oor:op="fuse"><value>ja-JP</value></prop></item>
- <item oor:path="/org.openoffice.Setup/L10N"><prop oor:name="ooSetupSystemLocale" oor:op="fuse"><value>ja-JP</value></prop></item>
-</oor:items>
-EOF
-
-# LibreOfficeを再起動して変更を適用
-```
-
-##### VLC
-
-###### VLC - GUIでの設定
-
-1. VLCを起動し、メニューバーから「Tools」（ツール）→「Preferences」（設定）を選択します
-2. 左下の「Show settings」（設定の表示）を「All」（すべて）に変更します
-3. 左側のメニューから「Interface」（インターフェース）→「Main interfaces」（主要インターフェース）→「Qt」を選択します
-4. 右側の「Language」（言語）ドロップダウンメニューから「Japanese」（日本語）を選択します
-5. 「Save」（保存）をクリックし、VLCを再起動して変更を適用します
-
-###### VLC - CLIでの設定
-
-```bash
-# VLCの設定ファイルを編集
-mkdir -p ~/.config/vlc
-cat > ~/.config/vlc/vlcrc << EOF
-language=ja
-EOF
-
-# VLCを再起動して変更を適用
-```
-
-##### Visual Studio Code
-
-###### VSCode - GUIでの設定
-
-1. VSCodeを起動します
-2. 左下の歯車アイコンをクリックし、「Settings」（設定）を選択します
-3. 検索バーに「locale」と入力します
-4. 「Configure Display Language」（表示言語の設定）をクリックします
-5. 日本語言語パックがインストールされていない場合は、「Install additional languages...」（追加の言語をインストール）をクリックします
-6. 表示されるマーケットプレイスで「Japanese Language Pack」を検索し、「Install」（インストール）をクリックします
-7. インストール完了後、言語の選択リストから「ja」を選択します
-8. 変更を適用するためにVSCodeを再起動するよう促されるので、「Restart Now」（今すぐ再起動）をクリックします
-
-###### VSCode - CLIでの設定
-
-```bash
-# 日本語言語パックをインストール
-code --install-extension MS-CEINTL.vscode-language-pack-ja
-
-# 設定ファイルを編集
-cat > ~/.config/Code/User/settings.json << EOF
-{
-    "locale": "ja"
-}
-EOF
-
-# VSCodeを再起動して変更を適用
-```
-
-以上の設定変更が完了したら、仮想環境のスナップショットを作成してください。VMware Workstation/Fusionの場合は、仮想マシンを選択し、「VM」メニューから「Snapshot」→「Take Snapshot」を選択します。スナップショットに「日本語環境」などのわかりやすい名前を付けてください。
-
-スナップショットを作成したら、`desktop_env.py`ファイルの`snapshotname`の値を変更したスナップショット名に更新してください。
-
-##### GUIでの変更
-
-1. 画面右上のシステム設定アイコン（歯車マーク）をクリックします
-2. 設定メニューから「Region & Language」（地域と言語）を選択します
-3. 「Language」（言語）の欄で「Manage Installed Languages」（インストール済み言語の管理）をクリックします
-4. 「Install / Remove Languages...」（言語のインストール/削除）をクリックし、リストから「Japanese」（日本語）にチェックを入れて「Apply」（適用）をクリックします
-5. インストールが完了したら、言語一覧から「日本語」を選択し、「Apply System-Wide」（システム全体に適用）をクリックします
-6. 再起動を促すメッセージが表示されるので「Restart Now」（今すぐ再起動）をクリックします
 
 ## 🚀 クイックスタート
+以下の最小限の例を実行して、環境と対話します：
 
-以下の最小限の例で環境と対話できます：
+```bash
+# デフォルト設定での基本的な使用法
+python quickstart.py
 
-```python
-from desktop_env.desktop_env import DesktopEnv
-
-example = {
-    "id": "94d95f96-9699-4208-98ba-3c3119edf9c2",
-    "instruction": "Spotify をこのシステムにインストールしたいです。手伝ってくれますか？",
-    "config": [
-        {
-            "type": "execute",
-            "parameters": {
-                "command": [
-                    "python",
-                    "-c",
-                    "import pyautogui; import time; pyautogui.click(960, 540); time.sleep(0.5);"
-                ]
-            }
-        }
-    ],
-    "evaluator": {
-        "func": "check_include_exclude",
-        "result": {
-            "type": "vm_command_line",
-            "command": "which spotify"
-        },
-        "expected": {
-            "type": "rule",
-            "rules": {
-                "include": ["spotify"],
-                "exclude": ["not found"]
-            }
-        }
-    }
-}
-
-env = DesktopEnv(action_space="pyautogui")
-
-obs = env.reset(task_config=example)
-obs, reward, done, info = env.step("pyautogui.rightClick()")
+# プロバイダーとVMパスのカスタマイズ
+python quickstart.py --provider_name vmware --path_to_vm "path/to/your/vm.vmx"
 ```
 
-システムのログが正常に表示され、環境作成、セットアップ、アクションの実行が成功するのを確認できます。最終的に右クリックに成功している様子が表示されていれば、準備完了です。
+システムが正常動作する際のすべてのログが表示されます。これには、環境の正常な作成、セットアップの完了、アクションの正常な実行が含まれます。最後に、画面上での右クリックが成功したことが確認でき、これは準備が整ったことを意味します。
 
 ## 🧪 実験
+### エージェントベースライン
 
-### エージェントのベースライン
+> **⚠️ 重要な設定要件：**
+>
+> * **Googleアカウントタスク**: 一部のタスクにはGoogleアカウントへのアクセスとOAuth2.0の設定が必要です。詳細なセットアップ手順については[Googleアカウントガイドライン](ACCOUNT_GUIDELINE.md)を参照してください。
+> * **プロキシ設定**: 一部のタスクではプロキシ設定が正しく機能する必要がある場合があります（これはあなたのネットワーク上の場所に対するウェブサイトの防御の強度に依存します）。システムのプロキシ設定ドキュメントを参照してください。
+> * **設定が不足している場合の影響**: これらの設定が正しくセットアップされていない場合、対応するタスクは正しく実行されず、評価スコアが低くなります。
 
-論文（訳註: オリジナルの OSWorld の論文です）で使用されたベースラインエージェントを実行したい場合、以下のコマンドで GPT-4V のスクリーンショット設定に基づいて実行可能です：
 
-API キーを環境変数に設定：
+論文で使用したベースラインエージェントを実行したい場合は、GPT-4oのスクリーンショットのみの設定で、以下のコマンドを例として実行できます：
 
+**OPENAI_API_KEY**環境変数にAPIキーを設定します
 ```bash
 export OPENAI_API_KEY='changeme'
 ```
 
+オプションで、カスタムOpenAI互換APIエンドポイントを使用するために**OPENAI_BASE_URL**を設定します
 ```bash
-python run.py --path_to_vm Ubuntu/Ubuntu.vmx --headless --observation_type screenshot --model gpt-4-vision-preview --result_dir ./results
+export OPENAI_BASE_URL='http://your-custom-endpoint.com/v1'  # オプション：デフォルトはhttps://api.openai.com
 ```
 
-結果（スクリーンショット、アクション、ビデオ記録）は `./results` ディレクトリに保存されます。その後、以下のコマンドで結果を確認できます：
+シングルスレッド実行（非推奨、`vmware`プロバイダーを例として使用）
+```bash
+python run.py \
+    --provider_name vmware \
+    --path_to_vm Ubuntu/Ubuntu.vmx \ FIXME
+    --headless \
+    --observation_type screenshot \
+    --model gpt-4o \
+    --sleep_after_execution 3 \
+    --max_steps 15 \
+    --result_dir ./results \
+    --client_password password
+```
 
+並列実行（プロバイダーを`docker`に切り替える例）
+```bash
+python run_multienv.py \
+    --provider_name docker \
+    --headless \
+    --observation_type screenshot \
+    --model gpt-4o \
+    --sleep_after_execution 3 \
+    --max_steps 15 \
+    --num_envs 10 \
+    --client_password password
+```
+
+エージェントのタスク完了のスクリーンショット、アクション、ビデオ録画を含む結果は、この場合`./results`（または指定した他の`result_dir`）ディレクトリに保存されます。
+以下のコマンドを実行して結果を取得できます：
 ```bash
 python show_result.py
 ```
 
-### 評価
-
-まず、[エージェントインターフェース](https://github.com/karakuri-ai/OSWorld-JP/blob/main/mm_agents/README.md)と[環境インターフェース](https://github.com/karakuri-ai/OSWorld-JP/blob/main/desktop_env/README.md)を読んでください。インターフェースを実装し、`run.py` にカスタムエージェントを読み込んだ後、先ほどのようなコマンドでベンチマークを実行できます。
-
-## ❓ よくある質問（FAQ）
-
-### 仮想マシンのユーザー名とパスワードは何ですか？
-
-- **Ubuntu:** `user` / `password`
-
-### Google や Google Drive のアカウント認証はどう設定すればいいですか？
-
-[アカウントガイド](ACCOUNT_GUIDELINE.md)を参照してください。
+## 評価
+### ローカル評価
+まず、[エージェントインターフェース](https://github.com/karakuri-ai/OSWorld-JP/blob/main/mm_agents/README.md)と[環境インターフェース](https://github.com/karakuri-ai/OSWorld-JP/blob/main/desktop_env/README.md)を読むことから始めてください。
+エージェントインターフェースを正しく実装し、カスタマイズしたバージョンを`run.py`または`run_multienv.py`ファイルにインポートしてください。
+その後、前のセクションと同様のコマンドを実行して、エージェントに対してベンチマークを実行できます。
 
 <!--
-### GFW（グレートファイアウォール）下でのプロキシ設定は？
-
-[プロキシ設定ガイド](PROXY_GUIDELINE.md)を参照してください。
-
-### 各種設定における実行時間とコストは？
-
-| 設定                       | 想定時間 | コスト（全テスト / 小テスト） |
-| ------------------------ | ---- | ---------------- |
-| GPT-4V（スクリーンショット）        | 10時間 | \$100（\$10）      |
-| Gemini-ProV（スクリーンショット）   | 15時間 | \$0（\$0）         |
-| Claude-3 Opus（スクリーンショット） | 15時間 | \$150（\$15）      |
-| GPT-4V（アクセシビリティツリーなど）    | 30時間 | \$500（\$50）      |
-
-\*並列実行なし、2024年4月時点の計算。
-
+### パブリック評価
+結果を検証し、検証済みリーダーボードに表示したい場合は、私たちとのミーティングを予約する必要があります（現在のメンテナー：tianbaoxiexxx@gmail.com、yuanmengqi732@gmail.com）。あなたのエージェントコードを私たちの側で実行し、結果を報告します。
+OSWorldフレームワーク下でのエージェント実装のアップロードと公開を許可していただく必要があります（モデルAPIの一般公開は選択可能です）。また、舞台裏で何が行われているかを一般に理解してもらうためのレポートも必要です。
+あるいは、信頼できる機関に所属している場合は、モニタリングデータとトラジェクトリを共有していただくことも可能です。
+結果を得るには、[パブリック評価ガイドライン](https://github.com/karakuri-ai/OSWorld-JP/blob/main/PUBLIC_EVALUATION_GUIDELINE.md)に注意深く従ってください。
 -->
+
+## ❓ FAQ
+### 仮想マシンのユーザー名とパスワードは何ですか？
+仮想マシンのユーザー名とパスワードは以下の通りです（プロバイダー`vmware`、`virtualbox`、`docker`の場合）：Ubuntuのアカウント認証情報は`user` / `password`に設定しています。
+`aws`などのクラウドサービスプロバイダーの場合、弱いパスワードによる攻撃を防ぐため、デフォルトで`osworld-public-evaluation`を使用しています。
+さらに変更を加える場合は、実験実行時にclient_password変数を設定し、DesktopEnvおよびAgent（サポートされている場合）に渡すことを忘れないでください。
+プロキシの設定など一部の機能では、環境がsudo権限を取得するためにクライアントVMのパスワードが必要です。また、一部のOSWorldタスクでは、エージェントがタスクを完了するためにsudo権限を取得するためのパスワードが必要です。
+
+### GoogleおよびGoogle Driveのアカウントと認証情報の設定方法は？
+
+[アカウントガイドライン](ACCOUNT_GUIDELINE.md)をご参照ください。
+
+### 仮想環境の日本語化は、どのようにして行われましたか？
+
+[日本語版のオリジナル版との差分](JP_VER_NOTES.md)をご参照ください。
 
 ## 📄 引用
 
@@ -446,5 +206,5 @@ python show_result.py
 
 ----
 
-This repository is a fork of [OSWorld](https://github.com/xlang-ai/OSWorld) by XLANG NLP Lab.
+This repository is a fork of [OSWorld](https://github.com/karakuri-ai/OSWorld-JP) by XLANG NLP Lab.
 The original project is licensed under the Apache License 2.0, which is preserved in this repository.

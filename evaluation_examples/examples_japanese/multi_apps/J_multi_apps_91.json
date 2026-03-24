@@ -1,0 +1,78 @@
+{
+  "id": "J_multiapps_91",
+  "snapshot": "multiapps",
+  "instruction": "今日はたくさんの面白いブログ記事を閲覧しました。Zoteroが論文を保存するように、これらの記事を、私のローカルの指定フォルダーに保存できればと思います。いま開いているブログたちをPDF形式でダウンロードし、/home/user/ドキュメント/Blogに「(記事タイトル).pdf」のファイル名で保存してください。",
+  "source": "authors",
+  "config": [
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "google-chrome",
+          "--remote-debugging-port=1337"
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "socat",
+          "tcp-listen:9222,fork",
+          "tcp:localhost:1337"
+        ]
+      }
+    },
+    {
+      "type": "chrome_open_tabs",
+      "parameters": {
+        "urls_to_open": [
+          "https://qiita.com/ksonoda/items/b9fd3e709aeae79629ff",
+          "https://qiita.com/ksonoda/items/b767cbd283e379303178"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome",
+    "os"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "download",
+        "parameters": {
+          "files": [
+            {
+              "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_91/script.py?download=true",
+              "path": "/home/user/デスクトップ/script.py"
+            }
+          ]
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": "pip install PyMuPDF",
+          "shell": "true"
+        }
+      }
+    ],
+    "func": "exact_match",
+    "result": {
+      "type": "vm_command_line",
+      "command": "python /home/user/デスクトップ/script.py",
+      "shell": "true"
+    },
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "expected": "[1, 1]\n"
+      }
+    }
+  },
+  "proxy": true,
+  "fixed_ip": false,
+  "possibility_of_env_change": "high"
+}

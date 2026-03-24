@@ -23,22 +23,34 @@ def process_epub(filename: str) -> List[str]:
 
     try:
         with zipfile.ZipFile(filename, "r") as z_f:
-            with z_f.open("toc.ncx") as in_f \
-                    , open(os.path.join(base_dir, "toc.ncx"), "w") as out_f:
-                contents: str = in_f.read().decode()
-                contents = contents.splitlines()
-                for l in contents:
-                    if "navPoint" not in l:
-                        out_f.write(l + "\n")
-            file_list.append(os.path.join(base_dir, "toc.ncx"))
-            with z_f.open("content.opf") as in_f \
-                    , open(os.path.join(base_dir, "content.opf"), "w") as out_f:
-                contents: str = in_f.read().decode()
-                contents = contents.splitlines()
-                for l in contents:
-                    if "dc:identifier" not in l:
-                        out_f.write(l + "\n")
-            file_list.append(os.path.join(base_dir, "content.opf"))
+            # Get list of all files in the zip archive
+            zip_file_list = z_f.namelist()
+            
+            # Process toc.ncx if it exists
+            if "toc.ncx" in zip_file_list:
+                with z_f.open("toc.ncx") as in_f \
+                        , open(os.path.join(base_dir, "toc.ncx"), "w") as out_f:
+                    contents: str = in_f.read().decode()
+                    contents = contents.splitlines()
+                    for l in contents:
+                        if "navPoint" not in l:
+                            out_f.write(l + "\n")
+                file_list.append(os.path.join(base_dir, "toc.ncx"))
+            else:
+                logger.debug("toc.ncx not found in epub file: %s", filename)
+            
+            # Process content.opf if it exists
+            if "content.opf" in zip_file_list:
+                with z_f.open("content.opf") as in_f \
+                        , open(os.path.join(base_dir, "content.opf"), "w") as out_f:
+                    contents: str = in_f.read().decode()
+                    contents = contents.splitlines()
+                    for l in contents:
+                        if "dc:identifier" not in l:
+                            out_f.write(l + "\n")
+                file_list.append(os.path.join(base_dir, "content.opf"))
+            else:
+                logger.debug("content.opf not found in epub file: %s", filename)
             for f_n in z_f.namelist():
                 if f_n.endswith(".html"):
                     with z_f.open(f_n) as in_f \
@@ -63,11 +75,13 @@ def compare_epub(result: str, expected: str) -> float:
     result_files: List[str] = process_epub(result)
     expected_files: List[str] = process_epub(expected)
 
-    metric: float = 1.
+    metric: float = 0.
     for f1, f2 in zip(result_files, expected_files):
         current_metric: float = diff_text_file(f1, f2)
         logger.debug("%s vs %s: %f", f1, f2, current_metric)
-        metric *= current_metric
+        metric += current_metric
+    if len(result_files) > 0:
+        metric /= len(result_files)
     return metric
 
 

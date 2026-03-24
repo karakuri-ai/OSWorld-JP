@@ -1,7 +1,7 @@
 {
   "id": "J_excel_76",
   "snapshot": "libreoffice_calc",
-  "instruction": "テーブルを転置して、B8から貼り付けてください。",
+  "instruction": "B2:F5の範囲にあるテーブルに行列転置を適用し、転置されたテーブルをB8に貼り付けてください（つまり、転置されたテーブルの左上のセルがB8になるようにしてください）。",
   "source": "https://www.youtube.com/shorts/t9JLUaT55UQ",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=1l8Nuxn8vbG3qSWkOjbLzzX9DzI9dgHpp",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/excel/J_excel_76/Students_Class_Subject_Marks.xlsx?download=true",
             "path": "/home/user/Students_Class_Subject_Marks.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?export=download&id=1Csrtrm7XeylBSw4EffEY2xQNs3xEdZJs",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/excel/J_excel_76/Students_Class_Subject_Marks_gold.xlsx?download=true",
       "dest": "Students_Class_Subject_Marks_gold.xlsx"
     },
     "result": {

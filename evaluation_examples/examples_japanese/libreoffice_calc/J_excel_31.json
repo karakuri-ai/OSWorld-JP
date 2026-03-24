@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=1BSdky6TtwlkephaYEqvpt4FcTQntKny-",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/excel/J_excel_31/Freeze_row_column2.xlsx?download=true",
             "path": "/home/user/Freeze_row_column.xlsx"
           }
         ]
@@ -66,7 +66,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?export=download&id=1gizfvgylndig-_aeqG_DZThHrUqPvIi1",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/excel/J_excel_31/Freeze_row_column2_gold.xlsx?download=true",
       "dest": "Freeze_row_column_gold.xlsx"
     },
     "options": {

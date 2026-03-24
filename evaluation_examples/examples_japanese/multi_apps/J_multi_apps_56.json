@@ -1,0 +1,69 @@
+{
+  "id": "J_multiapps_56",
+  "snapshot": "libreoffice_calc",
+  "instruction": "LibreOffice Calcの現在のシートにあるデータを、LibreOffice Writerのテーブル（Calcのオブジェクトを埋め込むのではなく、Writer上の素朴なテーブルとして。書式は未設定でOK）に転記する作業をやってもらえますか？文書は`price.docx`という名前でデスクトップに保存してください。",
+  "source": "authors",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "path": "/home/user/デスクトップ/OSP_Envelope_Price-List_2023_5000.xlsx",
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/81c425f5-78f3-4771-afd6-3d2973825947/OSP_Envelope_Price-List_2023_5000.xlsx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/OSP_Envelope_Price-List_2023_5000.xlsx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/81c425f5-78f3-4771-afd6-3d2973825947",
+  "related_apps": [
+    "libreoffice_writer",
+    "libreoffice_calc",
+    "os"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "activate_window",
+        "parameters": {
+          "window_name": "price.docx - LibreOffice Writer",
+          "strict": true
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 0.5
+        }
+      },
+      {
+        "type": "execute",
+        "parameters": {
+          "command": [
+            "python",
+            "-c",
+            "import pyautogui; import time; pyautogui.hotkey(\"ctrl\", \"s\"); time.sleep(0.5);"
+          ]
+        }
+      }
+    ],
+    "func": "compare_docx_tables",
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/price.docx",
+      "dest": "price.docx"
+    },
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/81c425f5-78f3-4771-afd6-3d2973825947/price.docx",
+      "dest": "price_Gold.docx"
+    }
+  }
+}

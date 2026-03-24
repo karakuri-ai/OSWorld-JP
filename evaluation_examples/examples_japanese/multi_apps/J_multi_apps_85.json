@@ -1,0 +1,88 @@
+{
+  "id": "J_multiapps_85",
+  "snapshot": "multiapps",
+  "instruction": "私のPicturesフォルダにはいくつかの山の写真がありますが、山の名前がわかりません。これらの写真を特定し、ファイル名を山の名前（英語名）に変更してください。",
+  "source": "authors",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/ce2b64a2-ddc1-4f91-8c7d-a88be7121aac/picture1.jpg",
+            "path": "/home/user/Pictures/picture1.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/ce2b64a2-ddc1-4f91-8c7d-a88be7121aac/picture2.jpg",
+            "path": "/home/user/Pictures/picture2.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/ce2b64a2-ddc1-4f91-8c7d-a88be7121aac/picture3.jpg",
+            "path": "/home/user/Pictures/picture3.jpg"
+          }
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/",
+  "related_apps": [
+    "chrome",
+    "os",
+    "image"
+  ],
+  "evaluator": {
+    "postconfig": [
+      {
+        "type": "download",
+        "parameters": {
+          "files": [
+            {
+              "url": "https://drive.usercontent.google.com/download?id=1eWGQ3z-Ps5p784NZjj9KyhHfX7NbHgWd&export=download&authuser=0&confirm=t&uuid=8ba167f4-8669-477b-89ee-a8f6996f43d7&at=APZUnTWShYYueBb8hRnrjjabU1ZD:1709972787510",
+              "path": "/home/user/デスクトップ/image_script.py"
+            }
+          ]
+        }
+      }
+    ],
+    "func": "check_direct_json_object",
+    "result": {
+      "type": "vm_command_line",
+      "command": "python /home/user/デスクトップ/image_script.py",
+      "shell": "true"
+    },
+    "expected": {
+      "type": "rule",
+      "rules": {
+        "expected": {
+          "ec076282f61ba74642e94b5a6a1250c6988204d59d9b02936606b6b8ef1e4433": [
+            "Kilimanjaro"
+          ],
+          "6ed4239ecc2be3ec15ad65a78c5c823b9004d640b8cc83a6a7af5930f354de91": [
+            "Himalayas",
+            "Everest",
+            "Sagarmatha"
+          ],
+          "79f45d40d8413d4e81f1b9734ea39e58622cafd79e12bab32959643fc245147c": [
+            "Hua",
+            "hua"
+          ]
+        },
+        "expect_in_result": true
+      }
+    }
+  }
+}

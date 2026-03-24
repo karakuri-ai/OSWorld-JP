@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_31",
   "snapshot": "chrome",
-  "instruction": "ナイキ公式オンラインストアで、10000円以上のレディースジャージの一覧を見てください。",
+  "instruction": "ナイキ公式オンラインストアで、10000円以上のレディースジャージの一覧を見たいです。",
   "source": "test_task_1",
   "config": [
     {
@@ -45,7 +45,7 @@
   "evaluator": {
     "func": "is_expected_url_pattern_match",
     "result": {
-      "type": "active_tab_info",
+      "type": "active_url_from_accessTree",
       "goto_prefix": "https://www."
     },
     "expected": {

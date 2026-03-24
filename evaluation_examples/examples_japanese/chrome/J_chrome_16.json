@@ -254,6 +254,12 @@
             "--remote-debugging-port=1337"
           ]
         }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 3
+        }
       }
     ],
     "func": "check_history_deleted",
@@ -270,5 +276,8 @@
         ]
       }
     }
-  }
+  },
+  "proxy": true,
+  "fixed_ip": false,
+  "possibility_of_env_change": "low"
 }

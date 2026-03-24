@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_19",
   "snapshot": "chrome",
-  "instruction": "「なつみ」という名前の漢字にはどんなものがありますか？",
+  "instruction": "「なつみ」という名前の漢字にはどんなものがあるか、見せてもらえますか？",
   "source": "Mind2Web",
   "config": [
     {

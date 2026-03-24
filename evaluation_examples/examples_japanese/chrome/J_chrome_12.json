@@ -1,8 +1,8 @@
 {
   "id": "J_chrome_12",
   "snapshot": "chrome",
-  "instruction": "ねえ、このサイトに戻るための簡単な方法が必要なんだ。デスクトップにショートカットを作ってもらえるかな？",
-  "source": "https://support.google.com/chrome/answer/15085120",
+  "instruction": "ねえ、このサイトにすぐ戻れる方法が必要なんだ。Chromeの標準機能でデスクトップにショートカットを作ってくれない？",
+  "source": "https://www.laptopmag.com/articles/how-to-create-desktop-shortcuts-for-web-pages-using-chrome",
   "config": [
     {
       "type": "launch",
@@ -27,7 +27,7 @@
       "type": "chrome_open_tabs",
       "parameters": {
         "urls_to_open": [
-          "https://rugugu.jp/2048/"
+          "https://www.mathsisfun.com/games/2048.html"
         ]
       }
     }
@@ -44,9 +44,12 @@
     "expected": {
       "type": "rule",
       "rules": {
-        "type": "name",
-        "name": "2048_by_Gabriele_Cirulli"
+        "type": "exec",
+        "exec": "/opt/google/chrome/google-chrome --profile-directory=Default --app-id=poahllcmmahlafplfhgjomkjmeblpapf"
       }
     }
-  }
+  },
+  "proxy": true,
+  "fixed_ip": false,
+  "possibility_of_env_change": "low"
 }

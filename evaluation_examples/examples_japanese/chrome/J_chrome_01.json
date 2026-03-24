@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_01",
   "snapshot": "chrome",
-  "instruction": "Chromeで「トラッキングを防ぐ」機能を有効にして、私のオンラインプライバシーを向上させていただけますか？",
+  "instruction": "Chromeの「Do Not Track」機能を有効にして、オンラインでのプライバシーを強化してもらえますか？",
   "source": "https://www.surreycc.gov.uk/website/cookies/do-not-track",
   "config": [
     {
@@ -29,6 +29,32 @@
     "chrome"
   ],
   "evaluator": {
+    "postconfig": [
+      {
+        "type": "launch",
+        "parameters": {
+          "command": [
+            "pkill",
+            "chrome"
+          ]
+        }
+      },
+      {
+        "type": "launch",
+        "parameters": {
+          "command": [
+            "google-chrome",
+            "--remote-debugging-port=1337"
+          ]
+        }
+      },
+      {
+        "type": "sleep",
+        "parameters": {
+          "seconds": 3
+        }
+      }
+    ],
     "func": "exact_match",
     "result": {
       "type": "enable_do_not_track"

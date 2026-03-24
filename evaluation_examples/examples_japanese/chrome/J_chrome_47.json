@@ -1,7 +1,7 @@
 {
   "id": "J_chrome_47",
   "snapshot": "chrome",
-  "instruction": "通勤定期券の購入のウェブ事前予約をしたいです。次の月曜日から、期間は3ヶ月、メトロの志茂駅から駒込駅まででお願いします。ここまで入力したところで、私に確認させてください。",
+  "instruction": "通勤定期券の購入のウェブ事前予約をしたいです。次の月曜日から、期間は3ヶ月、メトロの志茂駅から駒込駅まででお願いします。ここまで入力したところで、私に確認させてください。利用規約の同意はしてしまって大丈夫です。",
   "source": "test_task_2",
   "config": [
     {
@@ -52,10 +52,12 @@
     "conj": "and",
     "result": [
       {
-        "type": "active_tab_info"
+        "type": "active_url_from_accessTree",
+        "goto_prefix": "https://www."
       },
       {
         "type": "active_tab_html_parse",
+        "goto_prefix": "https://www.",
         "category": "input",
         "inputObject": {
           "//*[@id=\"periodStart\"]": "time"
@@ -63,6 +65,7 @@
       },
       {
         "type": "active_tab_html_parse",
+        "goto_prefix": "https://www.",
         "category": "input",
         "inputObject": {
           "//*[@id=\"period\"]": "period",
@@ -72,8 +75,9 @@
       },
       {
         "type": "active_tab_html_parse",
+        "goto_prefix": "https://www.",
         "category": "xpath",
-        "inputObject": {
+        "xpathObject": {
           "//*[@id=\"selectedStationName_from\"]": "selectedStationName_from",
           "//*[@id=\"selectedStationName_to\"]": "selectedStationName_to"
         }
@@ -84,7 +88,7 @@
         "type": "rule",
         "rules": {
           "expected": [
-            "webyoyaku/\\?urlstick=41105"
+            "webyoyaku/"
           ]
         }
       },
@@ -103,7 +107,7 @@
         "type": "rule",
         "rules": {
           "expected": {
-            "period": "3か月",
+            "period": "3",
             "stationName_from": "志茂",
             "stationName_to": "駒込"
           }

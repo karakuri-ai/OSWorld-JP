@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=1xRfeDOB0XCaWGQpf6yO0YDgwOV1PvqIK",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_105/calculator.zip?download=true",
             "path": "C:\\Users\\User\\Desktop\\calculator.zip"
           }
         ]

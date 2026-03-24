@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=1We-bmZszg7d8TlEUZyQPbRNzyeuvHHKP",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/excel/J_excel_72/SummerSales.xlsx?download=true",
             "path": "/home/user/SummerSales.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?export=download&id=1FJzUjaz5gkjt1CgH-7rbd88Gf_BWWvoS",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/excel/J_excel_72/6_SummerSales_gt1.xlsx?download=true",
       "dest": "6_SummerSales_gt1.xlsx"
     },
     "result": {

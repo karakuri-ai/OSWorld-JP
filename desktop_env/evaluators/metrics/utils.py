@@ -1,15 +1,16 @@
 import builtins
-import datetime
+#import datetime
 import functools
 import itertools
 import logging
 import operator
+import os
 import re
 import zipfile
-import pandas as pd
+#import pandas as pd
 from typing import Any, TypeVar, Union, Iterable, Optional, Callable
 from typing import Dict, List, Set, Match, Tuple, Pattern
-from urllib.parse import urlparse, urlunparse
+from urllib.parse import urlparse, urlunparse, ParseResult
 
 import formulas
 import lxml.cssselect
@@ -17,7 +18,7 @@ import lxml.etree
 import xmltodict
 from lxml.etree import _Element
 from openpyxl import Workbook
-from openpyxl.cell.cell import Cell
+from openpyxl.cell.cell import Cell, MergedCell
 from openpyxl.chart._chart import ChartBase
 from openpyxl.formatting.formatting import ConditionalFormattingList
 from openpyxl.pivot.cache import CacheSource as PivotCacheSource
@@ -28,15 +29,17 @@ from openpyxl.worksheet.cell_range import MultiCellRange, CellRange
 from openpyxl.worksheet.dimensions import DimensionHolder
 from openpyxl.worksheet.filters import AutoFilter, SortState
 from openpyxl.worksheet.worksheet import Worksheet
+import tldextract
 
 V = TypeVar("Value")
 
 logger = logging.getLogger("desktopenv.metrics.utils")
 
-_xlsx_namespaces = [("oo", "http://schemas.openxmlformats.org/spreadsheetml/2006/main")
-    , ("x14", "http://schemas.microsoft.com/office/spreadsheetml/2009/9/main")
-    , ("xm", "http://schemas.microsoft.com/office/excel/2006/main")
-                    ]
+_xlsx_namespaces = [
+    ("oo", "http://schemas.openxmlformats.org/spreadsheetml/2006/main"),
+    ("x14", "http://schemas.microsoft.com/office/spreadsheetml/2009/9/main"),
+    ("xm", "http://schemas.microsoft.com/office/excel/2006/main")
+]
 _xlsx_ns_mapping = dict(_xlsx_namespaces)
 _xlsx_ns_imapping = dict(map(lambda itm: (itm[1], itm[0]), _xlsx_namespaces))
 _xlsx_ns_imapping["http://schemas.openxmlformats.org/spreadsheetml/2006/main"] = None
@@ -191,6 +194,7 @@ def load_charts(xlsx_file: Workbook, sheet_name: str, **options) -> Dict[str, An
 # col_fields: indices
 # row_fields: indices
 # data_fields: list of str representations. the str representation is like "index;name;subtotal_type;show_data_as"; name is optional and is only returned when `data_fields_name` is specified in `pivot_props`
+# ignore_special_fields: if specified, negative indices (special fields like -5 for Values) will be filtered out from col_fields and row_fields
 def load_pivot_tables(xlsx_file: Workbook, sheet_name: str, **options) -> Dict[str, Any]:
     #  function load_pivot_tables {{{ # 
     """
@@ -259,9 +263,15 @@ def load_pivot_tables(xlsx_file: Workbook, sheet_name: str, **options) -> Dict[s
         if "filter" in pivot_props:
             info["filter_fields"] = set(f.fld for f in pvt.pageFields)
         if "col_fields" in pivot_props:
-            info["col_fields"] = [f.x - left_bias for f in pvt.colFields]
+            col_fields = [f.x - left_bias for f in pvt.colFields]
+            if "ignore_special_fields" in pivot_props:
+                col_fields = [f for f in col_fields if f >= 0]
+            info["col_fields"] = col_fields
         if "row_fields" in pivot_props:
-            info["row_fields"] = [f.x - left_bias for f in pvt.rowFields]
+            row_fields = [f.x - left_bias for f in pvt.rowFields]
+            if "ignore_special_fields" in pivot_props:
+                row_fields = [f for f in row_fields if f >= 0]
+            info["row_fields"] = row_fields
         if "data_fields" in pivot_props:
             info["data_fields"] = [
                 "{:d};{:};{:};{:}".format(f.fld - left_bias, f.name if "data_fields_name" in pivot_props else ""
@@ -282,6 +292,13 @@ _shared_str_value_selector = lxml.cssselect.CSSSelector("oo|t", namespaces=_xlsx
 
 def read_cell_value(xlsx_file: str, sheet_name: str, coordinate: str) -> Any:
     #  read_cell_value {{{ # 
+    logger.debug(f"Reading cell value from {xlsx_file}, sheet: {sheet_name}, coordinate: {coordinate}")
+    
+    # Check if file exists
+    if not os.path.exists(xlsx_file):
+        logger.error(f"Excel file not found: {xlsx_file}")
+        return None
+    
     try:
         with zipfile.ZipFile(xlsx_file, "r") as z_f:
             try:
@@ -292,7 +309,9 @@ def read_cell_value(xlsx_file: str, sheet_name: str, coordinate: str) -> Any:
                                            for elm in str_elements
                                              ]
             except:
+                #logger.exception("Read shared strings error: %s", xlsx_file)
                 logger.debug("Read shared strings error: %s", xlsx_file)
+                shared_strs: List[str] = []
 
             with z_f.open("xl/workbook.xml") as f:
                 workbook_database: _Element = lxml.etree.fromstring(f.read())
@@ -306,15 +325,24 @@ def read_cell_value(xlsx_file: str, sheet_name: str, coordinate: str) -> Any:
                                                , namespaces=_xlsx_ns_mapping
                                                )(sheet)
                 if len(cells) == 0:
+                    logger.debug(f"Cell {coordinate} not found in sheet {sheet_name}")
                     return None
                 cell: _Element = cells[0]
-    except zipfile.BadZipFile:
+    except zipfile.BadZipFile as e:
+        logger.error(f"Bad zip file {xlsx_file}: {e}")
+        return None
+    except KeyError as e:
+        logger.error(f"Sheet {sheet_name} not found in {xlsx_file}: {e}")
+        return None
+    except Exception as e:
+        logger.error(f"Error reading {xlsx_file}: {e}")
         return None
 
     cell: Dict[str, str] = xmltodict.parse(lxml.etree.tostring(cell, encoding="unicode")
                                            , process_namespaces=True
                                            , namespaces=_xlsx_ns_imapping
                                            )
+    logger.debug("%s.shared_strings: %s", xlsx_file, repr(shared_strs))
     logger.debug("%s.%s[%s]: %s", xlsx_file, sheet_name, coordinate, repr(cell))
     try:
         if "@t" not in cell["c"] or cell["c"]["@t"] == "n":
@@ -322,6 +350,10 @@ def read_cell_value(xlsx_file: str, sheet_name: str, coordinate: str) -> Any:
         if cell["c"]["@t"] == "s":
             return shared_strs[int(cell["c"]["v"])]
         if cell["c"]["@t"] == "str":
+            return cell["c"]["v"]
+        if cell["c"]["@t"] == "inlineStr":
+            return cell["c"]["is"]["t"]
+        if cell["c"]["@t"] == "e":
             return cell["c"]["v"]
     except (KeyError, ValueError):
         return None
@@ -338,10 +370,11 @@ def read_cell_value(xlsx_file: str, sheet_name: str, coordinate: str) -> Any:
 # font_underline - "single" | "double" | "singleAccounting" | "doubleAccounting"
 # font_size - float
 # fill_type - "patternFill" | "gradientFill"
-# bgcolor - in aRGB, e.g., FFFF0000 is red
-# fgcolor - in aRGB, e.g., FF00FFFF is yellow
+# bgcolor - in aRGB, e.g., FFFF0000 is red; This property seems to be ambiguous with fgcolor in xlsx, strange
+# fgcolor - in aRGB, e.g., FF00FFFF is yellow # Deprecated
 # hyperlink - str
-def _read_cell_style(style_name: str, cell: Cell, diff_style: Optional[DifferentialStyle] = None) -> Any:
+# merge - bool, if the cell is in a merged range and is not the first cell in the merged range
+def _read_cell_style(style_name: str, cell: Union[Cell, MergedCell], diff_style: Optional[DifferentialStyle] = None) -> Any:
     if style_name == "number_format":
         return (cell.number_format if diff_style is None else diff_style.numFmt.formatCode) \
             if cell.value is not None and cell.data_type == "n" else None
@@ -364,21 +397,64 @@ def _read_cell_style(style_name: str, cell: Cell, diff_style: Optional[Different
             return (diff_style or cell).fill.tagname
         except:
             return None
-    elif style_name == "bgcolor":
+    elif style_name == "bgcolor" or style_name == "fgcolor":
         try:
-            return (diff_style or cell).fill.bgColor.rgb
+            #return (diff_style or cell).fill.bgColor.rgb
+            if diff_style is not None:
+                return diff_style.fill.bgColor.rgb
+            else:
+                return cell.fill.fgColor.rgb
         except:
             return None
-    elif style_name == "fgcolor":
-        try:
-            return (diff_style or cell).fill.fgColor.rgb
-        except:
-            return None
+    #elif style_name == "fgcolor":
+        #try:
+            #return (diff_style or cell).fill.fgColor.rgb
+        #except:
+            #return None
     elif style_name == "hyperlink":
         return cell.hyperlink or "" if cell.value is not None else None
+    elif style_name == "merge":
+        return isinstance(cell, MergedCell)
     else:
         raise NotImplementedError("Unsupported Style: {:}".format(style_name))
 
+def _process_xlsx_cf_operator(operator: str, value: Any, ref: List[Any]) -> bool:
+    #  function _process_xlsx_cf_operator {{{ # 
+    # "containsText", "lessThanOrEqual", "notBetween", "lessThan", "notContains", "beginsWith", "equal", "greaterThanOrEqual", "between", "endsWith", "notEqual", "greaterThan"
+    try:
+        if operator=="lessThanOrEqual":
+            result: bool = value<=ref[0]
+        elif operator=="lessThan":
+            result: bool = value<ref[0]
+        elif operator=="equal":
+            result: bool = value==ref[0]
+        elif operator=="greaterThanOrEqual":
+            result: bool = value>=ref[0]
+        elif operator=="notEqual":
+            result: bool = value!=ref[0]
+        elif operator=="greaterThan":
+            result: bool = value>ref[0]
+        elif operator=="between":
+            small_one: float
+            large_one: float
+            small_one, large_one = min(ref), max(ref)
+            result: bool = value>=small_one and value<=large_one
+        elif operator=="notBetween":
+            small_one: float
+            large_one: float
+            small_one, large_one = min(ref), max(ref)
+            result: bool = value<small_one or value>large_one
+        else:
+            #raise NotImplementedError("Not Implemented CondFormat Operator: {:}".format(operator))
+            logger.exception("Not Implemented CondFormat Operator: {:}".format(operator))
+        return result
+    except TypeError:
+        logger.exception("Unmatched type of %s and %s. Auto to False", repr(value), repr(ref))
+        return False
+    except IndexError:
+        logger.exception("ref array doesn't have enough elements. Auto to False: %s", repr(ref))
+        return False
+    #  }}} function _process_xlsx_cf_operator # 
 
 _absolute_range_pattern: Pattern[str] = re.compile(r"""\$(?P<col1>[A-Z]{1,3})\$(?P<row1>\d+) # coord1
                                                         (?::
@@ -429,12 +505,23 @@ def load_xlsx_styles(xlsx_file: Workbook, sheet_name: str, book_name: str, **opt
     for fmt in conditional_formattings:
         for r in fmt.rules:
             active_cells: List[Cell] = []
-            if r.type == "expression":
-                condition: Callable[[str], bool] = formula_parser.ast("=" + r.formula[0])[1].compile()
-                logger.debug("Expression condition: %s", r.formula[0])
+
+            #  Process CF Formulae {{{ # 
+            formulae: List[Callable[[Any], Any]] = []
+            argument_lists: List[List[Any]] = []
+            has_error = False
+            for fml in r.formula:
+                try:
+                    formula_func: Callable[[Any], Any] =\
+                            formula_parser.ast("=" + fml)[1].compile()
+                    logger.debug("CondFormat rule formula: %s", fml)
+                except:
+                    logger.exception("Formula parsing error: %s. Skipping.", repr(fml))
+                    has_error = True
+                    break
 
                 arguments: List[Any] = []
-                absolute_range_match: List[Tuple[str, str, str, str]] = _absolute_range_pattern.findall(r.formula[0])
+                absolute_range_match: List[Tuple[str, str, str, str]] = _absolute_range_pattern.findall(fml)
                 for m in absolute_range_match:
                     logger.debug("Absolute ranges: %s", repr(m))
                     if m[2] is None and m[3] is None:
@@ -450,19 +537,65 @@ def load_xlsx_styles(xlsx_file: Workbook, sheet_name: str, book_name: str, **opt
                                          )
                 logger.debug("Absolute range arguments: %s", repr(arguments))
 
-                for rge in fmt.cells:
-                    for c in rge.cells:
-                        cell: Cell = worksheet.cell(row=c[0], column=c[1])
-                        cell_value = read_cell_value(book_name, sheet_name
-                                                     , coordinate="{:}{:d}".format(get_column_letter(c[1])
-                                                                                   , c[0]
-                                                                                   )
-                                                     )
-                        if condition(cell_value, *arguments):
-                            logger.debug("Active Cell %s(%s) for %s", repr(cell), str(cell_value), r.formula[0])
-                            active_cells.append(cell)
+                formulae.append(formula_func)
+                argument_lists.append(arguments)
+
+            if has_error:
+                continue
+            #  }}} Process CF Formulae # 
+
+            #  Process Condition Accroding to Type {{{ # 
+            if r.type in { "expression"
+                         , "containsText", "notContainsText"
+                         , "endsWith", "beginsWith"
+                         , "containsErrors", "notContainsErrors"
+                         }:
+                condition: Callable[[Any], bool] = formulae[0]
+                arguments: List[Any] = argument_lists[0]
+                is_active: Callable[[Any], bool] = lambda v: condition(v, *arguments)
+            elif r.type == "cellIs":
+                operator: str = r.operator
+                try:
+                    references: List[Any] = [fml() for fml in formulae]
+                except:
+                    logger.exception("Error occurs while calculating reference values for cellIs condition formatting.")
+                    continue
+                is_active: Callable[[Any], bool] =\
+                        lambda v: _process_xlsx_cf_operator(operator, v, references)
             else:
-                raise NotImplementedError("Not Implemented Condition Type: {:}".format(r.type))
+                #raise NotImplementedError("Not Implemented Condition Type: {:}".format(r.type))
+                # e.g., type=top10 (rank=number, percent=bool, bottom=bool)
+                # type=aboveAverage (equalAverage=bool, aboveAverage=bool)
+                # type=duplicateValues / type=uniqueValues
+                logger.exception("Not Implemented Condition Type: {:}".format(r.type))
+            #  }}} Process Condition Accroding to Type # 
+
+
+            #  Test Each Cell {{{ # 
+            nb_contiguous_nothings = 0
+            for rge in fmt.cells:
+                for c in rge.cells:
+                    cell: Cell = worksheet.cell(row=c[0], column=c[1])
+                    cell_value = read_cell_value(book_name, sheet_name
+                                                 , coordinate="{:}{:d}".format(get_column_letter(c[1])
+                                                                               , c[0]
+                                                                               )
+                                                 )
+                    if cell_value is None:
+                        nb_contiguous_nothings += 1
+                        if nb_contiguous_nothings>50:
+                            break
+                        continue
+                    else:
+                        try:
+                            satisfies_condition: bool = is_active(cell_value)
+                        except:
+                            logger.exception("Error in formula calculation with cell value %d", repr(cell_value))
+                            satisfies_condition = False
+                        if satisfies_condition:
+                            logger.debug("Active Cell %s(%s) for %s", repr(cell), repr(cell_value), r.formula[0])
+                            active_cells.append(cell)
+            #  }}} Test Each Cell # 
 
             for c in active_cells:
                 style_dict[c.coordinate] = [_read_cell_style(st, c, r.dxf) for st in concerned_styles]
@@ -654,31 +787,70 @@ def are_lists_equal(list1, list2, comparison_func):
     return True
 
 
-def compare_urls(url1, url2):
+def compare_urls(url1, url2, full=True):
     if url1 is None or url2 is None:
         return url1 == url2
+    
+    logger.info(f"compare_urls. url1: {url1}; url2: {url2}")
+
+    def parse_with_default_scheme(url):
+        """
+        Ensure the URL has a scheme. If not, prepend 'http://'
+        so it parses as host + path instead of just a path.
+        """
+        # Regex to check if URL has scheme like 'http://', 'https://', etc.
+        if not re.match(r'^[a-zA-Z][a-zA-Z0-9+\-.]*://', url):
+            url = f"http://{url}"
+        return urlparse(url)
 
     def normalize_url(url):
-        # Parse the URL
-        parsed_url = urlparse(url)
+        # Parse the URL; if no scheme is present, assume 'http'
+        parsed_url = parse_with_default_scheme(url)
+        scheme = parsed_url.scheme.lower()
 
-        # If no scheme is present, assume 'http'
-        scheme = parsed_url.scheme if parsed_url.scheme else 'http'
+        # Extract the domain parts using tldextract
+        extracted = tldextract.extract(parsed_url.netloc.lower())
+        # e.g., extracted = TLDExtractResult(subdomain='www', domain='airbnb', suffix='com.sg')
+        
+        # Drop 'www' if it's the only subdomain
+        subdomain = extracted.subdomain
+        if subdomain == 'www':
+            subdomain = ''
 
-        # Lowercase the scheme and netloc, remove 'www.', and handle trailing slash
-        normalized_netloc = parsed_url.netloc.lower().replace("www.", "")
+        # Instead of using the suffix (e.g., 'com', 'com.sg'), ignore it completely
+        # so that both 'airbnb.com' and 'airbnb.com.sg' become just 'airbnb' or 'www.airbnb'
+        if subdomain:
+            normalized_netloc = f"{subdomain}.{extracted.domain}"
+        else:
+            normalized_netloc = extracted.domain
+
+        # Handle trailing slash in the path
         normalized_path = parsed_url.path if parsed_url.path != '/' else ''
 
-        # Reassemble the URL with normalized components
-        normalized_parsed_url = parsed_url._replace(scheme=scheme.lower(), netloc=normalized_netloc,
-                                                    path=normalized_path)
-        normalized_url = urlunparse(normalized_parsed_url)
+        # Reassemble the URL with the normalized components
+        normalized_parsed_url = ParseResult(
+            scheme=scheme.lower(),
+            netloc=normalized_netloc,
+            path=normalized_path,
+            params=parsed_url.params if full else '',       # Keep the params
+            query=parsed_url.query if full else '',         # Keep the query string
+            fragment=parsed_url.fragment if full else '',   # Keep the fragment
+        )
+        return urlunparse(normalized_parsed_url)
 
-        return normalized_url
-
-    # Normalize both URLs for comparison
+    logger.info(f"After normalization. url1: {normalize_url(url1)}; url2: {normalize_url(url2)}")
+    # Normalize both URLs
     norm_url1 = normalize_url(url1)
     norm_url2 = normalize_url(url2)
 
     # Compare the normalized URLs
     return norm_url1 == norm_url2
+
+
+def snip_string(input_string: str, max_length: int = 30) -> str:
+    if len(input_string) <= max_length:
+        return input_string
+    else:
+        snip = "..."
+        half_length = max((max_length - len(snip)) // 2, 0)
+        return input_string[:half_length] + snip + input_string[-half_length:]

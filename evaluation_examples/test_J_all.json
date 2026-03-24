@@ -1,0 +1,122 @@
+{
+  "chrome": [
+    "J_chrome_01",
+    "J_chrome_06",
+    "J_chrome_11",
+    "J_chrome_16",
+    "J_chrome_19",
+    "J_chrome_21",
+    "J_chrome_26",
+    "J_chrome_29",
+    "J_chrome_31",
+    "J_chrome_36",
+    "J_chrome_41",
+    "J_chrome_47",
+    "J_chrome_51"
+  ],
+  "gimp": [
+    "J_gimp_01",
+    "J_gimp_06",
+    "J_gimp_10",
+    "J_gimp_11",
+    "J_gimp_16",
+    "J_gimp_20",
+    "J_gimp_26"
+  ],
+  "libreoffice_calc": [
+    "J_excel_01",
+    "J_excel_06",
+    "J_excel_11",
+    "J_excel_16",
+    "J_excel_20",
+    "J_excel_26",
+    "J_excel_31",
+    "J_excel_36",
+    "J_excel_45",
+    "J_excel_51",
+    "J_excel_56",
+    "J_excel_76"
+  ],
+  "libreoffice_impress": [
+    "J_ppt_01",
+    "J_ppt_06",
+    "J_ppt_09",
+    "J_ppt_13",
+    "J_ppt_18",
+    "J_ppt_20",
+    "J_ppt_21",
+    "J_ppt_22",
+    "J_ppt_26",
+    "J_ppt_31",
+    "J_ppt_41",
+    "J_ppt_46"
+  ],
+  "libreoffice_writer": [
+    "J_word_01",
+    "J_word_06",
+    "J_word_11",
+    "J_word_16",
+    "J_word_20",
+    "J_word_22"
+  ],
+  "multi_apps": [
+    "J_multi_apps_01",
+    "J_multi_apps_05",
+    "J_multi_apps_06",
+    "J_multi_apps_11",
+    "J_multi_apps_17",
+    "J_multi_apps_21",
+    "J_multi_apps_26",
+    "J_multi_apps_31",
+    "J_multi_apps_36",
+    "J_multi_apps_41",
+    "J_multi_apps_46",
+    "J_multi_apps_47",
+    "J_multi_apps_49",
+    "J_multi_apps_51",
+    "J_multi_apps_56",
+    "J_multi_apps_62",
+    "J_multi_apps_66",
+    "J_multi_apps_70",
+    "J_multi_apps_72",
+    "J_multi_apps_73",
+    "J_multi_apps_76",
+    "J_multi_apps_81",
+    "J_multi_apps_86",
+    "J_multi_apps_91",
+    "J_multi_apps_97",
+    "J_multi_apps_101",
+    "J_multi_apps_105"
+  ],
+  "os": [
+    "J_os_02",
+    "J_os_06",
+    "J_os_10",
+    "J_os_15",
+    "J_os_16",
+    "J_os_18",
+    "J_os_23"
+  ],
+  "thunderbird": [
+    "J_thunderbird_01",
+    "J_thunderbird_07",
+    "J_thunderbird_11",
+    "J_thunderbird_13"
+  ],
+  "vlc": [
+    "J_vlc_02",
+    "J_vlc_04",
+    "J_vlc_06",
+    "J_vlc_12",
+    "J_vlc_16"
+  ],
+  "vs_code": [
+    "J_vs_code_01",
+    "J_vs_code_06",
+    "J_vs_code_12",
+    "J_vs_code_14",
+    "J_vs_code_16",
+    "J_vs_code_21",
+    "J_vs_code_25"
+  ]
+}

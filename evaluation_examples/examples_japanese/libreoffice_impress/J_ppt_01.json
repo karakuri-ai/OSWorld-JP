@@ -1,7 +1,7 @@
 {
   "id": "J_ppt_01",
   "snapshot": "libreoffice_impress",
-  "instruction": "スライド1の最初の3つのテキストボックスをそれぞれ黄色、赤、緑にしてください。",
+  "instruction": "スライド1のテキストボックスのテキストの色を、上から順にそれぞれ黄色、赤、緑に変更してください。これらの色のみを使用し、バリエーション（例：濃い赤、薄い緑など）は使用しないでください。",
   "source": "https://arxiv.org/pdf/2311.01767.pdf",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=159lKj5aNLRA6_mhKy8rMBRqDDngyIZzi",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/ppt/J_ppt_01/J_45_2.pptx?download=true",
             "path": "/home/user/デスクトップ/45_2.pptx"
           }
         ]
@@ -67,7 +67,7 @@
     "func": "compare_pptx_files",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?export=download&id=1cKgOBptFiO_w1LdjoJLlwEu8E6OpxVJx",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/ppt/J_ppt_01/J_45_2_Gold.pptx?download=true",
       "dest": "45_2_Gold.pptx"
     },
     "result": {

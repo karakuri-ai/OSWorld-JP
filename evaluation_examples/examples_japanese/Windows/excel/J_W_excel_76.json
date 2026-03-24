@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=1l8Nuxn8vbG3qSWkOjbLzzX9DzI9dgHpp",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/excel/J_excel_76/Students_Class_Subject_Marks.xlsx?download=true",
             "path": "C:\\Users\\User\\Students_Class_Subject_Marks.xlsx"
           }
         ]

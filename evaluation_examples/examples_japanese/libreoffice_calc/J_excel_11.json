@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=1VoEpRbXGxxrxIp-a2iGPqgVPQNdswQB-&export=download",
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/NetIncome.xlsx",
             "path": "/home/user/NetIncome.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=1J94ijzCqrop6eoKAelatAEP98FvbsrTU&export=download",
+      "path": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/3_NetIncome_gt1.xlsx",
       "dest": "3_NetIncome_gt1.xlsx"
     },
     "result": {

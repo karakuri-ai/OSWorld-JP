@@ -10,11 +10,11 @@
         "files": [
           {
             "path": "C:\\Users\\User\\Desktop\\Employee Performance Evaluation Summary.xlsx",
-            "url": "https://drive.google.com/uc?export=download&id=1H0EYqvoBHSJcFyBe2dKxtK585_zP8WJK"
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_06/Employee Performance Evaluation Summary.xlsx?download=true"
           },
           {
             "path": "C:\\Users\\User\\Desktop\\review_template.pdf",
-            "url": "https://drive.google.com/uc?export=download&id=1v0fTzswcvOoCggR1ajCBtASIPUky0MLk"
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_06/review_template.pdf?download=true"
           }
         ]
       }

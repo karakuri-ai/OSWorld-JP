@@ -49,10 +49,10 @@
       "goto_prefix": "https://www.",
       "category": "xpath",
       "xpathObject": {
-        "//*[@data-automation=\"checkin\"]/div[2]": "from",
-        "//*[@data-automation=\"checkout\"]/div[2]": "to",
+        "//*[@data-automation=\"checkin\"]": "from",
+        "//*[@data-automation=\"checkout\"]": "to",
         "//*[@data-automation=\"header_geo_title\"]": "city",
-        "//*[@data-automation=\"roomsandguests\"]/div[3]": "adult",
+        "//*[@data-automation=\"roomsandguests\"]": "adult",
         "//*[@data-automation=\"sort\"]": "rank"
       }
     },
@@ -63,11 +63,12 @@
           "from": "this Saturday",
           "to": "this Sunday"
         },
+        "expect_in_result": true,
         "expected": {
           "from": "{MonthD}月{Day0D}日({DoWJ})",
           "to": "{MonthD}月{Day0D}日({DoWJ})",
           "city": "ニューヨーク シティ ホテル",
-          "adult": "1室、2名",
+          "adult": "2 Guests",
           "rank": "料金 (安い順)"
         }
       }

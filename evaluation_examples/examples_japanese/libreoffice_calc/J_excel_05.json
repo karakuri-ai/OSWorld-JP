@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=135XDfozh5XmO9juDVf_o1mtDEfeQV8wO&export=download",
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/libreoffice_calc/04d9aeaf-7bed-4024-bedb-e10e6f00eb7f/SmallBalanceSheet.xlsx",
             "path": "/home/user/SmallBalanceSheet.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=1S-T05POFWvfynU7Y7IO6qly1bHFmuDsE&export=download",
+      "path": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/libreoffice_calc/04d9aeaf-7bed-4024-bedb-e10e6f00eb7f/4_SmallBalanceSheet_gt1.xlsx",
       "dest": "4_SmallBalanceSheet_gt1.xlsx"
     },
     "result": {

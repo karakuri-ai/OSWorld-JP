@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.usercontent.google.com/download?id=1ITuXkSbTF0BcbTQ3v4A1qnSzbTPrP5ax&export=download&authuser=0&confirm=t&uuid=c6c45cbf-63bc-4cb0-b76c-5a663c0ed820&at=APZUnTVrE-pn_e6HGTp_Eg4ziQhi:1710938673095",
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/vs_code/c6bf789c-ba3a-4209-971d-b63abf0ab733/hw_python_oop-master-20240320T121244Z-001.zip",
             "path": "/home/user/download/hw_python_oop-master.zip"
           }
         ]
@@ -28,7 +28,10 @@
     {
       "type": "launch",
       "parameters": {
-        "command": ["code", "/home/user/download/hw_python_oop-master"]
+        "command": [
+          "code",
+          "/home/user/download/hw_python_oop-master"
+        ]
       }
     },
     {
@@ -39,7 +42,9 @@
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": ["vscode"],
+  "related_apps": [
+    "vscode"
+  ],
   "evaluator": {
     "func": "check_json_settings",
     "expected": {

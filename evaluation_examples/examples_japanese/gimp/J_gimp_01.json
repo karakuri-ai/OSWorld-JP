@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=1YnUq4q9rv7pr1MZPdaD2mVFZRrsgISmn",
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/gimp/045bf3ff-9077-4b86-b483-a1040a949cff/gate.jpeg",
             "path": "/home/user/デスクトップ/gate.jpeg"
           }
         ]

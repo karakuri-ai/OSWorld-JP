@@ -80,6 +80,12 @@ def config() -> argparse.Namespace:
         default="screenshot",
         help="Observation type",
     )
+    parser.add_argument(
+        "--provider_name", type=str, default="aws", choices=["aws", "virtualbox", "vmware", "docker", "azure"], help="Provider name"
+    )
+    parser.add_argument(
+        "--client_password", type=str, default="", help="Client password"
+    )
     parser.add_argument("--screen_width", type=int, default=1920)
     parser.add_argument("--screen_height", type=int, default=1080)
     parser.add_argument("--sleep_after_execution", type=float, default=2.0)
@@ -216,6 +222,7 @@ def test(args: argparse.Namespace, test_all_meta: dict) -> None:
             temperature=args.temperature,
             action_space=args.action_space,
             observation_type=args.observation_type,
+            client_password=args.client_password
         )
         agents.append(agent)
 
@@ -227,7 +234,8 @@ def test(args: argparse.Namespace, test_all_meta: dict) -> None:
             os_type="Ubuntu",
             require_a11y_tree=args.observation_type
             in ["a11y_tree", "screenshot_a11y_tree", "som"],
-            provider_name = "docker"
+            provider_name = args.provider_name,
+            client_password=args.client_password
         )
         envs.append(env)
     
@@ -333,6 +341,18 @@ if __name__ == "__main__":
     ####### The complete version of the list of examples #######
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     args = config()
+    
+    # save args to json in result_dir/action_space/observation_type/model/args.json
+    path_to_args = os.path.join(
+        args.result_dir,
+        args.action_space,
+        args.observation_type,
+        args.model,
+        "args.json",
+    )
+    os.makedirs(os.path.dirname(path_to_args), exist_ok=True)
+    with open(path_to_args, "w", encoding="utf-8") as f:
+        json.dump(vars(args), f, indent=4)
 
     with open(args.test_all_meta_path, "r", encoding="utf-8") as f:
         test_all_meta = json.load(f)

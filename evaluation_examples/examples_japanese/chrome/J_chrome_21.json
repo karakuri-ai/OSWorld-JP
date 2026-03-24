@@ -51,7 +51,7 @@
     "result": [
       {
         "type": "active_tab_html_parse",
-        "goto_prefix": "https://www.",
+        "goto_prefix": "https://",
         "category": "class",
         "class_singleObject": {
           "mach-flight-context-info": "time",
@@ -82,7 +82,7 @@
             "from": "5th next month"
           },
           "expected": {
-            "time": "片道\nSEA\nNYC\n{Year}年{MonthD}月{DayD}日({DoWJ})",
+            "time": "片道 SEANYC {Year}年{MonthD}月{Day0D}日({DoWJ})",
             "category": "マイル"
           }
         }

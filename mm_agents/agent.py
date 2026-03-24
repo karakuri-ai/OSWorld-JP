@@ -9,6 +9,7 @@ import xml.etree.ElementTree as ET
 from http import HTTPStatus
 from io import BytesIO
 from typing import Dict, List
+from dotenv import load_dotenv
 
 import backoff
 import dashscope
@@ -20,11 +21,10 @@ from PIL import Image
 from google.api_core.exceptions import InvalidArgument, ResourceExhausted, InternalServerError, BadRequest
 from groq import Groq
 from requests.exceptions import SSLError
-
-from requests_aws4auth import AWS4Auth
+from anthropic import Anthropic, AnthropicVertex
 
 from mm_agents.accessibility_tree_wrap.heuristic_retrieve import filter_nodes, draw_bounding_boxes
-from mm_agents.prompts_japanese import SYS_PROMPT_IN_SCREENSHOT_OUT_CODE, SYS_PROMPT_IN_SCREENSHOT_OUT_ACTION, \
+from mm_agents.prompts import SYS_PROMPT_IN_SCREENSHOT_OUT_CODE, SYS_PROMPT_IN_SCREENSHOT_OUT_ACTION, \
     SYS_PROMPT_IN_A11Y_OUT_CODE, SYS_PROMPT_IN_A11Y_OUT_ACTION, \
     SYS_PROMPT_IN_BOTH_OUT_CODE, SYS_PROMPT_IN_BOTH_OUT_ACTION, \
     SYS_PROMPT_IN_SOM_OUT_TAG
@@ -236,7 +236,8 @@ class PromptAgent:
             observation_type="screenshot_a11y_tree",
             # observation_type can be in ["screenshot", "a11y_tree", "screenshot_a11y_tree", "som"]
             max_trajectory_length=3,
-            a11y_tree_max_tokens=10000
+            a11y_tree_max_tokens=10000,
+            client_password="password"
     ):
         self.platform = platform
         self.model = model
@@ -247,6 +248,7 @@ class PromptAgent:
         self.observation_type = observation_type
         self.max_trajectory_length = max_trajectory_length
         self.a11y_tree_max_tokens = a11y_tree_max_tokens
+        self.client_password = client_password
 
         self.thoughts = []
         self.actions = []
@@ -282,6 +284,8 @@ class PromptAgent:
                 raise ValueError("Invalid action space: " + action_space)
         else:
             raise ValueError("Invalid experiment type: " + observation_type)
+        
+        self.system_message = self.system_message.format(CLIENT_PASSWORD=self.client_password)
 
     def predict(self, instruction: str, obs: Dict) -> List:
         """
@@ -567,14 +571,31 @@ class PromptAgent:
     )
     def call_llm(self, payload):
 
-        if self.model.startswith("gpt"):
+        if payload['model'].startswith("azure-gpt-4o"):
+
+
+            #.env config example :
+            # AZURE_OPENAI_API_BASE=YOUR_API_BASE
+            # AZURE_OPENAI_DEPLOYMENT=YOUR_DEPLOYMENT
+            # AZURE_OPENAI_API_VERSION=YOUR_API_VERSION
+            # AZURE_OPENAI_MODEL=gpt-4o-mini
+            # AZURE_OPENAI_API_KEY={{YOUR_API_KEY}}
+            # AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_API_BASE}/openai/deployments/${AZURE_OPENAI_DEPLOYMENT}/chat/completions?api-version=${AZURE_OPENAI_API_VERSION}
+
+
+            # Load environment variables
+            load_dotenv()
+            api_key = os.getenv('AZURE_OPENAI_API_KEY')
+            openai_endpoint = os.getenv('AZURE_OPENAI_ENDPOINT')
+            #logger.info("Openai endpoint: %s", openai_endpoint)
+
             headers = {
                 "Content-Type": "application/json",
-                "Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}"
+                "api-key": api_key
             }
-            logger.info("Generating content with GPT model: %s", self.model)
+            logger.info("Generating content with GPT model: %s", payload['model'])
             response = requests.post(
-                "https://api.openai.com/v1/chat/completions",
+                openai_endpoint,
                 headers=headers,
                 json=payload
             )
@@ -584,7 +605,42 @@ class PromptAgent:
                     logger.error("Context length exceeded. Retrying with a smaller context.")
                     payload["messages"] = [payload["messages"][0]] + payload["messages"][-1:]
                     retry_response = requests.post(
-                        "https://api.openai.com/v1/chat/completions",
+                        openai_endpoint,
+                        headers=headers,
+                        json=payload
+                    )
+                    if retry_response.status_code != 200:
+                         logger.error(
+                            "Failed to call LLM even after attempt on shortening the history: " + retry_response.text)
+                         return ""
+
+                logger.error("Failed to call LLM: " + response.text)
+                time.sleep(5)
+                return ""
+            else:
+                return response.json()['choices'][0]['message']['content']
+        elif self.model.startswith("gpt"):
+            # Support custom OpenAI base URL via environment variable
+            base_url = os.environ.get('OPENAI_BASE_URL', 'https://api.openai.com')
+            # Smart handling: avoid duplicate /v1 if base_url already ends with /v1
+            api_url = f"{base_url}/chat/completions" if base_url.endswith('/v1') else f"{base_url}/v1/chat/completions"
+            headers = {
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}"
+            }
+            logger.info("Generating content with GPT model: %s", self.model)
+            response = requests.post(
+                api_url,
+                headers=headers,
+                json=payload
+            )
+
+            if response.status_code != 200:
+                if response.json()['error']['code'] == "context_length_exceeded":
+                    logger.error("Context length exceeded. Retrying with a smaller context.")
+                    payload["messages"] = [payload["messages"][0]] + payload["messages"][-1:]
+                    retry_response = requests.post(
+                        api_url,
                         headers=headers,
                         json=payload
                     )
@@ -599,64 +655,6 @@ class PromptAgent:
             else:
                 return response.json()['choices'][0]['message']['content']
 
-        elif self.model == "Qwen2.5-VL-32B-sft-step-1000-merge-instruct":
-            headers = {
-                "Content-Type": "application/json"
-            }
-            logger.info("Generating content with Qwen2.5-VL model: %s", self.model)
-            
-            # payloadのmodelフィールドを確実に設定
-            payload["model"] = self.model
-            
-            try:
-                response = requests.post(
-                    "http://13.49.184.235:8000/v1/chat/completions",
-                    headers=headers,
-                    json=payload,
-                    timeout=120
-                )
-
-                if response.status_code == 200:
-                    result = response.json()
-                    if "choices" in result and len(result["choices"]) > 0:
-                        return result["choices"][0]["message"]["content"]
-                    else:
-                        logger.error("Invalid response format from Qwen2.5-VL API")
-                        return ""
-                else:
-                    logger.error(f"Failed to call Qwen2.5-VL API. Status: {response.status_code}, Response: {response.text}")
-                    
-                    # Context length exceeded error handling
-                    try:
-                        error_response = response.json()
-                        if 'error' in error_response and 'code' in error_response['error']:
-                            if error_response['error']['code'] == "context_length_exceeded":
-                                logger.error("Context length exceeded. Retrying with a smaller context.")
-                                payload["messages"] = [payload["messages"][0]] + payload["messages"][-1:]
-                                retry_response = requests.post(
-                                    "http://13.49.184.235:8000/v1/chat/completions",
-                                    headers=headers,
-                                    json=payload,
-                                    timeout=120
-                                )
-                                if retry_response.status_code == 200:
-                                    retry_result = retry_response.json()
-                                    if "choices" in retry_result and len(retry_result["choices"]) > 0:
-                                        return retry_result["choices"][0]["message"]["content"]
-                                logger.error(f"Failed to call LLM even after shortening context: {retry_response.text}")
-                    except:
-                        pass
-                    
-                    time.sleep(5)
-                    return ""
-                    
-            except requests.exceptions.RequestException as e:
-                logger.error(f"Request exception when calling Qwen2.5-VL API: {e}")
-                return ""
-            except Exception as e:
-                logger.error(f"Unexpected error when calling Qwen2.5-VL API: {e}")
-                return ""
-
         elif self.model.startswith("claude"):
             messages = payload["messages"]
             max_tokens = payload["max_tokens"]
@@ -670,72 +668,88 @@ class PromptAgent:
                     "role": message["role"],
                     "content": []
                 }
-                # Ensure each message has one text or one text with one image
                 assert len(message["content"]) in [1, 2], "One text, or one text with one image"
                 for part in message["content"]:
-                    if part["type"] == "image_url":
-                        image_source = {
-                            "type": "base64",
-                            "media_type": "image/png",
-                            "data": part["image_url"]["url"].replace("data:image/png;base64,", "")
-                        }
-                        claude_message["content"].append({"type": "image", "source": image_source})
-                    elif part["type"] == "text":
-                        claude_message["content"].append({"type": "text", "text": part["text"]})
+
+                    if part['type'] == "image_url":
+                        image_source = {}
+                        image_source["type"] = "base64"
+                        image_source["media_type"] = "image/png"
+                        image_source["data"] = part['image_url']['url'].replace("data:image/png;base64,", "")
+                        claude_message['content'].append({"type": "image", "source": image_source})
+
+                    if part['type'] == "text":
+                        claude_message['content'].append({"type": "text", "text": part['text']})
+
                 claude_messages.append(claude_message)
 
-            # Since the endpoint doesn’t support system messages, we inject it into the first user message.
-            if claude_messages[0]["role"] == "system":
-                system_item = claude_messages[0]["content"][0]
-                claude_messages[1]["content"].insert(0, system_item)
+            # the claude not support system message in our endpoint, so we concatenate it at the first user message
+            if claude_messages[0]['role'] == "system":
+                claude_system_message_item = claude_messages[0]['content'][0]
+                claude_messages[1]['content'].insert(0, claude_system_message_item)
                 claude_messages.pop(0)
 
             logger.debug("CLAUDE MESSAGE: %s", repr(claude_messages))
 
-            # Build payload with the fixed modelId
-            payload = {
-                "modelId": "anthropic.claude-3-5-sonnet-20241022-v2:0",
-                "max_tokens": max_tokens,
-                "messages": claude_messages,
-                "temperature": temperature,
-                "top_p": top_p
-            }
+            # Determine which provider to use
+            # Use Vertex AI if:
+            # 1. Model name contains '@' (Vertex AI format like claude-sonnet-4-5@20250929)
+            # 2. CLAUDE_PROVIDER environment variable is set to 'vertex'
+            use_vertex = '@' in self.model or os.environ.get('CLAUDE_PROVIDER', '').lower() == 'vertex'
+            # 注意: この判定ロジックはClaude Codeの気まぐれで生成されたものです。run_multienv系列のコードに合わせたほうが良いかもしれません。
 
-            # Headers (no API key needed now)
-            headers = {
-                "anthropic-version": "2023-06-01",
-                "content-type": "application/json"
-            }
-
-            # Set up AWS SigV4 authentication using credentials from environment variables.
-            aws_access_key = os.environ["AWS_ACCESS_KEY_ID"]
-            aws_secret_key = os.environ["AWS_SECRET_ACCESS_KEY"]
-            aws_session_token = os.environ.get("AWS_SESSION_TOKEN")
-            region = os.environ.get("AWS_REGION", "ap-northeast-1")  # adjust as needed
-            service = "execute-api"  # adjust if calling a different AWS service
-
-            aws_auth = AWS4Auth(
-                aws_access_key,
-                aws_secret_key,
-                region,
-                service,
-                session_token=aws_session_token
-            )
-
-            # Make the POST request (ensure the endpoint URL is correct for your AWS-backed API)
-            response = requests.post(
-                "https://api.anthropic.com/v1/messages",  # Update endpoint URL if needed
-                auth=aws_auth,
-                headers=headers,
-                json=payload
-            )
-
-            if response.status_code != 200:
-                logger.error("Failed to call LLM: " + response.text)
-                time.sleep(5)
-                return ""
+            if use_vertex:
+                # Use Vertex AI
+                logger.info(f"Using Vertex AI for model: {self.model}")
+                try:
+                    client = AnthropicVertex(region="global", project_id=os.getenv('GOOGLE_CLOUD_PROJECT_ID'))
+                    logger.warning("temperature and top_p together are not supported in some Vertex AI Anthropic models. Using temperature only.")
+                    response = client.messages.create(
+                        model=self.model,
+                        max_tokens=max_tokens,
+                        messages=claude_messages,
+                        temperature=temperature,
+                        # top_p=top_p
+                    )
+                    return response.content[0].text
+                except Exception as e:
+                    logger.error(f"Failed to call Vertex AI: {str(e)}")
+                    time.sleep(5)
+                    return ""
             else:
-                return response.json()["content"][0]["text"]
+                # Use Anthropic API directly
+                logger.info(f"Using Anthropic API for model: {self.model}")
+                api_key = os.environ.get("ANTHROPIC_API_KEY")
+                if not api_key:
+                    logger.error("ANTHROPIC_API_KEY environment variable is not set")
+                    return ""
+
+                headers = {
+                    "x-api-key": api_key,
+                    "anthropic-version": "2023-06-01",
+                    "content-type": "application/json"
+                }
+
+                payload = {
+                    "model": self.model,
+                    "max_tokens": max_tokens,
+                    "messages": claude_messages,
+                    "temperature": temperature,
+                    "top_p": top_p
+                }
+
+                response = requests.post(
+                    "https://api.anthropic.com/v1/messages",
+                    headers=headers,
+                    json=payload
+                )
+
+                if response.status_code != 200:
+                    logger.error("Failed to call LLM: " + response.text)
+                    time.sleep(5)
+                    return ""
+                else:
+                    return response.json()['content'][0]['text']
 
         elif self.model.startswith("mistral"):
             messages = payload["messages"]
@@ -841,85 +855,152 @@ class PromptAgent:
                 print("Failed to call LLM: ", response.status_code)
                 return ""
 
-        elif self.model in ["gemini-pro", "gemini-pro-vision", "gemini-1.5-pro-latest", "gemini-2.0-flash-001"]:
+        elif self.model in ["gemini-pro", "gemini-pro-vision"]:
             messages = payload["messages"]
             max_tokens = payload["max_tokens"]
             top_p = payload["top_p"]
             temperature = payload["temperature"]
 
-            # gemini-pro はテキスト入力のみをサポートしているためチェック
             if self.model == "gemini-pro":
-                assert self.observation_type in pure_text_settings, (
-                    f"The model {self.model} can only support text-based input. Please change model or settings."
-                )
+                assert self.observation_type in pure_text_settings, f"The model {self.model} can only support text-based input, please consider change based model or settings"
 
             gemini_messages = []
-            role_mapping = {"assistant": "model", "user": "user", "system": "system"}
             for i, message in enumerate(messages):
-                # 各メッセージはテキストのみ、またはテキストと1枚の画像である必要がある
-                assert len(message["content"]) in [1, 2], "Each message must have one text or one text with one image."
-                gemini_message = {"role": role_mapping[message["role"]], "parts": []}
+                role_mapping = {
+                    "assistant": "model",
+                    "user": "user",
+                    "system": "system"
+                }
+                gemini_message = {
+                    "role": role_mapping[message["role"]],
+                    "parts": []
+                }
+                assert len(message["content"]) in [1, 2], "One text, or one text with one image"
 
-                # 画像がある場合は先頭に挿入、テキストは末尾に追加
-                for part in message["content"]:
-                    if part["type"] == "image_url":
-                        gemini_message["parts"].insert(0, encoded_img_to_pil_img(part["image_url"]["url"]))
-                    elif part["type"] == "text":
-                        gemini_message["parts"].append(part["text"])
-                    else:
-                        raise ValueError("Invalid content type: " + part["type"])
+                # The gemini only support the last image as single image input
+                if i == len(messages) - 1:
+                    for part in message["content"]:
+                        gemini_message['parts'].append(part['text']) if part['type'] == "text" \
+                            else gemini_message['parts'].append(encoded_img_to_pil_img(part['image_url']['url']))
+                else:
+                    for part in message["content"]:
+                        gemini_message['parts'].append(part['text']) if part['type'] == "text" else None
+
                 gemini_messages.append(gemini_message)
 
-            # システムメッセージの処理
-            system_instruction = None
-            if gemini_messages and gemini_messages[0]["role"] == "system":
-                # gemini-1.5-pro-latest と gemini-2.0-flash-001 では先頭のシステムメッセージを抽出
-                if self.model in ["gemini-1.5-pro-latest", "gemini-2.0-flash-001"]:
-                    system_instruction = gemini_messages[0]["parts"][0]
-                    gemini_messages.pop(0)
-                else:
-                    if len(gemini_messages) > 1:
-                        gemini_messages[1]["parts"][0] = (
-                            gemini_messages[0]["parts"][0] + "\n" + gemini_messages[1]["parts"][0]
-                        )
-                        gemini_messages.pop(0)
-                    else:
-                        system_instruction = gemini_messages[0]["parts"][0]
-                        gemini_messages.pop(0)
+            # the gemini not support system message in our endpoint, so we concatenate it at the first user message
+            if gemini_messages[0]['role'] == "system":
+                gemini_messages[1]['parts'][0] = gemini_messages[0]['parts'][0] + "\n" + gemini_messages[1]['parts'][0]
+                gemini_messages.pop(0)
 
-            # Google Application Default Credentials 経由の認証を利用（事前に環境変数に認証情報ファイルパスを設定）
-            genai.configure()
+            # since the gemini-pro-vision donnot support multi-turn message
+            if self.model == "gemini-pro-vision":
+                message_history_str = ""
+                for message in gemini_messages:
+                    message_history_str += "<|" + message['role'] + "|>\n" + message['parts'][0] + "\n"
+                gemini_messages = [{"role": "user", "parts": [message_history_str, gemini_messages[-1]['parts'][1]]}]
+                # gemini_messages[-1]['parts'][1].save("output.png", "PNG")
+
+            # print(gemini_messages)
+            api_key = os.environ.get("GENAI_API_KEY")
+            assert api_key is not None, "Please set the GENAI_API_KEY environment variable"
+            genai.configure(api_key=api_key)
             logger.info("Generating content with Gemini model: %s", self.model)
             request_options = {"timeout": 120}
-
-            # モデル初期化：gemini-1.5-pro-latest および gemini-2.0-flash-001 はシステム指示を渡す
-            if self.model in ["gemini-1.5-pro-latest", "gemini-2.0-flash-001"]:
-                gemini_model = genai.GenerativeModel(self.model, system_instruction=system_instruction)
-            else:
-                gemini_model = genai.GenerativeModel(self.model)
-
-            # generation_config に max_tokens を追加（max_output_tokens として）
-            generation_config = {
-                "candidate_count": 1,
-                "max_output_tokens": max_tokens,
-                "top_p": top_p,
-                "temperature": temperature
-            }
-
-            # 安全設定：ドキュメントに準拠したキー・値で指定
-            safety_settings = {
-                "HARM_CATEGORY_HARASSMENT": "BLOCK_NONE",
-                "HARM_CATEGORY_HATE_SPEECH": "BLOCK_NONE",
-                "HARM_CATEGORY_SEXUALLY_EXPLICIT": "BLOCK_NONE",
-                "HARM_CATEGORY_DANGEROUS_CONTENT": "BLOCK_NONE"
-            }
+            gemini_model = genai.GenerativeModel(self.model)
 
             response = gemini_model.generate_content(
                 gemini_messages,
-                generation_config=generation_config,
-                safety_settings=safety_settings,
+                generation_config={
+                    "candidate_count": 1,
+                    # "max_output_tokens": max_tokens,
+                    "top_p": top_p,
+                    "temperature": temperature
+                },
+                safety_settings={
+                    "harassment": "block_none",
+                    "hate": "block_none",
+                    "sex": "block_none",
+                    "danger": "block_none"
+                },
                 request_options=request_options
             )
+            return response.text
+
+        elif self.model.startswith("gemini"):
+            messages = payload["messages"]
+            max_tokens = payload["max_tokens"]
+            top_p = payload["top_p"]
+            temperature = payload["temperature"]
+
+            gemini_messages = []
+            for i, message in enumerate(messages):
+                role_mapping = {
+                    "assistant": "model",
+                    "user": "user",
+                    "system": "system"
+                }
+                assert len(message["content"]) in [1, 2], "One text, or one text with one image"
+                gemini_message = {
+                    "role": role_mapping[message["role"]],
+                    "parts": []
+                }
+
+                # The gemini only support the last image as single image input
+                for part in message["content"]:
+
+                    if part['type'] == "image_url":
+                        # Put the image at the beginning of the message
+                        gemini_message['parts'].insert(0, encoded_img_to_pil_img(part['image_url']['url']))
+                    elif part['type'] == "text":
+                        gemini_message['parts'].append(part['text'])
+                    else:
+                        raise ValueError("Invalid content type: " + part['type'])
+
+                gemini_messages.append(gemini_message)
+
+            # the system message of gemini-1.5-pro-latest need to be inputted through model initialization parameter
+            system_instruction = None
+            if gemini_messages[0]['role'] == "system":
+                system_instruction = gemini_messages[0]['parts'][0]
+                gemini_messages.pop(0)
+
+            api_key = os.environ.get("GENAI_API_KEY")
+            assert api_key is not None, "Please set the GENAI_API_KEY environment variable"
+            genai.configure(api_key=api_key)
+            logger.info("Generating content with Gemini model: %s", self.model)
+            request_options = {"timeout": 120}
+            gemini_model = genai.GenerativeModel(
+                self.model,
+                system_instruction=system_instruction
+            )
+
+            with open("response.json", "w") as f:
+                messages_to_save = []
+                for message in gemini_messages:
+                    messages_to_save.append({
+                        "role": message["role"],
+                        "content": [part if isinstance(part, str) else "image" for part in message["parts"]]
+                    })
+                json.dump(messages_to_save, f, indent=4)
+
+            response = gemini_model.generate_content(
+                gemini_messages,
+                generation_config={
+                    "candidate_count": 1,
+                    # "max_output_tokens": max_tokens,
+                    "top_p": top_p,
+                    "temperature": temperature
+                },
+                safety_settings={
+                    "harassment": "block_none",
+                    "hate": "block_none",
+                    "sex": "block_none",
+                    "danger": "block_none"
+                },
+                request_options=request_options
+            )
+
             return response.text
 
         elif self.model == "llama3-70b":
@@ -1055,11 +1136,7 @@ class PromptAgent:
             except Exception as e:
                 print("Failed to call LLM: " + str(e))
                 return ""
-
-        elif self.model == "dummy":
-            logger.info("Generating dummy response: 'Done'")
-            return "Done"
-
+        
         else:
             raise ValueError("Invalid model: " + self.model)
 

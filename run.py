@@ -15,8 +15,7 @@ import lib_run_single
 from desktop_env.desktop_env import DesktopEnv
 from mm_agents.agent import PromptAgent
 
-# import wandb
-
+# Almost deprecated since it's not multi-env, use run_multienv_*.py instead
 
 #  Logger Configs {{{ #
 logger = logging.getLogger()
@@ -68,6 +67,10 @@ def config() -> argparse.Namespace:
     # environment config
     parser.add_argument("--path_to_vm", type=str, default=None)
     parser.add_argument(
+        "--provider_name", type=str, default="vmware",
+        help="Virtualization provider (vmware, docker, aws, azure, gcp, virtualbox)"
+    )
+    parser.add_argument(
         "--headless", action="store_true", help="Run in headless machine"
     )
     parser.add_argument(
@@ -89,6 +92,9 @@ def config() -> argparse.Namespace:
     parser.add_argument(
         "--test_config_base_dir", type=str, default="evaluation_examples"
     )
+    parser.add_argument(
+        "--examples_folder_name", type=str, default="examples"
+    )
 
     # lm config
     parser.add_argument("--model", type=str, default="gpt-4o")
@@ -101,14 +107,6 @@ def config() -> argparse.Namespace:
     parser.add_argument("--domain", type=str, default="all")
     parser.add_argument(
         "--test_all_meta_path", type=str, default="evaluation_examples/test_all.json"
-    )
-    parser.add_argument(
-        "--restart_task", type=str, default=None,
-        help="Restart from a specific task in format 'domain:task_id' (e.g., 'chrome:J_chrome_1')"
-    )
-    parser.add_argument(
-        "--list_tasks", action="store_true",
-        help="List all available tasks and exit"
     )
 
     # logging related
@@ -127,6 +125,7 @@ def test(args: argparse.Namespace, test_all_meta: dict) -> None:
     # set wandb project
     cfg_args = {
         "path_to_vm": args.path_to_vm,
+        "provider_name": args.provider_name,
         "headless": args.headless,
         "action_space": args.action_space,
         "observation_type": args.observation_type,
@@ -154,6 +153,7 @@ def test(args: argparse.Namespace, test_all_meta: dict) -> None:
     )
 
     env = DesktopEnv(
+        provider_name=args.provider_name,
         path_to_vm=args.path_to_vm,
         action_space=agent.action_space,
         screen_size=(args.screen_width, args.screen_height),
@@ -163,36 +163,10 @@ def test(args: argparse.Namespace, test_all_meta: dict) -> None:
         in ["a11y_tree", "screenshot_a11y_tree", "som"],
     )
 
-    # Handle restart_task option
-    restart_domain = None
-    restart_task_id = None
-    skip_until_restart = False
-    
-    if args.restart_task:
-        if ':' not in args.restart_task:
-            logger.error("Invalid restart_task format. Use 'domain:task_id' (e.g., 'chrome:J_chrome_1')")
-            return
-        restart_domain, restart_task_id = args.restart_task.split(':', 1)
-        skip_until_restart = True
-        logger.info(f"Will restart from task: {restart_domain}:{restart_task_id}")
-
     for domain in tqdm(test_all_meta, desc="Domain"):
-        # Skip domains until we reach the restart domain
-        if skip_until_restart and domain != restart_domain:
-            logger.info(f"Skipping domain: {domain}")
-            continue
-            
         for example_id in tqdm(test_all_meta[domain], desc="Example", leave=False):
-            # Skip tasks until we reach the restart task
-            if skip_until_restart:
-                if domain == restart_domain and example_id == restart_task_id:
-                    logger.info(f"Restarting from task: {domain}:{example_id}")
-                    skip_until_restart = False
-                else:
-                    logger.info(f"Skipping task: {domain}:{example_id}")
-                    continue
             config_file = os.path.join(
-                args.test_config_base_dir, f"examples_japanese/{domain}/{example_id}.json"
+                args.test_config_base_dir, f"{args.examples_folder_name}/{domain}/{example_id}.json"
             )
             with open(config_file, "r", encoding="utf-8") as f:
                 example = json.load(f)
@@ -233,9 +207,11 @@ def test(args: argparse.Namespace, test_all_meta: dict) -> None:
                 )
             except Exception as e:
                 logger.error(f"Exception in {domain}/{example_id}: {e}")
-                env.controller.end_recording(
-                    os.path.join(example_result_dir, "recording.mp4")
-                )
+                # Only attempt to end recording if controller exists (not Docker provider)
+                if hasattr(env, 'controller') and env.controller is not None:
+                    env.controller.end_recording(
+                        os.path.join(example_result_dir, "recording.mp4")
+                    )
                 with open(os.path.join(example_result_dir, "traj.jsonl"), "a") as f:
                     f.write(
                         json.dumps(
@@ -243,11 +219,6 @@ def test(args: argparse.Namespace, test_all_meta: dict) -> None:
                         )
                     )
                     f.write("\n")
-
-    # Check if restart_task was specified but never found
-    if skip_until_restart and args.restart_task:
-        logger.error(f"Restart task '{args.restart_task}' was not found in the test metadata.")
-        logger.error("Please check the domain and task_id are correct.")
 
     env.close()
     logger.info(f"Average score: {sum(scores) / len(scores)}")
@@ -329,39 +300,24 @@ if __name__ == "__main__":
     ####### The complete version of the list of examples #######
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     args = config()
+    
+    # save args to json in result_dir/action_space/observation_type/model/args.json
+    path_to_args = os.path.join(
+        args.result_dir,
+        args.action_space,
+        args.observation_type,
+        args.model,
+        "args.json",
+    )
+    os.makedirs(os.path.dirname(path_to_args), exist_ok=True)
+    with open(path_to_args, "w", encoding="utf-8") as f:
+        json.dump(vars(args), f, indent=4)
 
     with open(args.test_all_meta_path, "r", encoding="utf-8") as f:
         test_all_meta = json.load(f)
 
     if args.domain != "all":
         test_all_meta = {args.domain: test_all_meta[args.domain]}
-
-    # Handle list_tasks option
-    if args.list_tasks:
-        print("Available tasks:")
-        print("================")
-        for domain in sorted(test_all_meta.keys()):
-            print(f"\nDomain: {domain}")
-            for task_id in sorted(test_all_meta[domain]):
-                print(f"  {domain}:{task_id}")
-        print(f"\nTotal tasks: {sum(len(tasks) for tasks in test_all_meta.values())}")
-        sys.exit(0)
-
-    # Validate restart_task if specified
-    if args.restart_task:
-        if ':' not in args.restart_task:
-            logger.error("Invalid restart_task format. Use 'domain:task_id' (e.g., 'chrome:J_chrome_1')")
-            sys.exit(1)
-        restart_domain, restart_task_id = args.restart_task.split(':', 1)
-        if restart_domain not in test_all_meta:
-            logger.error(f"Domain '{restart_domain}' not found in test metadata.")
-            logger.error(f"Available domains: {', '.join(test_all_meta.keys())}")
-            sys.exit(1)
-        if restart_task_id not in test_all_meta[restart_domain]:
-            logger.error(f"Task '{restart_task_id}' not found in domain '{restart_domain}'.")
-            logger.error(f"Available tasks in {restart_domain}: {', '.join(test_all_meta[restart_domain])}")
-            sys.exit(1)
-        logger.info(f"Validated restart task: {restart_domain}:{restart_task_id}")
 
     test_file_list = get_unfinished(
         args.action_space,

@@ -1,7 +1,6 @@
 import logging
 import os
 import platform
-import re
 import subprocess
 import time
 
@@ -72,63 +71,18 @@ class VMwareProvider(Provider):
 
     def get_ip_address(self, path_to_vm: str) -> str:
         logger.info("Getting VMware VM IP address...")
-        max_retries = 30  # Increase retry limit for VM startup
-        retry_count = 0
-        
-        while retry_count < max_retries:
+        while True:
             try:
-                # First check if VMware Tools are running
-                if retry_count % 5 == 0:  # Check tools status every 5 attempts
-                    tools_running = self.check_vmware_tools_status(path_to_vm)
-                    if not tools_running:
-                        logger.warning("VMware Tools are not running. VM may still be booting...")
-                
-                command = ["vmrun"] + get_vmrun_type(return_list=True) + ["getGuestIPAddress", path_to_vm, "-wait"]
-                process = subprocess.Popen(
-                    command,
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE,
-                    text=True,
-                    encoding="utf-8"
+                output = VMwareProvider._execute_command(
+                    ["vmrun"] + get_vmrun_type(return_list=True) + ["getGuestIPAddress", path_to_vm, "-wait"],
+                    return_output=True
                 )
-                stdout, stderr = process.communicate()
-                
-                if process.returncode == 0:
-                    # Success - check if output looks like an IP address
-                    ip_address = stdout.strip()
-                    # Basic validation that we got an IP address, not an error message
-                    if ip_address and not "Error" in ip_address and not "VMware Tools" in ip_address:
-                        # Additional validation: check if it's a valid IP format
-                        import re
-                        ip_pattern = r'^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$'
-                        if re.match(ip_pattern, ip_address):
-                            logger.info(f"VMware VM IP address: {ip_address}")
-                            return ip_address
-                        else:
-                            raise Exception(f"Invalid IP address format: {ip_address}")
-                    else:
-                        raise Exception(f"Invalid IP address format: {ip_address}")
-                else:
-                    # Command failed
-                    error_msg = stderr.strip() if stderr.strip() else stdout.strip()
-                    raise Exception(f"vmrun getGuestIPAddress failed: {error_msg}")
-                    
+                logger.info(f"VMware VM IP address: {output}")
+                return output
             except Exception as e:
-                retry_count += 1
-                logger.error(f"Attempt {retry_count}/{max_retries} - Failed to get VM IP address: {e}")
-                
-                if retry_count >= max_retries:
-                    logger.error("Failed to get VM IP address after maximum retries.")
-                    logger.error("This usually indicates one of the following issues:")
-                    logger.error("1. VMware Tools are not installed in the virtual machine")
-                    logger.error("2. The virtual machine is not fully booted yet")
-                    logger.error("3. Network connectivity issues in the VM")
-                    logger.error("4. VMware Workstation/Fusion is not properly configured")
-                    logger.error(f"VM path: {path_to_vm}")
-                    raise Exception("Failed to get VM IP address after maximum retries")
-                
+                logger.error(e)
                 time.sleep(WAIT_TIME)
-                logger.info(f"Retrying to get VMware VM IP address... ({retry_count}/{max_retries})")
+                logger.info("Retrying to get VMware VM IP address...")
 
     def save_state(self, path_to_vm: str, snapshot_name: str):
         logger.info("Saving VMware VM state...")
@@ -143,31 +97,9 @@ class VMwareProvider(Provider):
         time.sleep(WAIT_TIME)  # Wait for the VM to revert
         return path_to_vm
 
-    def stop_emulator(self, path_to_vm: str):
+    def stop_emulator(self, path_to_vm: str, region=None, *args, **kwargs):
+        # Note: region parameter is ignored for VMware provider
+        # but kept for interface consistency with other providers
         logger.info("Stopping VMware VM...")
         VMwareProvider._execute_command(["vmrun"] + get_vmrun_type(return_list=True) + ["stop", path_to_vm])
         time.sleep(WAIT_TIME)  # Wait for the VM to stop
-
-    def check_vmware_tools_status(self, path_to_vm: str) -> bool:
-        """Check if VMware Tools are running in the VM"""
-        try:
-            command = ["vmrun"] + get_vmrun_type(return_list=True) + ["checkToolsState", path_to_vm]
-            process = subprocess.Popen(
-                command,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                text=True,
-                encoding="utf-8"
-            )
-            stdout, stderr = process.communicate()
-            
-            if process.returncode == 0:
-                tools_state = stdout.strip().lower()
-                logger.info(f"VMware Tools state: {tools_state}")
-                return tools_state == "running"
-            else:
-                logger.error(f"Failed to check VMware Tools state: {stderr.strip()}")
-                return False
-        except Exception as e:
-            logger.error(f"Error checking VMware Tools status: {e}")
-            return False

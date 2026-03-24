@@ -1,0 +1,80 @@
+{
+  "id": "J_multiapps_65",
+  "snapshot": "vs_code",
+  "instruction": "こんにちは、最近小さなPythonベースのテトリスゲームを開発してあそんでいます。大部分は完成したのですが、上に押して回転させるといくつかのケースでプログラムがクラッシュしてしまいます。コードを実行して、バグを修正してください。",
+  "source": "authors",
+  "config": [
+    {
+      "type": "command",
+      "parameters": {
+        "command": [
+          "mkdir",
+          "-p",
+          "/home/user/デスクトップ/tetris"
+        ]
+      }
+    },
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "path": "/home/user/デスクトップ/tetris/block.py",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_65/block.py?download=true"
+          },
+          {
+            "path": "/home/user/デスクトップ/tetris/main.py",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_65/main.py?download=true"
+          },
+          {
+            "path": "/home/user/デスクトップ/tetris/settings.py",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/multiapps/J_multiapps_65/settings.py?download=true"
+          },
+          {
+            "path": "/home/user/デスクトップ/tetris/tetris.py",
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/9219480b-3aed-47fc-8bac-d2cffc5849f7/tetris.py"
+          }
+        ]
+      }
+    },
+    {
+      "type": "launch",
+      "parameters": {
+        "command": [
+          "code",
+          "/home/user/デスクトップ/tetris"
+        ]
+      }
+    }
+  ],
+  "trajectory": "trajectories/9219480b-3aed-47fc-8bac-d2cffc5849f7",
+  "related_apps": [
+    "vs_code",
+    "os"
+  ],
+  "evaluator": {
+    "postconfig": [],
+    "func": "check_python_file_by_test_suite",
+    "result": {
+      "type": "vm_file",
+      "path": [
+        "/home/user/デスクトップ/tetris/block.py",
+        "/home/user/デスクトップ/tetris/main.py",
+        "/home/user/デスクトップ/tetris/settings.py",
+        "/home/user/デスクトップ/tetris/tetris.py"
+      ],
+      "dest": [
+        "block.py",
+        "main.py",
+        "settings.py",
+        "tetris.py"
+      ],
+      "multi": true
+    },
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/9219480b-3aed-47fc-8bac-d2cffc5849f7/test.py",
+      "dest": "test_suite.py"
+    }
+  }
+}

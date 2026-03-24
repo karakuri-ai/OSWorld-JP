@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=16Y7KIq2dPpTq2UshqGc3A7032Zn7km_1",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/excel/J_excel_10/WeeklySales.xlsx?download=true",
             "path": "/home/user/WeeklySales.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?export=download&id=1sdJFWhARrl_3O5syk1ACOlArTn2Tk-uo",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/excel/J_excel_10/13_WeeklySales_gt1.xlsx?download=true",
       "dest": "13_WeeklySales_gt1.xlsx"
     },
     "result": {

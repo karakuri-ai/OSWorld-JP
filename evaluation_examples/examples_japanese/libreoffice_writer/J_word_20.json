@@ -1,7 +1,7 @@
 {
   "id": "J_word_20",
   "snapshot": "libreoffice_writer",
-  "instruction": "最近、プロフェッショナルな文章を書く練習をしています。今、導入部、本文、結論の各段落が必要なエッセイを書いています。導入部はシングルスペース、本文はダブルスペース、結論は1.5スペースです。このエッセイのフォントサイズは12です。手伝っていただけますか？",
+  "instruction": "最近、プロレベルの文章作成を練習中です。導入部・本文・結論の各段落を1段落ずつ書きました。導入部は行間を1行とし、本文は2行、結論は1.5行の行間としたいです。フォントサイズは12ポイントです。お願いできますか？",
   "source": "https://superuser.com/questions/1097199/how-can-i-double-space-a-document-in-libreoffice?rq=1",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?id=1akFeAURJiqnK9wGNlRgPoPuQ6vRmnUPe&export=download",
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/libreoffice_writer/b21acd93-60fd-4127-8a43-2f5178f4a830/CCHU9045_Course_Outline_2019-20.docx",
             "path": "/home/user/デスクトップ/CCHU9045_Course_Outline_2019-20.docx"
           }
         ]
@@ -55,7 +55,7 @@
     "func": "compare_line_spacing",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?id=16LN7uYSSXk_xwgc4IZXnN2Z1nCmPJfLm&export=download",
+      "path": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/libreoffice_writer/b21acd93-60fd-4127-8a43-2f5178f4a830/CCHU9045_Course_Outline_2019-20_Gold.docx",
       "dest": "CCHU9045_Course_Outline_2019-20_Gold.docx"
     },
     "result": {

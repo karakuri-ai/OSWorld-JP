@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=1X2rLbJgSmLdxW-9y1tZd1PDwUlBxeGoT",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/excel/J_excel_27/J_LARS_Science_Assessment_Resource_List_7-30-21.xlsx?download=true",
             "path": "/home/user/LARS_Science_Assessment_Resource_List_7-30-21.xlsx"
           }
         ]
@@ -60,7 +60,7 @@
     },
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?export=download&id=1AW9Pe_7iL72nFNq0sb6gWGXPML1ifRIc",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/excel/J_excel_27/J_LARS_Science_Assessment_Resource_List_7-30-21_Gold.xlsx?download=true",
       "dest": "LARS_Science_Assessment_Resource_List_7-30-21_gold.xlsx"
     },
     "options": {

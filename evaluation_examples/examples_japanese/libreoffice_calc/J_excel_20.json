@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=1zBFfmJHgXSacygAFgX9Rjp4D8eQu4tbR",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/excel/J_excel_20/SalesRep.xlsx?download=true",
             "path": "/home/user/SalesRep.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?export=download&id=1vEqtyoOrtO0ZQ1QSm5qL5ZEprubPw3xu",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/excel/J_excel_20/3_SalesRep_gt1.xlsx?download=true",
       "dest": "3_SalesRep_gt1.xlsx"
     },
     "result": {

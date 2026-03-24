@@ -1,7 +1,7 @@
 {
   "id": "J_vs_code_16",
   "snapshot": "vscode",
-  "instruction": "VS Codeの設定を変更して、毎回開くと自動的に「test.py」という名前のPythonファイルが作成されるように手伝っていただけますか。",
+  "instruction": "拡張機能は使わず、VS Codeの設定を変更して、毎回の起動時に自動的に「test.py」という名前のPythonファイルが作成されるようにしてもらえますか。",
   "source": "",
   "config": [
     {

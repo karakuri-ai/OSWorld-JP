@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=1IQPiNT6Vmd0YO0OytaB8lb_Dvo1mCGnP",
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/gimp/a746add2-cab0-4740-ac36-c3769d9bfb46/dog_with_background.png",
             "path": "/home/user/デスクトップ/dog_with_background.png"
           }
         ]

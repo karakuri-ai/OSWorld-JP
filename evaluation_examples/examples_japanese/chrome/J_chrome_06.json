@@ -63,8 +63,8 @@
         "goto_prefix": "https://www.",
         "category": "xpath",
         "xpathObject": {
-          "/html/body/div[2]/main/div/div/section/div/div/div/div[1]/div[1]/p": "from",
-          "/html/body/div[2]/main/div/div/section/div/div/div/div[1]/div[3]/p": "to"
+          "//button[@aria-label=\"出発日を選択\"]": "from",
+          "//button[@aria-label=\"返却日を選択\"]": "to"
         }
       }
     ],
@@ -73,8 +73,8 @@
         "type": "rule",
         "rules": {
           "expected": {
-            "locationName": "%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AA%E3%83%83%E3%83%92",
-            "dropLocationName": "%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AA%E3%83%83%E3%83%92",
+            "locationName": "チューリッヒ",
+            "dropLocationName": "チューリッヒ",
             "filterCriteria_carCategory": "large",
             "filterCriteria_sortBy": "PRICE"
           }
@@ -88,8 +88,8 @@
             "to": "next Friday"
           },
           "expected": {
-            "from": "{Year}年{Month}月{DayD}日({DoWJ}) 10:00",
-            "to": "{Year}年{Month}月{DayD}日({DoWJ}) 10:00"
+            "from": "受け取り日{MonthD}月{DayD}日({DoWJ})",
+            "to": "返却日{MonthD}月{DayD}日({DoWJ})"
           }
         }
       }

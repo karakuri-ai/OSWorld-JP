@@ -1,7 +1,7 @@
 {
   "id": "J_gimp_07",
   "snapshot": "gimp",
-  "instruction": "画像のなかで何が起こっているかを説明してください。",
+  "instruction": "この画像に基づいて、隠された音声会話をフランス語に翻訳してください。",
   "source": "",
   "config": [
     {
@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=1w9R8RYkbFl88n8_Vgk_zZeD5J4t4yrzC",
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/gimp/58d3eeeb-e9d0-499f-962e-fd0db2a744d8/heron.jpeg",
             "path": "/home/user/デスクトップ/heron.jpeg"
           }
         ]

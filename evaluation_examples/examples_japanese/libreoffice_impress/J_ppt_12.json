@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=12qTW5DhjoFuPuViPeN-cOWKSXkbJpMBr",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/ppt/J_ppt_12/J_41_3.pptx?download=true",
             "path": "/home/user/デスクトップ/41_3.pptx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_pptx_files",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?export=download&id=1P2yEpW1Uou-iRCa4_Ssq_u-Qun-Z-Eiu",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/ppt/J_ppt_12/J_41_3_Gold.pptx?download=true",
       "dest": "41_3_Gold.pptx"
     },
     "result": {

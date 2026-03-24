@@ -9,7 +9,7 @@
       "parameters": {
         "files": [
           {
-            "url": "https://drive.google.com/uc?export=download&id=1pN12lyfw4UyX8gF9BJ23GSb3d-rQKbjP",
+            "url": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/excel/J_excel_26/J_Employee_Roles_and_Ranks.xlsx?download=true",
             "path": "/home/user/Employee_Roles_and_Ranks.xlsx"
           }
         ]
@@ -61,7 +61,7 @@
     "func": "compare_table",
     "expected": {
       "type": "cloud_file",
-      "path": "https://drive.google.com/uc?export=download&id=1srxFdnjSYOVeDlFtQsCDAh6WwxE3te2D",
+      "path": "https://huggingface.co/datasets/karakuri-ai/OSWorld-JP-task-resources/resolve/main/OSWorld-JP-files/excel/J_excel_26/J_Employee_Roles_and_Ranks_gold.xlsx?download=true",
       "dest": "Employee_Roles_and_Ranks_gold.xlsx"
     },
     "result": {

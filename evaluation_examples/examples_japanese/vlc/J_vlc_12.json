@@ -1,13 +1,14 @@
 {
   "id": "J_vlc_12",
   "snapshot": "chrome",
-  "instruction": "VLCメディアプレーヤーをウィンドウモードで見ているときに、下部ツールバーを隠す手伝いをしていただけますか？コンピュータでよくマルチタスクをするので、VLCの常に表示されるツールバーが非常に気になります。",
+  "instruction": "VLCメディアプレーヤーをウィンドウモードで観るときに、いつでも下部ツールバーが隠れるようにしてもらえませんか？PCでよくマルチタスクをするので、しつこく表示されるVLCのツールバーは非常に気が散ります。",
   "source": "https://superuser.com/questions/776056/how-to-hide-bottom-toolbar-in-vlc",
   "config": [
     {
       "type": "launch",
       "parameters": {
-        "command": "vlc"
+        "command": "VLC_VERBOSE=-1 vlc --no-audio --no-video-title-show",
+        "shell": true
       }
     },
     {
@@ -16,7 +17,7 @@
         "command": [
           "python",
           "-c",
-          "import pyautogui; import time; pyautogui.click(960, 540); time.sleep(0.5);"
+          "import pyautogui; import time; pyautogui.click({SCREEN_WIDTH_HALF}, {SCREEN_HEIGHT_HALF}); time.sleep(0.5);"
         ]
       }
     }
@@ -39,7 +40,8 @@
       {
         "type": "launch",
         "parameters": {
-          "command": "vlc"
+          "command": "vlc --no-audio --no-video-title-show",
+          "shell": true
         }
       }
     ],

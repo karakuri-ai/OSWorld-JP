@@ -1,0 +1,58 @@
+{
+  "id": "J_multiapps_08",
+  "snapshot": "vscode",
+  "instruction": "現在、「bubble_Sort_tutorial.docx」という文書を使ってアルゴリズムの練習をしています。「bubbleSort.py」ファイル内の'bubbleSort'関数を完成させ、その出力をデスクトップに'res.txt'という名前で保存してください。",
+  "source": "authors",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/20236825-b5df-46e7-89bf-62e1d640a897/bubbleSort.zip",
+            "path": "/home/user/デスクトップ/bubbleSort.zip"
+          },
+          {
+            "url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/20236825-b5df-46e7-89bf-62e1d640a897/Bubble_Sort_tutorial.docx",
+            "path": "/home/user/デスクトップ/Bubble_Sort_tutorial.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "execute",
+      "parameters": {
+        "command": [
+          "/bin/bash",
+          "-c",
+          "unzip /home/user/デスクトップ/bubbleSort.zip -d /home/user/デスクトップ/ && rm -rf /home/user/デスクトップ/bubbleSort.zip"
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/デスクトップ/Bubble_Sort_tutorial.docx"
+      }
+    }
+  ],
+  "trajectory": "trajectories/20236825-b5df-46e7-89bf-62e1d640a897",
+  "related_apps": [
+    "vscode",
+    "libreoffice_writer",
+    "os"
+  ],
+  "evaluator": {
+    "func": "compare_text_file",
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_file_cache/resolve/main/multi_apps/20236825-b5df-46e7-89bf-62e1d640a897/res.txt",
+      "dest": "res_Gold.txt"
+    },
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/デスクトップ/res.txt",
+      "dest": "res.txt"
+    }
+  }
+}

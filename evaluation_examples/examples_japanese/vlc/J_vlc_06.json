@@ -1,18 +1,21 @@
 {
   "id": "J_vlc_06",
   "snapshot": "base_setup",
-  "instruction": "Google Play Movies & TVストアから購入した「Stranger Things」の最新シーズンをVLCで直接プレイできます。",
+  "instruction": "Google Play Movies & TVストアから購入した「Stranger Things」の最新シーズンをVLCで直接再生してください。",
   "source": "https://wiki.videolan.org/Digital_Restrictions_Management/",
   "config": [
     {
       "type": "launch",
       "parameters": {
-        "command": "vlc"
+        "command": "VLC_VERBOSE=-1 vlc --no-audio --no-video-title-show",
+        "shell": true
       }
     }
   ],
   "trajectory": "trajectories/",
-  "related_apps": ["vlc"],
+  "related_apps": [
+    "vlc"
+  ],
   "evaluator": {
     "func": "infeasible"
   }
