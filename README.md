@@ -43,7 +43,7 @@
 git clone https://github.com/karakuri-ai/OSWorld-JP
 
 # クローンしたリポジトリのディレクトリに移動
-cd OSWorld
+cd OSWorld-JP
 
 # オプション：OSWorld用のConda環境を作成
 # conda create -n osworld python=3.10
@@ -139,7 +139,8 @@ python run.py \
     --sleep_after_execution 3 \
     --max_steps 15 \
     --result_dir ./results \
-    --client_password password
+    --client_password password \
+    --examples_folder_name examples_japanese
 ```
 
 並列実行（プロバイダーを`docker`に切り替える例）
@@ -152,7 +153,8 @@ python run_multienv.py \
     --sleep_after_execution 3 \
     --max_steps 15 \
     --num_envs 10 \
-    --client_password password
+    --client_password password \
+    --examples_folder_name examples_japanese    
 ```
 
 エージェントのタスク完了のスクリーンショット、アクション、ビデオ録画を含む結果は、この場合`./results`（または指定した他の`result_dir`）ディレクトリに保存されます。
