@@ -350,15 +350,24 @@ class AnthropicAgent:
             })
             
         if self.messages and "tool_use" in [content_block["type"] for content_block in self.messages[-1]["content"]]:
-            self.add_tool_result(
-                self.messages[-1]["content"][-1]["id"],
-                f"Success",
-                screenshot=obs.get("screenshot") if obs else None
-            )
+            tool_use_ids = [
+                block["id"] for block in self.messages[-1]["content"]
+                if block["type"] == "tool_use"
+            ]
+            # Provide tool_result for all tool_use blocks; attach screenshot only to the last one
+            for i, tool_use_id in enumerate(tool_use_ids):
+                is_last = (i == len(tool_use_ids) - 1)
+                self.add_tool_result(
+                    tool_use_id,
+                    "Success",
+                    screenshot=obs.get("screenshot") if obs and is_last else None
+                )
             
         enable_prompt_caching = False
         betas = ["computer-use-2025-01-24"]
-        if self.model_name in ["claude-3-7-sonnet-20250219", "claude-4-opus-20250514", "claude-4-sonnet-20250514", "claude-4-5-sonnet-20250929"]:
+        if self.model_name in ["claude-4-6-sonnet"]:
+            betas = ["computer-use-2025-11-24"]
+        elif self.model_name in ["claude-3-7-sonnet-20250219", "claude-4-opus-20250514", "claude-4-sonnet-20250514", "claude-4-5-sonnet-20250929"]:
             betas = ["computer-use-2025-01-24"]
         elif self.model_name == "claude-3-5-sonnet-20241022":
             betas = [COMPUTER_USE_BETA_FLAG]
@@ -404,6 +413,12 @@ class AnthropicAgent:
                 ] if self.platform == 'Ubuntu' else [
                     {'name': 'computer', 'type': 'computer_20241022', 'display_width_px': 1280, 'display_height_px': 720, 'display_number': 1},
                 ]
+            elif self.model_name in ["claude-4-6-sonnet"]:
+                tools = [
+                    {'name': 'computer', 'type': 'computer_20251124', 'display_width_px': 1280, 'display_height_px': 720, 'display_number': 1},
+                ] if self.platform == 'Ubuntu' else [
+                    {'name': 'computer', 'type': 'computer_20251124', 'display_width_px': 1280, 'display_height_px': 720, 'display_number': 1},
+                ]
             elif self.model_name in ["claude-3-7-sonnet-20250219", "claude-4-opus-20250514", "claude-4-sonnet-20250514", "claude-4-5-sonnet-20250929"]:
                 tools = [
                     {'name': 'computer', 'type': 'computer_20250124', 'display_width_px': 1280, 'display_height_px': 720, 'display_number': 1},
@@ -421,7 +436,17 @@ class AnthropicAgent:
             
             for attempt in range(API_RETRY_TIMES):
                 try:
-                    if self.model_name in ["claude-3-7-sonnet-20250219", "claude-4-opus-20250514", "claude-4-sonnet-20250514", "claude-4-5-sonnet-20250929"]:
+                    if self.model_name in ["claude-4-6-sonnet"]:
+                        response = client.beta.messages.create(
+                            max_tokens=self.max_tokens,
+                            messages=self.messages,
+                            model=PROVIDER_TO_DEFAULT_MODEL_NAME[self.provider, self.model_name],
+                            system=[system],
+                            tools=tools,
+                            betas=betas,
+                            extra_body=extra_body
+                        )
+                    elif self.model_name in ["claude-3-7-sonnet-20250219", "claude-4-opus-20250514", "claude-4-sonnet-20250514", "claude-4-5-sonnet-20250929"]:
                         response = client.beta.messages.create(
                             max_tokens=self.max_tokens,
                             messages=self.messages,
@@ -443,7 +468,7 @@ class AnthropicAgent:
                     else:
                         raise ValueError(f"Unsupported model: {self.model_name}")
                     logger.info(f"Response: {response}")
-                    break  
+                    break
                 except (APIError, APIStatusError, APIResponseValidationError) as e:
                     error_msg = str(e)
                     logger.warning(f"Anthropic API error (attempt {attempt+1}/{API_RETRY_TIMES}): {error_msg}")
@@ -472,7 +497,17 @@ class AnthropicAgent:
                 logger.warning("Retrying with backup API key...")
 
                 backup_client = Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY_BACKUP"), max_retries=4)
-                if self.model_name in ["claude-3-7-sonnet-20250219", "claude-4-opus-20250514", "claude-4-sonnet-20250514", "claude-4-5-sonnet-20250929"]:
+                if self.model_name in ["claude-4-6-sonnet"]:
+                    response = backup_client.beta.messages.create(
+                        max_tokens=self.max_tokens,
+                        messages=self.messages,
+                        model=PROVIDER_TO_DEFAULT_MODEL_NAME[APIProvider.ANTHROPIC, self.model_name],
+                        system=[system],
+                        tools=tools,
+                        betas=betas,
+                        extra_body=extra_body
+                    )
+                elif self.model_name in ["claude-3-7-sonnet-20250219", "claude-4-opus-20250514", "claude-4-sonnet-20250514", "claude-4-5-sonnet-20250929"]:
                     response = backup_client.beta.messages.create(
                         max_tokens=self.max_tokens,
                         messages=self.messages,
@@ -562,7 +597,17 @@ class AnthropicAgent:
                 response = None
                 for attempt in range(API_RETRY_TIMES):
                     try:
-                        if self.model_name in ["claude-3-7-sonnet-20250219", "claude-4-opus-20250514", "claude-4-sonnet-20250514", "claude-4-5-sonnet-20250929"]:
+                        if self.model_name in ["claude-4-6-sonnet"]:
+                            response = client.beta.messages.create(
+                                max_tokens=self.max_tokens,
+                                messages=self.messages,
+                                model=PROVIDER_TO_DEFAULT_MODEL_NAME[self.provider, self.model_name],
+                                system=[system],
+                                tools=tools,
+                                betas=betas,
+                                extra_body=extra_body
+                            )
+                        elif self.model_name in ["claude-3-7-sonnet-20250219", "claude-4-opus-20250514", "claude-4-sonnet-20250514", "claude-4-5-sonnet-20250929"]:
                             response = client.beta.messages.create(
                                 max_tokens=self.max_tokens,
                                 messages=self.messages,

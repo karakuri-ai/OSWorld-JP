@@ -52,6 +52,7 @@ PROVIDER_TO_DEFAULT_MODEL_NAME: dict[(APIProvider, str), str] = {
     (APIProvider.VERTEX, "claude-4-sonnet-20250514"): "claude-sonnet-4-v1@20250514",
     # Newer models
     (APIProvider.VERTEX, "claude-4-5-sonnet-20250929"): "claude-sonnet-4-5@20250929",
+    (APIProvider.VERTEX, "claude-4-6-sonnet"): "claude-sonnet-4-6@default",
 }
 
 
@@ -241,8 +242,10 @@ def _response_to_params(
                         thinking_block["signature"] = getattr(block, "signature", None)
                     res.append(cast(BetaContentBlockParam, thinking_block))
             else:
-                # Handle tool use blocks normally
-                res.append(cast(BetaToolUseBlockParam, block.model_dump()))
+                # Handle tool use blocks - exclude fields not accepted by all providers
+                dumped = block.model_dump()
+                dumped.pop("caller", None)
+                res.append(cast(BetaToolUseBlockParam, dumped))
         return res
     else:
         return []
